@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="24px" viewBox="0 0 22 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CAA44693-274D-41A5-9DEA-E5B2353AE9A0@1x</title>
+    <defs>
+        <path d="M12,0 C15.4495337,0 17.4770271,2.59547977 17.9129138,5.99988701 L21,6 C21.5522847,6 22,6.44771525 22,7 L23,23 C23,23.5522847 22.5522847,24 22,24 L2,24 C1.44771525,24 1,23.5522847 1,23 L2,7 C2,6.44771525 2.44771525,6 3,6 L6.07689447,6.00066148 C6.48933511,2.59587341 8.5502047,0 12,0 Z M20,8 L18,8 L18,10 L16,10 L16,8 L8,8 L8,10 L6,10 L6,8 L4,8 L3,22 L21,22 L20,8 Z M12,2 C9.6700624,2 8.4552867,3.69544956 8.10471308,5.99989146 L15.9116299,6.00047195 C15.5831955,3.69573429 14.3301332,2 12,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Lizenzen-&amp;-Assets-✅" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-340.000000, -490.000000)">
+            <g id="Group" transform="translate(339.000000, 490.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#071C31" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)" fill="#071C31" id="Rectangle">
+                    <g>
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

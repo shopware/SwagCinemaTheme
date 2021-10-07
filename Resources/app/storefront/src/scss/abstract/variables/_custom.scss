@@ -1,0 +1,39 @@
+/*
+Custom variables
+==================================================
+Contains custom non bootstrap variables.
+*/
+
+$icon-base-bg:            $gray-900 !default;
+$icon-review-color:       $gray-900 !default;
+
+$placeholder-text:        $gray-400 !default;
+$disable-text:            $gray-300 !default;
+
+$font-weight-medium:      500 !default;
+$font-weight-semibold:    600 !default;
+
+// Button
+$btn-font-weight-lg:                          $font-weight-semibold !default;
+$disabled-btn-color:                          #fff !default;
+
+$disabled-btn-primary-bg:                     #b2e5ec !default;
+$disabled-btn-primary-border-color:           #b2e5ec !default;
+
+$disabled-btn-secondary-bg:                   $gray-400 !default;
+$disabled-btn-secondary-border-color:         $gray-400 !default;
+
+$disabled-btn-outline-primary-color:          #b2e5ec !default;
+$disabled-btn-outline-primary-bg:             transparent !default;
+$disabled-btn-outline-primary-border-color:   #b2e5ec !default;
+
+$disabled-btn-outline-secondary-color:        $gray-400 !default;
+$disabled-btn-outline-secondary-bg:           transparent !default;
+$disabled-btn-outline-secondary-border-color: $gray-400 !default;
+
+// Modals
+$modal-close-padding:                         0 0 0 $modal-inner-padding !default;
+$modal-close-margin:                          -1.625rem -1.1875rem 0 auto !default;
+$modal-close-color:                           $gray-900 !default;
+
+$modal-footer-padding:                       0 $modal-inner-padding $modal-inner-padding $modal-inner-padding !default;

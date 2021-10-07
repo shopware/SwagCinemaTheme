@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>A4CE967F-EFB0-4542-8CF2-CFA4E0A1D98D@1x</title>
+    <defs>
+        <path d="M9.5,0 C14.7467051,0 19,4.25329488 19,9.5 C19,11.7629097 18.2087994,13.8410246 16.8879416,15.4728012 L22.2071068,20.7928932 C22.5976311,21.1834175 22.5976311,21.8165825 22.2071068,22.2071068 C21.8466228,22.5675907 21.2793918,22.5953203 20.8871006,22.2902954 L20.7928932,22.2071068 L15.4728012,16.8879416 C13.8410246,18.2087994 11.7629097,19 9.5,19 C4.25329488,19 0,14.7467051 0,9.5 C0,4.25329488 4.25329488,0 9.5,0 Z M9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Lizenzen-&amp;-Assets-✅" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-292.000000, -491.000000)">
+            <g id="Group" transform="translate(291.000000, 490.000000)">
+                <g id="Fills/White" transform="translate(1.000000, 1.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#071C31" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Group" mask="url(#mask-2)">
+                        <g transform="translate(-1.000000, -1.000000)">
+                            <rect id="Rectangle" fill="#071C31" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

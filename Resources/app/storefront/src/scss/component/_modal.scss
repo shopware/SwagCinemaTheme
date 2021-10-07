@@ -1,0 +1,17 @@
+// Modal header
+.modal-header {
+    .close {
+        padding: $modal-close-padding;
+        margin: $modal-close-margin;
+        opacity: 1;
+
+        .icon {
+            color: $modal-close-color;
+        }
+    }
+}
+
+// Footer (for actions)
+.modal-footer {
+    padding: $modal-footer-padding;
+}

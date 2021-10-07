@@ -1,0 +1,9 @@
+// Disable Button
+@mixin disable-button($background-color, $color, $border-color) {
+    &.disabled,
+    &:disabled {
+        background-color: $background-color;
+        border-color: $border-color;
+        color: $color;
+    }
+}
