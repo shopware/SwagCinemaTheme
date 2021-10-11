@@ -16,7 +16,84 @@
         "@Storefront",
         "app/storefront/dist/storefront/js/swag-cinema-theme.js"
     ],
+    "iconSets": {
+        "cinema": "app/storefront/src/assets/icon-pack/cinema"
+    },
     "asset": [
         "app/storefront/src/assets"
-    ]
+    ],
+    "config": {
+        "fields": {
+            "sw-color-brand-primary": {
+                "value": "#00a9c1"
+            },
+            "sw-color-brand-secondary": {
+                "value": "#071c31"
+            },
+            "sw-color-success": {
+                "value": "#0ea037"
+            },
+            "sw-color-info": {
+                "value": "#027eab"
+            },
+            "sw-color-danger": {
+                "value": "#c30205"
+            },
+            "sw-font-family-base": {
+                "value": "'IBM Plex Sans', sans-serif"
+            },
+            "sw-text-color": {
+                "value": "#071c31"
+            },
+            "sw-font-family-headline": {
+                "value": "'IBM Plex Sans', sans-serif"
+            },
+            "sw-headline-color": {
+                "value": "#071c31"
+            },
+            "sw-color-price": {
+                "value": "#071c31"
+            },
+            "sw-color-buy-button": {
+                "value": "#00a9c3"
+            },
+            "sw-color-buy-button-text": {
+                "value": "#ffffff"
+            },
+            "sw-logo-desktop": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/cinema-logo.svg"
+            },
+            "sw-logo-tablet": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/cinema-logo.svg"
+            },
+            "sw-logo-mobile": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/cinema-logo.svg"
+            },
+            "sw-footer-bg-color": {
+                "label": {
+                    "en-GB": "Background colour",
+                    "de-DE": "Hintergrundfarbe"
+                },
+                "type": "color",
+                "value": "#071c31",
+                "editable": true,
+                "block": "footer",
+                "order": 100
+            },
+            "sw-footer-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "block": "footer",
+                "order": 200
+            }
+        }
+    }
 }
