@@ -1,0 +1,19 @@
+.navigation-offcanvas {
+    .offcanvas-close {
+        background-color: $secondary;
+        border: none;
+        @extend .flex-row;
+
+        &:hover {
+            background-color: $secondary;
+        }
+
+        .icon {
+            color: $white;
+        }
+
+        .header-logo-main {
+            flex-grow: 1;
+        }
+    }
+}

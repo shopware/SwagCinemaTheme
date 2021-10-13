@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="15px" height="9px" viewBox="0 0 15 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>10D13CDD-BD86-47C0-8C0B-5C322295225D@1x</title>
-    <defs>
-        <path d="M10.049558,6.98460895 C10.398014,6.60970563 10.9463188,6.58086691 11.3255208,6.8980928 L11.4165848,6.98460895 L15,10.84 L11.4165848,14.6953911 C11.0390908,15.1015363 10.427052,15.1015363 10.049558,14.6953911 C9.70110198,14.3204877 9.67429767,13.7305674 9.96914508,13.3225846 L10.049558,13.2246089 L12.2651862,10.84 L10.049558,8.45539105 C9.70110198,8.08048773 9.67429767,7.49056743 9.96914508,7.08258458 L10.049558,6.98460895 Z" id="path-1"></path>
-    </defs>
-    <g id="Lizenzen-&amp;-Assets-✅" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icons" transform="translate(-621.000000, -615.000000)">
-            <g id="Group" transform="translate(621.000000, 609.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <use id="Mask-Copy" fill="#071C31" fill-rule="nonzero" xlink:href="#path-1"></use>
-                <path d="M13,11 L4.95993492,11 C4.66801004,11 4.39066052,10.8724373 4.20067832,10.6507914 L1.5,7.5 L1.5,7.5" id="Path-2" stroke="#071C31" stroke-width="2" stroke-linecap="round" fill-rule="nonzero"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg width="20" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M2 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" id="a"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><use fill="#1F2E3D" xlink:href="#a"/><g mask="url(#b)"><path fill="#071C31" d="M-2-10h24v24H-2z"/></g></g></svg>

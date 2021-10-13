@@ -1,0 +1,26 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/wishlist-widget.html.twig' %}
+
+{% block layout_header_actions_wishlist_widget %}
+    {% block layout_header_actions_wishlist_icon %}
+        <span class="header-wishlist-icon">
+            {% sw_icon 'ic-heart' style {'pack': 'cinema'} %}
+        </span>
+    {% endblock %}
+
+    {% set wishlistStorageOptions = {
+        listPath: path('frontend.wishlist.product.list'),
+        mergePath: path('frontend.wishlist.product.merge'),
+        tokenMergePath: sw_csrf('frontend.wishlist.product.merge', {'mode': 'token'}),
+        pageletPath: path('frontend.wishlist.product.merge.pagelet'),
+        tokenPageletPath: sw_csrf('frontend.wishlist.product.merge.pagelet', {'mode': 'token'}),
+    } %}
+
+    {% block layout_header_actions_wishlist_badge %}
+        <span class="badge badge-light header-wishlist-badge"
+              id="wishlist-basket"
+              data-wishlist-storage="true"
+              data-wishlist-storage-options="{{ wishlistStorageOptions|json_encode }}"
+              data-wishlist-widget="true"
+        ></span>
+    {% endblock %}
+{% endblock %}

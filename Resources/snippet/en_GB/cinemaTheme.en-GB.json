@@ -1,1 +1,5 @@
-{}
+{
+    "header": {
+        "searchPlaceholder": "What are you looking for?"
+    }
+}

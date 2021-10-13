@@ -31,6 +31,9 @@ $disabled-btn-outline-secondary-color:        $gray-400 !default;
 $disabled-btn-outline-secondary-bg:           transparent !default;
 $disabled-btn-outline-secondary-border-color: $gray-400 !default;
 
+$btn-link-icon-color:                         $primary !default;
+$btn-link-icon-hover-color:                   $btn-link-icon-color !default;
+
 // Modals
 $modal-close-padding:                         0 0 0 $modal-inner-padding !default;
 $modal-close-margin:                          -1.625rem -1.1875rem 0 auto !default;

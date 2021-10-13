@@ -25,8 +25,14 @@ https://sass-guidelin.es/#the-7-1-pattern
  * ---------- */
 @import "component/button";
 @import "component/modal";
+@import "component/nav";
+@import "component/icon";
 
 /*
  * Layout-related sections
  * ----------------------- */
 @import 'layout/container';
+@import "layout/header";
+@import "layout/navigation-offcanvas";
+@import "layout/header-minimal";
+@import "layout/scroll-up";

@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_header %}
+    <div class="top-bar">
+        <div class="container">
+            {% sw_include '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+        </div>
+    </div>
+    <header class="header-main">
+        {{ block('base_header_inner') }}
+    </header>
+{% endblock %}
+
+
+{% block base_navigation %}{% endblock %}

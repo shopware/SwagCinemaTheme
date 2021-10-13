@@ -1,0 +1,10 @@
+.nav {
+    flex-wrap: nowrap;
+}
+
+.main-navigation-link,
+.main-navigation-link.active {
+    font-weight: $font-weight-semibold;
+    color: $white;
+    flex-shrink: 0;
+}
