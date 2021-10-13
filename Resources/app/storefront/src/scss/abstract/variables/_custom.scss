@@ -39,4 +39,12 @@ $modal-close-padding:                         0 0 0 $modal-inner-padding !defaul
 $modal-close-margin:                          -1.625rem -1.1875rem 0 auto !default;
 $modal-close-color:                           $gray-900 !default;
 
-$modal-footer-padding:                       0 $modal-inner-padding $modal-inner-padding $modal-inner-padding !default;
+$modal-footer-padding:                        0 $modal-inner-padding $modal-inner-padding $modal-inner-padding !default;
+
+// Product Detail font sizes
+$product-detail-name:                         34px;
+$product-detail-name-lg:                      44px;
+$product-detail-price:                        20px;
+
+// Alert
+$custom-alert-text-color:                     $white;
