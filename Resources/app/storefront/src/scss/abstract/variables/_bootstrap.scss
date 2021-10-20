@@ -58,16 +58,23 @@ $h6-font-size:      1.5rem !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 // scss-docs-start btn-variables
-$btn-font-size:      .875rem !default;
-$btn-font-weight:    500 !default;
-$btn-padding-y:      .0625rem !default;
-$btn-padding-x:      .625rem !default;
-$btn-border-width:   .125rem !default;
+$btn-font-size:             .875rem !default;
+$btn-font-weight:           500 !default;
+$btn-padding-y:             .0625rem !default;
+$btn-padding-x:             .625rem !default;
+$btn-border-width:          .125rem !default;
 
-$btn-padding-y-sm:   .0625rem !default;
+$btn-padding-y-sm:          .0625rem !default;
 
-$btn-padding-y-lg:   .1875rem !default;
+$btn-padding-y-lg:          .1875rem !default;
 // scss-docs-start btn-variables
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-hover-color:            $primary !default;
 
 
 // Modals
@@ -94,3 +101,11 @@ $container-max-widths: (
     xl: 1591px
 ) !default;
 // scss-docs-end container-max-widths
+
+
+// Badges
+
+// scss-docs-start badge-variables
+$badge-font-size:                   .875em !default;
+$badge-font-weight:                 400 !default;
+// scss-docs-end badge-variables

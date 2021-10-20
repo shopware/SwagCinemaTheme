@@ -1,0 +1,20 @@
+.header-minimal {
+    background-color: $secondary;
+
+    &-row {
+        padding: 4px 0;
+    }
+
+    &-back-to-shop-button {
+        padding-right: 0;
+        color: $white;
+    }
+
+    .icon-cinema-ic-back {
+        color: $white;
+    }
+
+    &-logo {
+        margin: 0;
+    }
+}

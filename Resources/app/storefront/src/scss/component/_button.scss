@@ -7,6 +7,19 @@
     }
 }
 
+.btn-link {
+    .icon {
+        color: $btn-link-icon-color;
+        @include transition($btn-transition);
+    }
+
+    &:hover {
+        .icon {
+            color: $btn-link-icon-hover-color;
+        }
+    }
+}
+
 //
 // Alternate buttons
 //

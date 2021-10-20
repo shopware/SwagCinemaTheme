@@ -1,0 +1,89 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+
+{% block layout_header %}
+    {% block layout_top_bar %}{% endblock %}
+
+    {% block layout_header_navigation %}
+        <div class="row align-items-center header-row">
+            {{ block('layout_header_search') }}
+
+            {{ block('layout_header_actions') }}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{% block layout_header_navigation_toggle_button_icon %}
+    {% sw_icon 'ic-menu' style {'pack': 'cinema'} %}
+{% endblock %}
+
+{% block layout_header_navigation_toggle_tablet_button_icon %}
+    {% sw_icon 'ic-menu' style {'pack': 'cinema'} %}
+{% endblock %}
+
+{#{% block layout_header_logo %}{% endblock %}#}
+
+{% block layout_header_search %}
+    <div class="col-12 order-2 col-sm order-sm-1 header-search-col">
+        <div class="row no-gutters align-items-center">
+            <div class="col-sm-auto pr-0 d-none d-sm-block d-lg-none">
+                {{ block('layout_header_navigation_toggle_tablet') }}
+            </div>
+
+            {{ block('layout_header_logo') }}
+
+            {% block base_navigation %}
+                <div class="col-sm pr-0 d-none d-lg-flex nav-main">
+                    {% block base_navigation_inner %}
+                        {% sw_include '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
+            <div class="col col-sm-auto pl-0 ml-auto ml-lg-0">
+                {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_header_actions %}
+    <div class="col-12 order-1 col-sm-auto order-sm-2 header-actions-col">
+        <div class="row no-gutters align-items-center">
+            {% block layout_header_navigation_toggle %}
+                <div class="col-auto d-sm-none">
+                    <div class="menu-button">
+                        {{ block('layout_header_navigation_toggle_button') }}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {{ block('layout_header_logo') }}
+
+            {{ block('layout_header_search_toggle') }}
+
+            {% if config('core.cart.wishlistEnabled') %}
+                {{ block('layout_header_actions_wishlist') }}
+            {% endif %}
+
+            {{ block('layout_header_actions_account') }}
+
+            {{ block('layout_header_actions_cart') }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_header_search_toggle %}
+    <div class="col-auto d-sm-none">
+        <div class="search-toggle">
+            <button class="btn header-actions-btn search-toggle-btn js-search-toggle-btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#searchCollapse"
+                    aria-expanded="false"
+                    aria-controls="searchCollapse"
+                    aria-label="{{ "header.searchButton"|trans|striptags }}">
+                {% sw_icon 'ic-search' style {'pack': 'cinema'} %}
+            </button>
+        </div>
+    </div>
+{% endblock %}
