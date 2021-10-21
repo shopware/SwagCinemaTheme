@@ -1,6 +1,8 @@
 {
     "header": {
-        "searchPlaceholder": "What are you looking for?"
+        "searchPlaceholder": "What are you looking for?",
+        "serviceHotlineHeadline": "Service hotline",
+        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm"
     },
     "footer": {
         "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm"

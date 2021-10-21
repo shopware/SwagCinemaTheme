@@ -31,6 +31,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "component/filter-range";
 @import "component/alert";
 @import "component/tables";
+@import "component/offcanvas";
+
 /*
  * Layout-related sections
  * ----------------------- */
@@ -41,3 +43,4 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "layout/header-minimal";
 @import "layout/scroll-up";
 @import "layout/footer";
+@import "layout/top-bar";
