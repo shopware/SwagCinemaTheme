@@ -1,0 +1,84 @@
+.pagination {
+    .page-link {
+        line-height: $pagination-line-height;
+    }
+
+    .page-item {
+        &.disabled {
+            .page-link {
+                background: none;
+                color: $gray-300;
+
+                .icon {
+                    color: $gray-300;
+                }
+            }
+        }
+    }
+
+    .page-first,
+    .page-last,
+    .page-next,
+    .page-prev {
+        .page-link {
+            width: 20px;
+            padding: 0;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .page-next .page-link {
+        margin-left: 10px;
+    }
+
+    .page-prev .page-link {
+        margin-right: 10px;
+    }
+}
+
+.page-link {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    border-radius: 4px;
+
+    .icon {
+        color: $gray-900;
+        width: 18px;
+        height: 18px;
+
+        > svg {
+            top: 0.3rem;
+            text-align: center;
+            left: -2px;
+        }
+    }
+}
+
+.page-item {
+    margin-left: 2px;
+
+    &:first-child {
+        margin-left: 0;
+
+        .page-link {
+            @include border-left-radius(4px);
+        }
+    }
+
+    &:last-child {
+        .page-link {
+            @include border-right-radius(4px);
+        }
+    }
+
+    &.active {
+        .page-link {
+            font-weight: $font-weight-semibold;
+        }
+    }
+}
