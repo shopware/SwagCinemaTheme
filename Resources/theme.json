@@ -93,6 +93,47 @@
                 "editable": true,
                 "block": "footer",
                 "order": 200
+            },
+            "sw-footer-logo": {
+                "label": {
+                    "en-GB": "Footer logo",
+                    "de-DE": "Footer Logo"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/cinema-logo.svg",
+                "editable": true,
+                "block": "media",
+                "order": 300
+            },
+            "sw-instagram-link": {
+                "label": {
+                    "en-GB": "Instagram Link",
+                    "de-DE": "Instagram Link"
+                },
+                "type": "textarea",
+                "value": "https://www.instagram.com/",
+                "editable": true,
+                "block": "footer"
+            },
+            "sw-facebook-link": {
+                "label": {
+                    "en-GB": "Facebook Link",
+                    "de-DE": "Facebook Link"
+                },
+                "type": "textarea",
+                "value": "https://www.facebook.com/",
+                "editable": true,
+                "block": "footer"
+            },
+            "sw-pinterest-link": {
+                "label": {
+                    "en-GB": "Pinterest Link",
+                    "de-DE": "Pinterest Link"
+                },
+                "type": "textarea",
+                "value": "https://www.pinterest.com/",
+                "editable": true,
+                "block": "footer"
             }
         }
     }

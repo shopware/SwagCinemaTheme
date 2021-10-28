@@ -90,12 +90,6 @@ $table-cell-padding:            15px 0 !default;
 $table-border-width:            2px !default;
 $table-caption-color:           $gray-400 !default;
 
-// Links
-//
-// Style anchor elements.
-
-$link-hover-color:              $primary !default;
-
 
 // Modals
 
@@ -129,3 +123,10 @@ $container-max-widths: (
 $badge-font-size:               .875em !default;
 $badge-font-weight:             400 !default;
 // scss-docs-end badge-variables
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-hover-color:              $primary !default;
