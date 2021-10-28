@@ -1,0 +1,42 @@
+.custom-switch {
+    .custom-control-label::before {
+        background-color: $sw-text-color;
+        border-color: $sw-text-color;
+    }
+
+    .custom-control-label::after {
+        background-color: $white;
+        height: 10px;
+        width: 10px;
+        top: 6px;
+        left: -33px;
+    }
+}
+
+.custom-select {
+    &.sorting {
+        background-image: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg');
+    }
+}
+
+.input-group {
+    >.form-control {
+        &:not(:first-child) {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        &:focus {
+            + .input-group-append {
+                .btn {
+                    background: $input-focus-border-color;
+                    border-color: $input-focus-border-color;
+                }
+            }
+        }
+    }
+}
+
+textarea.form-control  {
+    padding: 15px;
+}
