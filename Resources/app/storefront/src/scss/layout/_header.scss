@@ -5,6 +5,7 @@
 .header {
     &-main {
         background-color: $secondary;
+        position: relative;
 
         @include media-breakpoint-up(lg) {
             .collapse:before {
@@ -141,6 +142,11 @@
 @include media-breakpoint-up(lg) {
     .header-row {
         padding: $spacer-lg 0;
+
+        .header-search-col,
+        .nav-main {
+            position: static;
+        }
     }
 
     .header-search-col .header-logo-col {
