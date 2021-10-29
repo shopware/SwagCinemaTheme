@@ -1,5 +1,11 @@
 .scroll-up-button {
     .btn {
         @extend .btn-secondary;
+
+        &:hover:not(:disabled) {
+            background-color: $primary;
+            color: $white;
+            border-color: $primary;
+        }
     }
 }

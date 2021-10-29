@@ -1,0 +1,95 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_bottom %}
+    <div class="container footer-bottom">
+        <div class="row align-items-center">
+            {% block layout_footer_service_menu %}
+                <div class="col-12 col-sm-6 col-lg-4">
+                    {{ block('layout_footer_service_menu_content') }}
+                </div>
+            {% endblock %}
+
+            <div class="col-12 col-lg-4 order-1 order-lg-0">
+                {% block layout_footer_vat %}
+                    <div class="footer-vat">
+                        {% if context.taxState == "gross" %}
+                            <p>
+                                {{ "footer.includeVat"|trans({
+                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
+                                })|raw }}
+                            </p>
+                        {% else %}
+                            <p>
+                                {{ "footer.excludeVat"|trans({
+                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
+                                })|raw }}
+                            </p>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                {% block layout_footer_copyright %}
+                    <div class="footer-copyright">
+                        {% sw_icon 'shopware' style {'size':'xs'} %}
+                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_footer_inner_container %}
+    <div class="container">
+        {{ block('layout_footer_navigation') }}
+
+        {{ block('layout_footer_payment_shipping_logos') }}
+
+        {% block layout_footer_social_media %}
+            <div class="footer-social-media">
+                <div class="row footer-links">
+                    {% block layout_footer_logo %}
+                        <div class="col-lg-12 footer-logo">
+                            <a class="footer-logo-main-link"
+                               href="{{ path('frontend.home.page') }}"
+                               title="{{ "header.logoLink"|trans|striptags }}">
+                                {% block layout_header_footer_image %}
+                                    {% if theme_config('sw-footer-logo') %}
+                                        <img src="{{ theme_config('sw-footer-logo') |sw_encode_url }}"
+                                             alt="{{ "header.logoLink"|trans|striptags }}"
+                                             class="img-fluid header-logo-main-img"/>
+                                    {% endif %}
+                                {% endblock %}
+                            </a>
+                        </div>
+                    {% endblock %}
+                    {% block layout_footer_soial_links %}
+                        <div class="col-lg-12 footer-social_links">
+                            {% apply spaceless %}
+                                <a class="links instagram"
+                                   href="{{ theme_config('sw-instagram-link') |sw_encode_url }}"
+                                   title="{{ "footer.instagramLink"|trans|striptags }}">
+                                    {% sw_icon 'ic-instagram' style {'pack' : 'cinema'} %}
+                                </a>
+                                <a class="links facebook"
+                                   href="{{ theme_config('sw-facebook-link') |sw_encode_url }}"
+                                   title="{{ "footer.facebookLink"|trans|striptags }}">
+                                    {% sw_icon 'ic-facebook' style {'pack' : 'cinema'} %}
+                                </a>
+                                <a class="links printer"
+                                   href="{{ theme_config('sw-pinterest-link') |sw_encode_url }}"
+                                   title="{{ "footer.pinterestLink"|trans|striptags }}">
+                                    {% sw_icon 'ic-pinterest' style {'pack' : 'cinema'} %}
+                                </a>
+                            {% endapply %}
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+
+    {{ block('layout_footer_bottom') }}
+{% endblock %}
