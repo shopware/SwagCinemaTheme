@@ -1,7 +1,30 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/navigation.html.twig' %}
 
+{% block utilities_offcanvas_close %}
+    <div class="sticky-top">
+        <div class="offcanvas-close sticky-top flex-row">
+            <button class="btn js-offcanvas-close d-flex align-center pl-md-1">
+                {% block utilities_offcanvas_close_icon %}
+                    {% sw_icon 'ic-close' style {'pack': 'cinema'} %}
+                {% endblock %}
+            </button>
+
+            {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+        </div>
+        <div class="container navigation-offcanvas-top-bar py-2">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto d-none d-sm-block">
+                    {{ block('layout_navigation_offcanvas_navigation_hotline') }}
+                </div>
+                <div class="col-auto">
+                    {{ block('layout_navigation_offcanvas_navigation_actions') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block utilities_offcanvas_close_text %}
-    {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
 {% endblock %}
 
 {% block layout_navigation_offcanvas_navigation_hotline %}
@@ -12,17 +35,6 @@
 {% endblock %}
 
 {% block utilities_offcanvas_content %}
-    <div class="container navigation-offcanvas-top-bar py-2">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-auto d-none d-sm-block">
-                {{ block('layout_navigation_offcanvas_navigation_hotline') }}
-            </div>
-            <div class="col-auto">
-                {{ block('layout_navigation_offcanvas_navigation_actions') }}
-            </div>
-        </div>
-    </div>
-
     {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/categories.html.twig' with { navigation: navigation } %}
 
     <div class="container navigation-offcanvas-bottom-bar py-4 d-block d-sm-none">
