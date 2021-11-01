@@ -1,0 +1,24 @@
+.breadcrumb {
+    margin-bottom: 0;
+
+    // fix cms breadcrumb
+    .breadcrumb {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .breadcrumb-placeholder {
+        width: 1px;
+        background-color: $sw-text-color;
+        height: 14px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    a {
+        &.is-active {
+            color: $gray-400;
+            font-weight: $font-weight-normal;
+        }
+    }
+}
