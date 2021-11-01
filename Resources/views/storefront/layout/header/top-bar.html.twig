@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+{% block layout_header_top_bar %}
+    <div class="top-bar d-none d-lg-block">
+        <nav class="top-bar-nav">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <div class="row align-items-center">
+                        <div class="col-auto top-bar-hotline">
+                            {% block layout_header_top_bar_hotline %}
+                                {{ 'header.serviceHotlineHeadline'|trans|sw_sanitize }}
+                                {{ 'header.serviceHotline'|trans|sw_sanitize }}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <div class="row">
+                        {% apply spaceless %}
+                            <div class="col-auto top-bar-currency">
+                                {{ block('layout_header_top_bar_currency') }}
+                            </div>
+                            <div class="col-auto top-bar-language">
+                                {{ block('layout_header_top_bar_language') }}
+                            </div>
+                        {% endapply %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+{% endblock %}

@@ -1,4 +1,7 @@
 .navigation-offcanvas {
+    display: flex;
+    flex-direction: column;
+
     .offcanvas-close {
         background-color: $secondary;
         border: none;
@@ -14,6 +17,58 @@
 
         .header-logo-main {
             flex-grow: 1;
+        }
+    }
+
+    .offcanvas-content-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &-hotline {
+        a {
+            color: $sw-text-color;
+            text-decoration: underline;
+        }
+    }
+
+    &-top-bar {
+        background-color: $topbar-bg;
+
+        > .row {
+            min-height: inherit;
+        }
+    }
+
+    &-bottom-bar {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: $spacer;
+            right: $spacer;
+            border-top: 2px solid $secondary;
+        }
+    }
+
+    &-container {
+        flex-grow: 1;
+    }
+
+    &-actions {
+        .top-bar-nav-item {
+            margin: 0;
+            padding: 0 14px;
+        }
+
+        & > *:first-child {
+            padding-left: 0;
+        }
+
+        & > *:last-child {
+            padding-right: 0;
         }
     }
 }

@@ -1,0 +1,26 @@
+.top-bar {
+    background-color: $topbar-bg;
+
+    &-nav {
+        justify-content: stretch;
+        display: block;
+    }
+
+    &-hotline {
+        a {
+            color: $sw-text-color;
+            text-decoration: underline;
+        }
+    }
+
+    &-currency,
+    &-language {
+        &:empty {
+            display: none;
+        }
+    }
+
+    &-nav-text {
+        display: inline;
+    }
+}

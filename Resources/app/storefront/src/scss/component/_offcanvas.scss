@@ -1,0 +1,6 @@
+@include media-breakpoint-up(sm) {
+    .offcanvas .offcanvas-content-container {
+        min-width: 400px;
+        width: auto;
+    }
+}
