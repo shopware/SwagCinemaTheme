@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/layout/header/search-suggest.html.twig' %}
+
+{% block layout_search_suggest_result_link %}
+    <a href="{{ seoUrl('frontend.detail.page', {'productId': product.id}) }}"
+       title="{{ product.translated.name }}"
+       class="search-suggest-product-link">
+        <div class="row align-items-center no-gutters">
+            {{ block('layout_search_suggest_result_image') }}
+
+            <div class="col-9 search-suggest-product-info pl-lg-2">
+                <div class="row no-gutters">
+                    {{ block('layout_search_suggest_result_name') }}
+                    {{ block('layout_search_suggest_result_price') }}
+                </div>
+            </div>
+        </div>
+    </a>
+{% endblock %}
+
+{% block layout_search_suggest_result_total_link %}
+    <a href="{{ path('frontend.search.page') }}?search={{ page.searchTerm }}"
+       title="{{ "header.searchAllResults"|trans|striptags }}"
+       class="search-suggest-total-link">
+        {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
+        {{ "header.searchAllResults"|trans|sw_sanitize }}
+        <span>({{ page.searchResult.total|trans|sw_sanitize }})</span>
+    </a>
+{% endblock %}
+
+{% block layout_search_suggest_result_total_count %}
+{% endblock %}

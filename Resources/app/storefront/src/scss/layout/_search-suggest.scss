@@ -1,0 +1,89 @@
+$search-suggest-padding: 20px;
+$search-suggest-image-size: 100px;
+
+.search-suggest-container {
+    top: calc(100% + 8px);
+    border: none;
+    box-shadow: none;
+    background-color: $gray-100;
+    padding: $search-suggest-padding;
+    border-radius: $border-radius-lg;
+
+    @include media-breakpoint-up(lg) {
+        max-width: 475px;
+        max-height: calc(100vh - 150px);
+        overflow-y: scroll;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100vw;
+        left: -$grid-gutter-width/2;
+        border-radius: 0;
+    }
+
+    &:after {
+        content: none;
+    }
+
+    .search-suggest-product {
+        border-width: 0;
+    }
+
+    .search-suggest-total {
+        border-top: 2px solid $gray-900;
+        padding: $search-suggest-padding 0 0 0;
+        margin-top: $search-suggest-padding;
+        font-weight: $font-weight-medium;
+    }
+
+    .search-suggest-product-info {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bolder;
+        color: $gray-700;
+
+        .search-suggest-product-name {
+            margin-bottom: $search-suggest-padding;
+        }
+
+        .search-suggest-product-name,
+        .search-suggest-product-price {
+            @include make-col(12);
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding-left: $search-suggest-padding;
+        }
+    }
+
+    .search-suggest-product-image-container {
+        width: $search-suggest-image-size;
+        height: $search-suggest-image-size;
+        @include make-col(3);
+
+        @include media-breakpoint-up(md) {
+            margin: 0;
+            justify-content: flex-start;
+        }
+    }
+
+    .search-suggest-product-image {
+        max-width: $search-suggest-image-size;
+        max-height: $search-suggest-image-size;
+        width: $search-suggest-image-size;
+        height: $search-suggest-image-size;
+        border-radius: $border-radius;
+    }
+
+    .search-suggest-total-link {
+        .icon {
+            margin-right: 5px;
+            color: $primary;
+
+            svg {
+                top: 7px;
+            }
+        }
+    }
+}
+
+
