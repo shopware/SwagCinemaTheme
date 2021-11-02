@@ -104,13 +104,15 @@ $table-caption-color:           $gray-400 !default;
 // Modals
 
 // scss-docs-start modal-variables
-$modal-inner-padding:           2.1875rem !default;
+$modal-inner-padding:           0 64px 64px 64px !default;
 
 $modal-header-border-color:     transparent !default;
-$modal-header-padding-x:        $modal-inner-padding !default;
-$modal-header-padding:          2.5rem $modal-header-padding-x 0 !default; // Keep this for backwards compatibility
+$modal-header-padding-x:        64px !default;
+$modal-header-padding:          64px $modal-header-padding-x 0 !default; // Keep this for backwards compatibility
 
 $modal-content-border-radius:   1rem !default;
+
+$modal-md:                      746px !default;
 // scss-docs-end modal-variables
 
 

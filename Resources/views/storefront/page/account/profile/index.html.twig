@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/page/account/profile/index.html.twig' %}
+
+{% block page_account_delete_account_confirm_modal_header_title %}
+    <div class="modal-title h4">
+        {{ "account.profileDeleteModalTitle"|trans|sw_sanitize }}
+    </div>
+{% endblock %}
+
+{% block page_account_delete_account_confirm_text %}
+    <div class="py-4 font-weight-bold">{{ "account.profileDeleteConfirm"|trans|sw_sanitize }}</div>
+{% endblock %}
+
+{% block page_account_delete_account_confirm_button %}
+    <div class="text-left">
+        <button class="btn btn-danger btn-lg" type="submit">
+            {{ "account.profileDeleteButton"|trans|sw_sanitize }}
+        </button>
+    </div>
+{% endblock %}
