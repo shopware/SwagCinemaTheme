@@ -45,10 +45,12 @@ button {
 }
 
 @each $color, $value in $theme-colors {
-    .btn-outline-#{$color}:hover:not(:disabled) {
-        color: $value;
-        background-color: transparent;
-        border-color: $value;
+    @if ($color != 'danger') {
+        .btn-outline-#{$color}:hover:not(:disabled) {
+            color: $value;
+            background-color: transparent;
+            border-color: $value;
+        }
     }
 }
 
@@ -68,4 +70,3 @@ button {
 .btn-outline-secondary {
     @include disable-button($disabled-btn-outline-secondary-bg, $disabled-btn-outline-secondary-color, $disabled-btn-outline-secondary-border-color);
 }
-// scss-docs-end btn-variant-loops

@@ -36,14 +36,18 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "component/cms-sections";
 @import "component/category-navigation";
 @import "component/pagination";
-@import "component/filter-panel";
-@import "component/filter-multi-select";
 @import "component/account-edtior";
 @import "component/card";
 @import "component/tab-menu";
 @import "component/product-box";
 @import "component/product-wishlist";
 @import "component/cms-element";
+@import "component/filter-range";
+@import "component/filter-panel";
+@import "component/filter-boolean";
+@import "component/filter-multi-select";
+@import "component/filter-property-select";
+@import "component/filter-rating-select";
 
 /*
  * Layout-related sections
