@@ -20,6 +20,18 @@
     }
 }
 
+button {
+    .icon {
+        color: $secondary;
+    }
+
+    &:hover {
+        .icon {
+            color: $primary;
+        }
+    }
+}
+
 //
 // Alternate buttons
 //
