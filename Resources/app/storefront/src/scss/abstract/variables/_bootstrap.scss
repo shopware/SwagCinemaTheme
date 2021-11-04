@@ -20,6 +20,9 @@ $gray-800: #354657 !default;
 $gray-900: #071c31 !default;
 // scss-docs-end gray-color-variables
 
+// primary shade color
+$primary-100: #e4f6f8 !default;
+
 // scss-docs-start theme-color-variables
 $primary:       #00a9c1 !default;
 $secondary:     #071c31 !default;
@@ -130,3 +133,19 @@ $badge-font-weight:             400 !default;
 // Style anchor elements.
 
 $link-hover-color:              $primary !default;
+
+// Pagination
+
+$pagination-color:                  $gray-900 !default;
+$pagination-border-width:           0 !default;
+$pagination-padding-y:              0 !default;
+$pagination-padding-x:              4px !default;
+$pagination-line-height:            36px !default;
+
+$pagination-hover-color:            $primary !default;
+$pagination-hover-bg:               $primary-100 !default;
+$pagination-hover-border-color:     $primary-100 !default;
+
+$pagination-active-color:           $white !default;
+$pagination-active-bg:              $primary !default;
+$pagination-active-border-color:    $pagination-hover-border-color !default;

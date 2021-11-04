@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/component/pagination.html.twig' %}
+
+{% block component_pagination_first_link %}
+    {% sw_icon 'ic-double-left' style {'pack': 'cinema'} %}
+{% endblock %}
+
+{% block component_pagination_last_link %}
+    {% sw_icon 'ic-double-right' style {'pack': 'cinema'} %}
+{% endblock %}
+
+{% block component_pagination_prev_icon %}
+    {% sw_icon 'ic-chevron-left' style {'pack': 'cinema'} %}
+{% endblock %}
+
+{% block component_pagination_next_icon %}
+    {% sw_icon 'ic-chevron-right' style {'pack': 'cinema'} %}
+{% endblock %}
