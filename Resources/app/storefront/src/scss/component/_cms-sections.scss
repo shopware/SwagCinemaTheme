@@ -1,0 +1,11 @@
+.cms-section {
+    .cms-section-sidebar-sidebar-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cms-block-container {
+        // reset default inline padding
+        padding-left: 0 !important;
+    }
+}
