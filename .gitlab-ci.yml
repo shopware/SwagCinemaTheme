@@ -1,0 +1,15 @@
+# The following variables can be overwritten
+# variables:
+    # THEME_NAME: $CI_PROJECT_TITLE # default is the project name in gitlab
+    # THEME_SOURCE_DIR: '' # use 'src/' if it starts in the src dir
+    # DEV_IMAGE: shopware/development:7.4-composer-2
+    # MYSQL_IMAGE: 'mysql:5.7'
+    # MYSQL_CMD: 'mysqld' # use $MYSQL8_CMD for mysql >= 8
+variables:
+  THEME_NAME: "SwagCinemaTheme"
+  PLATFORM_BRANCH: "6.4.6.0"
+
+include:
+  project: 'shopware/6/product/platform'
+  ref: 'trunk'
+  file: '.gitlab/templates/theme.yml'
