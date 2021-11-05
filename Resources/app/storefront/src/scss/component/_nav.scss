@@ -2,9 +2,12 @@
     flex-wrap: nowrap;
 }
 
-.main-navigation-link,
-.main-navigation-link.active {
-    font-weight: $font-weight-semibold;
-    color: $white;
+.main-navigation-link {
+    font-weight: $font-weight-bold;
     flex-shrink: 0;
+    color: $white;
+
+    &.active {
+        color: $white;
+    }
 }

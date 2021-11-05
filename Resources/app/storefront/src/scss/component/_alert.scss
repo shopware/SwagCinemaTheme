@@ -6,9 +6,6 @@ Custom styling for bootstrap alert component.
 https://getbootstrap.com/docs/4.3/components/alerts/
 */
 .alert {
-    font-weight: $font-weight-bold;
-    font-size: 1rem;
-    color: $custom-alert-text-color;
     padding: 0 $alert-padding-x;
 
     .alert-content-container {
@@ -16,6 +13,13 @@ https://getbootstrap.com/docs/4.3/components/alerts/
         color: $custom-alert-text-color;
         display: flex;
         padding: $alert-padding-y $alert-padding-x;
+    }
+
+    &.alert-warning {
+        .alert-content-container,
+        .icon {
+            color: $gray-900;
+        }
     }
 }
 
