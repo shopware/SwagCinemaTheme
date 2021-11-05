@@ -1,0 +1,94 @@
+.filter-panel-item {
+    position: relative !important;
+
+    .filter-multi-select-list {
+        padding-bottom: 12px;
+        max-height: inherit;
+        overflow: auto;
+    }
+
+    .filter-panel-item-toggle {
+        border: 2px solid $gray-600;
+        box-shadow: none;
+
+        .icon {
+            color: $secondary;
+            margin-left: 25px;
+        }
+
+        &:not(:disabled) {
+            &:hover {
+                color: $primary;
+                border-color: $primary;
+            }
+        }
+
+        &:disabled {
+            background-color: $white;
+            border-color: $gray-400;
+
+            .icon {
+                color: $gray-400;
+            }
+        }
+    }
+
+    &.filter-range {
+        .filter-panel-item-toggle .icon {
+            margin-left: 100px;
+        }
+
+        .filter-range-container {
+            padding-top: 0;
+        }
+    }
+
+    .filter-panel-item-dropdown {
+        width: 100%;
+        min-width: 0;
+        top: -12px !important;
+        padding-top: 0;
+        border: 2px solid $secondary;
+    }
+
+    &.show .filter-panel-item-toggle,
+    &:not(.show) .filter-panel-item-toggle[aria-expanded=true] {
+        &:not(:disabled) {
+            color: $secondary;
+            border-color: $secondary;
+            border-bottom-color: transparent;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        + .filter-panel-item-dropdown {
+            overflow: hidden;
+            padding: 0;
+        }
+    }
+
+    &.show .filter-panel-item-toggle,
+    &:not(.show) .filter-panel-item-toggle[aria-expanded=true] {
+       +  .filter-panel-item-dropdown {
+            border-top-color: transparent;
+            border-radius: 8px;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .icon svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.filter-panel.is--sidebar {
+    .filter-panel-item .filter-panel-item-toggle .icon {
+        margin-left: auto;
+
+        svg {
+            color: inherit;
+            top: 0;
+        }
+    }
+}

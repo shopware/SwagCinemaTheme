@@ -1,0 +1,27 @@
+.filter-multi-select {
+    &-list-item {
+        padding: 8px 12px;
+
+        &:not(.disabled):hover {
+            background-color: $gray-200;
+        }
+
+        .custom-checkbox {
+            flex-grow: 1;
+        }
+    }
+
+    &-rating {
+        .filter-panel-item-toggle .icon {
+            margin-left: 110px;
+        }
+    }
+
+    &-item-label {
+        padding: 0;
+        word-break: break-word;
+    }
+}
+
+
+

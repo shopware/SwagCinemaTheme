@@ -14,8 +14,15 @@
 }
 
 .custom-select {
+    font-weight: 400;
+
     &.sorting {
-        background-image: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg');
+        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg')no-repeat right 1rem center/22px 10px;
+        background-position-y: 15px;
+    }
+
+    &:focus {
+        box-shadow: none;
     }
 }
 
