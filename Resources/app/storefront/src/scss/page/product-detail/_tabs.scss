@@ -16,3 +16,25 @@
         display: none;
     }
 }
+
+.product-detail-properties-table {
+    max-width: 430px;
+
+    th,
+    td {
+        padding: 16px 0;
+    }
+
+    th {
+        padding-right: 10px;
+        width: auto;
+    }
+
+    tr {
+        display: block;
+
+        &:not(:last-child) {
+            border-bottom: none;
+        }
+    }
+}
