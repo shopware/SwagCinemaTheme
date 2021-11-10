@@ -1,0 +1,18 @@
+.product-detail-tab-navigation-list {
+    flex-direction: row;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.product-detail-tab-navigation-icon,
+.product-detail-tab-preview {
+    display: none;
+}
+
+.product-detail-tabs-content {
+    display: block;
+
+    .offcanvas-close {
+        display: none;
+    }
+}
