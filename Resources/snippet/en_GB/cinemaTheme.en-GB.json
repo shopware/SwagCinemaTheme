@@ -6,5 +6,8 @@
     },
     "footer": {
         "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm"
+    },
+    "account": {
+        "overviewChangeAction": "change"
     }
 }
