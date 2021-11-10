@@ -32,9 +32,14 @@ $btn-link-icon-color:                         $primary !default;
 $btn-link-icon-hover-color:                   $btn-link-icon-color !default;
 
 // Modals
-$modal-close-padding:                         0 0 0 $modal-inner-padding !default;
-$modal-close-margin:                          -1.625rem -1.1875rem 0 auto !default;
+$modal-close-padding:                         0 0 0 $modal-header-padding-x !default;
+$modal-close-margin:                          -2.625rem -2.1875rem 0 auto !default;
 $modal-close-color:                           $gray-900 !default;
+
+$modal-inner-padding-md:                      0 32px 32px 32px !default;
+
+$modal-header-padding-x-md:                   32px !default;
+$modal-header-padding-md:                     32px $modal-header-padding-x-md 0 !default;
 
 $modal-footer-padding:                        0 $modal-inner-padding $modal-inner-padding $modal-inner-padding !default;
 

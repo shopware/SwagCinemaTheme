@@ -1,0 +1,31 @@
+.address-editor-headline {
+    margin-bottom: 35px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid $sw-text-color;
+}
+
+.address-editor-select,
+.address-editor-edit,
+.address-editor-create {
+    cursor: pointer;
+    @extend .btn-outline-secondary;
+
+    &:not(.collapsed) {
+        @extend .btn-secondary;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .address-editor-modal {
+        padding: 0 !important;
+    }
+
+    .address-editor-select,
+    .address-editor-edit,
+    .address-editor-create {
+        margin-bottom: 8px;
+    }
+}

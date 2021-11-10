@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/component/address/address-editor-modal.html.twig' %}
+
+{% block component_address_address_editor_modal_accordion_overview_billing_card %}
+    <h5 class="address-editor-headline">{{ "account.overviewChangeBilling"|trans|sw_sanitize }}</h5>
+    {{ parent() }}
+{% endblock %}
+
+
+{% block component_address_address_editor_modal_accordion_overview_shipping_card %}
+    <h5 class="address-editor-headline">{{ "account.overviewChangeShipping"|trans|sw_sanitize }}</h5>
+    {{ parent() }}
+{% endblock %}
