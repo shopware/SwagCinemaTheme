@@ -13,6 +13,20 @@ Styling for productbox component.
         width: 24px;
         height: 24px;
     }
+
+    &-btn-content {
+        text-decoration: underline;
+
+        &-md {
+            margin-left: 0;
+            font-size: 0;
+        }
+
+        &-sm {
+            margin-left: 0;
+            font-size: 0;
+        }
+    }
 }
 
 .product-wishlist-action-circle {

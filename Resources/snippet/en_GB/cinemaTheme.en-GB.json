@@ -1,4 +1,10 @@
 {
+    "general": {
+        "grossTaxInformation": "plus shipping costs",
+        "netTaxInformation": "plus shipping costs",
+        "grossTaxLabelInformation": "Prices incl. VAT",
+        "netTaxLabelInformation": "Prices excl. VATs"
+    },
     "header": {
         "searchPlaceholder": "What are you looking for?",
         "serviceHotlineHeadline": "Service hotline",
@@ -9,5 +15,8 @@
     },
     "account": {
         "overviewChangeAction": "change"
+    },
+    "detail": {
+        "reviewLinkText": ""
     }
 }

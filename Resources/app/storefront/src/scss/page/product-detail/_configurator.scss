@@ -1,0 +1,108 @@
+.product-detail-configurator-container {
+    max-width: 396px;
+}
+
+.product-detail-configurator-option {
+    padding: 12px 10px;
+    margin-right: 0;
+    border-bottom: $border-width solid $gray-300;
+}
+
+.product-detail-configurator-option-input {
+    + .product-detail-configurator-option-label {
+        margin-bottom: 0;
+        padding: 0;
+        min-width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        box-shadow: unset;
+
+        &.is-display-text {
+            border-color: transparent;
+            padding: 0;
+        }
+    }
+
+    &.is-combinable + .product-detail-configurator-option-label {
+        border-color: $gray-300;
+        border-width: 1px;
+    }
+
+    &:checked + .product-detail-configurator-option-label {
+        border-color: $gray-300;
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 3px;
+            background-color: $primary;
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            border-left: $border-width solid $white;
+            border-right:  $border-width solid $white;
+        }
+
+        &.is-display-text {
+            background-color: transparent;
+            color: $secondary;
+        }
+    }
+
+    &.is-combinable + .product-detail-configurator-option-label,
+    + .product-detail-configurator-option-label {
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $gray-300;
+            position: relative;
+            @include transition($btn-transition);
+
+            &:after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: $primary;
+                position: absolute;
+                bottom: -15px;
+                left: 0;
+                border-left: $border-width solid $white;
+                border-right:  $border-width solid $white;
+            }
+        }
+
+        &.is-display-text {
+            border-color: transparent;
+        }
+
+        &.is-display-media {
+            background: transparent;
+            overflow: hidden;
+        }
+    }
+}
+
+.product-detail-configurator-select-input {
+    line-height: 20px;
+    padding: 12px 42px 12px 16px;
+    border-color: $gray-600;
+    border-radius: 11px;
+    height: auto;
+}
+
+.product-detail-configurator-group-title {
+    font-weight: $font-weight-normal;
+    margin-bottom: 8px;
+    line-height: 21px;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.product-detail-configurator-group {
+    margin-bottom: 30px;
+}
+
+.product-detail-configurator-option-image {
+    z-index: -1;
+}
