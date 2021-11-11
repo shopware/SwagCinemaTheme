@@ -1,0 +1,36 @@
+/*
+Product box for wishlist
+==============================================
+Styling for productbox component.
+*/
+
+.product-wishlist {
+    width: 24px;
+    margin-top: 0;
+    font-size: 0;
+
+    .icon-wishlist {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.product-wishlist-action-circle {
+    height: auto;
+    width: auto;
+    background: transparent;
+    border-radius: unset;
+    position: unset;
+    padding: 0;
+    font-size: 0;
+
+    &:before {
+        content: unset;
+    }
+
+    &.product-wishlist-added {
+        .icon {
+            color: $primary;
+        }
+    }
+}
