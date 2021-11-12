@@ -1,0 +1,93 @@
+{% sw_extends '@Storefront/storefront/page/account/index.html.twig' %}
+
+{% block page_account_overview %}
+    <div class="account-overview">
+        {% if feature('FEATURE_NEXT_15707') %}
+            {{ block('page_account_overview_shipping_warning') }}
+
+            {{ block('page_account_overview_request_group_info') }}
+        {% endif %}
+
+        {{ block('page_account_overview_welcome') }}
+
+        {{ block('page_account_overview_main') }}
+
+        {{ block('page_account_overview_addresses_include') }}
+
+        {{ block('page_account_overview_newsletter') }}
+
+        {{ block('page_account_overview_newest_order') }}
+    </div>
+{% endblock %}
+
+{% block page_account_overview_welcome %}
+    <div class="account-welcome">
+        <h2 class="mb-4">
+            <span class="font-italic">{{ "account.greetings"|trans|sw_sanitize }}</span>
+            {{ context.customer.title }}
+            {{ context.customer.firstName }}
+            {{ context.customer.lastName }}
+        </h2>
+
+        {% block page_account_overview_welcome_intro %}
+            <p class="mb-5">{{ "account.overviewInfo"|trans|sw_sanitize }}</p>
+        {% endblock %}
+
+        <h5>{{ "account.overviewTitle"|trans|sw_sanitize }}</h5>
+
+        {% if not feature('FEATURE_NEXT_15707') and page.customer.requestedGroup %}
+
+            {# @deprecated tag:v6.5.0 - Alert will be removed use block "page_account_overview_request_group_info" instead #}
+            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                type: 'info',
+                content: 'account.overviewCustomerGroupRequest'|trans({
+                    '%group%': page.customer.requestedGroup.translated.name
+                })
+            } %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+ {% block page_account_overview_profile %}
+     <div class="col-md-6 card-col account-overview-card account-overview-profile">
+         {{ block('page_account_overview_profile_card') }}
+     </div>
+ {% endblock %}
+
+{% block page_account_overview_profile_title %}
+    <div class="card-title">
+        {{ "account.overviewProfileHeader"|trans|sw_sanitize }}
+        <div class="card-actions">
+            <a href="{{ path('frontend.account.profile.page') }}"
+               title="{{ "account.overviewChangeProfile"|trans|striptags }}"
+               class="btn btn-link">
+                {{ "account.overviewChangeAction"|trans|sw_sanitize }}
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_overview_profile_actions %}{% endblock %}
+
+{% block page_account_overview_payment %}
+    <div class="col-md-6 card-col account-overview-card account-overview-payment">
+        {{ block('page_account_overview_payment_card') }}
+    </div>
+{% endblock %}
+
+{% block page_account_overview_payment_title %}
+    <div class="card-title">
+        {{ "account.overviewPaymentHeader"|trans|sw_sanitize }}
+        <div class="card-actions">
+            <a href="{{ path('frontend.account.payment.page') }}"
+               title="{{ "account.overviewChangePayment"|trans|striptags }}"
+               class="btn btn-link">
+                {{ "account.overviewChangeAction"|trans|sw_sanitize }}
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_overview_payment_actions %}{% endblock %}
+
+{% block page_account_overview_newest_order_title %}{% endblock %}

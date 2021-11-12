@@ -1,0 +1,40 @@
+.account {
+    &-welcome {
+        > h5 {
+            border-bottom: $border-width solid $border-color-bold;
+            padding-bottom: 15px;
+        }
+    }
+
+    &-content {
+        min-height: inherit;
+    }
+
+    &-content-aside {
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -20px;
+            bottom: -20px;
+            background: $gray-100;
+            right: 0;
+            left: -9999px;
+            border-right: $border-width-sm solid $border-color;
+        }
+    }
+
+    &-overview-card {
+        .card-title {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: $font-weight-medium;
+        }
+        .card-actions .btn {
+            line-height: normal;
+            font-weight: $font-weight-normal;
+        }
+    }
+}

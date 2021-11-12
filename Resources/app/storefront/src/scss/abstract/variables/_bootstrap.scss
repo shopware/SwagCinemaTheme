@@ -43,6 +43,9 @@ $danger:        #c30205 !default;
 //
 // Define common padding and border radius sizes and more.
 
+$border-width:                   2px !default;
+$border-color-bold:              $secondary !default;
+
 // Typography
 // Font, line-height, and color for body text, headings, and more.
 
@@ -59,6 +62,8 @@ $h3-font-size:      2.75rem !default;
 $h4-font-size:      2.25rem !default;
 $h5-font-size:      1.75rem !default;
 $h6-font-size:      1.5rem !default;
+
+$headings-font-weight:        $font-weight-bold !default;
 // scss-docs-end font-variables
 
 
@@ -132,8 +137,8 @@ $container-max-widths: (
 // Badges
 
 // scss-docs-start badge-variables
-$badge-font-size:               .875em !default;
-$badge-font-weight:             400 !default;
+$badge-font-size:               14px !default;
+$badge-font-weight:             $font-weight-bolder !default;
 // scss-docs-end badge-variables
 
 

@@ -1,0 +1,46 @@
+.account-aside {
+    .account-aside-header {
+        @extend .h5;
+        border-bottom: $border-width solid $border-color-bold;
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .account-aside-item.list-group-item {
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        padding: 8px 16px;
+        @include border-radius(8px);
+
+        &.is-active {
+            background-color: transparent;
+        }
+
+        &:hover:not(.is-active) {
+            color: $gray-700;
+            background-color: $gray-200;
+        }
+    }
+
+    .account-aside-footer {
+        margin: 20px 16px;
+        padding: 0;
+        border-top: $border-width solid $border-color-bold;
+    }
+
+    .account-aside-btn {
+        @extend .btn-outline-primary;
+        padding: $btn-padding-y $btn-padding-x;
+        line-height: $btn-line-height;
+        margin-top: 24px;
+        width: 100%;
+        text-decoration: none;
+
+        .icon-log-out {
+            display: none;
+        }
+    }
+}
