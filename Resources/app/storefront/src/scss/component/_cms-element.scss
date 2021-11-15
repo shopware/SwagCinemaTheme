@@ -6,6 +6,33 @@ General styling for cms elements
 
 $cms-element-product-listing-gutter-md-width: 20px;
 
+.cms-element-product-listing-actions {
+    .pagination-nav {
+        display: none;
+    }
+}
+
+.cms-block-product-three-column {
+    .cms-block-container-row {
+        > .card-col {
+            padding-right: $cms-element-product-listing-gutter-md-width / 2;
+            padding-left: $cms-element-product-listing-gutter-md-width / 2;
+
+            &:first-child {
+                padding-left: $cms-element-product-listing-gutter-md-width;
+            }
+        }
+    }
+}
+
+.cms-element-product-listing-actions {
+    @include media-breakpoint-up(md) {
+        div.sorting[data-listing-sorting="true"] {
+            margin-top: $spacer * 1.25;
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .cms-element-product-listing {
         .cms-listing-row {
@@ -16,10 +43,33 @@ $cms-element-product-listing-gutter-md-width: 20px;
         .cms-listing-col {
             padding-right: $cms-element-product-listing-gutter-md-width / 2;
             padding-left: $cms-element-product-listing-gutter-md-width / 2;
-        }
-
-        .cms-listing-col {
             margin-bottom: $cms-element-product-listing-gutter-md-width;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .cms-element-product-listing {
+        .cms-listing-col {
+            @include make-col(4);
+        }
+    }
+}
+
+.cms-section-sidebar {
+    @include media-breakpoint-up(lg) {
+        .cms-element-product-listing {
+            .cms-listing-col {
+                @include make-col(12);
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .cms-element-product-listing {
+            .cms-listing-col {
+                @include make-col(6);
+            }
         }
     }
 }

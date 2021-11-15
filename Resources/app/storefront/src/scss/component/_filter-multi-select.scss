@@ -1,7 +1,7 @@
 .filter-multi-select {
     &-list-item {
         @include transition($btn-transition);
-        padding: 8px 12px;
+        padding: 8px 4px 8px 12px;
 
         &:not(.disabled):hover {
             background-color: $gray-200;
@@ -21,6 +21,7 @@
     &-item-label {
         padding-left: 4px;
         padding-right: 0;
+        hyphens: auto;
     }
 
     &-list {
