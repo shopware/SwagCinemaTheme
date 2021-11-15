@@ -1,4 +1,8 @@
 .icon {
     width: 24px;
     height: 24px;
+
+    &.icon-xs {
+        @include sw-icon-size($icon-base-size * 0.75);
+    }
 }

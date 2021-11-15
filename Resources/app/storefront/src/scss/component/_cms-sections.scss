@@ -22,3 +22,10 @@
         height: 100%;
     }
 }
+
+@include media-breakpoint-down(md) {
+    .cms-section-sidebar-main-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
