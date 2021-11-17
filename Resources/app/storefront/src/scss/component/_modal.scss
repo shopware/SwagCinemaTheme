@@ -22,6 +22,8 @@
     .modal-title,
     .cms-element-form .card-title,
     .cms-element-text h2 {
+        border: none;
+
         + hr {
             margin-top: 0;
         }

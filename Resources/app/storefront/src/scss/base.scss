@@ -33,6 +33,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "component/tables";
 @import "component/offcanvas";
 @import "component/breadcrumb";
+@import "component/cms-block";
 @import "component/cms-sections";
 @import "component/category-navigation";
 @import "component/pagination";
@@ -49,6 +50,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "component/filter-multi-select";
 @import "component/filter-property-select";
 @import "component/filter-rating-select";
+@import "component/basic-captcha";
 
 /*
  * Layout-related sections
@@ -71,3 +73,4 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "page/account/aside";
 @import "page/account/account";
 @import "page/account/overview";
+@import "page/contact/contact";
