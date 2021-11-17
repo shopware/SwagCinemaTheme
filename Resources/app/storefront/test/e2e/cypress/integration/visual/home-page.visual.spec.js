@@ -4,5 +4,8 @@ describe('Home page visual', () => {
 
         cy.get('.header-logo-main-link').should('be.visible');
         cy.takeSnapshot('[Home] Landing');
+
+        cy.visit('/account');
+        cy.takeSnapshot('[Account] login/register page', '.account-register');
     });
 });

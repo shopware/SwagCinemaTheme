@@ -13,3 +13,9 @@ include:
   project: 'shopware/6/product/platform'
   ref: 'trunk'
   file: '.gitlab/templates/theme.yml'
+
+test_variable:
+  stage: test
+  script:
+    - echo "$CI_JOB_STAGE"
+    - echo "$PERCY_TOKEN"
