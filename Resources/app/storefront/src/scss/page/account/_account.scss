@@ -4,6 +4,15 @@
             border-bottom: $border-width solid $border-color-bold;
             padding-bottom: 15px;
         }
+
+        h1 {
+            @include font-size($h2-font-size);
+            font-weight: $font-weight-bold;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
     }
 
     &-content {
@@ -35,6 +44,37 @@
         .card-actions .btn {
             line-height: normal;
             font-weight: $font-weight-normal;
+        }
+    }
+
+    &-payment-card {
+        .card-title {
+            display: none;
+        }
+
+        .card-title,
+        .payment-methods {
+            margin-bottom: 24px;
+        }
+
+        .payment-method {
+            border-bottom: 1px solid $border-color;
+
+            .form-group {
+                margin-top: 24px;
+                margin-bottom: 8px;
+            }
+
+            &:first-child {
+                border-top: 1px solid $border-color;
+            }
+        }
+
+        .payment-method-description {
+            p {
+                color: $secondary;
+                font-style: italic;
+            }
         }
     }
 }
