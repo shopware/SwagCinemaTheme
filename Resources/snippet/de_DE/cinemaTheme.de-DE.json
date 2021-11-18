@@ -18,5 +18,11 @@
     },
     "detail": {
         "reviewLinkText": ""
+    },
+    "checkout" : {
+        "welcome" : "Willkommen zurück",
+        "welcomeText": "Sind Sie bereits Kunde?",
+        "addressLoginToggle": "Klicken Sie hier, um sich anzumelden.",
+        "addressRegisterCardTitle": "Ich bin neu hier."
     }
 }

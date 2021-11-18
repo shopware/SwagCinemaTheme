@@ -1,0 +1,39 @@
+{% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
+
+{% block component_address_personal_account_type %}
+    <div class="form-row">
+        {% if onlyCompanyRegistration or (config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect) %}
+            <div class="form-group col-12 col-md-6 contact-type">
+                {{ block('component_address_personal_account_type_label') }}
+
+                {{ block('component_address_personal_account_type_select') }}
+
+                {{ block('component_address_personal_account_type_error') }}
+            </div>
+        {% elseif not hideCustomerTypeSelect %}
+            <input type="hidden" name="accountType">
+        {% endif %}
+
+        {% block component_address_personal_fields_salutation %}
+            <div class="form-group col-12 col-md-6">
+                {{ block('component_address_personal_fields_salutation_label') }}
+
+                {{ block('component_address_form_salutation_select') }}
+
+                {{ block('component_address_form_salutation_select_error') }}
+            </div>
+        {% endblock %}
+
+        {% block component_address_personal_fields_title %}
+            {% if config('core.loginRegistration.showTitleField') %}
+                <div class="form-group col-12 col-md-6">
+                    {{ block('component_address_personal_fields_title_label') }}
+
+                    {{ block('component_address_personal_fields_title_input') }}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_address_personal_fields_salutation_title %}{% endblock %}

@@ -18,5 +18,11 @@
     },
     "detail": {
         "reviewLinkText": ""
+    },
+    "checkout" : {
+        "welcome" : "Welcome back",
+        "welcomeText": "If you already have an account.",
+        "addressLoginToggle": "Click here to login.",
+        "addressRegisterCardTitle": "I am new here."
     }
 }
