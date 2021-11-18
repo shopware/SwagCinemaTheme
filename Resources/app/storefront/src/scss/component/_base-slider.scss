@@ -1,0 +1,91 @@
+/*
+Base slider
+==============================================
+Styling for base slider component.
+Contains minimal styling for a slider with arrow and/or dot navigation.
+based on: https://github.com/ganlanyuan/tiny-slider
+*/
+$border-nav-radius: 5px;
+
+.base-slider {
+    position: relative;
+
+    // styling works both for auto generated markup by the tiny-slider and normal template markup
+    .tns-nav,
+    .base-slider-dots {
+        text-align: center;
+        line-height: 0;
+        font-size: 0;
+        margin-bottom: 20px;
+
+        .base-slider-dot,
+        button {
+            background-color: $gray-600;
+            height: 6px;
+            width: 6px;
+            padding: 3px;
+            border-radius: 50%;
+            margin: 0 4px;
+
+            &:hover,
+            &.tns-nav-active {
+                background-color: $secondary;
+            }
+        }
+    }
+}
+
+.base-slider-controls-prev,
+.base-slider-controls-next {
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    opacity: 1;
+    background: rgba($white, 0.7);
+
+    &:hover {
+        border-color: rgba($primary, 0.5);
+        color: $primary;
+        opacity: 1;
+        background: rgba($white, 0.7);
+    }
+
+    .icon {
+        width: 14px;
+        height: 38px;
+    }
+}
+
+.base-slider-controls-prev {
+    border-radius: 0 $border-nav-radius $border-nav-radius 0;
+}
+
+.base-slider-controls-next {
+    border-radius: $border-nav-radius 0 0 $border-nav-radius;
+}
+
+@include media-breakpoint-up(md) {
+    .base-slider {
+        .tns-nav,
+        .base-slider-dots {
+            margin-bottom: 32px;
+
+            .base-slider-dot,
+            button {
+                width: 16px;
+                height: 16px;
+                margin: 0 6px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .base-slider {
+        .tns-nav,
+        .base-slider-dots {
+            margin-bottom: 17px;
+        }
+    }
+}

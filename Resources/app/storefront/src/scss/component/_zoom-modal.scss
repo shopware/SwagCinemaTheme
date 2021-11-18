@@ -1,0 +1,20 @@
+/*
+Zoom modal
+==============================================
+Styling for zoom modal component.
+Displays a single image or a gallery slider in a zoom modal with zoom functions.
+*/
+
+.modal.zoom-modal {
+    .gallery-slider-thumbnails-item {
+        height: 65px;
+        width: 75px;
+    }
+
+    .gallery-slider-item,
+    .gallery-slider-single-image {
+        background-color: transparent;
+        border-radius: 0;
+        max-height: 100%;
+    }
+}
