@@ -12,3 +12,9 @@
         <div class="filter-panel-offcanvas-only filter-panel-offcanvas-title">{{ "listing.filterTitleText"|trans }}</div>
     </div>
 {% endblock %}
+
+{% block component_filter_panel_active_container %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}
