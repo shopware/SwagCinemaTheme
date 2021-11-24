@@ -19,6 +19,7 @@ https://sass-guidelin.es/#the-7-1-pattern
  * ---------- */
 @import 'base/font';
 @import 'base/typography';
+@import "base/base";
 
 /*
  * Components
@@ -54,6 +55,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "component/gallery-slider";
 @import "component/base-slider";
 @import "component/zoom-modal";
+@import "component/dropdown";
 
 /*
  * Layout-related sections
@@ -76,6 +78,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "page/account/aside";
 @import "page/account/account";
 @import "page/account/overview";
+@import "page/account/address";
 @import "page/contact/contact";
 @import "page/product-detail/configurator";
 @import "page/checkout/register";
