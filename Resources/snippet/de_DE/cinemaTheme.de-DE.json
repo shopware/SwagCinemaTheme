@@ -3,7 +3,11 @@
         "grossTaxInformation": "Versandkosten",
         "netTaxInformation": "Versandkosten",
         "grossTaxLabelInformation": "Preise inkl. MwSt. zzgl.",
-        "netTaxLabelInformation": "Preise exkl. MwSt. zzgl."
+        "netTaxLabelInformation": "Preise exkl. MwSt. zzgl.",
+        "maintenanceModeHeader": "Wartungsmodus",
+        "maintenanceModeDescription": "Wir aktualisieren derzeit den Inhalt dieser Website. Bitte schauen Sie später wieder vorbei.",
+        "404ErrorPageHeader": "Seite nicht gefunden",
+        "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können.Möglicherweise existiert sie nicht mehr oder ist verschoben worden."
     },
     "header": {
         "searchPlaceholder": "Nach was suchst Du?",

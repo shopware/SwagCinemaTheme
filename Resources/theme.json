@@ -134,6 +134,66 @@
                 "value": "https://www.pinterest.com/",
                 "editable": true,
                 "block": "footer"
+            },
+            "sw-404-bg-desktop": {
+                "label": {
+                    "en-GB": "Desktop Background Image",
+                    "de-DE": "Desktop-Hintergrundbild"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/404-desktop.png",
+                "editable": true,
+                "block": "404 Page"
+            },
+            "sw-404-bg-tablet": {
+                "label": {
+                    "en-GB": "Tablet Background Image",
+                    "de-DE": "Tablet-Hintergrundbild"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/404-tablet.png",
+                "editable": true,
+                "block": "404 Page"
+            },
+            "sw-404-bg-mobile": {
+                "label": {
+                    "en-GB": "Mobile Background Image",
+                    "de-DE": "Mobiles Hintergrundbild"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/404-mobile.png",
+                "editable": true,
+                "block": "404 Page"
+            },
+            "sw-maintenance-bg-mobile": {
+                "label": {
+                    "en-GB": "Maintenance Background",
+                    "de-DE": "Wartung Hintergrund"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/maintenance-mobile.png",
+                "editable": true,
+                "block": "Maintenance Page"
+            },
+            "sw-maintenance-bg-tablet": {
+                "label": {
+                    "en-GB": "Tablet Maintenance Background",
+                    "de-DE": "Tablet Wartung Hintergrund"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/maintenance-tablet.png",
+                "editable": true,
+                "block": "Maintenance Page"
+            },
+            "sw-maintenance-bg-desktop": {
+                "label": {
+                    "en-GB": "Tablet Maintenance Background",
+                    "de-DE": "Tablet Wartung Hintergrund"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/maintenance-desktop.png",
+                "editable": true,
+                "block": "Maintenance Page"
             }
         }
     }
