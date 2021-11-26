@@ -15,6 +15,10 @@
     .offcanvas-close {
         display: none;
     }
+
+    .card-tabs & {
+        padding-top: 23px;
+    }
 }
 
 .product-detail-properties-table {
@@ -28,6 +32,9 @@
     th {
         padding-right: 10px;
         width: auto;
+        color: $gray-600;
+        font-style: normal;
+        white-space: nowrap;
     }
 
     tr {

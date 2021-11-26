@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/component/review/review-item.html.twig' %}
+
+{% block component_review_item_info_date %}
+    <div class="col-6 product-detail-review-item-date">
+        <p>{{ review.createdAt|date("d. M Y")  }}</p>
+    </div>
+{% endblock %}
+
+{% block component_review_item_title %}
+{% endblock %}
+
+{% block component_review_item_content %}
+    {{ parent() }}
+
+    <p class="product-detail-review-item-user"><strong>{{ review.externalUser }}</strong></p>
+{% endblock %}
+
+{% block component_review_item_info_points %}
+    <div class="col-6 product-detail-review-item-points">
+        {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+            points: review.points
+        } %}
+    </div>
+{% endblock %}

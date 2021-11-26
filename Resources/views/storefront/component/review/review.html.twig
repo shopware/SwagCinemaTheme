@@ -1,0 +1,25 @@
+{% sw_extends '@Storefront/storefront/component/review/review.html.twig' %}
+
+{% block component_review_form_container %}
+    {# Add title to Review form #}
+    <div class="collapse multi-collapse{% if ratingSuccess == -1 %} show{% endif %}"
+         id="review-form">
+        {% if context.customer and not context.customer.guest %}
+            <p class="h4">
+                {% if not reviews.customerReview %}
+                    {{ "detail.reviewTeaserTitle"|trans|sw_sanitize }}
+                {% else %}
+                    {{ "detail.reviewExistsTeaserTitle"|trans|sw_sanitize }}
+                {% endif %}
+            </p>
+
+            <div class="product-detail-review-form">
+                {% sw_include '@Storefront/storefront/component/review/review-form.html.twig' %}
+            </div>
+        {% else %}
+            <div class="product-detail-review-login">
+                {% sw_include '@Storefront/storefront/component/review/review-login.html.twig' %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

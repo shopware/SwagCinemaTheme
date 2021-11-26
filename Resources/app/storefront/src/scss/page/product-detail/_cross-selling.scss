@@ -1,0 +1,13 @@
+@include media-breakpoint-down(xs) {
+    .product-detail-cross-selling {
+        .product-cross-selling-tab-navigation {
+            display: block;
+        }
+
+        .tab-pane {
+            .cms-element-title {
+                display: none;
+            }
+        }
+    }
+}

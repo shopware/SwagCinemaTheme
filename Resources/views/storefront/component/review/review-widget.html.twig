@@ -1,0 +1,109 @@
+{% sw_extends '@Storefront/storefront/component/review/review-widget.html.twig' %}
+
+{% block component_review_title %}
+{% endblock %}
+
+{% block component_review_overview %}
+    {% block component_review_overview_avg_rating %}
+        {# Move productAvgRating to the left and define block #}
+        <div class="product-detail-review-avg">
+            {% if productReviewCount > 0 %}
+                {{ productAvgRating }}
+            {% else %}
+                {{ "detail.productReviewZero"|trans|sw_sanitize }}
+            {% endif %}
+        </div>
+    {% endblock %}
+
+    <div class="product-detail-review-rating"
+        {% if productReviewCount > 0 %}
+        itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating"
+        {% endif %}>
+
+        {% if productReviewCount > 0 %}
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="ratingCount" content="{{ productReviewCount }}">
+            <meta itemprop="ratingValue" content="{{ productAvgRating }}">
+        {% endif %}
+
+        {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+            points: productAvgRating,
+            style: 'text-primary'
+        } %}
+
+        {% block component_review_overview_title %}
+            {# Move page_product_detail_review_title to the right bottom #}
+            <p class="product-detail-review-title mb-0">
+                <span class="number">{{ reviews.total }}</span>{{ "detail.tabsReview"|trans|sw_sanitize }}
+            </p>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_review_filter_checkbox_label %}
+    {# Remove count after point rating text #}
+    <label class="custom-control-label text-nowrap"
+           for="reviewRating{{ matrix.points }}">
+        {{ "detail.review#{matrix.points}PointRatingText"|trans|sw_sanitize }}
+    </label>
+{% endblock %}
+
+{% block component_review_filter_progressbar %}
+    {# Remove class d-none and class d-lg-block #}
+    <div class="col product-detail-review-progressbar-col">
+        <div class="progress product-detail-review-progressbar-container">
+            <div class="progress-bar product-detail-review-progressbar-bar"
+                 role="progressbar"
+                 style="width: {{ matrix.percent }}%;"
+                 aria-valuenow="{{ matrix.percent }}"
+                 aria-valuemin="0"
+                 aria-valuemax="100"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block component_review_filter_share %}
+    {# Change matrix percent to matrix count #}
+    <div class="col-12 col-md-3 product-detail-review-share">
+        <p>{{ matrix.count }}</p>
+    </div>
+{% endblock %}
+
+{% block component_review_form_teaser_text %}
+    {# Remove form teaser text #}
+{% endblock %}
+
+{% block component_review_form_teaser_header %}
+{% endblock %}
+
+{% block component_review_filter %}
+    {# Always show review filter form to avoid break layout #}
+    <div class="js-review-filter">
+        <form class="review-filter-form"
+              action="{{ path('frontend.product.reviews', { productId: product.id, parentId: product.parentId }) }}"
+              method="post"
+              data-form-ajax-submit="true"
+              data-form-ajax-submit-options='{{ formAjaxSubmitOptions|json_encode }}'>
+
+            {{ block('component_review_filter_csrf') }}
+
+            {% if app.request.get('limit') %}
+                <input type="hidden" name="limit" value="{{ app.request.get('limit') }}">
+            {% endif %}
+
+            {% if app.request.get('language') %}
+                <input type="hidden" name="language" value="{{ app.request.get('language') }}">
+            {% endif %}
+
+            {% if app.request.get('sort') %}
+                <input type="hidden" name="sort" value="{{ app.request.get('sort') }}">
+            {% endif %}
+
+            {% for matrix in reviews.matrix.matrix %}
+                {{ block('component_review_filter_box') }}
+            {% endfor %}
+        </form>
+    </div>
+
+    {{ block('component_review_filter_divider') }}
+{% endblock %}

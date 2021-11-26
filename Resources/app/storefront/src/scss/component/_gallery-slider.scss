@@ -6,6 +6,12 @@ Displays images in a slider gallery with thumbnail navigation.
 based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyuan/tiny-slider)
 */
 
+.gallery-slider-row {
+    &.is-loading {
+        height: 100%;
+    }
+}
+
 .ci-gallery-mobile .gallery-slider-thumbnails-col {
     display: none;
 }
@@ -16,6 +22,15 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
     border-radius: 14px;
     max-height: 626px;
     overflow: hidden;
+
+    .icon-placeholder {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .product-detail-media.grid {
@@ -68,6 +83,10 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
             min-height: 952px !important;
         }
     }
+}
+
+.gallery-slider-thumbnails-col {
+    @extend .d-none, .d-lg-block;
 }
 
 @include media-breakpoint-down(xs) {

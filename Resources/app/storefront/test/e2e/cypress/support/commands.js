@@ -50,3 +50,61 @@ Cypress.Commands.overwrite('cleanUpPreviousState', (orig) => {
 
     return orig();
 });
+
+/**
+ * Creates a variant product based on given fixtures "product-variants.json", 'tax,json" and "property.json"
+ * with minor customisation
+ * @memberOf Cypress.Chainable#
+ * @name createProductVariantFixture
+ * @function
+ */
+Cypress.Commands.add('createProductVariantFixture', () => {
+    return cy.createDefaultFixture('tax', {
+        id: '91b5324352dc4ee58ec320df5dcf2bf4',
+    }).then(() => {
+        return cy.createPropertyFixture({
+            options: [{
+                id: '15532b3fd3ea4c1dbef6e9e9816e0715',
+                name: 'Red',
+            }, {
+                id: '98432def39fc4624b33213a56b8c944d',
+                name: 'Green',
+            }],
+        });
+    }).then(() => {
+        return cy.createPropertyFixture({
+            name: 'Size',
+            options: [{name: 'S'}, {name: 'M'}, {name: 'L'}],
+        });
+    }).then(() => {
+        return cy.searchViaAdminApi({
+            data: {
+                field: 'name',
+                value: 'Storefront',
+            },
+            endpoint: 'sales-channel',
+        });
+    })
+        .then((saleschannel) => {
+            cy.createDefaultFixture('product', {
+                visibilities: [{
+                    visibility: 30,
+                    salesChannelId: saleschannel.id,
+                }],
+            }, 'product-variants.json');
+        });
+});
+
+/**
+ * Updates an existing entity using Shopware API at the given endpoint
+ * @memberOf Cypress.Chainable#
+ * @name changeElementStyling
+ * @function
+ * @param {String} selector - API endpoint for the request
+ * @param {String} imageStyle - API endpoint for the request
+ */
+Cypress.Commands.add('changeElementStyling', (selector, elementStyle) => {
+    cy.get(selector)
+        .invoke('attr', 'style', elementStyle)
+        .should('have.attr', 'style', elementStyle);
+});

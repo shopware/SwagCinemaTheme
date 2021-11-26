@@ -2,14 +2,22 @@
     .custom-control-label::before {
         background-color: $sw-text-color;
         border-color: $sw-text-color;
+        top: 2px;
     }
 
     .custom-control-label::after {
         background-color: $white;
         height: 10px;
         width: 10px;
-        top: 6px;
-        left: -33px;
+        top: 5px;
+        left: -35px;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+        &::after {
+            background-color: $custom-control-indicator-bg;
+            transform: translateX(0.6rem);
+        }
     }
 }
 

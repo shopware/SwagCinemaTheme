@@ -1,0 +1,49 @@
+describe('Product Detail: Check appearance of product review', () => {
+    beforeEach(() => {
+        cy.setToInitialState()
+            .then(() => {
+                const now = new Date(2020, 1,1).getTime();
+                return cy.clock(now);
+            })
+            .then(() => cy.createProductFixture())
+            .then(() => cy.createCustomerFixtureStorefront())
+            .then(() => {
+                cy.visit('/Product-name/RS-333');
+                cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
+                cy.get('.offcanvas-cookie .btn-primary').contains('Save').click({force: true});
+            })
+            .then(() => cy.get('#review-tab').click())
+    });
+
+    it('@visual, @review: show review tab', () => {
+        cy.get('.product-detail-review-teaser-btn').should('be.visible');
+        cy.get('.product-detail-review-list').contains('No reviews found');
+
+        cy.takeSnapshot('[Product Detail] No review', '.product-detail-tabs',);
+    });
+
+    it('@visual, @review: should be able to submit review', () => {
+        cy.get('.product-detail-review-teaser button').click();
+        cy.get('.product-detail-review-login').should('be.visible');
+        cy.takeSnapshot('[Product Detail] Review Login', '.product-detail-tabs',);
+
+        cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
+        cy.get('#loginPassword').typeAndCheckStorefront('shopware');
+        cy.get('.login-submit [type="submit"]').click();
+
+        cy.visit('/Product-name/RS-333');
+        cy.get('#review-tab').click();
+        cy.get('.product-detail-review-teaser-btn').click();
+
+        cy.get('#reviewTitle').type('Review title '.repeat(4));
+        cy.get('#reviewContent').type('Review content '.repeat(10));
+        cy.get('.product-detail-review-form-actions button').click();
+        cy.get('.product-detail-review-list-content').should('be.visible');
+
+        cy.changeElementStyling('.product-detail-review-item-date', 'visibility:hidden');
+        cy.get('.product-detail-review-item-date')
+            .should('have.css', 'visibility', 'hidden');
+
+        cy.takeSnapshot('[Product Detail] Review post', '.product-detail-tabs');
+    });
+});

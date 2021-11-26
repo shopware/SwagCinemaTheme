@@ -27,7 +27,15 @@
         "profilePasswordText": "*************"
     },
     "detail": {
-        "reviewLinkText": ""
+        "reviewLinkText": "",
+        "review1PointRatingText": "1 Stern",
+        "review2PointRatingText": "2 Sterne",
+        "review3PointRatingText": "3 Sterne",
+        "review4PointRatingText": "4 Sterne",
+        "review5PointRatingText": "5 Sterne",
+        "reviewTeaserTitle": "Eine Bewertung schreiben",
+        "productReviewZero": "0",
+        "backButtonLabel": "Back"
     },
     "checkout" : {
         "welcome" : "Willkommen zurück",
