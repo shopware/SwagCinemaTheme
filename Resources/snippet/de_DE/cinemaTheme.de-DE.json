@@ -1,4 +1,10 @@
 {
+    "general": {
+        "grossTaxInformation": "Versandkosten",
+        "netTaxInformation": "Versandkosten",
+        "grossTaxLabelInformation": "Preise inkl. MwSt. zzgl.",
+        "netTaxLabelInformation": "Preise exkl. MwSt. zzgl."
+    },
     "header": {
         "searchPlaceholder": "Nach was suchst Du?",
         "serviceHotlineHeadline": "Service-Hotline",
@@ -9,5 +15,8 @@
     },
     "account": {
         "overviewChangeAction": "change"
+    },
+    "detail": {
+        "reviewLinkText": ""
     }
 }
