@@ -1,0 +1,121 @@
+$cart-item-img-size: 100px;
+$cart-item-img-size-sm: 80px;
+
+.offcanvas-cart .offcanvas-cart-items .cart-item-img-source,
+.offcanvas-cart .offcanvas-cart-items .cart-item-img,
+.cart-item-img-container,
+.cart-item-img {
+    height: $cart-item-img-size;
+    width: $cart-item-img-size;
+    padding: 0;
+    border: none;
+    border-radius: $border-radius;
+    object-fit: cover;
+
+    @include media-breakpoint-down(lg) {
+        height: $cart-item-img-size-sm;
+        width: $cart-item-img-size-sm;
+    }
+}
+
+.cart-item {
+    position: relative;
+
+    .cart-item-label {
+        color: $gray-700;
+        font-size: $font-size-lg;
+    }
+
+    .cart-item-ordernumber {
+        font-size: 11px;
+    }
+
+    .quantity-select {
+        color: $gray-400;
+        font-weight: $font-weight-medium;
+    }
+
+    .cart-item-tax-price,
+    .cart-item-unit-price {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+
+        @include media-breakpoint-down(sm) {
+            font-size: $font-size-base;
+        }
+
+    }
+
+    .cart-item-total-price {
+        font-size: $font-size-lg;
+        color: $gray-700;
+    }
+
+    .cart-item-remove {
+        .cart-item-remove-button {
+            background: transparent;
+            padding: 0;
+            border: none;
+
+            &:active {
+                background-color: transparent;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            &:hover {
+                background: transparent;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            svg {
+                top: 0;
+                left: 10px;
+            }
+        }
+    }
+
+    .cart-item-details {
+        padding-top: 0;
+        @include make-col(7);
+    }
+
+    .cart-item-quantity-label,
+    .cart-item-unit-price-label,
+    .cart-item-total-price-label {
+        font-weight: $font-weight-medium;
+        margin-bottom: 0;
+
+        @include media-breakpoint-down(sm) {
+            font-size: $font-size-base;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .cart-item-tax-price,
+        .cart-item-unit-price,
+        .cart-item-total-price {
+            line-height: 43px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .cart-item-remove {
+            position: absolute;
+            right: 0;
+            top: 20px;
+        }
+
+        .cart-item-info {
+            @include make-col(12);
+        }
+
+        .cart-item-details {
+            padding-left: 8px;
+        }
+    }
+}

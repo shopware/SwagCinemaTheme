@@ -1,0 +1,19 @@
+.cart-offcanvas {
+    .offcanvas-cart {
+        .cart-item-remove {
+            right: 0;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .offcanvas-content-container {
+            width: 30rem;
+        }
+
+        .cart-item {
+            .cart-item-details {
+                @include make-col(9);
+            }
+        }
+    }
+}
