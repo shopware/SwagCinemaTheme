@@ -1,0 +1,164 @@
+$checkout-spacing-sm: 20px;
+$checkout-spacing-md: 40px;
+$checkout-spacing-lg: 70px;
+$checkout-divider-line: 1px solid $table-border-color;
+
+.is-act-checkoutregisterpage {
+    .container-main,
+    .checkout {
+        padding: 0;
+
+        &-container {
+            margin-bottom: 0;
+        }
+
+        &-main {
+            padding: $checkout-spacing-lg 20px 150px;
+            @extend .pr-lg-5;
+        }
+
+        .checkout-container {
+            .checkout-aside {
+                @extend .col-xl-4;
+                @extend .offset-xl-0;
+                padding-left: $checkout-spacing-lg;
+                padding-top: $checkout-spacing-lg;
+                position: relative;
+
+                &-summary,
+                &-products {
+                    padding: 0;
+                }
+
+                &-summary-list {
+                    margin-bottom: 50px;
+                    padding-top: 20px;
+                }
+
+                &-summary-total {
+                    margin-bottom: 0;
+                    padding: 15px 0;
+                    border-bottom: $checkout-divider-line;
+                    border-top: $checkout-divider-line;
+                    font-size: 20px;
+                    font-weight: $font-weight-medium;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        background-color: $gray-100;
+                        z-index: -1;
+                        left: 0;
+                        width: calc(50vw - 275px);
+                    }
+                }
+            }
+        }
+    }
+
+    .address-main-header,
+    .checkout-aside-summary-header,
+    .checkout-aside-product-header {
+        font-size: $h5-font-size;
+        line-height: 34px;
+        padding-bottom: 15px;
+        border-bottom: $border-width solid $border-color-bold;
+        margin-bottom: 0;
+        color: $gray-700;
+    }
+
+    .register-card {
+        border-top: $checkout-divider-line;
+        border-radius: 0;
+        padding-top: $checkout-spacing-sm;
+        margin-top: $checkout-spacing-sm;
+
+        .card-title {
+            border: none;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: $checkout-spacing-md;
+            margin-top: $checkout-spacing-md;
+        }
+    }
+
+    .register-address {
+        border-bottom: $checkout-divider-line;
+        padding-bottom: $checkout-spacing-sm;
+        margin-bottom: $spacer-md;
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: $checkout-spacing-md;
+            margin-bottom: $spacer-lg;
+        }
+
+        .register-billing {
+            .card-title {
+                display: none;
+            }
+        }
+
+        .register-different-shipping {
+            margin-bottom: 0;
+        }
+    }
+
+    .register-login-header {
+        padding-top: 25px;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: $checkout-spacing-md;
+        }
+    }
+
+    .checkout-aside {
+        background-color: $gray-100;
+        border-left: $checkout-divider-line;
+        @extend .offset-lg-0;
+
+        &-summary {
+            background-color: transparent;
+        }
+    }
+
+    .register-submit {
+        text-align: left;
+
+        button {
+            width: 100%;
+
+            @include media-breakpoint-up(lg) {
+                width: 50%;
+            }
+        }
+    }
+
+    .checkout-aside-item {
+        @extend .no-gutters;
+
+        .cart-item-img,
+        .checkout-aside-item-image {
+            width: 100px;
+            height: 100px;
+            border: none;
+            border-radius: $border-radius;
+        }
+
+        .checkout-aside-item-data {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .checkout-aside-item-link-price {
+                font-size: $font-size-lg;
+                font-weight: $font-weight-medium;
+                text-align: right;
+            }
+        }
+    }
+}
