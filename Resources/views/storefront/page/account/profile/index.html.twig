@@ -1,5 +1,8 @@
 {% sw_extends '@Storefront/storefront/page/account/profile/index.html.twig' %}
 
+{% block base_flashbags %}
+{% endblock %}
+
 {% block page_account_delete_account_confirm_modal_header_title %}
     <div class="modal-title h4">
         {{ "account.profileDeleteModalTitle"|trans|sw_sanitize }}
@@ -16,4 +19,62 @@
             {{ "account.profileDeleteButton"|trans|sw_sanitize }}
         </button>
     </div>
+{% endblock %}
+
+{% block page_account_profile_credentials_container %}
+    <div class="row align-items-sm-center">
+        {% block page_account_profile_credentials_current_mail %}
+            <div class="col-4 col-sm-6">
+                {% block page_account_profile_credentials_current_mail_label %}
+                    <span class="account-profile-mail-label">{{ "account.profileCurrentMail"|trans|sw_sanitize }}</span>
+                    <span class="account-profile-mail d-none d-sm-inline">{{ context.customer.email }}</span>
+                {% endblock %}
+            </div>
+        {% endblock %}
+        {% block page_account_profile_credentials_change_mail %}
+            <div class="col-8 col-sm-6 account-profile-action">
+                <span class="account-profile-mail d-sm-none">{{ context.customer.email }}</span>
+                <a class="account-profile-change{% if not emailFormViolation %} collapsed{% endif %}"
+                   data-toggle="collapse"
+                   href="#profile-email-form"
+                   role="button"
+                   aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
+                   aria-controls="profile-email-form">
+                    {{ "account.profileChangeEmail"|trans|sw_sanitize }}
+                </a>
+            </div>
+        {% endblock %}
+    </div>
+    <div class="row align-items-sm-center">
+        {% block page_account_profile_credentials_current_password %}
+            <div class="col-4 col-sm-6">
+                {% block page_account_profile_credentials_current_password_label %}
+                    <span class="account-profile-password-label">{{ "account.profileCurrentPassword"|trans|sw_sanitize }}</span>
+                    <span class="account-profile-password d-none d-sm-inline">{{ "account.profilePasswordText"|trans|sw_sanitize }}</span>
+                {% endblock %}
+            </div>
+        {% endblock %}
+        {% block page_account_profile_credentials_change_password %}
+            <div class="col-8 col-sm-6 account-profile-action">
+                <span class="account-profile-password d-sm-none">{{ "account.profilePasswordText"|trans|sw_sanitize }}</span>
+                <a class="account-profile-change{% if not passwordFormViolation %} collapsed{% endif %}"
+                   data-toggle="collapse"
+                   href="#profile-password-form"
+                   role="button"
+                   aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"
+                   aria-controls="profile-password-form">
+                    {{ "account.profileChangePassword"|trans|sw_sanitize }}
+                </a>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_account_profile %}
+    <div class="flashbags container">
+        {% for type, messages in app.flashes %}
+            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with { type: type, list: messages } %}
+        {% endfor %}
+    </div>
+    {{ parent() }}
 {% endblock %}

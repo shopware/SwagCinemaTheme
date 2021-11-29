@@ -18,6 +18,7 @@ $gray-600: #848f99 !default;
 $gray-700: #576674 !default;
 $gray-800: #354657 !default;
 $gray-900: #071c31 !default;
+$black:    #000 !default;
 // scss-docs-end gray-color-variables
 
 // Typography
@@ -77,7 +78,7 @@ $headings-font-weight:        $font-weight-bold !default;
 $input-font-weight:             500 !default;
 $input-border-width:            2px !default;
 $input-padding-x:               1rem !default;
-$input-border-color:            $gray-600 !default;
+$input-border-color:            $black !default;
 $input-placeholder-color:       $gray-400 !default;
 
 // Form checkbox
@@ -112,7 +113,7 @@ $table-caption-color:           $gray-400 !default;
 // Modals
 
 // scss-docs-start modal-variables
-$modal-inner-padding:           0 64px 64px 64px !default;
+$modal-inner-padding:           0 64px 48px 64px !default;
 
 $modal-header-border-color:     transparent !default;
 $modal-header-padding-x:        64px !default;
@@ -170,7 +171,9 @@ $pagination-active-border-color:    $pagination-hover-border-color !default;
 
 // Forms
 
-$custom-control-gutter:                 .75rem !default;
+$custom-control-gutter:             .75rem !default;
+
+$form-grid-gutter-width:            20px !default;
 
 
 // Dropdowns

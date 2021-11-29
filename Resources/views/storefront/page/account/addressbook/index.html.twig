@@ -18,3 +18,15 @@
 {% block page_account_address_overview_address %}
     {% sw_include '@Storefront/storefront/component/address/address.html.twig' with { 'showShippingWarning': defaultShippingAddress.id != address.id, 'showActionsButton': true } %}
 {% endblock %}
+
+{% block page_account_main_content %}
+    {{ block('page_account_address_success_messages') }}
+
+    {{ block('page_account_address_error_messages') }}
+
+    <div class="account-address">
+        {{ block('page_account_address_welcome') }}
+
+        {{ block('page_account_address_main') }}
+    </div>
+{% endblock %}

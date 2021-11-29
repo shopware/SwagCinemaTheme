@@ -57,6 +57,17 @@
             }
 
             .card-actions {
+                > .btn {
+                    height: 36px;
+                    width: 36px;
+                    border-radius: 8px;
+                }
+
+                .btn .icon > svg {
+                    top: 13px;
+                    left: -4px;
+                }
+
                 .address-actions-buttons {
                     flex-direction: column;
                 }

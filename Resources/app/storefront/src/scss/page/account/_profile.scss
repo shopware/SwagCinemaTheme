@@ -1,0 +1,108 @@
+.account-profile {
+    margin-bottom: 100px;
+
+    &-password-label,
+    &-mail-label {
+        display: inline-block;
+        font-weight: $font-weight-normal;
+        font-style: italic;
+        color: $gray-400;
+    }
+
+    &-profile-change {
+        margin-left: auto;
+    }
+
+    &-personal,
+    &-credentials {
+        .card-title {
+            color: $gray-700;
+            border-bottom: $border-width solid $border-color-bold;
+            padding-bottom: 15px;
+            font-size: $h5-font-size;
+            font-weight: $font-weight-bold;
+            margin-bottom: 24px;
+        }
+    }
+
+    &-credentials  {
+        > .card-body {
+            overflow: hidden;
+        }
+
+        .row {
+            padding-bottom: 20px;
+            border-bottom: $border-width-sm solid $border-color;
+
+            &:last-child {
+                padding-top: 20px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                > [class*="col"] {
+                    &:first-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &-password {
+        line-height: normal;
+        vertical-align: middle;
+    }
+
+    &-action {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+            justify-content: flex-end;
+            text-align: right;
+        }
+    }
+
+    &-change {
+        font-weight: $font-weight-medium;
+        font-size: 14px;
+    }
+}
+
+.profile-form-submit {
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    @include button-variant($primary, $primary);
+    &:not(:disabled):hover {
+        background-color: $primary;
+        border-color: $primary;
+    }
+
+    @include media-breakpoint-up(sm) {
+        width: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-right: 33px;
+        padding-left: 33px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-right: 75px;
+        padding-left: 75px;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .account-profile-password-label,
+    .account-profile-mail-label {
+        margin-right: 20px;
+        min-width: 100px;
+    }
+
+    .account-profile-personal {
+        margin-bottom: 60px;
+    }
+}
