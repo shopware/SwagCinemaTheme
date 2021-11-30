@@ -1,0 +1,90 @@
+$checkout-spacing-sm: 20px;
+$checkout-spacing-md: 40px;
+$checkout-spacing-lg: 70px;
+$checkout-divider-line: 1px solid $table-border-color;
+
+.is-ctl-checkout,
+.is-act-checkoutregisterpage {
+    .container-main,
+    .checkout {
+        padding: 0;
+    }
+
+    .checkout-container {
+        margin: 0;
+    }
+
+    .checkout {
+        .checkout-aside {
+            padding: $checkout-spacing-lg 0 $checkout-spacing-lg $checkout-spacing-lg;
+            position: relative;
+
+            &-summary,
+            &-products {
+                padding: 0;
+            }
+
+            &-summary-list {
+                margin-bottom: 35px;
+                padding-top: 20px;
+            }
+
+            &-summary-total {
+                margin-bottom: 0;
+                margin-top: 12px;
+                padding: 15px 0;
+                border-bottom: $checkout-divider-line;
+                border-top: $checkout-divider-line;
+                font-size: 20px;
+                font-weight: $font-weight-medium;
+            }
+
+            &-item-link-quantity {
+                font-size: 11px;
+            }
+
+            .checkout-aside-summary-header,
+            .checkout-aside-product-header {
+                font-size: $h5-font-size;
+                line-height: 34px;
+                padding-bottom: 15px;
+                border-bottom: $border-width solid $border-color-bold;
+                margin-bottom: 0;
+                color: $gray-700;
+            }
+
+            .summary-net,
+            .summary-tax {
+                font-size: 11px;
+            }
+
+            .checkout-aside-add-code {
+                @extend .input-group-lg;
+            }
+
+            @include media-breakpoint-up(lg) {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    background-color: $gray-100;
+                    z-index: -1;
+                    left: -1px;
+                    width: calc(50vw - 245px);
+                    min-height: 100vh;
+                    height: 100%;
+                    border-left: $checkout-divider-line;
+                }
+
+                &-product-list {
+                    padding: 10px 0;
+                }
+
+                &-item {
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+}

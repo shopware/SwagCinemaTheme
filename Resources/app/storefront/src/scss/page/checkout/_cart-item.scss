@@ -73,7 +73,7 @@ $cart-item-img-size-sm: 80px;
             }
 
             svg {
-                top: 0;
+                top: 10px;
                 left: 10px;
             }
         }
@@ -116,6 +116,14 @@ $cart-item-img-size-sm: 80px;
 
         .cart-item-details {
             padding-left: 8px;
+        }
+    }
+}
+
+.offcanvas-cart {
+    .cart-item {
+        .cart-item-remove svg {
+            top: 0;
         }
     }
 }

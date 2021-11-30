@@ -41,6 +41,24 @@
     }
 }
 
+.input-group-lg {
+    >.form-control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        + .input-group-append {
+            .btn {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+                .icon {
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
 textarea.form-control  {
     padding: 15px;
 }
