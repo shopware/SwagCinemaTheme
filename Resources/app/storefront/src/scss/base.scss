@@ -67,6 +67,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "layout/footer";
 @import "layout/top-bar";
 @import "layout/search-suggest";
+@import "layout/offcanvas-cart";
 
 /*
  * Page-specific styles
@@ -80,3 +81,4 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "page/product-detail/configurator";
 @import "page/checkout/register";
 @import "page/error/maintenance";
+@import "page/checkout/cart-item";
