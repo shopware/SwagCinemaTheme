@@ -1,0 +1,106 @@
+/*
+Gallery slider
+==============================================
+Styling for gallery slider component.
+Displays images in a slider gallery with thumbnail navigation.
+based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyuan/tiny-slider)
+*/
+
+.ci-gallery-mobile .gallery-slider-thumbnails-col {
+    display: none;
+}
+
+.gallery-slider-item,
+.gallery-slider-single-image {
+    background-color: $gray-100;
+    border-radius: 14px;
+    max-height: 626px;
+    overflow: hidden;
+}
+
+.product-detail-media.grid {
+    .gallery-slider-item,
+    .gallery-slider-single-image {
+        &.is-contain .gallery-slider-image {
+            width: 100%;
+            min-height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            font-family: "object-fit: cover;";
+        }
+    }
+}
+
+.magnifier-zoom-image {
+    border-radius: 14px
+}
+
+.gallery-slider-thumbnails-image,
+.gallery-slider-image {
+    margin: 0 auto;
+}
+
+.gallery-slider-thumbnails-item {
+    height: 75px;
+    width: 65px;
+}
+
+.gallery-slider-thumbnails-item-inner {
+    border-color: $gray-300;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.gallery-slider-thumbnails {
+    &.is-underneath {
+        .gallery-slider-thumbnails-item {
+            max-width: 75px;
+            height: 65px;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .gallery-slider-single-image,
+    .gallery-slider-item {
+        &.is-cover,
+        &.is-contain {
+            min-height: 952px !important;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    // override inline style on mobile devices
+    .gallery-slider-item,
+    .gallery-slider-single-image {
+        &.is-cover,
+        &.is-contain {
+            min-height: 462px !important;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .gallery-slider-thumbnails-col.is-left {
+        width: 100px;
+        padding-left: 25px;
+
+        #tns2 {
+            width: 100%;
+        }
+
+        #tns2-iw {
+            margin: 0;
+        }
+
+        #tns2 > .tns-item {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        .tns-horizontal.tns-subpixel {
+            white-space: unset;
+        }
+    }
+}
