@@ -51,5 +51,11 @@ $element-title-font-size-lg: 44px;
                 }
             }
         }
+
+        .cms-block-sidebar-filter {
+            .cms-block-container {
+                padding-top: 0 !important;
+            }
+        }
     }
 }

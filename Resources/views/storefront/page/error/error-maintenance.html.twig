@@ -1,0 +1,35 @@
+{% sw_extends '@Storefront/storefront/page/error/error-maintenance.html.twig' %}
+
+{% block error_maintenance_header %}
+    {% sw_include '@Storefront/storefront/layout/header/header-simple.html.twig' %}
+{% endblock %}
+
+{% block error_maintenance_main_fallback %}
+    <div class="container-main">
+        <div class="container">
+            <div class="container-maintenance text-center">
+                <div class="container-maintenance__bg">
+                    <picture>
+                        <source srcset="{{ theme_config('sw-maintenance-bg-mobile') |sw_encode_url }}"
+                                media="(max-width: {{ theme_config('breakpoint.md') - 1 }}px)">
+
+                        <source srcset="{{ theme_config('sw-maintenance-bg-tablet') |sw_encode_url }}"
+                                media="(min-width: {{ theme_config('breakpoint.md') }}px) and (max-width: {{ theme_config('breakpoint.xl') - 1 }}px)">
+
+                        <img src="{{ theme_config('sw-maintenance-bg-desktop') |sw_encode_url }}"
+                             alt="{{ "general.maintenanceModeHeader"|trans|striptags }}"
+                             class="rounded mx-auto d-block"/>
+                    </picture>
+                </div>
+                <h1 class="maintenance-heading">{{ "general.maintenanceModeHeader"|trans }}</h1>
+                <p>{{ "general.maintenanceModeDescription"|trans }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block error_maintenance_footer %}
+    <footer class="footer-main">
+        {{ block('error_maintenance_footer_content') }}
+    </footer>
+{% endblock %}
