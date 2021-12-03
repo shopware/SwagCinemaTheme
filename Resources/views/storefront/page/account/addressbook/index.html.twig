@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/account/addressbook/index.html.twig' %}
+
+{% block page_account_address_item_content_create %}
+    <div class="address-action-create">
+        <a href="{{ path('frontend.account.address.create.page') }}"
+           title="{{ "account.addressCreateBtn"|trans|striptags }}"
+           class="btn btn-primary px-5">
+            {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
+            {{ "account.addressCreateBtn"|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block page_account_address_overview_actions %}
+{% endblock %}
+
+
+{% block page_account_address_overview_address %}
+    {% sw_include '@Storefront/storefront/component/address/address.html.twig' with { 'showShippingWarning': defaultShippingAddress.id != address.id, 'showActionsButton': true } %}
+{% endblock %}

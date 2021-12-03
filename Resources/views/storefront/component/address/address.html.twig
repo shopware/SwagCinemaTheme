@@ -1,0 +1,41 @@
+{%  sw_extends '@Storefront/storefront/component/address/address.html.twig' %}
+
+{% block component_address_action_button %}
+    <div class="card-actions">
+        {% sw_include '@Storefront/storefront/page/account/addressbook/address-actions.html.twig' %}
+    </div>
+{% endblock %}
+
+{% block component_address_salutation %}
+{% endblock %}
+
+{% block component_address_name %}
+    <div class="{% if showActionsButton and (not address.company) %}card-title{% endif %}">
+        {% if address.salutation and address.salutation.salutationKey != 'not_specified' %}
+            {{ address.salutation.translated.displayName }}
+        {% endif %}
+
+        {{ parent() }}
+
+        {% if showActionsButton and (not address.company) %}
+            {{ block('component_address_action_button') }}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block component_address_company %}
+    <div class="{% if showActionsButton %}card-title{% endif %}">
+        {{ parent() }}
+
+        {% if showActionsButton %}
+            {{ block('component_address_action_button') }}
+        {% endif %}
+    </div>
+{% endblock %}
+
+
+{% block component_address %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}

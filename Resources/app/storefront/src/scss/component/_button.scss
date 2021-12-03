@@ -46,10 +46,20 @@ button {
 
 @each $color, $value in $theme-colors {
     @if ($color != 'danger') {
-        .btn-outline-#{$color}:hover:not(:disabled) {
-            color: $value;
-            background-color: transparent;
-            border-color: $value;
+        .btn-outline-#{$color} {
+            &:hover:not(:disabled) {
+                color: $value;
+                background-color: transparent;
+                border-color: $value;
+
+                .icon {
+                    color: $value;
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
         }
     }
 }
