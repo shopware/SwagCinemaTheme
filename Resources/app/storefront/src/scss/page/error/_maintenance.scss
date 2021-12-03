@@ -23,7 +23,7 @@ $picture-width: 390px;
 
     @include media-breakpoint-up(md) {
         h1 {
-            font-size: $h2-font-size;
+            font-size: 44px;
             color: $gray-900;
             margin-bottom: 28px;
         }
@@ -31,6 +31,12 @@ $picture-width: 390px;
         p {
             font-weight: $font-weight-semibold;
             font-size: 1rem;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        h1 {
+            font-size: $h2-font-size;
         }
     }
 }

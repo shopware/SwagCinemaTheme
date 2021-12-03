@@ -1,3 +1,11 @@
 .basic-captcha-content-image {
     margin-right: $grid-gutter-width / 2;
 }
+
+body {
+    &.modal-open {
+        .basic-captcha-content {
+            margin-bottom: 0;
+        }
+    }
+}
