@@ -25,6 +25,16 @@ $cms-element-product-listing-gutter-md-width: 20px;
     }
 }
 
+.cms-element-product-listing {
+    .pagination-nav {
+        margin: 40px 0;
+
+        .pagination {
+            justify-content: center;
+        }
+    }
+}
+
 .cms-element-product-listing-actions {
     @include media-breakpoint-up(md) {
         div.sorting[data-listing-sorting="true"] {

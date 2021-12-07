@@ -26,8 +26,7 @@
             margin-bottom: 0;
 
             > * {
-                flex: 1 0 140px;
-                max-width: 200px;
+                width: 100%;
             }
         }
     }
@@ -249,12 +248,21 @@
         flex-grow: 1;
         flex-shrink: 0;
     }
+
+    .filter-panel {
+        &:not(.is--sidebar) {
+            .filter-panel-items-container {
+                > * {
+                    flex: 1 0 140px;
+                    max-width: 200px;
+                }
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
     .filter-panel:not(.is--sidebar) {
-        border-bottom: $border-width-sm solid $gray-400;
-
         &:before {
             content: '';
             position: absolute;
