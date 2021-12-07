@@ -8,17 +8,18 @@ $asset-path: '#{$sw-asset-theme-url}/bundles/swagcinematheme/assets' !default;
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-50:  #f7f8f8 !default;
-$gray-100: #f4f4f5 !default;
-$gray-200: #e8eaec !default;
-$gray-300: #cdd2d6 !default;
-$gray-400: #bbc1c7 !default;
-$gray-500: #a5adb5 !default;
-$gray-600: #848f99 !default;
-$gray-700: #576674 !default;
-$gray-800: #354657 !default;
-$gray-900: #071c31 !default;
 $black:    #000 !default;
+
+$gray-50:  mix($white, $sw-text-color, 97%) !default;
+$gray-100: mix($white, $sw-text-color, 95%) !default;
+$gray-200: mix($white, $sw-text-color, 91%) !default;
+$gray-300: mix($white, $sw-text-color, 80%) !default;
+$gray-400: mix($white, $sw-text-color, 73%) !default;
+$gray-500: mix($white, $sw-text-color, 64%) !default;
+$gray-600: mix($white, $sw-text-color, 51%) !default;
+$gray-700: mix($white, $sw-text-color, 33%) !default;
+$gray-800: mix($white, $sw-text-color, 19%) !default;
+$gray-900: $sw-text-color !default;
 // scss-docs-end gray-color-variables
 
 // Typography
@@ -32,12 +33,12 @@ $font-weight-bolder: 700 !default;
 $primary-100: #e4f6f8 !default;
 
 // scss-docs-start theme-color-variables
-$primary:       #00a9c1 !default;
-$secondary:     #071c31 !default;
-$success:       #0ea037 !default;
-$info:          #027eab !default;
-$warning:       #ffbd5d !default;
-$danger:        #c30205 !default;
+$primary:       $sw-color-brand-primary !default;
+$secondary:     $sw-color-brand-secondary !default;
+$success:       $sw-color-success !default;
+$info:          $sw-color-info !default;
+$warning:       $sw-color-warning !default;
+$danger:        $sw-color-danger !default;
 // scss-docs-end theme-color-variables
 
 // Components
@@ -46,7 +47,7 @@ $danger:        #c30205 !default;
 
 $border-width:                   2px !default;
 $border-color:                   $gray-400 !default;
-$border-color-bold:              $secondary !default;
+$border-color-bold:              $sw-text-color !default;
 
 // Typography
 // Font, line-height, and color for body text, headings, and more.
@@ -84,7 +85,7 @@ $input-height-lg: 48px;
 
 // Form checkbox
 $custom-checkbox-indicator-border-radius: 4px !default;
-$custom-control-indicator-border-color: $secondary !default;
+$custom-control-indicator-border-color: $border-color-bold !default;
 
 // scss-docs-start btn-variables
 $btn-font-size:                 .875rem !default;
@@ -105,7 +106,7 @@ $alert-padding-x:               .75rem !default;
 $alert-border-radius:           11px 11px 11px 4px !default;
 
 // Tables
-$table-accent-bg:               $white !default;
+$table-accent-bg:               transparent !default;
 $table-cell-padding:            15px 0 !default;
 $table-border-width:            2px !default;
 $table-caption-color:           $gray-400 !default;

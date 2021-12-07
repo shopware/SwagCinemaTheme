@@ -56,7 +56,7 @@
 
     .product-block-prices-head {
         .product-block-prices-row {
-            border-color: $secondary;
+            border-color: $border-color-bold;
         }
     }
 
@@ -73,13 +73,13 @@
     line-height: 26px;
 
     &.with-list-price {
-        color: $secondary;
+        color: $sw-text-color;
         display: inline-block;
         margin-right: 10px;
     }
 
     &.with-advanced-list-price {
-        color: $secondary;
+        color: $sw-text-color;
         font-size: $font-size-base;
         font-weight: $font-weight-medium;
         vertical-align: middle;
@@ -176,7 +176,7 @@
 
 .product-detail-reviews-link {
     letter-spacing: -1px;
-    color: $secondary;
+    color: $sw-text-color;
     display: inline-block;
     vertical-align: middle;
     line-height: 14px;
@@ -229,7 +229,7 @@
 
 .point-partial-placeholder {
     .icon {
-        color: $secondary;
+        color: $sw-text-color;
     }
 }
 
@@ -250,7 +250,7 @@
 .product-detail-quantity-select {
     line-height: 20px;
     padding: 12px 42px 12px 16px;
-    border-color: $secondary;
+    border-color: $border-color-bold;
     border-radius: 11px;
     width: 170px;
     font-weight: $font-weight-medium;

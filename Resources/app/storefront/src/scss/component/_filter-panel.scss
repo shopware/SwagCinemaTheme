@@ -10,7 +10,7 @@
         .filter-panel-item-toggle[aria-expanded=true] {
             svg {
                 transform: none;
-                color: $secondary;
+                color: $sw-text-color;
             }
 
             .icon {
@@ -49,7 +49,7 @@
         background-color: $white;
 
         .icon {
-            color: $secondary;
+            color: $sw-text-color;
             margin-left: 25px;
             position: absolute;
             right: $spacer;
@@ -90,8 +90,8 @@
         &:not(:disabled) {
             @include border-bottom-radius(0);
 
-            color: $secondary;
-            border-color: $secondary;
+            color: $sw-text-color;
+            border-color: $border-color-bold;
             border-bottom-color: transparent;
         }
 
@@ -122,7 +122,7 @@
     min-width: 0;
     top: -12px !important;
     padding-top: 0;
-    border: $border-width solid $secondary;
+    border: $border-width solid $border-color-bold;
     border-top: 0;
 }
 

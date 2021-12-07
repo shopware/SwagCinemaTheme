@@ -27,12 +27,12 @@ https://getbootstrap.com/docs/4.3/components/card/#navigation
 
 
             &:hover {
-                color: $secondary;
+                color: $sw-text-color;
             }
 
             &.active {
                 border-width: 3px;
-                color: $secondary;
+                color: $sw-text-color;
             }
         }
     }
