@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/layout/header/account-menu.html.twig' %}
+
+{% block layout_header_actions_account_widget_dropdown_header %}
+    {% if not context.customer.guest %}
+        <div class="dropdown-header account-menu-header">
+            {% sw_icon 'ic-profile' style {'pack' : 'cinema'} %}
+            {{ "account.myAccount"|trans|sw_sanitize }}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block utilities_offcanvas_content %}
+    <div class="account-menu">
+        {{ block('layout_header_actions_account_widget_dropdown_header') }}
+
+        {{ block('layout_header_actions_account_widget_dropdown_links') }}
+
+        {{ block('layout_header_actions_account_widget_dropdown_login') }}
+    </div>
+{% endblock %}

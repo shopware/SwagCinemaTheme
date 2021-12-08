@@ -1,0 +1,132 @@
+.account-menu {
+    &-dropdown {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    &-header {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: none;
+        font-weight: $font-weight-medium;
+
+        .icon {
+            color: $secondary;
+
+            svg {
+                top: 0;
+            }
+        }
+    }
+
+    &-login {
+        padding-left: 20px;
+        padding-right: 20px;
+        border: none;
+        margin-bottom: 0;
+        background-color: $gray-100;
+    }
+
+    &-login-button {
+        @extend .btn-sm;
+    }
+
+    &-links {
+        .account-aside-item {
+            padding-left: 56px;
+            padding-right: 20px;
+            color: $sw-text-color;
+            @extend .rounded-0;
+
+            &:hover {
+                background-color: $gray-200;
+            }
+        }
+
+        .account-aside-footer {
+            padding: 20px;
+            background-color: $gray-100;
+            border: none;
+            margin: 0;
+        }
+
+        .account-aside-btn {
+            @extend .btn-secondary;
+            @extend .btn-sm;
+            width: 100%;
+            text-decoration: none;
+
+            .icon {
+                display: none;
+            }
+        }
+    }
+
+    &-offcanvas {
+        .offcanvas-close {
+            font-weight: $font-weight-medium;
+            color: $sw-text-color;
+            padding: 3px 20px;
+            border: none;
+            border-bottom: $border-width-sm solid $border-color;
+
+            .icon {
+                color: inherit;
+            }
+        }
+
+        .account-menu-header {
+            font-size: 28px;
+            font-weight: $font-weight-bold;
+            color: $gray-700;
+            border-bottom: $border-width solid $border-color-bold;
+            padding: 10px 0;
+
+            .icon {
+                display: none;
+            }
+        }
+
+        .account-menu-links {
+            .account-aside-item {
+                padding: 14px 0;
+                font-size: 16px;
+                font-weight: $font-weight-bold;
+                background-color: transparent;
+
+                &.is-active {
+                    color: $primary;
+                }
+
+                &:first-child {
+                    padding-top: 28px;
+                }
+
+                &:last-child {
+                    padding-bottom: 28px;
+                }
+            }
+
+            .account-aside-btn {
+                line-height: 34px;
+            }
+
+            .account-aside-footer {
+                background-color: transparent;
+                padding: 30px 0;
+            }
+        }
+
+        .account-menu-login {
+            padding: 30px 0;
+            background-color: transparent;
+            border-top: $border-width solid $border-color-bold;
+        }
+
+        .account-menu-login-button {
+            line-height: 34px;
+        }
+    }
+}
