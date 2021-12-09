@@ -18,7 +18,12 @@
         "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm"
     },
     "account": {
-        "overviewChangeAction": "change"
+        "overviewChangeAction": "change",
+        "profileChangeEmail": "change",
+        "profileCurrentMail": "Email Address",
+        "profileCurrentPassword": "Password",
+        "profileChangePassword": "change",
+        "profilePasswordText": "*************"
     },
     "detail": {
         "reviewLinkText": ""

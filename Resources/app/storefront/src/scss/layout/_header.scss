@@ -58,8 +58,13 @@
     &-search-input,
     &-search-input:focus,
     &-search-btn {
+        border-color: $gray-500;
         color: $white;
         background-color: transparent;
+    }
+
+    &-search-input:focus {
+        border-color: $primary;
     }
 
     &-search-btn .icon {
