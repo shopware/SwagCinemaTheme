@@ -14,7 +14,7 @@ describe('Error: 404 page visual testing', {tags: ['@visual']}, () => {
             failOnStatusCode: false
         });
         cy.get('.container-404 p')
-            .contains('We are sorry, it seems we can\'t find the page you\'re looking for.It may no longer exist or may have been moved.');
+            .contains('We are sorry, it seems we can\'t find the page you\'re looking for. It may no longer exist or may have been moved.');
 
         cy.get('.content-bg img')
             .should('have.attr', 'src')

@@ -3,6 +3,7 @@
     padding-top: 24px;
     margin-top: 24px;
     margin-bottom: 48px;
+    flex-direction: column-reverse;
 }
 
 .cms-form-submit-col {
@@ -11,7 +12,6 @@
         float: none !important;
         display: block;
         width: 100%;
-        max-width: 200px;
     }
 }
 
@@ -22,5 +22,21 @@
         button[type="submit"] {
             max-width: unset;
         }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .cms-form-submit-col {
+        button[type="submit"] {
+            max-width: 200px;
+        }
+    }
+
+    .form-privacy-row {
+        flex-direction: row;
+    }
+
+    .form-info-text {
+        text-align: right;
     }
 }
