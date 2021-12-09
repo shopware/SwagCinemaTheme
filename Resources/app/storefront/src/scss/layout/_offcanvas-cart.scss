@@ -1,19 +1,162 @@
+$offcanvas-cart-spacing: 20px;
+
 .cart-offcanvas {
     .offcanvas-cart {
-        .cart-item-remove {
-            right: 0;
+        .alert {
+            margin-top: 0;
+        }
+
+        .offcanvas-cart-header {
+            @extend .align-items-start;
+            flex-direction: column;
+            font-size: $h5-font-size;
+            color: $gray-700;
+            line-height: 1;
+
+            .offcanvas-cart-header-count {
+                font-size: 20px;
+                font-style: italic;
+                color: $sw-text-color;
+            }
+        }
+
+
+        .offcanvas-cart-items {
+            border-top: $border-width solid $border-color-bold;
+            border-bottom: $border-width solid $border-color-bold;
+            margin: 0;
+            padding-top: 10px;
+
+            .cart-item-row {
+                position: relative;
+            }
+
+            .cart-item-remove {
+                top: 0;
+            }
+
+            .cart-item-remove {
+                right: 2px;
+
+                @include media-breakpoint-down(sm) {
+                    .cart-item-remove-button svg {
+                        left: 5px;
+                    }
+                }
+            }
+
+            .cart-item-price {
+                margin-left: 0;
+            }
+
+            .cart-item-details {
+                margin-bottom: 0;
+                padding-left: 0;
+                flex: 0 0 calc(100% - 88px);
+                max-width: none;
+
+                .cart-item-details-container {
+                    padding-left: 20px;
+                    @extend .pl-md-0, .pl-lg-3;
+                }
+
+                @include media-breakpoint-up(md) {
+                    flex: 0 0 calc(100% - 110px);
+                }
+            }
+        }
+
+        .offcanvas-summary {
+            margin: 12px 0 8px;
+
+            .offcanvas-summary-list {
+                margin: 0 0 10px;
+                border-bottom: $border-width-sm solid $border-color;
+
+                .summary-total {
+                    padding: 0;
+                    font-size: 20px;
+                }
+            }
+
+            .shipping-cost {
+                font-weight: $font-weight-medium;
+            }
+
+            .js-toggle-shipping-selection {
+                text-decoration: none;
+                color: $sw-color-brand-primary;
+                font-size: $font-size-sm;
+            }
+        }
+
+        .offcanvas-cart-tax {
+            color: $sw-text-color;
+        }
+
+        .offcanvas-cart-actions {
+            border-top: $border-width solid $border-color-bold;
+            padding-top: $offcanvas-cart-spacing;
+
+            .offcanvas-cart-promotion-form {
+                margin-bottom: $offcanvas-cart-spacing;
+
+                .input-group {
+                    @extend .input-group-lg;
+                }
+            }
+
+            .begin-checkout-btn {
+                @extend .btn-lg;
+                @include button-variant($primary, $primary);
+            }
+
+            .btn-block {
+                @extend .btn-lg;
+                @extend .btn-outline-primary;
+                margin-top: 12px;
+
+                &.begin-checkout-btn:hover:not(:disabled) {
+                    @include button-variant($primary, $primary);
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .cart-item-quantity {
+            .custom-select {
+                width: 80px;
+                background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px;
+            }
+        }
+    }
+
+    .offcanvas-close {
+        padding: 2px $offcanvas-cart-spacing;
+        color: $sw-text-color;
+        border-bottom: $border-width-sm solid $border-color;
+        background: $gray-50;
+        font-weight: $font-weight-medium;
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        svg {
+            color: $sw-text-color;
+        }
+
+        &:hover {
+            border-bottom: $border-width-sm solid $border-color;
         }
     }
 
     @include media-breakpoint-up(md) {
         .offcanvas-content-container {
             width: 30rem;
-        }
-
-        .cart-item {
-            .cart-item-details {
-                @include make-col(9);
-            }
         }
     }
 }
