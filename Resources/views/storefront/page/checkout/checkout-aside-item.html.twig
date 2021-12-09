@@ -1,7 +1,13 @@
 {% sw_extends '@Storefront/storefront/page/checkout/checkout-aside-item.html.twig' %}
 
+{% block page_checkout_aside_item_image %}
+    <div class="checkout-aside-item-image">
+        {{ block('page_checkout_aside_item_image_inner') }}
+    </div>
+{% endblock %}
+
 {% block page_checkout_aside_item_data %}
-    <div class="col-8 checkout-aside-item-data">
+    <div class="col pl-4 checkout-aside-item-data">
         {{ block('page_checkout_aside_item_title') }}
 
         {{ block('page_checkout_aside_item_variant_characteristics') }}

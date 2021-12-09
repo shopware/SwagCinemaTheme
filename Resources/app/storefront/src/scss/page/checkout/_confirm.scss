@@ -1,0 +1,28 @@
+.is-act-confirmpage {
+    .checkout-main {
+        @include make-col(8);
+        @extend .m-lg-0;
+    }
+    .checkout-aside {
+        @include make-col(4);
+        @extend .m-lg-0;
+    }
+
+    .checkout {
+        .checkout-aside {
+            .checkout-aside-summary-list {
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid $table-border-color;
+            }
+
+            .checkout-aside-action {
+                margin-top: 0;
+            }
+
+            #confirmFormSubmit {
+                margin-top: 50px;
+            }
+        }
+    }
+}

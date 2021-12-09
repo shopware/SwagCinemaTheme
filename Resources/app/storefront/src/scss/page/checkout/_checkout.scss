@@ -1,0 +1,13 @@
+.is-act-cartpage {
+    .checkout .checkout-aside {
+        .checkout-aside-summary-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .cart-add-promotion {
+        border-bottom: $border-width solid $border-color-bold;
+        padding-bottom: $spacer-lg;
+    }
+}

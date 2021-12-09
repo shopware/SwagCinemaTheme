@@ -6,12 +6,6 @@ $checkout-divider-line: 1px solid $table-border-color;
 .is-act-checkoutregisterpage {
     .container-main,
     .checkout {
-        padding: 0;
-
-        &-container {
-            margin-bottom: 0;
-        }
-
         &-main {
             padding: $checkout-spacing-lg 20px 150px;
             @extend .pr-lg-5;
@@ -22,47 +16,13 @@ $checkout-divider-line: 1px solid $table-border-color;
                 @extend .col-xl-4;
                 @extend .offset-xl-0;
                 padding-left: $checkout-spacing-lg;
-                padding-top: $checkout-spacing-lg;
+                padding-right: 0;
                 position: relative;
-
-                &-summary,
-                &-products {
-                    padding: 0;
-                }
-
-                &-summary-list {
-                    margin-bottom: 50px;
-                    padding-top: 20px;
-                }
-
-                &-summary-total {
-                    margin-bottom: 0;
-                    padding: 15px 0;
-                    border-bottom: $checkout-divider-line;
-                    border-top: $checkout-divider-line;
-                    font-size: 20px;
-                    font-weight: $font-weight-medium;
-                }
-
-                @include media-breakpoint-up(lg) {
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        background-color: $gray-100;
-                        z-index: -1;
-                        left: 0;
-                        width: calc(50vw - 275px);
-                    }
-                }
             }
         }
     }
 
-    .address-main-header,
-    .checkout-aside-summary-header,
-    .checkout-aside-product-header {
+    .address-main-header {
         font-size: $h5-font-size;
         line-height: 34px;
         padding-bottom: 15px;
@@ -120,10 +80,6 @@ $checkout-divider-line: 1px solid $table-border-color;
         background-color: $gray-100;
         border-left: $checkout-divider-line;
         @extend .offset-lg-0;
-
-        &-summary {
-            background-color: transparent;
-        }
     }
 
     .register-submit {
@@ -141,14 +97,6 @@ $checkout-divider-line: 1px solid $table-border-color;
     .checkout-aside-item {
         @extend .no-gutters;
 
-        .cart-item-img,
-        .checkout-aside-item-image {
-            width: 100px;
-            height: 100px;
-            border: none;
-            border-radius: $border-radius;
-        }
-
         .checkout-aside-item-data {
             display: flex;
             flex-direction: column;
@@ -158,6 +106,7 @@ $checkout-divider-line: 1px solid $table-border-color;
                 font-size: $font-size-lg;
                 font-weight: $font-weight-medium;
                 text-align: right;
+                line-height: 1.5;
             }
         }
     }

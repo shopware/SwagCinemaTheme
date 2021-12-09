@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
+
+{% block page_checkout_aside_summary %}
+    <div class="checkout-aside-summary">
+        {{ block('page_checkout_summary_header') }}
+
+        {{ block('page_checkout_cart_add_promotion') }}
+
+        {{ block('page_checkout_summary_list') }}
+    </div>
+{% endblock %}
+
+{% block page_checkout_aside_actions %}
+    {{ block('page_checkout_cart_action_proceed') }}
+{% endblock %}
