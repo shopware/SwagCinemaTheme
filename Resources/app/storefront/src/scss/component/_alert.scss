@@ -23,6 +23,10 @@ https://getbootstrap.com/docs/4.3/components/alerts/
     }
 }
 
+.flashbags {
+    margin-top: 30px;
+}
+
 @each $color, $value in $theme-colors {
     .alert-#{$color} {
         @include alert-variant($value, $value, $custom-alert-text-color);
