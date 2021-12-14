@@ -1,5 +1,13 @@
+.product-detail-content {
+    margin-top: 26px;
+}
+
 .product-detail-form-container {
     margin-bottom: 36px;
+
+    .custom-select {
+        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px;
+    }
 }
 
 .product-block-prices-grid {
@@ -133,7 +141,7 @@
 
 .product-detail-delivery-information {
     width: 50%;
-    margin-bottom: 63px;
+    margin-bottom: 0;
 }
 
 .delivery-information {
@@ -191,11 +199,12 @@
 .product-detail-reviews,
 .product-review-point {
     .icon {
-        width: 16px;
-        height: 17px;
+        width: 20px;
+        height: 20px;
 
         svg {
             top: 0;
+            transform: scale(1.2);
         }
     }
 }
@@ -226,7 +235,16 @@
 
 .product-detail-info {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    padding-bottom: 55px;
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 39px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 66px;
+    }
 }
 
 .product-detail-quantity-select {
@@ -273,6 +291,16 @@
 
     .btn-buy {
         margin-top: 48px;
+
+        .icon {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            .icon {
+                color: inherit;
+            }
+        }
     }
 }
 
@@ -310,6 +338,7 @@
 
 .product-detail-price-container {
     margin-top: 32px;
+    width: calc(100% - 202px);
 
     &.product-detail-price-table {
         width: 100%;
@@ -323,8 +352,8 @@
 }
 
 .product-detail-tax {
-    margin-bottom: 2px;
-    margin-top: 15px;
+    margin-bottom: 0;
+    margin-top: 8px;
 }
 
 .product-detail-configurator-container {
@@ -333,10 +362,12 @@
 }
 
 .product-detail-media {
-    &.col-lg-8 {
-        @include media-breakpoint-up(lg) {
-            padding-right: 0;
-        }
+    &.col-lg-7 {
+        @extend .col-lg-8;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-right: 0;
     }
 
     &.grid {
@@ -351,10 +382,25 @@
 }
 
 .product-detail-buy {
-    &.col-lg-4 {
-        @include media-breakpoint-up(lg) {
-            padding-left: 90px;
+    &.col-lg-5 {
+        @extend .col-lg-4;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-left: 90px;
+    }
+
+    .product-detail-review-content {
+        > [class*='col'] {
+            @extend .col-12;
         }
+    }
+}
+
+.cms-element-product-description-reviews .product-detail-review-content {
+    > .col-sm-4 {
+        @extend .col-12;
+        @extend .col-lg-4;
     }
 }
 
@@ -381,6 +427,86 @@
             width: 100%;
             padding-bottom: 138%;
             position: relative;
+        }
+    }
+}
+
+.product-detail-description-title {
+    line-height: 21px;
+    font-size: $font-size-base;
+    margin-bottom: 42px;
+}
+
+.product-detail-properties-container {
+    .col-lg-6 {
+        @extend .col-md-12;
+        @extend .col-lg-12;
+    }
+}
+
+// breadcrumb
+.product-detail-breadcrumb {
+    display: flex;
+    align-items: flex-start;
+
+    > nav,
+    .cms-breadcrumb {
+        width: calc(100% - 115px);
+        margin-left: auto;
+        padding: 0;
+    }
+
+    .breadcrumb {
+        justify-content: flex-end;
+    }
+}
+
+.product-detail-button-back {
+    width: 70px;
+    margin-right: 45px;
+    padding-top: 3px;
+    line-height: 21px;
+    color: $secondary;
+    text-transform: lowercase;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    display: none;
+
+    .product-detail-breadcrumb.container & {
+        margin-top: -9px;
+        padding-top: 0;
+    }
+
+    .icon {
+        color: $secondary;
+        margin-right: 10px;
+
+        svg {
+            top: 6px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .product-detail-breadcrumb {
+        .breadcrumb {
+            justify-content: flex-start;
+        }
+
+        &.container {
+            padding-bottom: 40px;
+        }
+
+        nav,
+        .cms-breadcrumb {
+            margin-left: 0;
+        }
+    }
+
+    [class*="product-detail-buy"] {
+        .btn-buy {
+            text-align: left;
+            padding-left: 32px;
         }
     }
 }

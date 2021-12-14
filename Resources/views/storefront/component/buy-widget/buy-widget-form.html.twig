@@ -1,19 +1,19 @@
-{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
 
-{% block page_product_detail_buy_quantity_container %}
+{% block buy_widget_buy_quantity_container %}
     <div class="col-12 product-detail-quantity-box">
         <div class="product-detail-buy-quantity">
             <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
-            {{ block('page_product_detail_buy_quantity') }}
+            {{ block('buy_widget_buy_quantity') }}
         </div>
 
-        {% block page_product_detail_price %}
-            {# the block page_product_detail_price was moved from product-detail/buy-widget.html.twig #}
-            <div class="product-detail-price-container {% if page.product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
-                {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+        {% block buy_widget_price %}
+            {# the block buy_widget_price was moved from buy-widget/buy-widget.html.twig #}
+            <div class="product-detail-price-container {% if product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
+                {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
 
-                {% block page_product_detail_tax %}
-                    {# the block page_product_detail_tax was moved from product-detail/buy-widget.html.twig #}
+                {% block buy_widget_tax %}
+                    {# the block buy_widget_tax was moved from buy-widget/buy-widget.html.twig #}
                     <div class="product-detail-tax-container">
                         {% if context.taxState == "gross" %}
                             {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
@@ -22,7 +22,7 @@
                         {% endif %}
 
                         <p class="product-detail-tax">
-                            {% block page_product_detail_tax_link %}
+                            {% block buy_widget_tax_link %}
                                 {% if context.taxState == "gross" %}
                                     {% set taxLabelText = "general.grossTaxLabelInformation"|trans|sw_sanitize %}
                                 {% else %}
@@ -44,18 +44,19 @@
             </div>
         {% endblock %}
 
-        {% block page_product_detail_configurator_include %}
-            {% if page.product.parentId and page.configuratorSettings|length > 0 %}
+        {% block buy_widget_configurator_include %}
+            {# the block buy_widget_configurator_include was moved from buy-widget/buy-widget.html.twig #}
+            {% if product.parentId and configuratorSettings|length > 0 %}
                 <form></form>
                 <div class="product-detail-configurator-container">
-                    {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+                    {% sw_include '@Storefront/storefront/component/buy-widget/configurator.html.twig' %}
                 </div>
             {% endif %}
         {% endblock %}
     </div>
 {% endblock %}
 
-{% block page_product_detail_buy_button %}
+{% block buy_widget_buy_button %}
     <button class="btn btn-primary btn-block btn-buy"
             title="{{ "detail.addProduct"|trans|striptags }}"
             aria-label="{{ "detail.addProduct"|trans|striptags }}">

@@ -6,7 +6,8 @@ Custom skin styling for bootstrap card with included tab navigation.
 https://getbootstrap.com/docs/4.3/components/card/#navigation
 */
 
-.product-detail-tabs {
+.product-detail-tabs,
+.product-detail-cross-selling {
     .card-tabs {
         .nav-item {
             margin-right: 12px;
@@ -38,22 +39,44 @@ https://getbootstrap.com/docs/4.3/components/card/#navigation
 }
 
 @include media-breakpoint-up(md) {
-    .product-detail-tabs {
+    .product-detail-tabs,
+    .product-detail-cross-selling {
+        .card-tabs {
+            .nav-item {
+                margin-right: 24px;
+                width: calc(50% - 12px);
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .product-detail-tabs,
+    .product-detail-cross-selling {
         .card-tabs {
             .nav-item {
                 margin-right: 12px;
                 width: auto;
+
+                .product-detail-buy & {
+                    width: 50%;
+                }
             }
 
             .nav-link {
                 min-width: 210px;
+
+                .product-detail-buy & {
+                    min-width: 100%;
+                }
             }
         }
     }
 }
 
 @include media-breakpoint-down(xs) {
-    .product-detail-tabs {
+    .product-detail-tabs,
+    .product-detail-cross-selling {
         .product-detail-tab-navigation-link {
             border-bottom: 2px solid $gray-400;
         }

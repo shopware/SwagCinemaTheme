@@ -1,3 +1,16 @@
 .container {
     @include make-container-max-widths();
+
+    &.flashbags {
+        padding-top: 20px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .is-ctl-product {
+        .container,
+        .cms-section .boxed {
+            max-width: 1591px;
+        }
+    }
 }

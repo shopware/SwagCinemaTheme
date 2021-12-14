@@ -33,6 +33,11 @@ $border-nav-radius: 5px;
             }
         }
     }
+
+    .product-detail-cross-selling & {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
 }
 
 .base-slider-controls-prev,
@@ -51,18 +56,27 @@ $border-nav-radius: 5px;
         background: rgba($white, 0.7);
     }
 
-    .icon {
-        width: 14px;
-        height: 38px;
+    .product-detail-cross-selling & {
+        background: transparent;
+        border-radius: 0;
+        width: 20px;
     }
 }
 
 .base-slider-controls-prev {
     border-radius: 0 $border-nav-radius $border-nav-radius 0;
+
+    .product-detail-cross-selling & {
+        left: 0;
+    }
 }
 
 .base-slider-controls-next {
     border-radius: $border-nav-radius 0 0 $border-nav-radius;
+
+    .product-detail-cross-selling & {
+        right: 0;
+    }
 }
 
 @include media-breakpoint-up(md) {

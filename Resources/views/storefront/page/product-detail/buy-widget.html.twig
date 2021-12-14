@@ -7,6 +7,12 @@
         </div>
     {% endblock %}
 
+    {{ block('page_product_detail_data_rich_snippet_url') }}
+
+    {{ block('page_product_detail_data_rich_snippet_price_range') }}
+
+    {{ block('page_product_detail_data_rich_snippet_price_currency') }}
+
     <div class="product-detail-info">
         {{ block('page_product_detail_delivery_informations') }}
 
@@ -16,13 +22,40 @@
         } %}
 
         {{ block('page_product_detail_reviews') }}
+
+        {% if page.product.purchaseUnit and page.product.calculatedPrices|length <= 1 %}
+            {% block page_product_detail_price_unit %}
+                {# the block page_product_detail_price_unit was moved from /product-detail/buy-widget-price.html.twig #}
+                {% set price = page.product.calculatedPrice %}
+
+                {% if page.product.calculatedPrices|length == 1 %}
+                    {% set price = page.product.calculatedPrices.first %}
+                {% endif %}
+
+                <div class="product-detail-price-unit">
+                    {% block page_product_detail_price_unit_label %}
+                        <span class="price-unit-label">
+                            {{ "detail.priceUnitName"|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block page_product_detail_price_unit_content %}
+                        <span class="price-unit-content">
+                            {{ page.product.purchaseUnit }} {{ page.product.unit.name }}
+                        </span>
+                    {% endblock %}
+
+                    {% if price.referencePrice is not null %}
+                        {% block page_product_detail_price_unit_reference_content %}
+                            <span class="price-unit-reference-content">
+                                ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
+                            </span>
+                        {% endblock %}
+                    {% endif %}
+                </div>
+            {% endblock %}
+        {% endif %}
     </div>
-
-    {{ block('page_product_detail_data_rich_snippet_url') }}
-
-    {{ block('page_product_detail_data_rich_snippet_price_range') }}
-
-    {{ block('page_product_detail_data_rich_snippet_price_currency') }}
 {% endblock %}
 
 {% block page_product_detail_ordernumber_container %}

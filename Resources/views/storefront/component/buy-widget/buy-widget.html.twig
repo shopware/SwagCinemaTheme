@@ -1,0 +1,64 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget_ordernumber_container %}
+{% endblock %}
+
+{% block buy_widget_price %}
+{% endblock %}
+
+{% block buy_widget_configurator_include %}
+{% endblock %}
+
+{% block buy_widget_data %}
+    {{ block('buy_widget_data_rich_snippet_url') }}
+
+    {{ block('buy_widget_data_rich_snippet_price_range') }}
+
+    {{ block('buy_widget_data_rich_snippet_price_currency') }}
+
+    <div class="product-detail-info">
+        {{ block('buy_widget_delivery_informations') }}
+
+        {% set remoteClickOptions = {
+            selector: "#review-tab-" ~ product.id,
+            scrollToElement: true
+        } %}
+
+        {% set reviewTabHref = "#review-tab-" ~ product.id ~ "-pane" %}
+
+        {{ block('buy_widget_reviews') }}
+
+        {% if product.purchaseUnit and product.calculatedPrices|length <= 1 %}
+            {% block buy_widget_price_unit %}
+                {# the block buy_widget_price_unit was moved from /buy-widget/buy-widget-price.html.twig #}
+                {% set price = product.calculatedPrice %}
+
+                {% if product.calculatedPrices|length == 1 %}
+                    {% set price = product.calculatedPrices.first %}
+                {% endif %}
+
+                <div class="product-detail-price-unit">
+                    {% block buy_widget_price_unit_label %}
+                        <span class="price-unit-label">
+                        {{ "detail.priceUnitName"|trans|sw_sanitize }}
+                    </span>
+                    {% endblock %}
+
+                    {% block buy_widget_price_unit_content %}
+                        <span class="price-unit-content">
+                        {{ product.purchaseUnit }} {{ product.unit.name }}
+                    </span>
+                    {% endblock %}
+
+                    {% if price.referencePrice is not null %}
+                        {% block buy_widget_price_unit_reference_content %}
+                            <span class="price-unit-reference-content">
+                            ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
+                        </span>
+                        {% endblock %}
+                    {% endif %}
+                </div>
+            {% endblock %}
+        {% endif %}
+    </div>
+{% endblock %}

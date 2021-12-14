@@ -21,6 +21,11 @@
             border-color: transparent;
             padding: 0;
         }
+
+        &.is-display-media .product-detail-configurator-option-image {
+            width: 36px;
+            border-radius: 50%;
+        }
     }
 
     &.is-combinable + .product-detail-configurator-option-label {
@@ -72,13 +77,21 @@
             }
         }
 
-        &.is-display-text {
+        &.is-display-text,
+        &.is-display-media {
             border-color: transparent;
+            background: transparent;
         }
 
         &.is-display-media {
-            background: transparent;
-            overflow: hidden;
+            img {
+                border: $border-width solid $gray-300;
+            }
+        }
+
+        &.is-display-color:not([style*="background-color"]) {
+            border-color: transparent;
+            border-radius: 0;
         }
     }
 }
