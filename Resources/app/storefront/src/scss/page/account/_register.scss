@@ -1,0 +1,190 @@
+.account-register {
+    .card-title {
+        font-size: 28px;
+        font-weight: $font-weight-bold;
+        border-bottom: $border-width solid $border-color-bold;
+        padding: 0 0 16px 0;
+        color: $gray-700;
+        margin-bottom: 30px;
+        margin-top: 16px;
+    }
+
+    .register-personal {
+        margin-bottom: 32px;
+    }
+
+    .form-group {
+        max-width: 100%;
+        flex-basis: 100%;
+
+        &:empty {
+            margin-bottom: 0;
+        }
+    }
+
+    &-aside {
+        @extend .col-lg-5;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -20px;
+            bottom: -20px;
+            background: $gray-100;
+            right: 0;
+            width: 100vw;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: $border-width-sm solid $border-color;
+        }
+
+        .login-card {
+            margin-bottom: 56px;
+        }
+
+        .login-form {
+            &-description {
+                display: none;
+            }
+
+            .login-password-recover a {
+                color: $sw-text-color;
+                text-decoration: underline;
+            }
+
+            .login-submit .btn-primary {
+                @extend .btn-secondary, .btn-block;
+            }
+        }
+
+        .login-advantages {
+            position: relative;
+            display: block;
+
+            &-header {
+                @extend .h6;
+                border-bottom: $border-width solid $border-color-bold;
+                padding-bottom: 12px;
+                margin-bottom: 30px;
+            }
+
+            ul {
+                padding-left: 22px;
+            }
+
+            li {
+                list-style-image: $custom-bullet-point;
+                font-weight: $font-weight-medium;
+                padding: 8px 0;
+            }
+        }
+    }
+
+    &-main {
+        padding-top: 50px;
+    }
+
+    .flashbags {
+        padding-left: 0;
+        padding-right: 0;
+
+        .alert {
+            margin-bottom: 0;
+        }
+    }
+
+    .register-billing {
+        .card-title {
+            display: none;
+        }
+    }
+
+    .register-different-shipping {
+        margin-bottom: 30px;
+    }
+
+    .register-shipping {
+        border-top: $border-width-sm solid $border-color;
+        padding-top: 10px;
+
+        .card-title {
+            font-size: 16px;
+            border-bottom: none;
+            margin-bottom: 4px;
+        }
+
+        .country-and-state-form-elements {
+            margin-bottom: 16px;
+        }
+    }
+
+    .register-address {
+        margin-bottom: 0;
+        border-bottom: $border-width-sm solid $border-color;
+    }
+
+    .privacy-notice {
+        margin-bottom: 0;
+
+        strong {
+            display: none;
+        }
+    }
+
+    .register-required-info {
+        margin-bottom: 24px;
+    }
+
+    .register-submit {
+        width: 100%;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .login-password-recover {
+        margin-top: -8px;
+        margin-bottom: 32px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .account-register-aside {
+        padding: 50px 130px 0;
+    }
+
+    .account-register-main {
+        padding: 70px 130px;
+    }
+
+
+    .login-advantages {
+        li {
+            font-size: 16px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .account-register-aside {
+        padding: 50px 130px 50px 160px;
+
+        &:before {
+            width: auto;
+            left: -9999px;
+            transform: none;
+            border-right: $border-width-sm solid $border-color;
+            border-bottom: none;
+        }
+    }
+
+    .account-register-main {
+        padding: 50px 20px 0 150px;
+
+        .register-submit {
+            margin-bottom: 80px;
+        }
+    }
+}

@@ -1,5 +1,11 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
+{% block base_flashbags %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}
+
 {% block base_header %}
     <div class="top-bar">
         <div class="container">
