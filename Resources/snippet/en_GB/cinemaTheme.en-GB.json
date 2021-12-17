@@ -24,7 +24,10 @@
         "profileCurrentMail": "Email Address",
         "profileCurrentPassword": "Password",
         "profileChangePassword": "change",
-        "profilePasswordText": "*************"
+        "profilePasswordText": "*************",
+        "overviewChangeAction": "change",
+        "orRegister": "",
+        "orRegisterLink": "Register"
     },
     "detail": {
         "reviewLinkText": "",
