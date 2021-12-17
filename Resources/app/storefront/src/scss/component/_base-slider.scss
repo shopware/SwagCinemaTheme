@@ -49,7 +49,7 @@ $border-nav-radius: 5px;
     opacity: 1;
     background: rgba($white, 0.7);
 
-    &:hover {
+    &:hover:not(:disabled) {
         border-color: rgba($primary, 0.5);
         color: $primary;
         opacity: 1;
