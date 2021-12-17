@@ -23,7 +23,7 @@ https://getbootstrap.com/docs/4.3/components/alerts/
     }
 }
 
-.flashbags {
+.flashbags:not(:empty) {
     margin-top: 30px;
 }
 

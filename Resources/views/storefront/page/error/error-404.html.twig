@@ -1,5 +1,11 @@
 {% sw_extends '@Storefront/storefront/page/error/error-404.html.twig' %}
 
+{% block base_flashbags %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}
+
 {% block base_main_inner %}
     {% block base_content %}
         {% block not_found_error_content %}
