@@ -1,7 +1,7 @@
 .container {
     @include make-container-max-widths();
 
-    &.flashbags {
+    &.flashbags:not(:empty) {
         padding-top: 20px;
     }
 }
