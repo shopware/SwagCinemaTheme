@@ -1,5 +1,49 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-image-gallery.html.twig' %}
 
+{% block element_image_gallery_inner %}
+    {% set gallerySliderOptions = gallerySliderOptions|replace_recursive({
+        thumbnailSlider: {
+            items: (galleryPosition == "underneath") ? 7 : 5,
+            slideBy: (galleryPosition == "underneath") ? 5 : 4,
+            controls: true,
+            startIndex: startIndexThumbnails ? startIndexThumbnails : null,
+            responsive: {
+                xs: {
+                    enabled: false,
+                    controls: false
+                },
+                sm: {
+                    enabled: false,
+                    controls: false
+                },
+                xl: {
+                    items: (galleryPosition == "underneath") ? 10 : 5,
+                }
+            }
+        }
+    }) %}
+
+    {% if galleryPosition == "left" %}
+        {% set gallerySliderOptions = gallerySliderOptions|replace_recursive({
+            thumbnailSlider: {
+                responsive: {
+                    md: {
+                        axis: 'vertical'
+                    },
+                    lg: {
+                        axis: 'vertical'
+                    },
+                    xl: {
+                        axis: 'vertical'
+                    }
+                }
+            }
+        }) %}
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}
+
 {% block element_image_gallery_inner_wrapper %}
     {% if isGridLayout %}
         {% block element_image_gallery_inner_grid %}

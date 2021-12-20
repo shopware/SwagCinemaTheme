@@ -66,14 +66,6 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
     padding: 5px;
 }
 
-.gallery-slider-thumbnails {
-    &.is-underneath {
-        .gallery-slider-thumbnails-item {
-            max-width: 75px;
-            height: 65px;
-        }
-    }
-}
 
 @include media-breakpoint-down(md) {
     .gallery-slider-single-image,
