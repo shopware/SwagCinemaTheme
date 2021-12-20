@@ -80,8 +80,8 @@
         }
 
         .filter-range-container {
-            padding-top: 0;
             padding-left: 12px;
+            padding-top: 0;
         }
     }
 
@@ -102,12 +102,16 @@
     }
 
     &.show .filter-panel-item-toggle {
-        + .filter-panel-item-dropdown {
+        + .filter-panel-item-dropdown[x-placement^='bottom'] {
             @include border-bottom-radius(8px);
             @include border-top-radius(0px);
 
             border-top-color: transparent;
             margin: 0;
+        }
+
+        + .filter-panel-item-dropdown[x-placement^='top'] {
+            border-top: $border-width solid $secondary;
         }
 
         .icon {
@@ -199,6 +203,10 @@
             height: 20px;
         }
     }
+
+    .filter-panel {
+        height: calc(100vh - 220px);
+    }
 }
 
 .filter-panel-offcanvas-title {
@@ -254,7 +262,7 @@
             .filter-panel-items-container {
                 > * {
                     flex: 1 0 140px;
-                    max-width: 200px;
+                    max-width: 300px;
                 }
             }
         }
@@ -271,7 +279,7 @@
             background-color: $gray-100;
             z-index: -1;
             border-bottom: $border-width-sm solid $gray-400;
-            width: calc(100vw - 18px);
+            width: 100vw;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -286,6 +294,12 @@
         max-width: 569px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .offcanvas-filter {
+        .filter-panel {
+            padding-bottom: 120px;
+        }
     }
 }
 
