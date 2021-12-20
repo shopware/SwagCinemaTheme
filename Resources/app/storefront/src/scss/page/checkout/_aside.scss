@@ -1,9 +1,5 @@
-$checkout-spacing-sm: 20px;
-$checkout-spacing-md: 40px;
-$checkout-spacing-lg: 70px;
-$checkout-divider-line: 1px solid $table-border-color;
-
 .is-ctl-checkout,
+.is-act-editorder,
 .is-act-checkoutregisterpage {
     .container-main,
     .checkout {
@@ -62,19 +58,41 @@ $checkout-divider-line: 1px solid $table-border-color;
                 @extend .input-group-lg;
             }
 
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -9999px;
+                background-color: $gray-100;
+                z-index: -1;
+                width: 9999px;
+                height: 100%;
+                border-top: $checkout-divider-line;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $gray-100;
+                z-index: -1;
+                width: 100vw;
+                height: 100%;
+                border-top: $checkout-divider-line;
+            }
+
+
             @include media-breakpoint-up(lg) {
-                &:after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    background-color: $gray-100;
-                    z-index: -1;
-                    left: -1px;
-                    width: calc(50vw - 245px);
+                &::before {
+                    content: none;
+                }
+
+                &::after {
+                    width: calc(50vw - 160px);
                     min-height: 100vh;
-                    height: 100%;
                     border-left: $checkout-divider-line;
+                    border-top: none;
                 }
 
                 &-product-list {
@@ -83,6 +101,12 @@ $checkout-divider-line: 1px solid $table-border-color;
 
                 &-item {
                     padding: 20px 0;
+                }
+            }
+
+            @include media-breakpoint-up(xl) {
+                &::after {
+                    width: calc(50vw - 200px);
                 }
             }
         }
