@@ -17,7 +17,6 @@ $picture-width: 390px;
     p {
         font-weight: $font-weight-medium;
         line-height: 24px;
-        text-align: center;
         margin-bottom: 24px;
     }
 
@@ -80,15 +79,11 @@ $picture-width: 390px;
 
     @include media-breakpoint-up(md) {
         .content {
-            max-width: 54ch;
+            max-width: 61ch;
         }
 
         .picture {
             max-width: $picture-width;
-        }
-
-        p {
-            text-align: left;
         }
     }
 }
