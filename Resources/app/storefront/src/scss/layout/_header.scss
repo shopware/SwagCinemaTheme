@@ -78,6 +78,13 @@
         }
     }
 
+    &-actions-btn:hover {
+        .header-cart-badge,
+        .header-wishlist-badge {
+            background-color: $primary;
+        }
+    }
+
     &-actions-col {
         .header-logo-col {
             width: auto;
@@ -90,10 +97,12 @@
 
         .header-cart-badge {
             right: -22px;
+            color: $secondary;
         }
 
         .header-wishlist-badge {
-            right: -14px
+            right: -14px;
+            color: $secondary;
         }
     }
 

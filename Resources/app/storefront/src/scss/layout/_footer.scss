@@ -2,7 +2,7 @@
     &-main,
     &-bottom,
     &-minimal {
-        background-color: $sw-footer-bg-color;
+        background-color: $sw-color-brand-secondary;
 
         .icon {
             color: $white;
@@ -31,7 +31,7 @@
     &-link,
     &-main a:not(:hover),
     &-minimal a:not(:hover){
-        color: $sw-footer-text-color;
+        color: #fdfdfd;
     }
 
     &-contact-form a,

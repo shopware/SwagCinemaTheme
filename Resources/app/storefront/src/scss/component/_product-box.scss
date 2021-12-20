@@ -38,9 +38,11 @@ $box-image-height-img: 100%;
     .btn-light {
         @extend .btn-outline-secondary;
         background-color: rgba(255, 255, 255, 0.8);
+        border-color: $border-color-bold;
 
         &:hover:not(:disabled) {
             background-color: rgba(255, 255, 255, 0.8);
+            color: $primary;
         }
     }
 
@@ -106,7 +108,7 @@ $box-image-height-img: 100%;
         margin: 0 8px 0 0;
         line-height: 21px;
         font-weight: $font-weight-normal;
-        color: $secondary;
+        color: $sw-text-color;
         font-size: 14px;
         text-transform: uppercase;
     }
@@ -148,7 +150,7 @@ $box-image-height-img: 100%;
     line-height: 12px;
     overflow: hidden;
     font-style: italic;
-    color: $secondary;
+    color: $sw-text-color;
     margin-bottom: 5px;
 }
 
@@ -166,7 +168,7 @@ $box-image-height-img: 100%;
     }
 
     &.with-list-price {
-        color: $secondary;
+        color: $sw-text-color;
     }
 
 }

@@ -23,6 +23,26 @@
         "app/storefront/src/assets"
     ],
     "config": {
+        "blocks": {
+            "footer": {
+                "label": {
+                    "en-GB": "Footer",
+                    "de-DE": "Fußzeile"
+                }
+            },
+            "404 Page": {
+                "label": {
+                    "en-GB": "404 page",
+                    "de-DE": "404-seite"
+                }
+            },
+            "Maintenance Page": {
+                "label": {
+                    "en-GB": "Maintenance page",
+                    "de-DE": "Wartungsseite"
+                }
+            }
+        },
         "fields": {
             "sw-color-brand-primary": {
                 "value": "#00a9c1"
@@ -71,28 +91,6 @@
             "sw-logo-mobile": {
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/cinema-logo.svg"
-            },
-            "sw-footer-bg-color": {
-                "label": {
-                    "en-GB": "Background colour",
-                    "de-DE": "Hintergrundfarbe"
-                },
-                "type": "color",
-                "value": "#071c31",
-                "editable": true,
-                "block": "footer",
-                "order": 100
-            },
-            "sw-footer-text-color": {
-                "label": {
-                    "en-GB": "Text colour",
-                    "de-DE": "Textfarbe"
-                },
-                "type": "color",
-                "value": "#fdfdfd",
-                "editable": true,
-                "block": "footer",
-                "order": 200
             },
             "sw-footer-logo": {
                 "label": {
