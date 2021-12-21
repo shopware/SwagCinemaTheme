@@ -66,6 +66,18 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
     padding: 5px;
 }
 
+.gallery-slider-thumbnails-col.is-underneath {
+    .gallery-slider-thumbnails-controls-prev {
+       width: 30px;
+       left: 0;
+    }
+
+    .gallery-slider-thumbnails-controls-next {
+        width: 30px;
+        right: 0;
+    }
+}
+
 
 @include media-breakpoint-down(md) {
     .gallery-slider-single-image,
