@@ -8,7 +8,8 @@
         "maintenanceModeDescription": "Wir aktualisieren derzeit den Inhalt dieser Website. Bitte schauen Sie später wieder vorbei.",
         "404ErrorPageHeader": "Seite nicht gefunden",
         "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können. Möglicherweise existiert sie nicht mehr oder ist verschoben worden.",
-        "requiredFields": "Die mit einem Stern (*) markierten Felder sind Pflichtfelder."
+        "requiredFields": "Die mit einem Stern (*) markierten Felder sind Pflichtfelder.",
+        "privacyNotice": "ich habe gelesen <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
     },
     "header": {
         "searchPlaceholder": "Nach was suchst Du?",
@@ -27,7 +28,11 @@
         "profilePasswordText": "*************",
         "overviewChangeAction": "change",
         "orRegister": "",
-        "orRegisterLink": "Registrieren"
+        "orRegisterLink": "Registrieren",
+        "loginHeader": "Anmeldung",
+        "loginPasswordRecover": "Passwort vergessen?",
+        "personalMailLabel": "E-Mail-Addresse",
+        "registerAddressShippingHeader": "Abweichende Lieferadresse:"
     },
     "detail": {
         "reviewLinkText": "",
