@@ -18,6 +18,14 @@
     }
 }
 
+.address-editor-modal {
+    .js-field-toggle-contact-type-company .form-group {
+        @extend .col-12, .col-sm-6;
+        padding-right: $form-grid-gutter-width / 2;
+        padding-left: $form-grid-gutter-width / 2;
+    }
+}
+
 @include media-breakpoint-down(sm) {
     .address-editor-modal {
         padding: 0 !important;

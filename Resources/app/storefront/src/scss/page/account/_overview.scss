@@ -1,87 +1,13 @@
 .account-overview-card {
-    .order-table {
-        border: none;
-    }
-
-    .order-table-header-heading {
-        @extend .h5;
-        margin-right: 10px;
-        margin-bottom: 0;
-
-        + .order-table-header-order-status {
-            margin-bottom: 5px;
-            margin-top: 10px;
-            display: inline-block;
-        }
-    }
-
-    .order-table-header-order-status {
-        display: none;
-    }
-
-    .order-item-header {
-        padding: 0;
-    }
-
-    .order-table-header-context-menu-wrapper {
-        margin-top: 20px;
-    }
-
-    .order-table-header-context-menu {
-        border: $border-width solid $border-color-bold;
-        @include border-radius(4px);
-
-        .icon {
-            margin-top: 13px;
-        }
-    }
-
-    .order-table-header-label {
-        font-weight: $font-weight-normal;
-        padding-left: 8px;
-    }
-
-    .order-table-header-order-number {
-        margin-bottom: 8px;
-        padding-bottom: 4px;
-        border-bottom: $border-width solid $border-color-bold;
-    }
-
-    .order-table-header-order-table-header,
-    .order-table-header-order-table-body {
-        > *:last-child {
-            display: none;
-        }
-    }
-
-    .order-table-header-order-table-header-cell {
+    .card-title {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-weight: $font-weight-medium;
     }
-
-    .order-item-actions {
-        padding: 0;
-        margin-top: 20px;
-
-        .order-hide-btn {
-            width: 100%;
-            background-color: transparent;
-            @extend .btn-outline-secondary;
-        }
-    }
-}
-
-@include media-breakpoint-up(sm) {
-    .account-overview-card {
-        .order-table-header-heading {
-            margin-right: 25px;
-
-            + .order-table-header-order-status {
-                display: none;
-            }
-        }
-
-        .order-table-header-order-status {
-            display: inline-block;
-        }
+    .card-actions .btn {
+        line-height: normal;
+        font-weight: $font-weight-normal;
     }
 }

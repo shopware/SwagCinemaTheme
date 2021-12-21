@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/page/account/order-history/order-detail-document-item.html.twig' %}
+
+{% block page_account_order_document_item_detail_view_file_btn_icon %}
+    <a href="{{ documentLink }}"
+       target="_blank"
+       class="btn btn-outline-primary document-item-view-file-icon-btn">
+        {% sw_icon 'ic-external' style {'pack': 'cinema', 'size': 'xs'} %}
+    </a>
+{% endblock %}

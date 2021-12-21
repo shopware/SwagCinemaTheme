@@ -39,6 +39,12 @@
             border-bottom: $border-width-sm solid $border-color;
         }
 
+        .login-card,
+        .login-advantages {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .login-card {
             margin-bottom: 56px;
         }
@@ -83,6 +89,13 @@
 
     &-main {
         padding-top: 50px;
+
+        .register-card,
+        .flashbags {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
     }
 
     .flashbags {
@@ -152,11 +165,21 @@
 
 @include media-breakpoint-up(md) {
     .account-register-aside {
-        padding: 50px 130px 0;
+        padding-top: 50px;
+
+        .login-card,
+        .login-advantages {
+            max-width: 450px;
+        }
     }
 
     .account-register-main {
-        padding: 70px 130px;
+        padding-top: 70px;
+
+        .register-card,
+        .flashbags {
+            max-width: 450px;
+        }
     }
 
 
@@ -169,8 +192,6 @@
 
 @include media-breakpoint-up(lg) {
     .account-register-aside {
-        padding: 50px 130px 50px 160px;
-
         &:before {
             width: auto;
             left: -9999px;
@@ -178,13 +199,24 @@
             border-right: $border-width-sm solid $border-color;
             border-bottom: none;
         }
+
+        .login-card,
+        .login-advantages {
+            max-width: 370px;
+        }
     }
 
     .account-register-main {
-        padding: 50px 20px 0 150px;
+        padding-top: 50px;
 
         .register-submit {
             margin-bottom: 80px;
+        }
+
+        .register-card,
+        .flashbags {
+            max-width: 630px;
+            margin-right: 0;
         }
     }
 }

@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/page/account/order-history/order-detail-list-item.html.twig' %}
+
+{% block page_account_order_item_detail_name %}
+{% endblock %}
+
+{% block page_account_order_item_detail_image %}
+    <div class="col-12 col-md-6 order-item">
+        <div class="order-item-image">
+            {{ block('page_account_order_item_detail_image_value') }}
+        </div>
+        <div class="order-item-name">
+            {{ block('page_account_order_item_detail_name_value') }}
+
+            {{ block('page_account_order_item_detail_variants') }}
+
+            {{ block('page_account_order_item_detail_unitprice') }}
+        </div>
+    </div>
+{% endblock %}

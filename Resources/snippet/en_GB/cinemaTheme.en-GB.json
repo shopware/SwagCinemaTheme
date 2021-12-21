@@ -33,7 +33,8 @@
         "loginHeader": "Login",
         "loginPasswordRecover": "Forgot Password?",
         "personalMailLabel": "Email address",
-        "registerAddressShippingHeader": "Alternative shipping address:"
+        "registerAddressShippingHeader": "Alternative shipping address:",
+        "ordersWelcome": "Here you can find your orders sorted by date."
     },
     "detail": {
         "reviewLinkText": "",
