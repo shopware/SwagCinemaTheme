@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart.html.twig' %}
+
+{% block component_offcanvas_cart %}
+    {% set isCartNotEmpty = (page.cart.lineItems|length > 0) %}
+
+    <div class="offcanvas-cart">
+        {# Move flashbags block to top Offcanvas #}
+        {{ block('component_offcanvas_cart_flashbags') }}
+
+        {{ block('component_offcanvas_cart_header') }}
+
+        {% if isCartNotEmpty %}
+            {{ block('component_offcanvas_cart_items') }}
+        {% else %}
+            {{ block('component_offcanvas_cart_empty') }}
+        {% endif %}
+
+        {% if isCartNotEmpty %}
+            {{ block('component_offcanvas_summary') }}
+        {% endif %}
+
+        {{ block('component_offcanvas_cart_actions') }}
+    </div>
+
+    {{ block('component_offcanvas_cart_hidden_line_items_information') }}
+{% endblock %}
+
+{% block utilities_offcanvas_close_icon %}
+    {% sw_icon 'ic-back' style {'pack': 'cinema'} %}
+{% endblock %}

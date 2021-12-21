@@ -1,0 +1,23 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart-summary.html.twig' %}
+
+{% block component_offcanvas_summary_content_info %}
+    <div class="row offcanvas-shipping-info">
+        <span class="col-7 shipping-label shipping-cost">
+            {{ "checkout.summaryShipping"|trans|sw_sanitize }}
+            ({{ activeShipping.shippingMethod.translated.name }})
+        </span>
+
+        <span class="col-5 shipping-value shipping-cost">
+            + {{ activeShipping.shippingCosts.totalPrice|currency }}
+        </span>
+
+        <div class="col-12 offcanvas-shipping-selection">
+            {% if loop.first %}
+                <span
+                    {% if page.shippingMethods|length %}class="js-toggle-shipping-selection"{% endif %}>
+                    {{ "checkout.confirmChangeShipping"|trans|sw_sanitize }}
+                </span>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
