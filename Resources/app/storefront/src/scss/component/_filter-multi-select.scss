@@ -13,6 +13,10 @@
     }
 
     &-rating {
+        .filter-multi-select-list {
+            margin-top: 12px;
+        }
+
         .filter-panel-item-toggle .icon {
             margin-left: 110px;
         }
