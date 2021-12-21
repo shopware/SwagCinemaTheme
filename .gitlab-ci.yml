@@ -7,7 +7,7 @@
     # MYSQL_CMD: 'mysqld' # use $MYSQL8_CMD for mysql >= 8
 variables:
   THEME_NAME: "SwagCinemaTheme"
-  PLATFORM_BRANCH: "6.4.6.0"
+  PLATFORM_BRANCH: "6.4.7.0"
 
 include:
   project: 'shopware/6/product/platform'
