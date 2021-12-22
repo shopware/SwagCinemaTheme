@@ -3,8 +3,9 @@
     "author": "Shopware AG",
     "views": [
         "@Storefront",
-        "@Plugins",
-        "@SwagCinemaTheme"
+        "@SwagPayPal",
+        "@SwagCinemaTheme",
+        "@Plugins"
     ],
     "previewMedia": "app/storefront/src/assets/images/preview.png",
     "style": [

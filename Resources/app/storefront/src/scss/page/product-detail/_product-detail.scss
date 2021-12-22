@@ -8,6 +8,19 @@
     .custom-select {
         background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px;
     }
+
+    .form-row {
+        &.justify-content-end {
+            @extend .justify-content-start;
+            margin: 0;
+
+            .col-8 {
+                flex: 0 0 calc(100% - 60px);
+                max-width: calc(100% - 60px);
+                padding: 0;
+            }
+        }
+    }
 }
 
 .product-block-prices-grid {
@@ -262,6 +275,13 @@
 }
 
 [class*="product-detail-buy"] {
+    position: relative;
+
+    .product-wishlist {
+        width: 48px;
+        margin-top: 48px;
+    }
+
     .product-wishlist-action {
         width: 48px;
         height: 48px;
@@ -280,12 +300,9 @@
         display: none;
     }
 
-    .btn-buy,
-    .product-wishlist {
-        margin-top: 48px;
-    }
-
     .btn-buy {
+        margin-top: 48px;
+
         .icon {
             margin-right: 16px;
         }
