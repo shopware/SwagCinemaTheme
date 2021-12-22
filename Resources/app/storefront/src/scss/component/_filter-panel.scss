@@ -36,6 +36,10 @@
     position: relative !important;
     margin: 0px;
 
+    &-dropdown {
+        background-color: $white;
+    }
+
     .filter-panel-item-toggle {
         @include text-truncate();
 
