@@ -85,6 +85,10 @@
         }
     }
 
+    &.filter-boolean {
+        background-color: $white;
+    }
+
     &.show .filter-panel-item-toggle,
     &:not(.show) .filter-panel-item-toggle[aria-expanded=true] {
         &:not(:disabled) {
@@ -261,8 +265,7 @@
         &:not(.is--sidebar) {
             .filter-panel-items-container {
                 > * {
-                    flex: 1 0 140px;
-                    max-width: 300px;
+                    flex: 1 0 200px;
                 }
             }
         }
@@ -284,6 +287,16 @@
             transform: translateX(-50%);
         }
     }
+
+    .filter-panel {
+        &:not(.is--sidebar) {
+            .filter-panel-items-container {
+                > * {
+                    max-width: 224px;
+                }
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(md) {
@@ -298,7 +311,7 @@
 
     .offcanvas-filter {
         .filter-panel {
-            padding-bottom: 120px;
+            padding-bottom: 160px;
         }
     }
 }
