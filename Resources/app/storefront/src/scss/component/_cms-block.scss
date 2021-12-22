@@ -41,6 +41,14 @@
     }
 }
 
+.cms-block-product-three-column {
+    .cms-block-container-row {
+        > * {
+            margin-bottom: $spacer;
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .is-ctl-navigation {
         &:not(.modal-open) {
