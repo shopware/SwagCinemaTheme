@@ -10,10 +10,25 @@
         margin: 0;
     }
 
+    .checkout-main::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $sw-background-color;
+        z-index: -1;
+        width: 75vw;
+        height: 100%;
+        border-right: $checkout-divider-line;
+
+        @include media-breakpoint-down(md) {
+            content: none;
+        }
+    }
+
     .checkout {
         .checkout-aside {
             padding: $checkout-spacing-lg 0 $checkout-spacing-lg $checkout-spacing-lg;
-            position: relative;
 
             &-summary,
             &-products {
@@ -58,40 +73,27 @@
                 @extend .input-group-lg;
             }
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -9999px;
-                background-color: $gray-100;
-                z-index: -1;
-                width: 9999px;
-                height: 100%;
-                border-top: $checkout-divider-line;
-            }
-
             &::after {
                 content: '';
                 position: absolute;
                 top: 0;
-                left: 0;
+                right: 0;
                 background-color: $gray-100;
-                z-index: -1;
+                z-index: -2;
                 width: 100vw;
                 height: 100%;
                 border-top: $checkout-divider-line;
             }
 
+            @include media-breakpoint-only(md) {
+                &::after {
+                    left: calc(-1 *(100vw - 720px)/2);
+                }
+            }
 
             @include media-breakpoint-up(lg) {
-                &::before {
-                    content: none;
-                }
-
                 &::after {
-                    width: calc(50vw - 160px);
-                    min-height: 100vh;
-                    border-left: $checkout-divider-line;
+                    position: fixed;
                     border-top: none;
                 }
 
@@ -101,12 +103,6 @@
 
                 &-item {
                     padding: 20px 0;
-                }
-            }
-
-            @include media-breakpoint-up(xl) {
-                &::after {
-                    width: calc(50vw - 200px);
                 }
             }
         }
