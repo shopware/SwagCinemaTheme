@@ -4,6 +4,12 @@
             padding-right: 0 !important;
         }
 
+        .cms-section-default.full-width {
+            .cms-block-container {
+                padding-right: $grid-gutter-width / 2 !important;
+            }
+        }
+
         .cms-element-form,
         .cms-element-text {
             .card-title,
