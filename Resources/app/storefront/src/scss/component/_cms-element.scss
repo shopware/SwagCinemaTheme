@@ -43,6 +43,12 @@ $cms-element-product-listing-gutter-md-width: 20px;
     }
 }
 
+.cms-element-product-listing {
+    .cms-listing-col {
+        @include make-col(6);
+    }
+}
+
 @include media-breakpoint-up(md) {
     .cms-element-product-listing {
         .cms-listing-row {
