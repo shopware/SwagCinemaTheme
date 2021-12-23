@@ -33,6 +33,7 @@ $cart-item-img-size-sm: 80px;
     .quantity-select {
         color: $gray-400;
         font-weight: $font-weight-medium;
+        min-width: 80px;
     }
 
     .cart-item-tax-price,

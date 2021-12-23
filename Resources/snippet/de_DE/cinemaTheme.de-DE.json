@@ -50,6 +50,7 @@
         "welcome" : "Willkommen zurück",
         "welcomeText": "Sind Sie bereits Kunde?",
         "addressLoginToggle": "Klicken Sie hier, um sich anzumelden.",
-        "addressRegisterCardTitle": "Ich bin neu hier."
+        "addressRegisterCardTitle": "Ich bin neu hier.",
+        "shippingCosts": "Konfigurieren versandkosten"
     }
 }

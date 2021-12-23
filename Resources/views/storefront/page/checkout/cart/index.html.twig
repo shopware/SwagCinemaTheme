@@ -13,3 +13,43 @@
 {% block page_checkout_aside_actions %}
     {{ block('page_checkout_cart_action_proceed') }}
 {% endblock %}
+
+{% block page_checkout_cart_add_product_and_shipping %}
+    <div class="row">
+        {{ block('page_checkout_cart_add_product') }}
+
+        <div class="col-md-6">
+            <a class="btn btn-lg btn-secondary cart-shipping-costs-btn"
+               data-toggle="collapse"
+               href="#collapseShippingCost"
+               role="button"
+               aria-expanded="false"
+               aria-controls="collapseExample">
+                {{ "checkout.shippingCosts"|trans|sw_sanitize }}
+            </a>
+        </div>
+
+        {{ block('page_checkout_cart_shipping_costs') }}
+    </div>
+{% endblock %}
+
+{% block page_checkout_cart_shipping_costs_trigger %}
+{% endblock %}
+
+{% block page_checkout_cart_shipping_costs_form_group %}
+    <div class="collapse" id="collapseShippingCost">
+        {{ block('page_checkout_cart_shipping_costs_form_group_country') }}
+
+        <div class="row">
+            <div class="col-md-6">
+                {{ block('page_checkout_cart_shipping_costs_form_group_payment_method') }}
+            </div>
+
+            <div class="col-md-6">
+                {{ block('page_checkout_cart_shipping_costs_form_group_shipping_method') }}
+            </div>
+        </div>
+
+        <input type="hidden" name="redirectTo" value="frontend.checkout.cart.page">
+    </div>
+{% endblock %}
