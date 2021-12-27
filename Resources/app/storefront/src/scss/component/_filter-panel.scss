@@ -224,12 +224,14 @@
     padding: 32px 0px 24px 0px;
 }
 
-.filter-panel-wrapper-toggle {
+.btn.filter-panel-wrapper-toggle {
     @include button-variant($primary, $primary);
     text-align: left;
 
-    @include hover {
-        color: $primary;
+    &:hover {
+        .icon {
+            color: $white;
+        }
     }
 
     &.header-actions-btn {
