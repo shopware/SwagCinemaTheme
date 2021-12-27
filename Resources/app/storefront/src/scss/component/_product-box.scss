@@ -97,6 +97,7 @@ $box-image-height-img: 100%;
 .product-badges {
     position: unset;
     width: calc(100% - 24px);
+    z-index: 9;
 
     > div {
         display: inline-block;
