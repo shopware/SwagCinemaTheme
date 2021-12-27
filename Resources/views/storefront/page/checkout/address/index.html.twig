@@ -13,3 +13,18 @@
         </div>
     </div>
 {% endblock %}
+
+{% block page_checkout_address %}
+    {{ block('page_checkout_address_header') }}
+
+    {{ block('page_checkout_address_login_toggle') }}
+
+    {{ block('page_checkout_address_login') }}
+
+    {% if block('page_checkout_address_login_swag_amazon_pay_card') is defined %}
+        {{ block('page_checkout_address_login_swag_amazon_pay_card') }}
+    {% endif %}
+
+    {{ block('page_checkout_address_register') }}
+{% endblock %}
+

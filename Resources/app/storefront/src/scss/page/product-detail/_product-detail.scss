@@ -262,15 +262,6 @@
 }
 
 [class*="product-detail-buy"] {
-    position: relative;
-
-    .product-wishlist {
-        width: 48px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-
     .product-wishlist-action {
         width: 48px;
         height: 48px;
@@ -289,9 +280,12 @@
         display: none;
     }
 
-    .btn-buy {
+    .btn-buy,
+    .product-wishlist {
         margin-top: 48px;
+    }
 
+    .btn-buy {
         .icon {
             margin-right: 16px;
         }
@@ -484,6 +478,14 @@
         svg {
             top: 6px;
         }
+    }
+}
+
+#swag-amazon-pay-product-detail-wrapper {
+    > div.col-8 {
+        @include make-col(10);
+
+        margin-right: auto;
     }
 }
 
