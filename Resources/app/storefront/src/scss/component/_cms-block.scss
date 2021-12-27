@@ -1,9 +1,5 @@
 .is-ctl-navigation {
     &:not(.modal-open) {
-        .cms-block-container {
-            padding-right: 0 !important;
-        }
-
         .cms-section-default.full-width {
             .cms-block-container {
                 padding-right: $grid-gutter-width / 2 !important;
@@ -52,6 +48,12 @@
 @include media-breakpoint-up(md) {
     .is-ctl-navigation {
         &:not(.modal-open) {
+            .cms-block-form {
+                .cms-block-container {
+                    padding-top: $spacer * 4 !important;
+                }
+            }
+
             .cms-element-form,
             .cms-element-text {
                 .card-title,
@@ -78,9 +80,6 @@
 
     .is-ctl-navigation {
         &:not(.modal-open) {
-            .cms-block-container {
-                padding-top: $spacer * 5 !important;
-            }
 
             .cms-block-product-listing {
                 .cms-block-container {
@@ -104,6 +103,17 @@
         .cms-block-sidebar-filter {
             .cms-block-container {
                 padding-top: 0 !important;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .is-ctl-navigation {
+        &:not(.modal-open) {
+            .cms-block-container {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
         }
     }
