@@ -57,6 +57,15 @@
             padding-bottom: 10px;
         }
 
+        .confirm-card-title {
+            display: flex;
+            justify-content: space-between;
+
+            .card-actions {
+                font-size: $font-size-base;
+            }
+        }
+
         .payment-method-description,
         .shipping-method-description {
             strong {
@@ -91,6 +100,12 @@
 
             @include media-breakpoint-up(md) {
                 border-top: none;
+            }
+        }
+
+        .confirm-checkout-collapse-trigger {
+            svg {
+                top: 5px;
             }
         }
     }
