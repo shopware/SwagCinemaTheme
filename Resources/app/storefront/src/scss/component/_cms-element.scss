@@ -99,3 +99,9 @@ $cms-element-product-listing-gutter-md-width: 20px;
         @extend .align-self-start;
     }
 }
+
+.cms-element-image {
+    .cms-image {
+        width: 100%;
+    }
+}
