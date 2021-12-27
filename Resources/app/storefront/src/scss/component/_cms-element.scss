@@ -36,10 +36,8 @@ $cms-element-product-listing-gutter-md-width: 20px;
 }
 
 .cms-element-product-listing-actions {
-    @include media-breakpoint-up(md) {
-        div.sorting[data-listing-sorting="true"] {
-            margin-top: $spacer * 1.25;
-        }
+    div.sorting[data-listing-sorting="true"] {
+        margin-top: $spacer * 1.25;
     }
 }
 
