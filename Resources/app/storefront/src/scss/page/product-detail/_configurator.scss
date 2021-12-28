@@ -45,8 +45,8 @@
             position: absolute;
             bottom: -15px;
             left: 0;
-            border-left: $border-width solid $white;
-            border-right:  $border-width solid $white;
+            border-left: $border-width solid transparent;
+            border-right:  $border-width solid transparent;
         }
 
         &.is-display-text {
