@@ -115,9 +115,11 @@
 @include media-breakpoint-down(md) {
     .is-ctl-navigation {
         &:not(.modal-open) {
-            .cms-block-container {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+            .cms-section-default.boxed {
+                .cms-block-container {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
             }
         }
     }
