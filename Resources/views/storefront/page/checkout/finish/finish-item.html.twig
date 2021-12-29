@@ -1,0 +1,21 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/finish-item.html.twig' %}
+
+{% block page_checkout_item_quantity %}
+{% endblock %}
+
+{% block page_checkout_item_info_label %}
+    {% if lineItem.type == PRODUCT_LINE_ITEM_TYPE %}
+        <a href="{{ seoUrl('frontend.detail.page', {'productId': lineItem.referencedId}) }}"
+           class="cart-item-label"
+           title="{{ lineItem.label }}"
+        >
+            {{ lineItem.quantity }}x
+            {{ lineItem.label|u.truncate(60, '...', false) }}
+        </a>
+    {% else %}
+        <div class="cart-item-label">
+            {{ lineItem.quantity }}x
+            {{ lineItem.label|u.truncate(60, '...', false) }}
+        </div>
+    {% endif %}
+{% endblock %}
