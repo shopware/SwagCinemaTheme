@@ -33,7 +33,8 @@
         "loginHeader": "Anmeldung",
         "loginPasswordRecover": "Passwort vergessen?",
         "personalMailLabel": "E-Mail-Addresse",
-        "registerAddressShippingHeader": "Abweichende Lieferadresse:"
+        "registerAddressShippingHeader": "Abweichende Lieferadresse:",
+        "ordersWelcome": "Hier finden sie ihre bestellungen sortiert nach datum."
     },
     "detail": {
         "reviewLinkText": "",
