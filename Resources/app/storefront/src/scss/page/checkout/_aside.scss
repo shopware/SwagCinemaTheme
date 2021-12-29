@@ -27,6 +27,18 @@
     }
 
     .checkout {
+        .checkout-container {
+            .checkout-aside {
+                @extend .offset-md-0;
+                @extend .col-md-12;
+                @extend .col-lg-4;
+
+                @include media-breakpoint-up(lg) {
+                    padding-left: $checkout-spacing-lg;
+                }
+            }
+        }
+
         .checkout-aside {
             padding: $checkout-spacing-lg 0 $checkout-spacing-lg $checkout-spacing-lg;
 

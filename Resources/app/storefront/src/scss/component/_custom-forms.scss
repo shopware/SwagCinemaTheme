@@ -62,6 +62,12 @@
                 .icon {
                     height: 20px;
                 }
+
+                &:hover{
+                    .icon {
+                        color: $white;
+                    }
+                }
             }
         }
     }

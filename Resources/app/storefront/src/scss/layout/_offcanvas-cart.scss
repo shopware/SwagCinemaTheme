@@ -27,6 +27,10 @@ $offcanvas-cart-spacing: 20px;
             margin: 0;
             padding-top: 10px;
 
+            .cart-item:last-child {
+                border-bottom: none;
+            }
+
             .cart-item-row {
                 position: relative;
             }
