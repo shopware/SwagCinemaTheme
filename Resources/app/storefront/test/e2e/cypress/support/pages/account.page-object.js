@@ -72,6 +72,10 @@ export default class AccountPageObject {
         return cy.get(`${this.elements.loginSubmit} [type="submit"]`)
     }
 
+    getLoginCollapse() {
+        return cy.get('.login-collapse-toggle')
+    }
+
     login(email = 'test@example.com', pw = 'shopware') {
         this.getEmail().type(email)
         this.getPassword().type(pw)

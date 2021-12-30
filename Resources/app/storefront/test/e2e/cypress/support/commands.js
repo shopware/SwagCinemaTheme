@@ -42,14 +42,6 @@ Cypress.Commands.add('takeSnapshot', (title, selectorToCheck = null, width = {wi
  * @name cleanUpPreviousState
  * @function
  */
-Cypress.Commands.overwrite('cleanUpPreviousState', (orig) => {
-    if (Cypress.env('localUsage')) {
-        return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console e2e:restore-db`)
-            .its('code').should('eq', 0);
-    }
-
-    return orig();
-});
 
 /**
  * Creates a variant product based on given fixtures "product-variants.json", 'tax,json" and "property.json"
@@ -144,4 +136,31 @@ Cypress.Commands.add('setShippingMethodInSalesChannel', (name, salesChannel = 'S
             },
         });
     });
+});
+
+/**
+ *
+ */
+Cypress.Commands.add('initializePluginConfig', (config, endpoint) => {
+    return cy.fixture(config).then((data) => {
+        return cy.requestAdminApi(
+            'POST',
+            endpoint,
+            {
+                data
+            }
+        )
+    });
+});
+
+Cypress.Commands.add('updatePluginConfig', (data, salesChannelId) => {
+    return cy.requestAdminApi(
+        'POST',
+        `/api/_action/system-config?salesChannelId=${salesChannelId}`,
+        {
+            data: {
+                [`SwagAmazonPay.settings.${data.key}`]: data.value
+            }
+        }
+    );
 });

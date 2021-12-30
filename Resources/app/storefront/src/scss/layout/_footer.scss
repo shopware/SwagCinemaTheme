@@ -11,6 +11,11 @@
 
     &-main {
         overflow: hidden;
+
+        .paypal-mark {
+            margin: 0 4px;
+            padding: 7px;
+        }
     }
 
     &-minimal,
@@ -91,6 +96,7 @@
         gap: 8px;
         justify-content: center;
         margin-bottom: 8px;
+
         .icon > svg {
             top: 0;
         }
@@ -119,9 +125,12 @@
     }
 
     &-logos {
+        gap: 16px;
+
         .footer-logo {
             background-color: $white;
             padding: 10px;
+            border-radius: 3px;
         }
     }
 
@@ -131,6 +140,29 @@
             width: 18px;
             height: 18px;
         }
+    }
+
+    &-logo {
+        margin-right: 0;
+        margin-bottom: 0;
+
+        &.col-4 {
+            @extend .col-auto;
+
+            margin-top: 0 !important;
+            border-radius: 3px;
+            padding: 5px 10px;
+            order: 1;
+
+            iframe {
+                padding: 10px;
+                height: 51px !important;
+            }
+        }
+    }
+
+    &-logo-image {
+        max-height: 36px;
     }
 }
 
@@ -180,6 +212,12 @@
 
     .footer-service-menu-list {
         text-align: left;
+    }
+
+    .footer-logo {
+        &.col-4 {
+            min-width: 443px;
+        }
     }
 }
 

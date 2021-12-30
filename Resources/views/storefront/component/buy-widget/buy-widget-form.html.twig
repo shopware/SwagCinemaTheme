@@ -64,3 +64,17 @@
         {{ "detail.addProduct"|trans|sw_sanitize }}
     </button>
 {% endblock %}
+
+{% block buy_widget_buy_button_container %}
+    {{ parent() }}
+
+    {% if config('core.cart.wishlistEnabled') %}
+        {% block buy_widget_wishlist %}
+            {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                showText: true,
+                size: 'md',
+                productId: product.id
+            } %}
+        {% endblock %}
+    {% endif %}
+{% endblock %}

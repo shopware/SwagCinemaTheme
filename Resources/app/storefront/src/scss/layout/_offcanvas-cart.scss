@@ -127,6 +127,11 @@ $offcanvas-cart-spacing: 20px;
                 &:hover {
                     text-decoration: none;
                 }
+
+                &[data-swag-paypal-express-button="true"],
+                &[data-swag-paypal-installment-banner="true"] {
+                    padding: 0;
+                }
             }
         }
 

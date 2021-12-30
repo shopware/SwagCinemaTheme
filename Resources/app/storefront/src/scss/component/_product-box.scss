@@ -20,6 +20,8 @@ $box-image-height-img: 100%;
         border-radius: 8px;
         width: 40px;
         text-align: center;
+        margin-left: auto;
+        margin-right: 10px;
     }
 
     .btn-buy {
@@ -187,8 +189,16 @@ $box-image-height-img: 100%;
 .product-action {
     position: absolute;
     bottom: 16px;
-    right: 16px;
+    right: 9px;
     z-index: 1;
+    padding: 0 3px;
+    width: calc(100% - 18px);
+
+    [data-swag-paypal-express-button="true"] {
+        padding-top: 0 !important;
+        line-height: 0;
+        margin-top: 12px;
+    }
 }
 
 .product-image-wrapper {
@@ -238,6 +248,11 @@ $box-image-height-img: 100%;
             .product-image-wrapper {
                 min-height: 340px;
             }
+        }
+
+        .btn-buy,
+        .btn-light {
+            margin-right: 0;
         }
     }
 
@@ -294,7 +309,22 @@ $box-image-height-img: 100%;
 
     .product-action {
         bottom: 36px;
-        right: 36px;
+        right: 20px;
+        width: calc(100% - 40px);
+        padding: 0 16px;
+
+        .buy-widget {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        [data-swag-paypal-express-button=true] {
+            order: -1;
+            margin-top: 0;
+            width: calc(100% - 49px);
+            margin-right: 9px;
+        }
     }
 }
 
@@ -351,5 +381,17 @@ $box-image-height-img: 100%;
 
     .product-action {
         display: none;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .product-action {
+        padding: 0 22px;
+        bottom: 45px;
+
+        [data-swag-paypal-express-button=true] {
+            margin-right: 30px;
+            padding-left: 70px;
+        }
     }
 }
