@@ -1,0 +1,32 @@
+{% sw_extends '@Storefront/storefront/component/product/quickview/minimal.html.twig' %}
+
+{% block component_product_quickview_minimal_top %}
+    {% set product = page.product %}
+
+    <div class="row quickview-minimal-top">
+        {{ block ('component_product_quickview_minimal_img') }}
+
+        {% block component_product_quickview_minimal_product %}
+            <div class="col-12 col-md-6 quickview-minimal-product">
+                {{ block('component_product_quickview_minimal_product_name') }}
+
+                {{ block('component_product_quickview_minimal_product_number') }}
+
+                {{ block('component_product_quickview_minimal_product_manufacturer') }}
+
+                {# Bring description from modal footer to body#}
+                {% if page.product.translated.description %}
+                    {{ block('component_product_quickview_minimal_footer_heading') }}
+
+                    {{ block('component_product_quickview_minimal_footer_text') }}
+                {% endif %}
+
+                {# Bring component_product_properties_table from product detail to modal#}
+                {{ block('component_product_properties_table', '@Storefront/storefront/component/product/properties.html.twig') }}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_product_quickview_minimal_footer %}
+{% endblock %}
