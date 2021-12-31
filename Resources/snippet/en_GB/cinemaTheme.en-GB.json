@@ -52,6 +52,8 @@
         "welcomeText": "If you already have an account.",
         "addressLoginToggle": "Click here to login.",
         "addressRegisterCardTitle": "I am new here.",
-        "shippingCosts": "Configure shipping costs"
+        "shippingCosts": "Configure shipping costs",
+        "orderItemPaymentMethod": "Payment method",
+        "orderItemShippingMethod": "Shipping method"
     }
 }

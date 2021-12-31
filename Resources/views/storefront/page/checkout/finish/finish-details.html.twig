@@ -1,0 +1,51 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/finish-details.html.twig' %}
+
+{% block page_checkout_finish_order %}
+    <div class="row checkout-finish-info">
+        {{ block('page_checkout_finish_order_address') }}
+    </div>
+
+    <div class="row checkout-finish-info">
+        {% block page_checkout_finish_order_details %}
+            <div class="col-md-6 finish-order-details">
+                <div class="card checkout-card">
+                    <div class="card-body">
+                        {% block page_checkout_finish_order_payment_method %}
+                            <div class="card-title">
+                                {{ "checkout.finishInfoPayment"|trans|sw_sanitize }}
+                            </div>
+                            <p>
+                                {{ page.order.transactions.last.paymentMethod.translated.name }}
+                            </p>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 finish-order-details">
+                <div class="card checkout-card">
+                    <div class="card-body">
+                        {% block page_checkout_finish_order_dispatch_method %}
+                            <div class="card-title finish-order-shipping">
+                                {{ "checkout.finishInfoShipping"|trans|sw_sanitize }}
+                            </div>
+                            <p>
+                                {{ page.order.deliveries.first.shippingMethod.translated.name }}
+                            </p>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_finish_action_back %}
+    <div class="finish-back-to-shop-button">
+        <a href="{{ path('frontend.home.page') }}"
+           class="btn btn-secondary btn-back-to-shop"
+           title="{{ "checkout.finishButtonBackToShop"|trans|striptags }}">
+            {{ "checkout.finishButtonBackToShop"|trans|striptags }}
+        </a>
+    </div>
+{% endblock %}
