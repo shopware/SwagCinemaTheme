@@ -4,6 +4,8 @@
     "views": [
         "@Storefront",
         "@SwagPayPal",
+        "@SwagCmsExtensions",
+        "@SwagCustomizedProducts",
         "@SwagCinemaTheme",
         "@Plugins"
     ],

@@ -35,6 +35,12 @@
     padding: $modal-footer-padding;
 }
 
+.modal.swag-cms-extensions-quickview-modal {
+    .modal-dialog {
+        max-width: 800px;
+    }
+}
+
 // Scale up the modal
 @include media-breakpoint-up(sm) {
     .modal-dialog {
@@ -52,7 +58,6 @@
         }
     }
 }
-
 
 @include media-breakpoint-down(md) {
     .modal-dialog {
@@ -87,6 +92,14 @@
     .modal-body {
         .btn-danger {
             width: 100%;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .modal.swag-cms-extensions-quickview-modal {
+        .modal-dialog {
+            max-width: 1200px;
         }
     }
 }
