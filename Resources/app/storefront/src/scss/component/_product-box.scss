@@ -191,6 +191,12 @@ $box-image-height-img: 100%;
     min-height: 42px;
 }
 
+.box-wishlist {
+    .product-price-wrapper {
+        min-height: unset
+    }
+}
+
 .product-action {
     position: absolute;
     bottom: 16px;
@@ -235,6 +241,14 @@ $box-image-height-img: 100%;
     .icon {
         width: 100%;
         height: 100%;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .box-wishlist {
+        .card-body-wishlist {
+            padding: $spacer 9px;
+        }
     }
 }
 

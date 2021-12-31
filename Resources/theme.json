@@ -195,6 +195,36 @@
                 "value": "app/storefront/src/assets/images/maintenance-desktop.png",
                 "editable": true,
                 "block": "Maintenance Page"
+            },
+            "sw-wishlist-empty": {
+                "label": {
+                    "en-GB": "Mobile empty state",
+                    "de-DE": "Mobile empty state"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/empty-wishlist-mobile.png",
+                "editable": true,
+                "block": "wishlist"
+            },
+            "sw-wishlist-empty-tablet": {
+                "label": {
+                    "en-GB": "Tablet empty state",
+                    "de-DE": "Tablet empty state"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/empty-wishlist-tablet.png",
+                "editable": true,
+                "block": "wishlist"
+            },
+            "sw-wishlist-empty-desktop": {
+                "label": {
+                    "en-GB": "Desktop empty state",
+                    "de-DE": "Desktop empty state"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/empty-wishlist-desktop.png",
+                "editable": true,
+                "block": "wishlist"
             }
         }
     }
