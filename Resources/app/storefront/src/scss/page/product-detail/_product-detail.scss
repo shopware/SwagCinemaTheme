@@ -277,9 +277,6 @@
 [class*="product-detail-buy"] {
     .product-wishlist {
         width: 48px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
     }
 
     .product-wishlibuy-widget-containerst-btn-content-md {
@@ -415,6 +412,13 @@
     > .col-sm-4 {
         @extend .col-12;
         @extend .col-lg-4;
+    }
+}
+
+[data-swag-paypal-express-button].is-disabled {
+    &::after {
+        left: 0;
+        width: 100%;
     }
 }
 

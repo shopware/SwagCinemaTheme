@@ -28,8 +28,11 @@ $box-image-height-img: 100%;
         @include button-variant($secondary, $secondary);
         @include disable-button($disabled-btn-secondary-bg, $disabled-btn-color, $disabled-btn-secondary-border-color);
 
+        margin-top: 0;
+
         .icon {
             color: $white;
+            margin-right: 0;
 
             > svg {
                 left: 1px;

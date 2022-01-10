@@ -167,6 +167,14 @@
     }
 }
 
+.is-act-checkoutregisterpage {
+    [data-swag-paypal-express-button="true"],
+    [data-swag-paypal-installment-banner="true"] {
+        @extend .col-12;
+        @extend .col-md-5;
+    }
+}
+
 @include media-breakpoint-up(md) {
     .account-register-aside {
         padding-top: 50px;
