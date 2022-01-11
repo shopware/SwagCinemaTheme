@@ -7,6 +7,7 @@
 .address-editor-select,
 .address-editor-edit,
 .address-editor-create {
+    margin-top: 20px;
     cursor: pointer;
     @extend .btn-outline-secondary;
 

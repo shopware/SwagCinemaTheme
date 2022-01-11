@@ -21,10 +21,10 @@
 
             {% block  page_checkout_confirm_address_billing_actions_link %}
                 <a href="{{ path('frontend.account.address.edit.page', {'addressId': billingAddress.id}) }}"
-                   title="{{ "account.overviewChangeBilling"|trans|striptags }}"
+                   title="{{ "account.overviewChangeAction"|trans|striptags }}"
                    data-address-editor="true"
                    data-address-editor-options='{{ addressEditorOptions|json_encode }}'>
-                    {{ "account.overviewChangeBilling"|trans|sw_sanitize }}
+                    {{ "account.overviewChangeAction"|trans|sw_sanitize }}
                 </a>
             {% endblock %}
         </div>
@@ -46,10 +46,10 @@
 
             {% block  page_checkout_confirm_address_shipping_actions_link %}
                 <a href="{{ path('frontend.account.address.edit.page', {'addressId': shippingAddress.id}) }}"
-                   title="{{ "account.overviewChangeShipping"|trans|striptags }}"
+                   title="{{ "account.overviewChangeAction"|trans|striptags }}"
                    data-address-editor="true"
                    data-address-editor-options='{{ addressEditorOptions|json_encode }}'>
-                    {{ "account.overviewChangeShipping"|trans|sw_sanitize }}
+                    {{ "account.overviewChangeAction"|trans|sw_sanitize }}
                 </a>
             {% endblock %}
         </div>

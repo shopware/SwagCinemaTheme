@@ -7,7 +7,7 @@ $checkout-divider-line: 1px solid $table-border-color;
     .container-main,
     .checkout {
         &-main {
-            padding: $checkout-spacing-lg 20px 150px;
+            padding: $checkout-spacing-md 20px 150px;
             @extend .pr-lg-5;
         }
 
