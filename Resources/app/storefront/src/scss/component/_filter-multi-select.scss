@@ -33,6 +33,10 @@
         max-height: inherit;
         overflow-y: auto;
     }
+
+    &-count {
+        display: none;
+    }
 }
 
 .is--sidebar {
