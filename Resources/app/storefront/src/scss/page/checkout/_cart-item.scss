@@ -44,7 +44,6 @@ $cart-item-img-size-sm: 80px;
         @include media-breakpoint-down(sm) {
             font-size: $font-size-base;
         }
-
     }
 
     .cart-item-total-price {
@@ -93,6 +92,32 @@ $cart-item-img-size-sm: 80px;
 
         @include media-breakpoint-down(sm) {
             font-size: $font-size-base;
+        }
+    }
+
+    .product-wishlist {
+        width: auto;
+
+        .product-wishlist-action {
+            margin-top: 0;
+            border: none;
+            width: 200px;
+            justify-content: left;
+
+            .icon-wishlist {
+                color: $sw-text-color;
+
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+
+        &-btn-content {
+            font-size: $font-size-base;
+            text-decoration: none;
+            color: $sw-text-color;
         }
     }
 
