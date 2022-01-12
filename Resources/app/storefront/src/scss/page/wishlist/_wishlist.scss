@@ -1,0 +1,129 @@
+.is-ctl-wishlist {
+    .container-main {
+        padding-top: 0;
+    }
+
+    .cms-element-product-listing {
+        margin-top: 40px;
+        overflow-x: hidden;
+
+        > .cms-listing-row {
+            justify-content: center;
+        }
+    }
+
+    .container {
+        .cms-element-product-listing {
+            > .cms-listing-row {
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+.wishlist {
+
+    &-page {
+        > .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .cms-element-product-listing-wrapper {
+            width: 100%;
+        }
+    }
+
+    &-header-container {
+        background-color: $gray-100;
+        padding: 46px 0 24px;
+        border-bottom: $border-width-sm solid $border-color;
+        width: 100%;
+    }
+
+    &-headline {
+        display: block;
+        font-size: $h5-font-size;
+        text-align: left;
+        height: unset;
+        font-weight: $font-weight-semibold;
+        line-height: 48px;
+    }
+
+    &-body {
+        text-align: center;
+        padding-left: $grid-gutter-width / 2;
+        padding-right: $grid-gutter-width / 2;
+    }
+
+    &-listing-col {
+        max-width: 754px !important;
+        flex-basis: 100% !important;
+        margin-top: 0;
+
+        &.cms-listing-col {
+            margin-bottom: 80px;
+        }
+
+        .wishlist-listing-header {
+            font-weight: $font-weight-semibold;
+            font-size: 28px;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+
+        .wishlist-listing-description {
+            font-weight: $font-weight-medium;
+        }
+    }
+
+    &-listing-empty {
+        height: unset !important;
+        max-height: unset;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .wishlist {
+        &-header-container {
+            padding: 73px 0 54px;
+        }
+
+        &-listing-col {
+            .wishlist-listing-header {
+                font-size: 44px;
+                margin-bottom: 30px;
+                margin-top: 0;
+            }
+
+            .wishlist-listing-description {
+                font-size: 1rem;
+                color: $gray-700;
+                font-weight: $font-weight-semibold;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .is-ctl-wishlist {
+        .cms-element-product-listing {
+            margin-top: 80px;
+        }
+    }
+
+    .wishlist {
+        &-header-container {
+            padding: 100px 0 78px;
+        }
+        &-headline {
+            font-size: $h3-font-size;
+        }
+
+        &-listing-col {
+            .wishlist-listing-header {
+                font-size: 56px;
+            }
+        }
+    }
+}

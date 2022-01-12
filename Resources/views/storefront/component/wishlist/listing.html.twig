@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/component/wishlist/listing.html.twig' %}
+
+{% block element_product_listing_col_empty_wishlist %}
+    <div>
+        <picture>
+            {% if theme_config('sw-wishlist-empty') %}
+                <source srcset="{{ theme_config('sw-wishlist-empty') |sw_encode_url }}"
+                        media="(max-width: 375px)">
+            {% endif %}
+
+            {% if theme_config('sw-wishlist-empty') %}
+                <source srcset="{{ theme_config('sw-wishlist-empty-tablet') |sw_encode_url }}"
+                        media="(min-width: 376px) and (max-width: {{ theme_config('breakpoint.lg') - 1 }}px)">
+            {% endif %}
+
+            {% if theme_config('sw-wishlist-empty') %}
+                <img src="{{ theme_config('sw-wishlist-empty-desktop') |sw_encode_url }}"
+                     alt="{{ "wishlist.wishlistEmptyDescription"|trans|striptags }}"
+                     class="mx-auto d-block wishlist-listing-empty"/>
+            {% endif %}
+        </picture>
+    </div>
+
+    <div class="wishlist-body">
+        <h1 class="wishlist-listing-header">{{ "wishlist.wishlistEmptyHeader"|trans }}</h1>
+        <p class="wishlist-listing-description">{{ "wishlist.wishlistEmptyDescription"|trans }}</p>
+    </div>
+{% endblock %}

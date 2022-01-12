@@ -29,10 +29,21 @@ Styling for productbox component.
     }
 }
 
+.product-wishlist-btn-remove {
+    position: relative;
+    top: -10px;
+    right: 10px;
+    height: unset;
+}
+
+.product-wishlist-btn-remove,
+.product-wishlist-action-circle {
+    background: transparent;
+}
+
 .product-wishlist-action-circle {
     height: auto;
     width: auto;
-    background: transparent;
     border-radius: unset;
     position: unset;
     padding: 0;
@@ -46,5 +57,11 @@ Styling for productbox component.
         .icon {
             color: $primary;
         }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .product-wishlist-btn-remove {
+        right: 0;
     }
 }
