@@ -79,6 +79,41 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
                 color: $gray-400;
             }
         }
+
+        &.show,
+        &:not(.show)[aria-expanded=true] {
+            &:not(:disabled) {
+                @include border-bottom-radius(0);
+                color: $sw-text-color;
+
+                border-bottom-color: transparent;
+                border-bottom: none;
+                padding-bottom: 3px;
+            }
+
+            + .filter-panel-item-dropdown {
+                border-color: $primary;overflow: hidden;
+                padding: 0;
+            }
+        }
+
+        &.show {
+            + .filter-panel-item-dropdown[data-popper-placement^='bottom'] {
+                @include border-bottom-radius(8px);
+                @include border-top-radius(0);
+
+                border-color: $primary;
+                margin: 0;
+            }
+
+            + .filter-panel-item-dropdown[data-popper-placement^='top'] {
+                border-top: $border-width solid $secondary;
+            }
+
+            .icon {
+                transform: rotate(180deg);
+            }
+        }
     }
 
     &.filter-range {
@@ -95,47 +130,12 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
     &.filter-boolean {
         background-color: $white;
     }
-
-    &.show .filter-panel-item-toggle,
-    &:not(.show) .filter-panel-item-toggle[aria-expanded=true] {
-        &:not(:disabled) {
-            @include border-bottom-radius(0);
-
-            color: $sw-text-color;
-            border-bottom-color: transparent;
-        }
-
-        + .filter-panel-item-dropdown {
-            border-color: $primary;
-            overflow: hidden;
-            padding: 0;
-        }
-    }
-
-    &.show .filter-panel-item-toggle {
-        + .filter-panel-item-dropdown[x-placement^='bottom'] {
-            @include border-bottom-radius(8px);
-            @include border-top-radius(0);
-
-            border-color: $primary;
-            margin: 0;
-        }
-
-        + .filter-panel-item-dropdown[x-placement^='top'] {
-            border-top: $border-width solid $secondary;
-        }
-
-        .icon {
-            transform: rotate(180deg);
-        }
-    }
 }
 
 .is--sidebar .filter-panel-item-dropdown,
 .filter-panel-item-dropdown {
     width: 100%;
     min-width: 0;
-    top: -12px !important;
     padding-top: 0;
     border: $border-width solid $primary;
     border-top: 0;

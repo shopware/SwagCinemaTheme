@@ -10,19 +10,23 @@
         margin: 0;
     }
 
-    .checkout-main::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: $sw-background-color;
-        z-index: -1;
-        width: 75vw;
-        height: 100%;
-        border-right: $checkout-divider-line;
+    .checkout-main {
+        position: relative;
 
-        @include media-breakpoint-down(md) {
-            content: none;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $sw-background-color;
+            z-index: -1;
+            width: 75vw;
+            height: 100%;
+            border-right: $checkout-divider-line;
+
+            @include media-breakpoint-down(md) {
+                content: none;
+            }
         }
     }
 

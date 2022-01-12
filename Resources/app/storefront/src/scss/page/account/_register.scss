@@ -24,6 +24,7 @@
 
     &-aside {
         @extend .col-lg-5;
+        position: relative;
 
         &::before {
             content: '';
@@ -60,8 +61,10 @@
                 text-decoration: underline;
             }
 
-            .login-submit .btn-primary {
-                @extend .btn-secondary, .btn-block;
+            .login-submit {
+                .btn-primary {
+                    @extend .btn-secondary, .w-100;
+                }
             }
         }
 

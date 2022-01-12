@@ -102,6 +102,10 @@
                     width: 36px;
                     border-radius: 8px;
                     border-color: $border-color-bold;
+
+                    .icon {
+                        margin-top: -2px;
+                    }
                 }
 
                 .btn .icon > svg {

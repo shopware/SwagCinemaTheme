@@ -5,7 +5,7 @@
     <li class="nav-item">
         <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
            id="{{ descriptionTabId }}"
-           data-toggle="tab"
+           data-bs-toggle="tab"
            href="{{ descriptionTabHref }}"
            role="tab"
            aria-controls="{{ descriptionTabContent }}"
@@ -37,7 +37,7 @@
         <li class="nav-item">
             <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link review-tab"
                id="{{ reviewTabId }}"
-               data-toggle="tab"
+               data-bs-toggle="tab"
                href="{{ reviewTabHref }}"
                role="tab"
                aria-controls="{{ reviewTabContent }}"

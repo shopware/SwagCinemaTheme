@@ -1,30 +1,11 @@
-.custom-switch {
-    .custom-control-label::before {
-        background-color: $sw-text-color;
-        border-color: $sw-text-color;
-        top: 2px;
-    }
-
-    .custom-control-label::after {
-        background-color: $white;
-        height: 10px;
-        width: 10px;
-        top: 5px;
-        left: -36px;
-    }
-
-    .custom-control-input:checked ~ .custom-control-label {
-        &::after {
-            background-color: $custom-control-indicator-bg;
-            transform: translateX(0.6rem);
-        }
-    }
-}
-
-.custom-select {
+.form-select {
     font-weight: 400;
-    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px $input-bg;
+    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 8px center/22px 10px $input-bg;
     background-position-y: 15px;
+
+    &-lg {
+        background-position-y: 18px;
+    }
 
     &:focus {
         box-shadow: none;
@@ -39,11 +20,9 @@
         }
 
         &:focus {
-            + .input-group-append {
-                .btn {
-                    background: $input-focus-border-color;
-                    border-color: $input-focus-border-color;
-                }
+            + .btn {
+                background: $input-focus-border-color;
+                border-color: $input-focus-border-color;
             }
         }
     }

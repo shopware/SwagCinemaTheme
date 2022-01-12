@@ -42,7 +42,7 @@
 
 {% block component_review_filter_checkbox_label %}
     {# Remove count after point rating text #}
-    <label class="custom-control-label text-nowrap"
+    <label class="form-check-label text-nowrap"
            for="reviewRating{{ matrix.points }}">
         {{ "detail.review#{matrix.points}PointRatingText"|trans|sw_sanitize }}
     </label>

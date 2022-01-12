@@ -1,0 +1,9 @@
+// Sizing
+//
+// Remix the default form control sizing classes into new ones for easier
+// manipulation.
+
+.input-group-lg > .btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

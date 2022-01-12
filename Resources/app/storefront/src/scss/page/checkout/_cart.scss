@@ -3,7 +3,7 @@ $checkout-cart-spacing: 32px;
 .is-act-cartpage {
     .checkout {
         .checkout-main {
-            @extend .pr-lg-5;
+            @extend .pe-lg-5;
             margin-bottom: 0;
             padding: $checkout-spacing-sm $checkout-spacing-sm $checkout-spacing-md;
 
@@ -54,10 +54,10 @@ $checkout-cart-spacing: 32px;
 
         .cart-add-product {
             max-width: none;
+        }
 
-            >.input-group {
-                @extend .input-group-lg;
-            }
+        .input-group {
+            @extend .input-group-lg;
         }
     }
 
@@ -69,9 +69,7 @@ $checkout-cart-spacing: 32px;
         @extend .col-md-12;
         padding-top: $checkout-cart-spacing;
 
-        .custom-select {
-            @extend .custom-select-lg;
-
+        .form-select {
             &[aria-expanded=true] + .dropdown-menu {
                 width: 100%;
             }

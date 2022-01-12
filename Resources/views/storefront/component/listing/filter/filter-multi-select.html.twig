@@ -1,9 +1,27 @@
 {% sw_extends '@Storefront/storefront/component/listing/filter/filter-multi-select.html.twig' %}
 
-{% block component_filter_multi_select_count %}
-    <span class="filter-multi-select-count"></span>
-{% endblock %}
-
 {% block component_filter_multi_select_toggle_icon %}
     {% sw_icon 'ic-arrow-down' style {'pack' : 'cinema'} %}
+{% endblock %}
+
+{% block component_filter_multi_select_toggle %}
+    <button class="filter-panel-item-toggle btn"
+            aria-expanded="false"
+    {% if sidebar %}
+        data-bs-toggle="collapse"
+        data-bs-target="#{{ filterItemId }}"
+    {% else %}
+        data-bs-toggle="dropdown"
+        data-boundary="viewport"
+        data-bs-offset="0,0"
+        data-bs-reference="parent"
+        aria-haspopup="true"
+    {% endif %}>
+
+        {{ block('component_filter_multi_select_display_name') }}
+
+        {{ block('component_filter_multi_select_count') }}
+
+        {{ block('component_filter_multi_select_toggle_icon') }}
+    </button>
 {% endblock %}

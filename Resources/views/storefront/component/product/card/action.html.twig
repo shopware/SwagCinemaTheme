@@ -1,18 +1,22 @@
 {% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
 
 {% block page_product_detail_product_buy_button %}
-    <button class="btn btn-block btn-buy"
-            title="{{ "listing.boxAddProduct"|trans|striptags }}">
-        {% sw_icon 'ic-cart' style {'pack': 'cinema'} %}
-        {{ "listing.boxAddProduct"|trans|sw_sanitize }}
-    </button>
+    <div class="d-grid">
+        <button class="btn btn-buy"
+                title="{{ "listing.boxAddProduct"|trans|striptags }}">
+            {% sw_icon 'ic-cart' style {'pack': 'cinema'} %}
+            {{ "listing.boxAddProduct"|trans|sw_sanitize }}
+        </button>
+    </div>
 {% endblock %}
 
 {% block component_product_box_action_detail %}
-    <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
-       class="btn btn-block btn-light"
-       title="{{ "listing.boxProductDetails"|trans|striptags }}">
-        {% sw_icon 'ic-chevron-right' style {'pack': 'cinema'} %}
-        {{ "listing.boxProductDetails"|trans|sw_sanitize }}
-    </a>
+    <div class="d-grid">
+        <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+           class="btn btn-light"
+           title="{{ "listing.boxProductDetails"|trans|striptags }}">
+            {% sw_icon 'ic-chevron-right' style {'pack': 'cinema'} %}
+            {{ "listing.boxProductDetails"|trans|sw_sanitize }}
+        </a>
+    </div>
 {% endblock %}

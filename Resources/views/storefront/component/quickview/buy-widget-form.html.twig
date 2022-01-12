@@ -3,7 +3,7 @@
 {% block page_product_detail_buy_quantity_container %}
     <div class="col-12 product-detail-quantity-box swag-cms-extensions-quickview-content--buy-quantity" data-custom-select="true">
         <div class="product-detail-buy-quantity">
-            <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
+            <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
             {{ block('page_product_detail_buy_quantity') }}
         </div>
 
@@ -33,7 +33,7 @@
                                 <a class="product-detail-tax-link"
                                    href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
                                    title="{{ taxText }}"
-                                   data-toggle="modal"
+                                   data-bs-toggle="modal"
                                    data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
                                     {{ taxText }}
                                 </a>
@@ -55,12 +55,14 @@
 {% endblock %}
 
 {% block page_product_detail_buy_button %}
-    <button class="btn btn-primary btn-block btn-buy"
-            title="{{ "detail.addProduct"|trans|striptags }}"
-            aria-label="{{ "detail.addProduct"|trans|striptags }}">
-        {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
-        {{ "detail.addProduct"|trans|sw_sanitize }}
-    </button>
+    <div class="d-grid">
+        <button class="btn btn-primary btn-buy"
+                title="{{ "detail.addProduct"|trans|striptags }}"
+                aria-label="{{ "detail.addProduct"|trans|striptags }}">
+            {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
+            {{ "detail.addProduct"|trans|sw_sanitize }}
+        </button>
+    </div>
 {% endblock %}
 
 {% block page_product_detail_buy_button_container %}
@@ -83,11 +85,13 @@
 {% endblock %}
 
 {% block swag_cms_extensions_detail_buy_form_detail_button %}
-    <a class="swag-cms-extensions-quickview-detail-page-button btn btn-outline-primary btn-block btn-lg{{ redirectButtonClasses }}"
-       href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}"
-       title="{{ redirectButtonLabel }}"
-       aria-label="{{ redirectButtonLabel }}">
-        {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
-        {{ redirectButtonLabel }}
-    </a>
+    <div class="d-grid">
+        <a class="swag-cms-extensions-quickview-detail-page-button btn btn-outline-primary btn-lg{{ redirectButtonClasses }}"
+           href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}"
+           title="{{ redirectButtonLabel }}"
+           aria-label="{{ redirectButtonLabel }}">
+            {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
+            {{ redirectButtonLabel }}
+        </a>
+    </div>
 {% endblock %}

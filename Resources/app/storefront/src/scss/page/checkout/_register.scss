@@ -7,7 +7,7 @@ $checkout-divider-line: 1px solid $table-border-color;
     .container-main,
     .checkout {
         &-main {
-            @extend .pr-lg-5;
+            @extend .pe-lg-5;
             padding: $checkout-spacing-md 20px 150px;
         }
     }
@@ -89,7 +89,7 @@ $checkout-divider-line: 1px solid $table-border-color;
     }
 
     .checkout-aside-item {
-        @extend .no-gutters;
+        @extend .g-0;
 
         .checkout-aside-item-data {
             display: flex;

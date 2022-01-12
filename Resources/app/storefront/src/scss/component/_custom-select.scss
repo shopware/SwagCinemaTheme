@@ -1,4 +1,6 @@
-.custom-select {
+.form-select {
+    cursor: pointer;
+
     &[aria-expanded="true"] {
         border-color: $primary;
         border-bottom-color: transparent;
@@ -15,7 +17,7 @@
             overflow: hidden;
             min-width: 0;
 
-            &[x-placement="bottom-start"] {
+            &[data-popper-placement="bottom-start"] {
                 border-top: none;
                 border-top-right-radius: 0;
                 border-top-left-radius: 0;
@@ -31,7 +33,8 @@
             .dropdown-item {
                 outline: none;
                 cursor: pointer;
-                padding: $custom-select-padding-y $custom-select-padding-x;
+                border-radius: 0;
+                padding: $form-select-padding-y $form-select-padding-x;
 
                 &:empty {
                     padding: 0;
@@ -47,7 +50,7 @@
 }
 
 .was-validated {
-    .custom-select[aria-expanded="true"] {
+    .form-select[aria-expanded="true"] {
         &:invalid + .dropdown-menu.show {
             border-color: $sw-color-danger;
         }

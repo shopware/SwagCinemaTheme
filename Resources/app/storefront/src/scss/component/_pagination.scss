@@ -68,13 +68,13 @@
         margin-left: 0;
 
         .page-link {
-            @include border-left-radius(4px);
+            @include border-start-radius(4px);
         }
     }
 
     &:last-child {
         .page-link {
-            @include border-right-radius(4px);
+            @include border-end-radius(4px);
         }
     }
 

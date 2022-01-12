@@ -61,6 +61,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/address-editor';
 @import 'component/amazon-pay-button';
 @import 'component/custom-select';
+@import 'component/input-group';
 
 /*
  * Layout-related sections
@@ -120,3 +121,9 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'option-type/select';
 @import 'option-type/upload';
 @import 'option-type/html-editor';
+
+
+/*
+ * Utilities
+ * ---------- */
+@import 'utilities/screenreaders';

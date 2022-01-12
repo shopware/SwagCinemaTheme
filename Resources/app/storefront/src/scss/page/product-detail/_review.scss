@@ -56,18 +56,14 @@
     max-width: 98px;
     padding-right: 25px;
 
-    .custom-control-label {
-        &::before,
-        &::after {
-            content: unset;
-        }
+    .form-check-label {
+        font-size: $font-size-lg;
     }
 
-    .custom-checkbox {
+    .form-check {
         padding-left: 0;
         padding-right: 0;
         font-weight: $font-weight-bold;
-        font-size: $font-size-lg;
         width: 63px;
     }
 }
@@ -188,16 +184,15 @@
     flex-flow: row;
     justify-content: flex-end;
 
-    .custom-select {
+    .form-select {
         font-size: 14px;
-        height: $custom-select-height;
-        padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+        padding: $form-select-padding-y ($form-select-padding-x + $form-select-indicator-padding) $form-select-padding-y $form-select-padding-x;
         border-color: $secondary;
         transition: none;
 
         &:focus,
         &:hover {
-            border-color: $custom-select-focus-border-color;
+            border-color: $form-select-focus-border-color;
         }
     }
 }
@@ -251,7 +246,7 @@
 .product-detail-review-language {
     margin-bottom: 0;
 
-    .form-label {
+    .form-check-label {
         margin-bottom: 0;
     }
 

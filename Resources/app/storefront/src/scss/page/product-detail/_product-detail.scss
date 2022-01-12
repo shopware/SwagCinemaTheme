@@ -5,8 +5,8 @@
 .product-detail-form-container {
     margin-bottom: 36px;
 
-    .custom-select {
-        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px $input-bg;
+    .form-select {
+        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 16px center/15px $input-bg;
     }
 
     .form-row {
@@ -282,6 +282,7 @@
     font-weight: $font-weight-medium;
     height: 48px;
     text-align: left;
+    background-position-y: 17px;
 }
 
 .product-detail-quantity-dropdown {
@@ -368,6 +369,7 @@
 
     label {
         display: block;
+        @extend .form-label;
     }
 }
 

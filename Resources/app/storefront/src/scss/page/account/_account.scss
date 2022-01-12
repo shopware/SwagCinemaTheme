@@ -43,6 +43,7 @@
 
     &-content-aside {
         padding-top: 20px;
+        position: relative;
 
         &::before {
             content: '';

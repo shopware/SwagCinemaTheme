@@ -5,6 +5,10 @@
     &-lg {
         font-weight: $btn-font-weight-lg;
     }
+
+    .icon {
+        margin-top: -4px;
+    }
 }
 
 .btn-link {
@@ -38,9 +42,15 @@ button {
 
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
-    .btn-#{$color}:hover:not(:disabled) {
-        background-color: $value;
-        border-color: $value;
+    .btn-#{$color} {
+        &:hover:not(:disabled) {
+            background-color: $value;
+            border-color: $value;
+        }
+
+        .icon {
+            color: inherit;
+        }
     }
 }
 
