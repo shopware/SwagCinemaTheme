@@ -95,6 +95,12 @@ $cart-item-img-size-sm: 80px;
         }
     }
 
+    &.cart-item-customized-products {
+        .cart-item-quantity {
+            padding-left: 10px;
+        }
+    }
+
     .product-wishlist {
         width: auto;
 
@@ -124,7 +130,8 @@ $cart-item-img-size-sm: 80px;
     @include media-breakpoint-up(lg) {
         .cart-item-tax-price,
         .cart-item-unit-price,
-        .cart-item-total-price {
+        .cart-item-total-price,
+        &.cart-item-customized-products .cart-item-quantity {
             line-height: 43px;
         }
     }
