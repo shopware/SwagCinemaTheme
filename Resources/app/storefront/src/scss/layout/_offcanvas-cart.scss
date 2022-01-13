@@ -68,6 +68,12 @@ $offcanvas-cart-spacing: 20px;
                     flex: 0 0 calc(100% - 110px);
                 }
             }
+
+            .cart-item-customized-products {
+                .cart-item-quantity {
+                    padding-left: 8px;
+                }
+            }
         }
 
         .offcanvas-summary {
@@ -137,6 +143,8 @@ $offcanvas-cart-spacing: 20px;
 
         .cart-item-quantity {
             .custom-select {
+                color: $gray-400;
+                font-weight: $font-weight-medium;
                 width: 80px;
                 background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px;
             }
