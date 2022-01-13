@@ -59,6 +59,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "component/forms";
 @import "component/quickview-modal";
 @import "component/quickview";
+@import "component/fading-plugin";
 
 /*
  * Layout-related sections
@@ -101,3 +102,14 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import "page/checkout/cart";
 @import "page/checkout/finish";
 @import "page/wishlist/wishlist";
+@import "page/product-detail/customized-product";
+@import "page/product-detail/price-display";
+@import "page/checkout/cart-item-children";
+@import "page/account/account-item-children";
+
+/*
+ * Option type
+ * ---------- */
+@import "option-type/select";
+@import "option-type/upload";
+@import "option-type/html-editor";

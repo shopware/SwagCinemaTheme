@@ -52,6 +52,15 @@
         "addressRegisterCardTitle": "Ich bin neu hier.",
         "shippingCosts": "Konfigurieren versandkosten",
         "orderItemPaymentMethod": "Zahlungsart",
-        "orderItemShippingMethod": "Versandart"
+        "orderItemShippingMethod": "Versandart",
+        "lineItemContainerHeadline": "Konfiguration"
+    },
+    "customizedProducts": {
+        "stepByStep": {
+            "navigation": {
+                "btnChangeConfiguration": "Produktkonfiguration ändern",
+                "btnFinish": "Fertige"
+            }
+        }
     }
 }

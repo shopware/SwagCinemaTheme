@@ -10,16 +10,16 @@ $asset-path: '#{$sw-asset-theme-url}/bundles/swagcinematheme/assets' !default;
 $white:    #fff !default;
 $black:    #000 !default;
 
-$gray-50:  mix($white, $sw-text-color, 97%) !default;
-$gray-100: mix($white, $sw-text-color, 95%) !default;
-$gray-200: mix($white, $sw-text-color, 91%) !default;
-$gray-300: mix($white, $sw-text-color, 80%) !default;
-$gray-400: mix($white, $sw-text-color, 73%) !default;
-$gray-500: mix($white, $sw-text-color, 64%) !default;
-$gray-600: mix($white, $sw-text-color, 51%) !default;
-$gray-700: mix($white, $sw-text-color, 33%) !default;
-$gray-800: mix($white, $sw-text-color, 19%) !default;
-$gray-900: $sw-text-color !default;
+$gray-50:  mix($white, $sw-text-color, 97%) !default; //#f7f8f8
+$gray-100: mix($white, $sw-text-color, 95%) !default; //#f4f4f5
+$gray-200: mix($white, $sw-text-color, 91%) !default; //#e8eaec
+$gray-300: mix($white, $sw-text-color, 80%) !default; //#cdd2d6
+$gray-400: mix($white, $sw-text-color, 73%) !default; //#bbc1c7
+$gray-500: mix($white, $sw-text-color, 64%) !default; //#a5adb5
+$gray-600: mix($white, $sw-text-color, 51%) !default; //#848f99
+$gray-700: mix($white, $sw-text-color, 33%) !default; //#576674
+$gray-800: mix($white, $sw-text-color, 19%) !default; //#354657
+$gray-900: $sw-text-color !default; //#071c31
 // scss-docs-end gray-color-variables
 
 // Typography

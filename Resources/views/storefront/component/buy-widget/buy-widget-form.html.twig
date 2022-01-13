@@ -1,80 +1,105 @@
 {% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
 
-{% block buy_widget_buy_quantity_container %}
-    <div class="col-12 product-detail-quantity-box">
-        <div class="product-detail-buy-quantity">
-            <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
-            {{ block('buy_widget_buy_quantity') }}
-        </div>
-
-        {% block buy_widget_price %}
-            {# the block buy_widget_price was moved from buy-widget/buy-widget.html.twig #}
-            <div class="product-detail-price-container {% if product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
-                {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
-
-                {% block buy_widget_tax %}
-                    {# the block buy_widget_tax was moved from buy-widget/buy-widget.html.twig #}
-                    <div class="product-detail-tax-container">
-                        {% if context.taxState == "gross" %}
-                            {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
-                        {% else %}
-                            {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
-                        {% endif %}
-
-                        <p class="product-detail-tax">
-                            {% block buy_widget_tax_link %}
-                                {% if context.taxState == "gross" %}
-                                    {% set taxLabelText = "general.grossTaxLabelInformation"|trans|sw_sanitize %}
-                                {% else %}
-                                    {% set taxLabelText = "general.netTaxLabelInformation"|trans|sw_sanitize %}
-                                {% endif %}
-
-                                {{ taxLabelText }}
-                                <a class="product-detail-tax-link"
-                                   href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
-                                   title="{{ taxText }}"
-                                   data-toggle="modal"
-                                   data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
-                                    {{ taxText }}
-                                </a>
-                            {% endblock %}
-                        </p>
+{% block buy_widget_buy_container %}
+    {% if buyable %}
+        <div class="form-row buy-widget-container">
+            {% block buy_widget_buy_quantity_container %}
+                <div class="col-12 product-detail-quantity-box">
+                    <div class="product-detail-buy-quantity">
+                        <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
+                        {{ block('buy_widget_buy_quantity') }}
                     </div>
-                {% endblock %}
-            </div>
-        {% endblock %}
 
-        {% block buy_widget_configurator_include %}
-            {# the block buy_widget_configurator_include was moved from buy-widget/buy-widget.html.twig #}
-            {% if product.parentId and configuratorSettings|length > 0 %}
-                <form></form>
-                <div class="product-detail-configurator-container">
-                    {% sw_include '@Storefront/storefront/component/buy-widget/configurator.html.twig' %}
+                    {% block buy_widget_price %}
+                        {# the block buy_widget_price was moved from buy-widget/buy-widget.html.twig #}
+                        <div class="product-detail-price-container {% if product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
+                            {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+
+                            {% block buy_widget_tax %}
+                                {# the block buy_widget_tax was moved from buy-widget/buy-widget.html.twig #}
+                                <div class="product-detail-tax-container">
+                                    {% if context.taxState == "gross" %}
+                                        {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+                                    {% else %}
+                                        {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+                                    {% endif %}
+
+                                    <p class="product-detail-tax">
+                                        {% block buy_widget_tax_link %}
+                                            {% if context.taxState == "gross" %}
+                                                {% set taxLabelText = "general.grossTaxLabelInformation"|trans|sw_sanitize %}
+                                            {% else %}
+                                                {% set taxLabelText = "general.netTaxLabelInformation"|trans|sw_sanitize %}
+                                            {% endif %}
+
+                                            {{ taxLabelText }}
+                                            <a class="product-detail-tax-link"
+                                               href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                                               title="{{ taxText }}"
+                                               data-toggle="modal"
+                                               data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                                                {{ taxText }}
+                                            </a>
+                                        {% endblock %}
+                                    </p>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+
+                    {% block buy_widget_configurator_include %}
+                        {# the block buy_widget_configurator_include was moved from buy-widget/buy-widget.html.twig #}
+                        {% if product.parentId and configuratorSettings|length > 0 %}
+                            <form></form>
+                            <div class="product-detail-configurator-container">
+                                {% sw_include '@Storefront/storefront/component/buy-widget/configurator.html.twig' %}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
                 </div>
+            {% endblock %}
+
+            {{ block('buy_widget_buy_redirect_input') }}
+
+            {{ block('buy_widget_buy_product_buy_info') }}
+
+            {{ block('buy_widget_product_buy_meta') }}
+
+            {% if customizedProductsTemplate %}
+                {% if pageType == 'product_detail' %}
+                    {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-form-customized-products.html.twig' %}
+                {% else %}
+                    <a class="btn btn-primary btn-block"
+                       href="{{ seoUrl('frontend.detail.page', { 'productId': product.id }) }}"
+                       title="{{ 'customizedProducts.stepByStep.navigation.btnConfigureProduct'|trans|striptags }}"
+                       aria-label="{{ 'customizedProducts.stepByStep.navigation.btnConfigureProduct'|trans|striptags }}">
+                        {{ 'customizedProducts.stepByStep.navigation.btnConfigureProduct'|trans|striptags }}
+                    </a>
+                {% endif %}
             {% endif %}
-        {% endblock %}
-    </div>
-{% endblock %}
 
-{% block buy_widget_buy_button %}
-    <button class="btn btn-primary btn-block btn-buy"
-            title="{{ "detail.addProduct"|trans|striptags }}"
-            aria-label="{{ "detail.addProduct"|trans|striptags }}">
-        {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
-        {{ "detail.addProduct"|trans|sw_sanitize }}
-    </button>
-{% endblock %}
+            {% block buy_widget_buy_button_container %}
+                <div class="col-8">
+                    {% block buy_widget_buy_button %}
+                        <button class="btn btn-primary btn-block btn-buy"
+                                title="{{ "detail.addProduct"|trans|striptags }}"
+                                aria-label="{{ "detail.addProduct"|trans|striptags }}">
+                            {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
+                            {{ "detail.addProduct"|trans|sw_sanitize }}
+                        </button>
+                    {% endblock %}
+                </div>
 
-{% block buy_widget_buy_button_container %}
-    {{ parent() }}
-
-    {% if config('core.cart.wishlistEnabled') %}
-        {% block buy_widget_wishlist %}
-            {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
-                showText: true,
-                size: 'md',
-                productId: product.id
-            } %}
-        {% endblock %}
+                {% if config('core.cart.wishlistEnabled') %}
+                    {% block buy_widget_wishlist %}
+                        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                            showText: true,
+                            size: 'md',
+                            productId: product.id
+                        } %}
+                    {% endblock %}
+                {% endif %}
+            {% endblock %}
+        </div>
     {% endif %}
 {% endblock %}
