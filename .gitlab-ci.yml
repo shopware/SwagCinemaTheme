@@ -19,7 +19,10 @@ include:
     - export THEME_NAME="${THEME_NAME:-${CI_PROJECT_TITLE}}"
 
 .base_install: &base_install
-    - composer install --quiet
+    - composer config --global allow-plugins.composer/package-versions-deprecated true
+    - composer config --global allow-plugins.bamarni/composer-bin-plugin true
+    - composer config --global allow-plugins.phpstan/extension-installer true
+    - composer install
     - mkdir -p config/jwt || true
     - bin/console system:generate-jwt || true
     - bin/console system:install --drop-database --basic-setup --force >/dev/null
