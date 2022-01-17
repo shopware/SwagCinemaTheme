@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/page/checkout/checkout-aside-item-children.html.twig' %}
+
+{% block page_checkout_aside_item_children_header_collapse_button_icon %}
+    <div class="cart-aside-item-collapse-icon">
+        {% sw_icon 'ic-arrow-down' style { 'pack':'cinema' } %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_aside_item_child_total_price %}
+    {% if lineItem.type == 'customized-products' %}
+        <span class="nesting-level-{{ nestingLevel }}">{{ nestedLineItem|customized_product_price_tag }}</span>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

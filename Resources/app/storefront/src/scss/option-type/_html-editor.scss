@@ -1,0 +1,18 @@
+.swag-custommized-product-html-editor {
+    border-radius: 8px;
+    border: $hr-border-width solid $gray-600;
+
+    &__toolbar {
+        background: transparent;
+        border-bottom: $hr-border-width solid $gray-600;
+    }
+
+    &__toolbar-button {
+        background-color: transparent;
+        padding: 10px 17px;
+    }
+
+    &__editor {
+        padding: 9px 16px;
+    }
+}

@@ -1,0 +1,79 @@
+.account-item-children {
+    background-color: transparent;
+    padding: 20px 0 0;
+    margin-top: 0;
+
+    .account-item-headline-text {
+        color: $gray-700;
+        font-size: $font-size-lg;
+        line-height: 22px;
+    }
+
+    .account-item-child-label-bullet {
+        list-style: none;
+    }
+
+    .account-item-label {
+        margin-left: 0;
+    }
+
+    .account-item-children-element {
+        padding: 0;
+        display: block;
+    }
+
+    .account-item-children-elements {
+        padding-top: 18px;
+        padding-left: 32px;
+    }
+
+    .account-item-children-element-divider {
+        border-color: transparent;
+        margin: 3px 0 4px;
+    }
+
+    .nesting-level-0,
+    .nesting-level-1 {
+        display: inline-block;
+        vertical-align: top;
+        width: auto;
+    }
+
+    .nesting-level-1 {
+        color: $gray-400;
+        margin-left: 0;
+    }
+
+    .nesting-level-0 {
+        font-style: italic;
+        font-weight: $font-weight-medium;
+    }
+
+    .account-item-collapse-button {
+        padding: 0;
+
+        &.collapsed > .cart-item-collapse-icon .icon {
+            margin-top: 2px;
+        }
+
+        > .cart-item-collapse-icon .icon {
+            margin-top: 0;
+        }
+    }
+
+    .account-item-child-total-price {
+        width: auto;
+        max-width: fit-content;
+        flex: 0 0 auto;
+        display: inline-block;
+    }
+}
+
+.account-item-collapse-icon {
+    .icon {
+        width: 22px;
+        height: 13px;
+    }
+}
+
+

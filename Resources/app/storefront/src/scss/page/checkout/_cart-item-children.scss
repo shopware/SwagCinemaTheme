@@ -1,0 +1,122 @@
+.cart-item-children,
+.cart-aside-item-children {
+    background-color: transparent;
+    padding: 20px 0 0;
+    margin-top: 0;
+
+    .order-item-product-name {
+        @extend .d-none;
+    }
+
+    .cart-item-headline-text,
+    .cart-aside-item-headline-text {
+        color: $gray-700;
+        font-size: $font-size-lg;
+        line-height: 22px;
+    }
+
+    .cart-item-child-label-bullet,
+    .cart-aside-item-child-label-bullet {
+        list-style: none;
+    }
+
+    .cart-item-child-label,
+    .cart-aside-item-children-label {
+        margin-left: 0;
+    }
+
+    .cart-item-children-element,
+    .cart-aside-item-children-element {
+        padding: 0;
+        display: block;
+    }
+
+    .cart-item-children-elements,
+    .cart-aside-item-children-elements {
+        padding-top: 18px;
+        padding-left: 32px;
+    }
+
+    .cart-item-children-element-divider,
+    .cart-aside-item-children-element-divider {
+        border-color: transparent;
+        margin: 3px 0 4px;
+    }
+
+    .nesting-level-0,
+    .nesting-level-1 {
+        display: inline-block;
+        vertical-align: top;
+        width: auto;
+    }
+
+    .nesting-level-1 {
+        color: $gray-400;
+        margin-left: 0;
+    }
+
+    .nesting-level-0 {
+        font-style: italic;
+        font-weight: $font-weight-medium;
+    }
+
+    .cart-item-collapse-button,
+    .cart-aside-item-collapse-button {
+        padding: 0;
+
+        &.collapsed > .cart-item-collapse-icon .icon {
+            margin-top: 2px;
+        }
+
+        > .cart-item-collapse-icon .icon {
+            margin-top: 0;
+        }
+    }
+}
+
+.cart-item-collapse-icon,
+.cart-aside-item-collapse {
+    .icon {
+        width: 22px;
+        height: 13px;
+    }
+}
+
+.cart-item-children,
+.checkout-product-table {
+    .cart-item-children {
+        .cart-item-headline,
+        .cart-item-collapse-icon-container {
+            flex: 0 0 auto;
+        }
+
+        .cart-item-headline  {
+            max-width: 105px;
+        }
+
+        .cart-item-collapse-icon-container {
+            max-width: 30px;
+        }
+
+        .cart-item-children-elements {
+            padding-left: 0;
+        }
+    }
+}
+
+.cart-item-children {
+    padding-left: 96px;
+    margin-left: 0;
+
+    .offcanvas-cart & {
+        padding-left: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-left: 104px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-left: 128px;
+    }
+}
