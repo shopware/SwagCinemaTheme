@@ -1,0 +1,15 @@
+.swag-amazon-pay-wrapper {
+    &.account-login {
+        margin-bottom: 0;
+        width: calc(41.6% - 20px);
+    }
+
+    @include media-breakpoint-down(xs) {
+        &.account-login {
+            width: unset;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
