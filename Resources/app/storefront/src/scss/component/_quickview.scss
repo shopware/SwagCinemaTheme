@@ -21,13 +21,12 @@
 
     &-content {
         .product-wishlist {
-            width: 100%;
+            width: 48px;
         }
 
         .product-wishlist-action {
             width: 100%;
         }
-
 
         .base-slider {
             .base-slider-dots {
@@ -83,6 +82,30 @@
 
             .product-wishlist-action {
                 margin-top: $spacer;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .swag-cms-extensions-quickview {
+        &-content {
+            &--buy-button {
+                @include make-col(9);
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(lg) {
+    .swag-cms-extensions-quickview {
+        &-content {
+            &--buy-button {
+                @include make-col(9);
+            }
+
+            .wishlist-col {
+                @include make-col(3);
             }
         }
     }

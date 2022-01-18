@@ -64,18 +64,12 @@
 {% endblock %}
 
 {% block page_product_detail_buy_button_container %}
-    {% set btnBuyClasses = 'col-12' %}
-
-    {% if config('core.cart.wishlistEnabled') %}
-        {% set btnBuyClasses = 'col-12 col-md-10' %}
-    {% endif %}
-
-    <div class="swag-cms-extensions-quickview-content--buy-button {{ btnBuyClasses }}">
+    <div class="swag-cms-extensions-quickview-content--buy-button col">
         {{ block('page_product_detail_buy_button') }}
     </div>
 
     {% if config('core.cart.wishlistEnabled') %}
-        <div class="col-12 col-md-2">
+        <div class="wishlist-col col-auto">
             {% block page_product_detail_wishlist %}
                 {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
                     showText: true,
