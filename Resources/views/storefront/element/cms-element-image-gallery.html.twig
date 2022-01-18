@@ -47,7 +47,7 @@
 {% block element_image_gallery_inner_wrapper %}
     {% if isGridLayout %}
         {% block element_image_gallery_inner_grid %}
-            <div class="ci-gallery-desktop d-none d-lg-block">
+            <div class="ci-gallery-desktop d-none d-lg-block" data-active="0">
                 <div class="gallery-container">
                     {% if imageCount > 0 %}
                         {% for image in mediaItems %}
