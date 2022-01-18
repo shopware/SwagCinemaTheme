@@ -146,7 +146,7 @@ $offcanvas-cart-spacing: 20px;
                 color: $gray-400;
                 font-weight: $font-weight-medium;
                 width: 80px;
-                background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px;
+                background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px $input-bg;
             }
         }
     }
