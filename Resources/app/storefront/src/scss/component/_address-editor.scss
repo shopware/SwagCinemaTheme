@@ -1,0 +1,8 @@
+.address-editor-card {
+    .card-actions .btn {
+        @extend .btn-outline-secondary;
+        background-color: transparent;
+        margin-top: 20px;
+        line-height: 34px;
+    }
+}
