@@ -6,7 +6,7 @@
     margin-bottom: 36px;
 
     .custom-select {
-        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px;
+        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px $input-bg;
     }
 
     .form-row {
