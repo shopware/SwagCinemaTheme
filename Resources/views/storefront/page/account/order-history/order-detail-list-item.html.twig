@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block page_account_order_item_detail_image %}
-    <div class="col-12 col-md-6 order-item">
+    <div class="col-12 col-sm-6 order-item">
         <div class="order-item-image">
             {{ block('page_account_order_item_detail_image_value') }}
         </div>
@@ -15,5 +15,39 @@
 
             {{ block('page_account_order_item_detail_unitprice') }}
         </div>
+    </div>
+{% endblock %}
+
+{% block page_account_order_item_detail_quantity %}
+    <div class="col-12 col-sm-2 order-item order-item-quantity">
+        {% if not isChild %}
+
+            {{ block('page_account_order_item_detail_quantity_label') }}
+
+            {{ block('page_account_order_item_detail_quantity_value') }}
+
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block page_account_order_item_detail_price %}
+    <div class="col-12 col-sm-2 order-item order-item-price">
+        {% if not isDiscount %}
+
+            {{ block('page_account_order_item_detail_price_label') }}
+
+            {{ block('page_account_order_item_detail_price_value') }}
+
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block page_account_order_item_detail_total %}
+    <div class="col-12 col-sm-2 order-item order-item-total">
+
+        {{ block('page_account_order_item_detail_total_label') }}
+
+        {{ block('page_account_order_item_detail_total_value') }}
+
     </div>
 {% endblock %}
