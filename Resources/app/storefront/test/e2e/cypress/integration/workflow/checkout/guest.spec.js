@@ -3,7 +3,7 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 let product = {};
 
-describe('Checkout: as a guest', () => {
+describe('Checkout: as a guest', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {

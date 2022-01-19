@@ -1,6 +1,6 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-describe('Account: Edit profile', () => {
+describe('Account: Edit profile', {tags: '@visual'}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {

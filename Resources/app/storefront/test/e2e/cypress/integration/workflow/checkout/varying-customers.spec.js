@@ -20,7 +20,7 @@ const customers = [{
 
 let product = {};
 
-describe('Checkout: Proceed checkout using various customers', () => {
+describe('Checkout: Proceed checkout using various customers', {tags: ['@workflow']}, () => {
 
     beforeEach(() => {
         return cy.setToInitialState()

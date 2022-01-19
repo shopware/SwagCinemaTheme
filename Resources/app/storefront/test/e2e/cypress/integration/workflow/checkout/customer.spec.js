@@ -2,7 +2,7 @@ import CheckoutPageObject from "../../../support/pages/checkout.page-object";
 
 let product = {};
 
-describe('Checkout: as a customer', () => {
+describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {

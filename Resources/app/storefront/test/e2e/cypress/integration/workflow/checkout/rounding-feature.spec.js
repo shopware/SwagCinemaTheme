@@ -3,7 +3,7 @@ import CheckoutPageObject from "../../../support/pages/checkout.page-object";
 let product = {};
 let roundedNum = '0.50';
 
-describe('Checkout: Use rounding feature', () => {
+describe('Checkout: Use rounding feature', {tags: ['@workflow']}, () => {
 
     beforeEach(() => {
         return cy.setToInitialState()

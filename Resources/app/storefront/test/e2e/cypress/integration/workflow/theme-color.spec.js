@@ -4,7 +4,7 @@ let product = {};
 let colorScheme = {};
 const accountPage = new AccountPageObject();
 
-describe('ThemeColor: workflow change primary color and buy color', () => {
+describe('ThemeColor: workflow change primary color and buy color', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
