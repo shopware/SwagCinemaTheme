@@ -3,6 +3,7 @@
     "author": "Shopware AG",
     "views": [
         "@Storefront",
+        "@SwagAmazonPay",
         "@SwagPayPal",
         "@SwagCmsExtensions",
         "@SwagCustomizedProducts",
