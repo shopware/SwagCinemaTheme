@@ -61,6 +61,7 @@
                     height: 36px;
                     width: 36px;
                     border-radius: 8px;
+                    border-color: $border-color-bold;
                 }
 
                 .btn .icon > svg {
@@ -129,11 +130,11 @@
         }
 
         .address-card:not(:only-child) {
-            &:first-child {
+            &:nth-child(odd) {
                 padding-right: 10px;
                 margin-bottom: 16px;
             }
-            &:last-child {
+            &:nth-child(even) {
                 padding-left: 10px;
             }
         }
