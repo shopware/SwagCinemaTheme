@@ -21,4 +21,13 @@
             font-weight: $font-weight-normal;
         }
     }
+
+    &.container {
+        max-width: 100%;
+        background-color: white;
+
+        > nav {
+            @extend .container;
+        }
+    }
 }
