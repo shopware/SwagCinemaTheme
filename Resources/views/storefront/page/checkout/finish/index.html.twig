@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/index.html.twig' %}
+
+{% block page_checkout_aside_container %}
+    <div class="checkout-aside-container">
+
+        {% if page.order.customerComment %}
+            <div class="checkout-additional">
+                {{ block('page_checkout_finish_customer_comment') }}
+            </div>
+        {% endif %}
+
+        {{ block('page_checkout_aside_summary') }}
+
+        {% block page_checkout_aside_actions %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_additional %}
+{% endblock %}

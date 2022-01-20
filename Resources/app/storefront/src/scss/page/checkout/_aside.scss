@@ -36,6 +36,28 @@
                 @include media-breakpoint-up(lg) {
                     padding-left: $checkout-spacing-lg;
                 }
+
+                .checkout-additional {
+                    @extend .col-sm-12;
+                    @extend .offset-lg-0;
+                    @extend .col-lg-12;
+                    padding: 0;
+                    margin-top: 0;
+                    margin-bottom: 40px;
+
+                    .card-title {
+                        color: $gray-700;
+                        font-size: $h5-font-size;
+                        border-bottom: $border-width solid $border-color-bold;
+                        margin-bottom: 15px;
+                        padding-bottom: 13px;
+                        line-height: 34px;
+                    }
+
+                    #customerComment {
+                        height: 125px;
+                    }
+                }
             }
         }
 
