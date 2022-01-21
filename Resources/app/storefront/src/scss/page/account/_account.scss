@@ -2,6 +2,7 @@
     &-welcome {
         > h5 {
             border-bottom: $border-width solid $border-color-bold;
+            border-bottom: $border-width solid $border-color-bold;
             padding-bottom: 15px;
         }
 
@@ -34,11 +35,13 @@
     }
 
     &-content-aside {
+        padding-top: 20px;
+
         &:before {
             content: "";
             display: block;
             position: absolute;
-            top: -20px;
+            top: 0;
             bottom: -20px;
             background: $gray-100;
             right: 0;
@@ -317,8 +320,8 @@
 
     @include media-breakpoint-down(sm) {
         .order-item-detail-footer {
-            margin-left: -20px;
-            margin-right: -20px;
+            margin-left: -($grid-gutter-width / 2 + $card-border-width);
+            margin-right: -($grid-gutter-width / 2 + $card-border-width);
             border-radius: 0;
         }
 
