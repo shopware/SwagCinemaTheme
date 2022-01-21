@@ -3,7 +3,7 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 let product = {};
 
-describe('Checkout: as a guest', () => {
+describe('Checkout: as a guest', {tags: ['@visual']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
@@ -45,13 +45,11 @@ describe('Checkout: as a guest', () => {
         cy.get('.offcanvas .offcanvas-close').should('be.visible').click();
 
         // Product detail
-        cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input').should('be.visible');
         cy.get('.header-search-input').type('dummy test');
         cy.get('.header-search-btn').should('be.visible').click();
         cy.takeSnapshot('[Checkout] No products found', '.container-main');
 
-        cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input').type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
         cy.get('.search-suggest-product-price').contains(product.price[0].gross);
@@ -72,7 +70,7 @@ describe('Checkout: as a guest', () => {
         cy.get(accountPage.elements.registerCard).should('be.visible');
 
         cy.get('.login-collapse-toggle').should('be.visible').click();
-        cy.takeSnapshot('[Checkout] Login/Register form', '.page-checkout-address-login');
+        cy.takeSnapshot('[Checkout] Login/Register form', '.login-form');
 
         cy.get('select[name="salutationId"]').select('Mr.');
         cy.get('input[name="firstName"]').type('John');
@@ -95,9 +93,9 @@ describe('Checkout: as a guest', () => {
         cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
         // Checkout
-        cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.revocation-notice').contains('Please note our cancellation policy.');
+        cy.get('.checkout-confirm-tos-label').scrollIntoView();
+        cy.get('.checkout-confirm-tos-label').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
@@ -106,9 +104,9 @@ describe('Checkout: as a guest', () => {
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order');
         cy.get('.checkout-aside-summary-total').contains(product.price[0].gross);
-        cy.get('.col-5.checkout-aside-summary-value').contains('10.51');
+        cy.get('.col-5.checkout-aside-summary-value').contains('64');
         cy.takeSnapshot('[Checkout] Finish checkout', '.checkout-container');
     });
 
@@ -117,7 +115,6 @@ describe('Checkout: as a guest', () => {
         const accountPage = new AccountPageObject();
 
         // Product detail
-        cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input').should('be.visible');
         cy.get('.header-search-input').type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
@@ -174,9 +171,9 @@ describe('Checkout: as a guest', () => {
 
 
         // Checkout
-        cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.revocation-notice').contains('Please note our cancellation policy.');
+        cy.get('.checkout-confirm-tos-label').scrollIntoView();
+        cy.get('.checkout-confirm-tos-label').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
@@ -184,8 +181,8 @@ describe('Checkout: as a guest', () => {
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order');
         cy.get('.checkout-aside-summary-total').contains(product.price[0].gross);
-        cy.get('.col-5.checkout-aside-summary-value').contains('10.51');
+        cy.get('.col-5.checkout-aside-summary-value').contains('64');
     });
 });

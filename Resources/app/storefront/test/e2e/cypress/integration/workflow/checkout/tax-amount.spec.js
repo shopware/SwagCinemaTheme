@@ -44,13 +44,13 @@ describe('Checkout: Use different taxes in products while checkout', {tags: ['@w
                     })
             });
 
-            it.skip('@Checkout: Run checkout', () => {
+            it('@Checkout: Run checkout', () => {
                 const page = new CheckoutPageObject();
                 const accountPage = new AccountPageObject();
                 let productName = product.name;
 
-                const taxSum = additionalProduct.name === '7% Product' ? 0.65 : 1.68;
-                const additionalTaxSum = additionalProduct.name === 'Mixed Products' ? 0.69 : taxSum;
+                const taxSum = additionalProduct.name === '7% Product' ? 4.185 : 10.22;
+                const additionalTaxSum = additionalProduct.name === 'Mixed Products' ? 4.19 : taxSum;
 
                 if (additionalProduct.productNumber === "RS-777") {
                     productName = additionalProduct.name;
@@ -60,7 +60,6 @@ describe('Checkout: Use different taxes in products while checkout', {tags: ['@w
                 console.log(product);
 
                 // Product detail - first product
-                cy.get('.search-toggle-btn').should('be.visible').click();
                 cy.get('.header-search-input')
                     .should('be.visible')
                     .type(productName);
@@ -73,7 +72,6 @@ describe('Checkout: Use different taxes in products while checkout', {tags: ['@w
                 cy.get(`${page.elements.offCanvasCart} .offcanvas-close`).click();
 
                 // Product detail - Second product
-                cy.get('.search-toggle-btn').should('be.visible').click();
                 cy.get('.header-search-input')
                     .should('be.visible')
                     .type(additionalProduct.name);
@@ -91,14 +89,13 @@ describe('Checkout: Use different taxes in products while checkout', {tags: ['@w
                 cy.get('.checkout-main').should('be.visible');
                 cy.get('.login-collapse-toggle').click();
                 cy.get(accountPage.elements.loginCard).should('be.visible');
-                cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
+                cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
                 cy.get('#loginPassword').typeAndCheckStorefront('shopware');
                 cy.get(`${accountPage.elements.loginSubmit} [type="submit"]`).click();
 
                 // Confirm
-                cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-                cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-                cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+                cy.get('.checkout-confirm-tos-label').scrollIntoView();
+                cy.get('.checkout-confirm-tos-label').click(1, 1);
                 cy.get('.confirm-address').contains('Pep Eroni');
 
                 cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`)
@@ -145,7 +142,7 @@ describe('Checkout: Use different taxes in products while checkout', {tags: ['@w
                 // Finish checkout
                 cy.get('#confirmFormSubmit').scrollIntoView();
                 cy.get('#confirmFormSubmit').click();
-                cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+                cy.get('.finish-header').contains('Thank you for your order');
 
                 // Let's check the calculation on /finish as well
                 cy.contains(additionalProduct.name);

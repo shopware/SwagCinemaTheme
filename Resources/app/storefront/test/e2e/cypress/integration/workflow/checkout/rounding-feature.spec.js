@@ -15,7 +15,7 @@ describe('Checkout: Use rounding feature', {tags: ['@workflow']}, () => {
             })
     });
 
-    it.skip(`@checkout: Run checkout with value of rounding is ${roundedNum}`, () => {
+    it(`@checkout: Run checkout with value of rounding is ${roundedNum}`, () => {
         cy.server();
         cy.route({
             url: '/api/currency/**',
@@ -42,8 +42,6 @@ describe('Checkout: Use rounding feature', {tags: ['@workflow']}, () => {
         cy.visit('/');
 
         const page = new CheckoutPageObject();
-
-        cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input')
             .should('be.visible')
             .type(product.name);
@@ -57,7 +55,7 @@ describe('Checkout: Use rounding feature', {tags: ['@workflow']}, () => {
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
 
-        cy.get('.checkout-aside-summary-value.checkout-aside-summary-total-rounded').contains('10.50');
-        cy.get('.checkout-aside-summary-value.checkout-aside-summary-total').contains('10.51');
+        cy.get('.checkout-aside-summary-value.checkout-aside-summary-total-rounded').contains('64');
+        cy.get('.checkout-aside-summary-value.checkout-aside-summary-total').contains('64');
     });
 });

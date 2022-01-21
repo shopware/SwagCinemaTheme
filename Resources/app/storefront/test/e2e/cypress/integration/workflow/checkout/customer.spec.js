@@ -16,18 +16,17 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
 
                         // Login
                         cy.get('.login-card').should('be.visible');
-                        cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
+                        cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
                         cy.get('#loginPassword').typeAndCheckStorefront('shopware');
                         cy.get('.login-submit [type="submit"]').click();
                     });
             })
     });
 
-    it.skip('@checkout: should show methods', () => {
+    it('@checkout: should show methods', () => {
         const page = new CheckoutPageObject();
 
         // add product to cart
-        cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input')
             .should('be.visible')
             .type(product.name);
@@ -55,7 +54,7 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
             .should('have.length', 2);
     });
 
-    it.skip('@checkout: should have working collapse on payment methods', () => {
+    it('@checkout: should have working collapse on payment methods', () => {
         cy.createPaymentMethodFixture({name: 'Test Method #1'})
             .then(() => {
                 return cy.createPaymentMethodFixture({name: 'Test Method #2'});
@@ -67,7 +66,6 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
                 const page = new CheckoutPageObject();
 
                 // add product to cart
-                cy.get('.search-toggle-btn').should('be.visible').click();
                 cy.get('.header-search-input')
                     .should('be.visible')
                     .type(product.name);
@@ -105,11 +103,10 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
             });
     });
 
-    it.skip('@checkout: should change payment and shipping methods', () => {
+    it('@checkout: should change payment and shipping methods', () => {
         const page = new CheckoutPageObject();
 
         // add product to cart
-        cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input')
             .should('be.visible')
             .type(product.name);
@@ -123,8 +120,8 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
         // Go to cart
         cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click();
 
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.checkout-confirm-tos-label').scrollIntoView();
+        cy.get('.checkout-confirm-tos-label').click(1, 1);
 
         cy.get(`${page.elements.paymentMethodsContainer} > :nth-child(3) .payment-method-label`)
             .should('exist')
@@ -137,12 +134,12 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
 
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order');
 
-        cy.get('.finish-order-details .checkout-card .card-body p:nth-of-type(1)')
+        cy.get('.finish-order-details .checkout-card .card-body p')
             .should('contain', 'Paid in advance');
 
-        cy.get('.finish-order-details .checkout-card .card-body p:nth-of-type(2)')
+        cy.get('.finish-order-details .checkout-card .card-body p')
             .should('contain', 'Standard');
     });
 });

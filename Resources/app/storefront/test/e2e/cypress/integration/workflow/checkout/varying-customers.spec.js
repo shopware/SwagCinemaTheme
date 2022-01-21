@@ -49,7 +49,7 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
                 });
             });
 
-            it.skip('@base @checkout: run checkout', () => {
+            it('@base @checkout: run checkout', () => {
                 const page = new CheckoutPageObject();
                 const accountPage = new AccountPageObject();
                 const price = customer.displayGross ? product.price[0].gross : product.price[0].net;
@@ -81,14 +81,14 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
                     cy.get('#addressAddressCountryState').select('Lower Saxony');
                     cy.get('.address-form-submit').click();
                     cy.get('.alert-success .alert-content').contains('Address has been saved.');
+                    cy.get('.address-item-body .card-title').contains('Sherman').find('#accountActionsDropdown').click();
 
                     // Set new address as shipping address
-                    cy.contains('Set as default shipping').click();
-                    cy.get('.shipping-address p').contains('Sherman');
+                    cy.get('.address-action-set-default-shipping').click();
+                    cy.get('.shipping-address').contains('Sherman');
                 }
 
                 // Product detail
-                cy.get('.search-toggle-btn').should('be.visible').click();
                 cy.get('.header-search-input')
                     .should('be.visible')
                     .type(product.name);
@@ -105,9 +105,9 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
 
                 // Checkout
                 cy.get('.offcanvas-cart-actions .btn-primary').click();
-                cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-                cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-                cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+                cy.get('.revocation-notice').contains('Please note our cancellation policy.');
+                cy.get('.checkout-confirm-tos-label').scrollIntoView();
+                cy.get('.checkout-confirm-tos-label').click(1, 1);
                 cy.get('.confirm-address').contains('Pep Eroni');
                 cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
                 cy.get(`${page.elements.cartItem}-total-price`).contains(price);
@@ -122,12 +122,12 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
                 // Finish checkout
                 cy.get('#confirmFormSubmit').scrollIntoView();
                 cy.get('#confirmFormSubmit').click();
-                cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+                cy.get('.finish-header').contains('Thank you for your order');
 
                 // Check the total price
                 if (customer.firstName === 'Net') {
-                    cy.get('.checkout-aside-summary-total').contains('10.00');
-                    cy.get('.col-5.checkout-aside-summary-value').contains('10.00');
+                    cy.get('.checkout-aside-summary-total').contains('49.98');
+                    cy.get('.col-5.checkout-aside-summary-value').contains('49.98');
                 } else {
                     cy.get('.checkout-aside-summary-total').contains(price);
                     cy.get('.col-5.checkout-aside-summary-value').contains(price);
@@ -142,11 +142,11 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
                 cy.get('.cart-header-tax-price').contains(vatSnippet);
                 // Check the tax price
                 if (customer.firstName === 'Net') {
-                    cy.get('.col-12.cart-item-tax-price').contains('1.60');
-                    cy.get('.col-5.checkout-aside-summary-value').contains('1.60');
+                    cy.get('.col-12.cart-item-tax-price').contains('7.98');
+                    cy.get('.col-5.checkout-aside-summary-value').contains('49.98');
                 } else {
-                    cy.get('.col-12.cart-item-tax-price').contains('1.68');
-                    cy.get('.col-5.checkout-aside-summary-value').contains('1.68');
+                    cy.get('.col-12.cart-item-tax-price').contains('10.22');
+                    cy.get('.col-5.checkout-aside-summary-value').contains('53.78');
                 }
             });
         });
