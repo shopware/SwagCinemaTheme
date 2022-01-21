@@ -4,6 +4,10 @@
     &.flashbags:not(:empty) {
         padding-top: 20px;
     }
+
+    &-main {
+        padding-top: 0;
+    }
 }
 
 @include media-breakpoint-up(lg) {
