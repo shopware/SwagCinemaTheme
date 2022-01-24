@@ -15,7 +15,7 @@ describe('Checkout: Use rounding feature', {tags: ['@workflow']}, () => {
             })
     });
 
-    it(`@checkout: Run checkout with value of rounding is ${roundedNum}`, () => {
+    it.skip(`@checkout: Run checkout with value of rounding is ${roundedNum}`, () => {
         cy.server();
         cy.route({
             url: '/api/currency/**',

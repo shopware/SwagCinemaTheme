@@ -44,7 +44,7 @@ describe('Checkout: Use different taxes in products while checkout', {tags: ['@w
                     })
             });
 
-            it('@Checkout: Run checkout', () => {
+            it.skip('@Checkout: Run checkout', () => {
                 const page = new CheckoutPageObject();
                 const accountPage = new AccountPageObject();
                 let productName = product.name;
