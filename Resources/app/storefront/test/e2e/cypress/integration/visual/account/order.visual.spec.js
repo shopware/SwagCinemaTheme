@@ -2,7 +2,7 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 const accountPage = new AccountPageObject();
 
-describe('Account: Order page', () => {
+describe('Account: Order page', {tags: '@visual'}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => cy.setShippingMethodInSalesChannel('Standard'))

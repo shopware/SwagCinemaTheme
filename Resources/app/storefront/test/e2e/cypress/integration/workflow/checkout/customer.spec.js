@@ -2,7 +2,7 @@ import CheckoutPageObject from "../../../support/pages/checkout.page-object";
 
 let product = {};
 
-describe('Checkout: as a customer', () => {
+describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
@@ -23,7 +23,7 @@ describe('Checkout: as a customer', () => {
             })
     });
 
-    it('@checkout: should show methods', () => {
+    it.skip('@checkout: should show methods', () => {
         const page = new CheckoutPageObject();
 
         // add product to cart
@@ -55,7 +55,7 @@ describe('Checkout: as a customer', () => {
             .should('have.length', 2);
     });
 
-    it('@checkout: should have working collapse on payment methods', () => {
+    it.skip('@checkout: should have working collapse on payment methods', () => {
         cy.createPaymentMethodFixture({name: 'Test Method #1'})
             .then(() => {
                 return cy.createPaymentMethodFixture({name: 'Test Method #2'});
@@ -105,7 +105,7 @@ describe('Checkout: as a customer', () => {
             });
     });
 
-    it('@checkout: should change payment and shipping methods', () => {
+    it.skip('@checkout: should change payment and shipping methods', () => {
         const page = new CheckoutPageObject();
 
         // add product to cart

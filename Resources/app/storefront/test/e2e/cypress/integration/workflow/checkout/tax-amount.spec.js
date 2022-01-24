@@ -16,7 +16,7 @@ const additionalProducts = [{
 }];
 let product = {};
 
-describe('Checkout: Use different taxes in products while checkout', () => {
+describe('Checkout: Use different taxes in products while checkout', {tags: ['@workflow']}, () => {
 
     beforeEach(() => {
         cy.setToInitialState()
@@ -44,7 +44,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                     })
             });
 
-            it('@Checkout: Run checkout', () => {
+            it.skip('@Checkout: Run checkout', () => {
                 const page = new CheckoutPageObject();
                 const accountPage = new AccountPageObject();
                 let productName = product.name;

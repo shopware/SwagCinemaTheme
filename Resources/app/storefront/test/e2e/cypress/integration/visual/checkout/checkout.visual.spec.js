@@ -34,7 +34,7 @@ describe('Checkout: as a guest', () => {
             });
     });
 
-    it('@checkout: Run checkout with the same address', () => {
+    it('@visual: Run checkout with the same address', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
@@ -112,7 +112,7 @@ describe('Checkout: as a guest', () => {
         cy.takeSnapshot('[Checkout] Finish checkout', '.checkout-container');
     });
 
-    it('@checkout: Run checkout with the different shipping address', () => {
+    it('@visual: Run checkout with the different shipping address', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 

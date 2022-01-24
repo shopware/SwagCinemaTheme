@@ -139,6 +139,22 @@ Cypress.Commands.add('setShippingMethodInSalesChannel', (name, salesChannel = 'S
 });
 
 /**
+ * Patch to update via admin api
+ * @memberOf Cypress.Chainable#
+ * @name patchViaAdminApi
+ * @param {String} [endpoint = null] - Endpoint to patch
+ * @param {Object} [data = null] - Data send to API
+ * @function
+ */
+Cypress.Commands.add('patchViaAdminApi', ({endpoint, data}) => {
+    return cy.requestAdminApi(
+        'PATCH',
+        `/api/${endpoint}?response=true`,
+        data
+    );
+});
+
+/**
  *
  */
 Cypress.Commands.add('initializePluginConfig', (config, endpoint) => {

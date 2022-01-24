@@ -1,6 +1,6 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-describe('Account: Address page', () => {
+describe('Account: Address page', { tags: '@visual' }, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
@@ -14,7 +14,7 @@ describe('Account: Address page', () => {
             });
     });
 
-    it('@visual: update address page', () => {
+    it('@account: update address page', () => {
         const accountPage = new AccountPageObject();
 
         cy.visit('/account/login');

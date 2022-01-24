@@ -3,7 +3,7 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 let product = {};
 
-describe('Checkout: as a guest', () => {
+describe('Checkout: as a guest', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
@@ -15,7 +15,7 @@ describe('Checkout: as a guest', () => {
             })
     });
 
-    it('@checkout: Run checkout with the same address', () => {
+    it.skip('@checkout: Run checkout with the same address', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
@@ -71,7 +71,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.col-5.checkout-aside-summary-value').contains('10.51');
     });
 
-    it('@checkout: Run checkout with the different shipping address', () => {
+    it.skip('@checkout: Run checkout with the different shipping address', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 

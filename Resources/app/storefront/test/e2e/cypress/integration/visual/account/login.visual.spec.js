@@ -2,7 +2,7 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 const accountPage = new AccountPageObject();
 
-describe('Account: Visual tests login as customer', () => {
+describe('Account: Visual tests login as customer', {tags: '@visual'}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => cy.createCustomerFixtureStorefront())

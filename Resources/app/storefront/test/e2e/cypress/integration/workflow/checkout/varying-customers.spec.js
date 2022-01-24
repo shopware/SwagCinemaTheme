@@ -20,7 +20,7 @@ const customers = [{
 
 let product = {};
 
-describe('Checkout: Proceed checkout using various customers', () => {
+describe('Checkout: Proceed checkout using various customers', {tags: ['@workflow']}, () => {
 
     beforeEach(() => {
         return cy.setToInitialState()
@@ -49,7 +49,7 @@ describe('Checkout: Proceed checkout using various customers', () => {
                 });
             });
 
-            it('@base @checkout: run checkout', () => {
+            it.skip('@base @checkout: run checkout', () => {
                 const page = new CheckoutPageObject();
                 const accountPage = new AccountPageObject();
                 const price = customer.displayGross ? product.price[0].gross : product.price[0].net;
