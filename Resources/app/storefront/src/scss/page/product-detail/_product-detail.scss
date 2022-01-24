@@ -466,11 +466,15 @@
 .product-detail-breadcrumb {
     display: flex;
     align-items: flex-start;
+    background-color: $white;
 
     > nav,
     .cms-breadcrumb {
         width: calc(100% - 115px);
         margin-left: auto;
+    }
+
+    > nav {
         padding: 0;
     }
 
@@ -482,8 +486,8 @@
 .product-detail-button-back {
     width: 70px;
     margin-right: 45px;
-    padding-top: 3px;
-    line-height: 21px;
+    padding-top: 0;
+    line-height: 4.3;
     color: $secondary;
     text-transform: lowercase;
     font-weight: $font-weight-medium;
@@ -491,7 +495,6 @@
     display: none;
 
     .product-detail-breadcrumb.container & {
-        margin-top: -9px;
         padding-top: 0;
     }
 
@@ -527,10 +530,6 @@
     .product-detail-breadcrumb {
         .breadcrumb {
             justify-content: flex-start;
-        }
-
-        &.container {
-            padding-bottom: 40px;
         }
 
         nav,

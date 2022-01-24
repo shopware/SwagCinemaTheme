@@ -67,7 +67,7 @@
 
             {% if customizedProductsTemplate %}
                 {% if pageType == 'product_detail' %}
-                    {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-form-customized-products.html.twig' %}
+                    {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-form-customized-products.html.twig' ignore missing %}
                 {% else %}
                     <a class="btn btn-primary btn-block"
                        href="{{ seoUrl('frontend.detail.page', { 'productId': product.id }) }}"
