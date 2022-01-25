@@ -1,15 +1,19 @@
 import CategoryPageObject from '../../../support/pages/sw-category.page-object';
 
-let saleChannel = {}
-
-describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
+describe('Shop page: CMS service page', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
-            .then(() => cy.createDefaultFixture('category', {}, 'footer-category-first'))
-            .then(() => cy.createDefaultFixture('category', {}, 'footer-category-second'))
             .then(() => {
-                return cy.searchViaAdminApi({
+                cy.loginViaApi()
+            })
+            .then(() => {
+                cy.createDefaultFixture('category',{}, 'footer-category-first');
+            })
+            .then(() => {
+                cy.createDefaultFixture('category',{}, 'footer-category-second');
+            })
+            .then(() => {
+                cy.searchViaAdminApi({
                     endpoint: 'sales-channel',
                     data: {
                         field: 'name',
@@ -17,18 +21,17 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
                     }
                 });
             })
-            .then((channel) => {
-                saleChannel = channel
-                return cy.fixture('footer-category-first')
-            })
-            .then((category) => {
-                cy.updateViaAdminApi('sales-channel', saleChannel.id, {
-                    data: {
-                        footerCategoryId: category.id,
-                        maintenanceIpWhitelist: []
-                    }
-                });
-            })
+            .then((salesChannel) => {
+                // This ID of the fixture is set by purpose, thus being predictable
+                cy.fixture('footer-category-first').then((category) => {
+                    cy.updateViaAdminApi('sales-channel', salesChannel.id, {
+                        data: {
+                            footerCategoryId: category.id,
+                            maintenanceIpWhitelist: []
+                        }
+                    });
+                })
+            });
     });
 
     function assignToFooterLink() {
@@ -80,7 +83,7 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
     function createServicePage() {
         let salesChannel;
 
-        cy.searchViaAdminApi({
+        return cy.searchViaAdminApi({
             endpoint: 'sales-channel',
             data: {
                 field: 'name',
@@ -89,14 +92,14 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
             }
         }).then((data) => {
             salesChannel = data.id;
-            return cy.createDefaultFixture('cms-page', {}, 'cms-service-page')
+            cy.createDefaultFixture('cms-page', {}, 'cms-service-page')
         }).then(() => {
             cy.openInitialPage(`${Cypress.env('admin')}#/sw/category/index`);
             assignToFooterLink();
         });
     }
 
-    it('@visual: assign service page to footer category', () => {
+    it('@shop: assign service page to footer category', () => {
         createServicePage();
         cy.visit('/');
 
@@ -111,7 +114,5 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
         cy.get('.cms-element-text').contains('Shipping and payment');
         cy.get('.breadcrumb-link.is-active').should('have.attr', 'href') // yields the "href" attribute
             .and('include', '/Information/Shipping-and-payment');
-
-        cy.takeSnapshot('[CMS] Service and information page', '.cms-page');
     });
 });
