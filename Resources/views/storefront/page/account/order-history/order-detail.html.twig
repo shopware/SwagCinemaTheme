@@ -3,12 +3,20 @@
 {% block page_account_order_item_detail_table_labels_summary %}
     <div class="order-item-detail-footer">
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 offset-md-6">
+            <div class="col-12 col-md-6 order-item-summary">
                 {{ block('page_account_order_item_detail_summary') }}
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-md-6 order-item-labels">
                 <dl class="row no-gutters order-item-detail-labels">
+                    {{ block('page_account_order_item_detail_date') }}
+
+                    {{ block('page_account_order_item_detail_number') }}
+
+                    {{ block('page_account_order_item_detail_payment_method') }}
+
+                    {{ block('page_account_order_item_detail_shipping_method') }}
+
                     {{ block('page_account_order_item_detail_tracking_code') }}
                 </dl>
             </div>

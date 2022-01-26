@@ -70,15 +70,17 @@
 }
 
 .order-item-detail-footer {
-    > .row {
-        align-items: flex-end;
-    }
-
     dl {
         dt.col,
         dt[class*='col-'] {
             margin-bottom: 0;
             padding-right: 0;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .order-item-summary {
+            order: 1;
         }
     }
 }
@@ -100,10 +102,8 @@
 .order-item-detail-labels {
     padding-top: 32px;
 
-    dt,
-    dd {
+    dd:last-child {
         @extend .col-12;
-        @extend .col-md-12;
     }
 
     dt {
