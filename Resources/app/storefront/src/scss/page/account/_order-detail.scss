@@ -68,3 +68,65 @@
         }
     }
 }
+
+.order-item-detail-footer {
+    dl {
+        dt.col,
+        dt[class*='col-'] {
+            margin-bottom: 0;
+            padding-right: 0;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .order-item-summary {
+            order: 1;
+        }
+    }
+}
+
+.order-item-detail-summary {
+    dt {
+        @extend .col-md-5;
+    }
+
+    dd {
+        @extend .col-md-7;
+
+        &:after {
+            content: '*';
+        }
+    }
+}
+
+.order-item-detail-labels {
+    padding-top: 32px;
+
+    dd:last-child {
+        @extend .col-12;
+    }
+
+    dt {
+        font-weight: $font-weight-medium;
+    }
+
+    dd {
+        margin-bottom: 0;
+    }
+}
+
+.account-orders {
+    @include media-breakpoint-down(xs) {
+        .order-item-detail-labels {
+            > *:nth-child(even) {
+                text-align: left;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .order-item-detail-labels {
+        padding-top: 0;
+    }
+}

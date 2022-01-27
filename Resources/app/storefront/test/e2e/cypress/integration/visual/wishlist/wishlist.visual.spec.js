@@ -113,13 +113,13 @@ describe('Wishlist: Check appearance of wishlist', {tags: ['@visual']}, () => {
 
         cy.get('.product-wishlist-action').first().should('be.visible');
 
-        cy.get('.product-wishlist-btn-content.text-wishlist-not-added').first().should('be.visible');
+        cy.get('.product-wishlist-btn-content.text-wishlist-not-added').first().should('not.be.visible');
         cy.get('.product-wishlist-btn-content.text-wishlist-remove').first().should('not.be.visible');
         cy.get('.product-wishlist-btn-content.text-wishlist-not-added').first().contains('Add to wishlist');
 
         cy.get('.product-wishlist-action').first().click();
 
-        cy.get('.product-wishlist-btn-content.text-wishlist-remove').first().should('be.visible');
+        cy.get('.product-wishlist-btn-content.text-wishlist-remove').first().should('not.be.visible');
         cy.get('.product-wishlist-btn-content.text-wishlist-not-added').first().should('not.be.visible');
         cy.get('.product-wishlist-btn-content.text-wishlist-remove').first().contains('Remove from wishlist');
 

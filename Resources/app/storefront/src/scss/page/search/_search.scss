@@ -1,0 +1,38 @@
+.search-page {
+    .filter-panel-wrapper-toggle {
+        margin-bottom: $spacer-md;
+    }
+
+    .cms-element-product-listing-actions div.sorting[data-listing-sorting=true] {
+        margin-top: 0;
+    }
+
+    .filter-panel-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
+}
+
+.search-headline {
+    text-align: center;
+    margin-bottom: $spacer-lg;
+    margin-top: $spacer-lg;
+    font-size: 28px;
+    line-height: 34px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 44px;
+        line-height: 48px;
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+    .search-page {
+        .cms-element-product-listing-actions {
+            .sorting {
+                margin-top: 0;
+            }
+        }
+    }
+}

@@ -13,8 +13,17 @@
     </div>
 {% endblock %}
 
-{% block component_filter_panel_active_container %}
-    {% apply spaceless %}
-        {{ parent() }}
-    {% endapply %}
+{% block component_filter_panel_element %}
+    {# hidden block filter-panel when filter empty #}
+    <div class="filter-panel{% if sidebar %} is--sidebar{% endif %} {% if properties.entities is empty %}d-none{% endif %}">
+        {% block component_filter_panel_items_container %}
+            {% apply spaceless %}
+                {{ parent() }}
+            {% endapply %}
+        {% endblock %}
+
+        {% block component_filter_panel_active_container %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
 {% endblock %}
