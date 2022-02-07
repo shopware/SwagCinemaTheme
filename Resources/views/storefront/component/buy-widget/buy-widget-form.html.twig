@@ -5,7 +5,7 @@
         <div class="form-row buy-widget-container">
             {% block buy_widget_buy_quantity_container %}
                 <div class="col-12 product-detail-quantity-box">
-                    <div class="product-detail-buy-quantity">
+                    <div class="product-detail-buy-quantity" data-custom-select="true">
                         <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
                         {{ block('buy_widget_buy_quantity') }}
                     </div>

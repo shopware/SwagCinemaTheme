@@ -281,6 +281,17 @@
     width: 170px;
     font-weight: $font-weight-medium;
     height: 48px;
+    text-align: left;
+}
+
+.product-detail-quantity-dropdown {
+    max-height: 200px;
+    border-top: none;
+    overflow: hidden;
+    margin: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 170px;
 }
 
 .js-magnifier-zoom-image-container {

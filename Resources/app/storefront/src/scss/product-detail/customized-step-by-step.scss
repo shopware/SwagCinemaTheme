@@ -1,0 +1,10 @@
+.swag-customized-products.is--step-by-step {
+    .custom-select {
+        opacity: 1 !important;
+        padding-bottom: 9px !important;
+
+        + .dropdown-menu {
+            width: 100% !important;
+        }
+    }
+}

@@ -146,3 +146,28 @@
         margin-left: 0;
     }
 }
+
+.form-group .swag-customized-products-option-type-select-wrapper {
+    .custom-select[aria-expanded=true] {
+        border-color: $primary;
+
+        + .dropdown-menu {
+            width: 100%;
+            max-height: 140px;
+        }
+    }
+}
+
+.swag-customized-products.is--step-by-step {
+    .swag-customized-products-option {
+        overflow: visible;
+    }
+
+    .swag-customized-products__scrollable {
+        z-index: 2;
+    }
+
+    .swag-customized-products-pager {
+        padding-top: 50px;
+    }
+}

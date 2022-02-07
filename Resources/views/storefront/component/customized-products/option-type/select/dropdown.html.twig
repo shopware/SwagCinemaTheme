@@ -1,0 +1,14 @@
+{% sw_extends '@Storefront/storefront/component/customized-products/option-type/select/dropdown.html.twig' %}
+
+{% block swag_customized_products_option_type_template_select_dropdown %}
+    {% set inConfigurationExtension = configurationExtension.configuration[option.id] %}
+
+    <select id="swag-customized-products-option-id-{{ option.id }}"
+            class="custom-select form-control swag-customized-products-form-control"
+            name="{{ constant('Swag\\CustomizedProducts\\Storefront\\Controller\\CustomizedProductsCartController::CUSTOMIZED_PRODUCTS_TEMPLATE_REQUEST_PARAMETER') }}[options][{{ option.id }}][value]"
+        {{ option.required ? 'required' : '' }}>
+
+        {{ block('swag_customized_products_option_type_template_select_dropdown_options') }}
+
+    </select>
+{% endblock %}

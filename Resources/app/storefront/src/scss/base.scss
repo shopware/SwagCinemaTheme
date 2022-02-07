@@ -60,6 +60,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/fading-plugin';
 @import 'component/address-editor';
 @import 'component/amazon-pay-button';
+@import 'component/custom-select';
 
 /*
  * Layout-related sections
@@ -107,6 +108,11 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/checkout/cart-item-children';
 @import 'page/account/account-item-children';
 @import 'page/search/search';
+
+/*
+ * Plugins
+ * ---------- */
+@import 'product-detail/customized-step-by-step';
 
 /*
  * Option type

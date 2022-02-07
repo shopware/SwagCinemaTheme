@@ -189,9 +189,16 @@
     justify-content: flex-end;
 
     .custom-select {
-        height: 40px;
-        padding-right: 48px;
+        font-size: 14px;
+        height: $custom-select-height;
+        padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
         border-color: $secondary;
+        transition: none;
+
+        &:focus,
+        &:hover {
+            border-color: $custom-select-focus-border-color;
+        }
     }
 }
 

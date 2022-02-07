@@ -1,3 +1,10 @@
 .form-text {
     font-size: 14px;
 }
+.form-group {
+    .custom-select[aria-expanded="true"] {
+        + .dropdown-menu.show {
+            width: calc(100% - #{$form-grid-gutter-width});
+        }
+    }
+}

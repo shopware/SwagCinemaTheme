@@ -4,10 +4,12 @@ import CinemaFilterRatingSelectPlugin from './plugin/listing/cinema-filter-ratin
 import CustomizedProductsStepByStepWizard from "./plugin/customized-product/customized-product-step.plugin";
 import CinemaCustomizedProductPriceDisplay from "./plugin/customized-product/customized-products-price-display.plugin";
 import CinemaZoomModalPlugin from './plugin/zoom-modal/zoom-modal.plugin';
+import CinemaCustomSelectPlugin from './plugin/listing/cinema-custom-select.plugin';
 
 const PluginManager = window.PluginManager;
 
 PluginManager.register('BackButton', BackButtonPlugin, '[data-back-button]');
+PluginManager.register('CustomSelect', CinemaCustomSelectPlugin, '[data-custom-select]')
 PluginManager.override('Listing', CinemaListingPlugin, '[data-listing]');
 PluginManager.override('FilterRatingSelect', CinemaFilterRatingSelectPlugin, '[data-filter-rating-select]');
 PluginManager.override('ZoomModal', CinemaZoomModalPlugin, '[data-zoom-modal]');
