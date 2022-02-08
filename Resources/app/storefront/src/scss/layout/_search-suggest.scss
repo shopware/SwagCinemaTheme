@@ -21,7 +21,7 @@ $search-suggest-image-size: 100px;
         border-radius: 0;
     }
 
-    &:after {
+    &::after {
         content: none;
     }
 
@@ -41,6 +41,10 @@ $search-suggest-image-size: 100px;
         font-weight: $font-weight-bolder;
         color: $gray-700;
 
+        @include media-breakpoint-down(sm) {
+            padding-left: $search-suggest-padding;
+        }
+
         .search-suggest-product-name {
             margin-bottom: $search-suggest-padding;
         }
@@ -49,16 +53,12 @@ $search-suggest-image-size: 100px;
         .search-suggest-product-price {
             @include make-col(12);
         }
-
-        @include media-breakpoint-down(sm) {
-            padding-left: $search-suggest-padding;
-        }
     }
 
     .search-suggest-product-image-container {
+        @include make-col(3);
         width: $search-suggest-image-size;
         height: $search-suggest-image-size;
-        @include make-col(3);
 
         @include media-breakpoint-up(md) {
             margin: 0;

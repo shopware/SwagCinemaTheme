@@ -9,8 +9,8 @@
 
 .btn-link {
     .icon {
-        color: $btn-link-icon-color;
         @include transition($btn-transition);
+        color: $btn-link-icon-color;
     }
 
     &:hover {

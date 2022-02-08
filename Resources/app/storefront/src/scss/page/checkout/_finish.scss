@@ -27,6 +27,10 @@
         padding-top: 45px;
         border: none;
 
+        @include media-breakpoint-up(lg) {
+            padding-top: 60px;
+        }
+
         .card-title {
             font-size: $font-size-lg;
             font-weight: $font-weight-medium;
@@ -43,10 +47,6 @@
             width: 100vw;
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        @include media-breakpoint-up(lg){
-            padding-top: 60px;
         }
     }
 
@@ -98,7 +98,7 @@
         margin-top: 36px;
 
         .btn-back-to-shop {
-            padding: 1px 25px
+            padding: 1px 25px;
         }
     }
 

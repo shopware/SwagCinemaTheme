@@ -9,29 +9,7 @@
         @include media-breakpoint-up(md) {
             padding-top: $checkout-spacing-md;
         }
-    }
 
-    .checkout {
-        .checkout-container {
-            .checkout-aside {
-                .checkout-aside-summary-list {
-                    margin-bottom: $checkout-spacing-sm;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid $table-border-color;
-                }
-
-                .checkout-aside-action {
-                    margin-top: 0;
-                }
-
-                #confirmFormSubmit {
-                    margin-top: 50px;
-                }
-            }
-        }
-    }
-
-    .checkout-main {
         .confirm-main-header {
             font-size: $h5-font-size;
             line-height: 34px;
@@ -73,6 +51,17 @@
         }
 
         .confirm-product {
+            border-top: $border-width solid $border-color-bold;
+
+            @include media-breakpoint-up(md) {
+                border-top: none;
+            }
+
+            .cart-item-unit-price,
+            .cart-item-total-price {
+                line-height: 1;
+            }
+
             .card-title {
                 border-bottom: $border-width solid $border-color-bold;
             }
@@ -86,14 +75,6 @@
             }
         }
 
-        .confirm-product {
-            border-top: $border-width solid $border-color-bold;
-
-            @include media-breakpoint-up(md) {
-                border-top: none;
-            }
-        }
-
         .confirm-checkout-collapse-trigger {
             svg {
                 top: 5px;
@@ -101,14 +82,22 @@
         }
     }
 
-}
+    .checkout {
+        .checkout-container {
+            .checkout-aside {
+                .checkout-aside-summary-list {
+                    margin-bottom: $checkout-spacing-sm;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $table-border-color;
+                }
 
-.is-act-editorder {
-    .checkout-main {
-        .confirm-product {
-            .cart-item-unit-price,
-            .cart-item-total-price {
-                line-height: 1;
+                .checkout-aside-action {
+                    margin-top: 0;
+                }
+
+                #confirmFormSubmit {
+                    margin-top: 50px;
+                }
             }
         }
     }

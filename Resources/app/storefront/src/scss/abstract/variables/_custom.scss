@@ -5,61 +5,61 @@ Contains custom non bootstrap variables.
 */
 $app-css-relative-asset-path: '../assets' !default;
 
-$icon-base-bg:            $gray-900 !default;
-$icon-review-color:       $gray-900 !default;
+$icon-base-bg: $gray-900 !default;
+$icon-review-color: $gray-900 !default;
 
-$placeholder-text:        $gray-400 !default;
-$disable-text:            $gray-300 !default;
+$placeholder-text: $gray-400 !default;
+$disable-text: $gray-300 !default;
 
 // Components
-$border-width-sm:         1px !default;
+$border-width-sm: 1px !default;
 
 // Button
-$btn-font-weight-lg:                          $font-weight-bold !default;
-$disabled-btn-color:                          $white !default;
+$btn-font-weight-lg: $font-weight-bold !default;
+$disabled-btn-color: $white !default;
 
-$disabled-btn-primary-bg:                     #b2e5ec !default;
-$disabled-btn-primary-border-color:           #b2e5ec !default;
+$disabled-btn-primary-bg: #b2e5ec !default;
+$disabled-btn-primary-border-color: #b2e5ec !default;
 
-$disabled-btn-secondary-bg:                   $gray-400 !default;
-$disabled-btn-secondary-border-color:         $gray-400 !default;
+$disabled-btn-secondary-bg: $gray-400 !default;
+$disabled-btn-secondary-border-color: $gray-400 !default;
 
-$disabled-btn-outline-primary-color:          #b2e5ec !default;
-$disabled-btn-outline-primary-bg:             transparent !default;
-$disabled-btn-outline-primary-border-color:   #b2e5ec !default;
+$disabled-btn-outline-primary-color: #b2e5ec !default;
+$disabled-btn-outline-primary-bg: transparent !default;
+$disabled-btn-outline-primary-border-color: #b2e5ec !default;
 
-$disabled-btn-outline-secondary-color:        $gray-400 !default;
-$disabled-btn-outline-secondary-bg:           transparent !default;
+$disabled-btn-outline-secondary-color: $gray-400 !default;
+$disabled-btn-outline-secondary-bg: transparent !default;
 $disabled-btn-outline-secondary-border-color: $gray-400 !default;
 
-$btn-link-icon-color:                         $primary !default;
-$btn-link-icon-hover-color:                   $btn-link-icon-color !default;
+$btn-link-icon-color: $primary !default;
+$btn-link-icon-hover-color: $btn-link-icon-color !default;
 
 // Modals
-$modal-close-padding:                         0 0 0 $modal-header-padding-x !default;
-$modal-close-margin:                          -2.625rem -2.1875rem 0 auto !default;
-$modal-close-color:                           $gray-900 !default;
+$modal-close-padding: 0 0 0 $modal-header-padding-x !default;
+$modal-close-margin: -2.625rem -2.1875rem 0 auto !default;
+$modal-close-color: $gray-900 !default;
 
-$modal-inner-padding-md:                      0 32px 32px 32px !default;
+$modal-inner-padding-md: 0 32px 32px 32px !default;
 
-$modal-header-padding-x-md:                   32px !default;
-$modal-header-padding-md:                     32px $modal-header-padding-x-md 0 !default;
+$modal-header-padding-x-md: 32px !default;
+$modal-header-padding-md: 32px $modal-header-padding-x-md 0 !default;
 
-$modal-footer-padding:                        0 $modal-inner-padding $modal-inner-padding $modal-inner-padding !default;
+$modal-footer-padding: 0 $modal-inner-padding $modal-inner-padding $modal-inner-padding !default;
 
 // Product Detail font sizes
-$product-detail-name:                         34px;
-$product-detail-name-lg:                      44px;
-$product-detail-price:                        20px;
+$product-detail-name: 34px;
+$product-detail-name-lg: 44px;
+$product-detail-price: 20px;
 
 // Alert
-$custom-alert-text-color:                     $white;
+$custom-alert-text-color: $white;
 
 // Top bar
-$topbar-bg:                                  $gray-200 !default;
+$topbar-bg: $gray-200 !default;
 
 // Cms element
-$cms-element-product-listing-gutter-width:   8px !default;
+$cms-element-product-listing-gutter-width: 8px !default;
 
 // Table
 $table-border-color: $gray-400 !default;

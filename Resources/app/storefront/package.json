@@ -1,0 +1,20 @@
+{
+  "name": "swagcinematheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint:scss": "stylelint --config stylelint.config.js ./src/scss",
+    "lint:scss-fix": "npm run lint:scss -- --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stylelint": "^14.3.0",
+    "stylelint-config-sass-guidelines": "^9.0.1"
+  }
+}

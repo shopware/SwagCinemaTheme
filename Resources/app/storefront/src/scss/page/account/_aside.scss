@@ -9,11 +9,11 @@
     }
 
     .account-aside-item.list-group-item {
+        @include border-radius(8px);
         background-color: transparent;
         font-size: 16px;
         font-weight: $font-weight-bold;
         padding: 8px 16px;
-        @include border-radius(8px);
 
         &.is-active {
             background-color: transparent;

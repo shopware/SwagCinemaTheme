@@ -63,7 +63,7 @@
         white-space: unset;
 
         &:hover:not(:disabled) {
-            color: white;
+            color: $white;
         }
     }
 }

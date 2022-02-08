@@ -3,14 +3,18 @@ $navigation-offcanvas-spacer-sm: 10px;
 $navigation-offcanvas-spacer-lg: 60px;
 
 .navigation-offcanvas {
+    @extend .is-fullwidth;
     display: flex;
     flex-direction: column;
-    @extend .is-fullwidth;
 
     .offcanvas-close {
+        @extend .flex-row;
         background-color: $secondary;
         border: none;
-        @extend .flex-row;
+
+        @include media-breakpoint-up(sm) {
+            padding: $spacer-sm $navigation-offcanvas-spacer-lg;
+        }
 
         &:hover {
             background-color: $secondary;
@@ -22,10 +26,6 @@ $navigation-offcanvas-spacer-lg: 60px;
 
         .header-logo-main {
             flex-grow: 1;
-        }
-
-        @include media-breakpoint-up(sm) {
-            padding: $spacer-sm $navigation-offcanvas-spacer-lg;
         }
     }
 
@@ -61,8 +61,8 @@ $navigation-offcanvas-spacer-lg: 60px;
         bottom: 0;
         background-color: $white;
 
-        &:before {
-            content: "";
+        &::before {
+            content: '';
             position: absolute;
             top: 0;
             left: $spacer;
@@ -81,11 +81,11 @@ $navigation-offcanvas-spacer-lg: 60px;
             padding: 0 14px;
         }
 
-        & > *:first-child {
+        > *:first-child {
             padding-left: 0;
         }
 
-        & > *:last-child {
+        > *:last-child {
             padding-right: 0;
         }
     }
@@ -119,13 +119,13 @@ $navigation-offcanvas-spacer-lg: 60px;
                 font-weight: $font-weight-semibold;
                 color: $gray-700;
 
-                .icon svg {
-                    right: -2px;
-                }
-
                 @include media-breakpoint-up(sm) {
                     padding: 15px 0;
                     font-size: 20px;
+                }
+
+                .icon svg {
+                    right: -2px;
                 }
             }
 

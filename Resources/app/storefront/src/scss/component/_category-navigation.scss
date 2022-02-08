@@ -27,7 +27,7 @@
 
 .category-navigation-link {
     @include transition($btn-transition);
-    padding: 12px 0px;
+    padding: 12px 0;
     color: $gray-700;
     font-weight: $font-weight-bold;
     line-height: 20px;

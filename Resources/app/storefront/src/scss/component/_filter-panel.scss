@@ -34,7 +34,7 @@
 
 .filter-panel-item {
     position: relative !important;
-    margin: 0px;
+    margin: 0;
 
     &-dropdown {
         background-color: $white;
@@ -112,7 +112,7 @@
     &.show .filter-panel-item-toggle {
         + .filter-panel-item-dropdown[x-placement^='bottom'] {
             @include border-bottom-radius(8px);
-            @include border-top-radius(0px);
+            @include border-top-radius(0);
 
             border-top-color: transparent;
             margin: 0;
@@ -221,7 +221,7 @@
     font-size: 36px;
     font-weight: $font-weight-semibold;
     line-height: 43px;
-    padding: 32px 0px 24px 0px;
+    padding: 32px 0 24px;
 }
 
 .btn.filter-panel-wrapper-toggle {
@@ -271,7 +271,7 @@
         &:not(.is--sidebar) {
             .filter-panel-items-container {
                 > * {
-                    flex: 1 0 200px;
+                    max-width: 224px;
                 }
             }
         }
@@ -280,7 +280,7 @@
 
 @include media-breakpoint-up(lg) {
     .filter-panel:not(.is--sidebar) {
-        &:before {
+        &::before {
             content: '';
             position: absolute;
             top: 0;
@@ -291,16 +291,6 @@
             width: 100vw;
             left: 50%;
             transform: translateX(-50%);
-        }
-    }
-
-    .filter-panel {
-        &:not(.is--sidebar) {
-            .filter-panel-items-container {
-                > * {
-                    max-width: 224px;
-                }
-            }
         }
     }
 }
@@ -324,6 +314,6 @@
 
 @include media-breakpoint-down(sm) {
     .filter-panel-offcanvas-title {
-        padding: 32px 25px 24px 25px;
+        padding: 32px 25px 24px;
     }
 }

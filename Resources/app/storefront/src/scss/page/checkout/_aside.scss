@@ -64,6 +64,27 @@
         .checkout-aside {
             padding: $checkout-spacing-lg 0 $checkout-spacing-lg $checkout-spacing-lg;
 
+            @include media-breakpoint-only(md) {
+                &::after {
+                    left: calc(-1 * (100vw - 720px) / 2);
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                &::after {
+                    position: fixed !important;
+                    border-top: none;
+                }
+
+                &-product-list {
+                    padding: 10px 0;
+                }
+
+                &-item {
+                    padding: 20px 0;
+                }
+            }
+
             &-summary,
             &-products {
                 padding: 0;
@@ -117,27 +138,6 @@
                 width: 100vw;
                 height: 100%;
                 border-top: $checkout-divider-line;
-            }
-
-            @include media-breakpoint-only(md) {
-                &::after {
-                    left: calc(-1 *(100vw - 720px)/2);
-                }
-            }
-
-            @include media-breakpoint-up(lg) {
-                &::after {
-                    position: fixed;
-                    border-top: none;
-                }
-
-                &-product-list {
-                    padding: 10px 0;
-                }
-
-                &-item {
-                    padding: 20px 0;
-                }
             }
         }
     }
