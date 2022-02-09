@@ -5,11 +5,12 @@
         <name>SwagCinemaTheme</name>
         <label>Cinema Theme</label>
         <label lang="de-DE">Cinema Theme</label>
-        <description></description>
-        <description lang="de-DE"></description>
+        <description>The Cinema Theme from Shopware has a high-contrast design and unique character. It can be used in any branch, offers additional functions and can be extended by apps.</description>
+        <description lang="de-DE">Das Cinema Theme von Shopware hat ein kontrastreiches Design und einzigartigen Charachter. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
         <version>1.0.0</version>
+        <icon>theme-icon.png</icon>
         <license>MIT</license>
     </meta>
 </manifest>
