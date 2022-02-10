@@ -91,132 +91,6 @@
 
 .account-overview,
 .account-orders {
-
-    @include media-breakpoint-down(xs) {
-        .order-item-detail-footer {
-            margin-left: -($grid-gutter-width / 2 + $card-border-width);
-            margin-right: -($grid-gutter-width / 2 + $card-border-width);
-            border-radius: 0;
-        }
-
-        .order-item-detail-summary,
-        .order-item-detail-labels {
-            > *:nth-child(even) {
-                text-align: right;
-            }
-        }
-
-        .order-item-detail-list-item:first-child {
-            border-top: $border-width-sm solid $border-color;
-            padding-top: 20px;
-            margin-top: 10px;
-        }
-    }
-
-    @include media-breakpoint-up(sm) {
-        .order-detail-content {
-            border-top: 0;
-        }
-
-        .order-detail-content-header {
-            display: block;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            border-bottom: $border-width-sm solid $border-color;
-        }
-
-        .order-table-header-heading {
-            font-size: 28px;
-            color: $gray-700;
-        }
-
-        .order-table-header-order-status {
-            flex-basis: auto;
-            margin: 0;
-        }
-
-        .order-detail-content-row {
-            font-size: 16px;
-
-            .order-item-total-value {
-                font-weight: $font-weight-medium;
-            }
-        }
-
-        .order-item {
-            &:first-child {
-                margin-bottom: 0;
-            }
-
-            &:not(:first-child) {
-                padding-left: 20px;
-                font-size: 14px;
-
-                &:not(:last-child) {
-                    padding-right: 20px;
-                }
-            }
-        }
-
-        .order-table-header-order-number {
-            font-size: 14px;
-        }
-
-        .order-item-name {
-            padding: 4px 0;
-        }
-
-        .order-item-value {
-            padding: 4px 0;
-            display: inline-table;
-            text-align: unset;
-        }
-
-        .product-image-link {
-            height: 90px;
-            width: 90px;
-        }
-
-        .order-item-label {
-            display: none;
-        }
-
-        .order-header-price,
-        .order-item-price,
-        .order-header-total,
-        .order-item-total,
-        .order-header-actions {
-            text-align: right;
-        }
-    }
-
-    @include media-breakpoint-up(lg) {
-        .order-table-header-heading {
-            margin-right: 40px;
-        }
-
-        .order-table-header-order-table-header,
-        .order-detail-content-header {
-            font-size: 16px;
-        }
-
-        .order-detail-content-row {
-            .order-item {
-                &:not(:first-child) {
-                    font-size: 16px;
-                }
-
-                &:last-child {
-                    padding-right: 20px;
-                }
-            }
-
-            .order-item-total-value {
-                font-weight: $font-weight-bold;
-            }
-        }
-    }
-
     .order-table {
         border: none;
     }
@@ -475,6 +349,131 @@
 
     .order-item-product-name {
         color: $gray-700;
+    }
+
+    @include media-breakpoint-down(xs) {
+        .order-item-detail-footer {
+            margin-left: -($grid-gutter-width / 2 + $card-border-width);
+            margin-right: -($grid-gutter-width / 2 + $card-border-width);
+            border-radius: 0;
+        }
+
+        .order-item-detail-summary,
+        .order-item-detail-labels {
+            > *:nth-child(even) {
+                text-align: right;
+            }
+        }
+
+        .order-item-detail-list-item:first-child {
+            border-top: $border-width-sm solid $border-color;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .order-detail-content {
+            border-top: 0;
+        }
+
+        .order-detail-content-header {
+            display: block;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: $border-width-sm solid $border-color;
+        }
+
+        .order-table-header-heading {
+            font-size: 28px;
+            color: $gray-700;
+        }
+
+        .order-table-header-order-status {
+            flex-basis: auto;
+            margin: 0;
+        }
+
+        .order-detail-content-row {
+            font-size: 16px;
+
+            .order-item-total-value {
+                font-weight: $font-weight-medium;
+            }
+        }
+
+        .order-detail-content-row .order-item {
+            &:first-child {
+                margin-bottom: 0;
+            }
+
+            &:not(:first-child) {
+                padding-left: 20px;
+                font-size: 14px;
+
+                &:not(:last-child) {
+                    padding-right: 20px;
+                }
+            }
+        }
+
+        .order-table-header-order-number {
+            font-size: 14px;
+        }
+
+        .order-item-name {
+            padding: 4px 0;
+        }
+
+        .order-item-value {
+            padding: 4px 0;
+            display: inline-table;
+            text-align: unset;
+        }
+
+        .product-image-link {
+            height: 90px;
+            width: 90px;
+        }
+
+        .order-item-label {
+            display: none;
+        }
+
+        .order-header-price,
+        .order-item-price,
+        .order-header-total,
+        .order-item-total,
+        .order-header-actions {
+            text-align: right;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .order-table-header-heading {
+            margin-right: 40px;
+        }
+
+        .order-table-header-order-table-header,
+        .order-detail-content-header {
+            font-size: 16px;
+        }
+
+        .order-detail-content-row {
+            .order-item {
+                &:not(:first-child) {
+                    font-size: 16px;
+                }
+
+                &:last-child {
+                    padding-right: 20px;
+                }
+            }
+
+            .order-item-total-value {
+                font-weight: $font-weight-bold;
+            }
+        }
     }
 }
 

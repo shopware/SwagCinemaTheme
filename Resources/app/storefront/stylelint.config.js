@@ -12,6 +12,7 @@ module.exports = {
         'selector-class-pattern': null,
         'selector-max-compound-selectors': null,
         'selector-max-id': null,
+        'order/order': null,
         'selector-no-qualifying-type': [
             true, {
                 ignore: ['attribute', 'class']

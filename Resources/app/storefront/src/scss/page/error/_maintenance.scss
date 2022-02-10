@@ -6,6 +6,20 @@ $picture-width: 390px;
     background-color: $primary-100;
     color: $gray-700;
 
+    h1 {
+        font-size: $h5-font-size;
+        line-height: 1;
+        color: $gray-700;
+        margin-bottom: $spacer;
+        font-weight: $font-weight-semibold;
+    }
+
+    p {
+        font-weight: $font-weight-medium;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+
     @include media-breakpoint-up(md) {
         h1 {
             font-size: 44px;
@@ -24,34 +38,10 @@ $picture-width: 390px;
             font-size: $h2-font-size;
         }
     }
-
-    h1 {
-        font-size: $h5-font-size;
-        line-height: 1;
-        color: $gray-700;
-        margin-bottom: $spacer;
-        font-weight: $font-weight-semibold;
-    }
-
-    p {
-        font-weight: $font-weight-medium;
-        line-height: 24px;
-        margin-bottom: 24px;
-    }
 }
 
 .container-404 {
     padding: 80px 0;
-
-    @include media-breakpoint-up(md) {
-        .content {
-            max-width: 61ch;
-        }
-
-        .picture {
-            max-width: $picture-width;
-        }
-    }
 
     .picture {
         max-width: $picture-width-sm;
@@ -86,6 +76,16 @@ $picture-width: 390px;
         line-height: 36px;
         padding: 0 20px;
     }
+
+    @include media-breakpoint-up(md) {
+        .content {
+            max-width: 61ch;
+        }
+
+        .picture {
+            max-width: $picture-width;
+        }
+    }
 }
 
 .is-ctl-maintenance {
@@ -118,14 +118,6 @@ $picture-width: 390px;
 .container-maintenance {
     padding: 90px 0 125px;
 
-    @include media-breakpoint-up(md) {
-        padding: 155px 0;
-
-        &__bg {
-            margin-bottom: 72px;
-        }
-    }
-
     &__bg {
         padding: 0;
         max-width: 896px;
@@ -135,6 +127,14 @@ $picture-width: 390px;
 
         img {
             max-width: 100%;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        padding: 155px 0;
+
+        &__bg {
+            margin-bottom: 72px;
         }
     }
 }
