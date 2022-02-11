@@ -7,7 +7,7 @@
 }
 
 .cms-form-submit-col {
-    button[type="submit"] {
+    button[type='submit'] {
         @extend .btn-lg;
         float: none !important;
         display: block;
@@ -19,7 +19,7 @@
     .cms-form-submit-col {
         @include make-col(12);
 
-        button[type="submit"] {
+        button[type='submit'] {
             max-width: unset;
         }
     }
@@ -27,7 +27,7 @@
 
 @include media-breakpoint-up(md) {
     .cms-form-submit-col {
-        button[type="submit"] {
+        button[type='submit'] {
             max-width: 200px;
         }
     }

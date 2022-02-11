@@ -15,8 +15,7 @@
     }
 
     select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        appearance: none;
         background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px;
         height: 48px;
     }
@@ -40,7 +39,7 @@
 
             &::before,
             &::after {
-                content: "";
+                content: '';
                 display: block;
                 border-radius: 100%;
                 position: absolute;
@@ -85,7 +84,7 @@
 
             &::before,
             &::after {
-                content: "";
+                content: '';
                 display: block;
                 position: absolute;
                 top: 50%;

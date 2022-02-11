@@ -44,25 +44,46 @@
                     padding: 0;
                     margin-top: 0;
                     margin-bottom: 40px;
+                }
 
-                    .card-title {
-                        color: $gray-700;
-                        font-size: $h5-font-size;
-                        border-bottom: $border-width solid $border-color-bold;
-                        margin-bottom: 15px;
-                        padding-bottom: 13px;
-                        line-height: 34px;
-                    }
+                .card-title {
+                    color: $gray-700;
+                    font-size: $h5-font-size;
+                    border-bottom: $border-width solid $border-color-bold;
+                    margin-bottom: 15px;
+                    padding-bottom: 13px;
+                    line-height: 34px;
+                }
 
-                    #customerComment {
-                        height: 125px;
-                    }
+                #customerComment {
+                    height: 125px;
                 }
             }
         }
 
         .checkout-aside {
             padding: $checkout-spacing-lg 0 $checkout-spacing-lg $checkout-spacing-lg;
+
+            @include media-breakpoint-only(md) {
+                &::after {
+                    left: calc(-1 * (100vw - 720px) / 2);
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                &::after {
+                    position: fixed !important;
+                    border-top: none;
+                }
+
+                &-product-list {
+                    padding: 10px 0;
+                }
+
+                &-item {
+                    padding: 20px 0;
+                }
+            }
 
             &-summary,
             &-products {
@@ -117,27 +138,6 @@
                 width: 100vw;
                 height: 100%;
                 border-top: $checkout-divider-line;
-            }
-
-            @include media-breakpoint-only(md) {
-                &::after {
-                    left: calc(-1 *(100vw - 720px)/2);
-                }
-            }
-
-            @include media-breakpoint-up(lg) {
-                &::after {
-                    position: fixed;
-                    border-top: none;
-                }
-
-                &-product-list {
-                    padding: 10px 0;
-                }
-
-                &-item {
-                    padding: 20px 0;
-                }
             }
         }
     }

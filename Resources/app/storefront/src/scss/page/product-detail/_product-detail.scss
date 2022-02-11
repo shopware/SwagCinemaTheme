@@ -34,18 +34,6 @@
         line-height: 16px;
         font-weight: $font-weight-medium;
 
-        &:nth-child(1) {
-            width: 86px;
-        }
-
-        &:nth-child(3) {
-            width: 131px;
-        }
-
-        &:nth-child(2) {
-            padding-right: 16px;
-        }
-
         @include media-breakpoint-up(sm) {
             &:nth-child(1) {
                 width: 170px;
@@ -64,6 +52,18 @@
             &:nth-child(3) {
                 width: 134px;
             }
+        }
+
+        &:nth-child(1) {
+            width: 86px;
+        }
+
+        &:nth-child(3) {
+            width: 131px;
+        }
+
+        &:nth-child(2) {
+            padding-right: 16px;
         }
     }
 
@@ -101,6 +101,19 @@
 }
 
 .product-detail-price-container {
+    margin-top: 32px;
+    width: calc(100% - 202px);
+
+    &.product-detail-price-table {
+        width: 100%;
+
+        + .product-detail-tax-container {
+            .product-detail-tax {
+                margin-top: 0;
+            }
+        }
+    }
+
     .list-price-badge,
     .list-price-percentage {
         display: none;
@@ -195,16 +208,16 @@
     line-height: 14px;
     font-size: $font-size-base;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         display: inline-block;
     }
 
-    &:before {
+    &::before {
         content: '(';
     }
 
-    &:after {
+    &::after {
         content: ')';
     }
 }
@@ -274,7 +287,7 @@
     position: relative;
 }
 
-[class*="product-detail-buy"] {
+[class*='product-detail-buy'] {
     .product-wishlist {
         width: 48px;
     }
@@ -347,21 +360,6 @@
     }
 }
 
-.product-detail-price-container {
-    margin-top: 32px;
-    width: calc(100% - 202px);
-
-    &.product-detail-price-table {
-        width: 100%;
-
-        + .product-detail-tax-container {
-            .product-detail-tax {
-                margin-top: 0;
-            }
-        }
-    }
-}
-
 .product-detail-tax {
     margin-bottom: 0;
     margin-top: 8px;
@@ -373,12 +371,13 @@
 }
 
 .product-detail-media {
-    &.col-lg-7 {
-        @extend .col-lg-8;
-    }
 
     @include media-breakpoint-up(xl) {
         padding-right: 0;
+    }
+
+    &.col-lg-7 {
+        @extend .col-lg-8;
     }
 
     &.grid {
@@ -393,12 +392,13 @@
 }
 
 .product-detail-buy {
-    &.col-lg-5 {
-        @extend .col-lg-4;
-    }
 
     @include media-breakpoint-up(xl) {
         padding-left: 90px;
+    }
+
+    &.col-lg-5 {
+        @extend .col-lg-4;
     }
 
     .product-detail-review-content {

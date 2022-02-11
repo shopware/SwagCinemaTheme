@@ -1,4 +1,44 @@
 .account-address {
+
+    @include media-breakpoint-down(sm) {
+        &.account-address-form {
+            .form-group {
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .account-welcome {
+            h1 + p {
+                margin-top: 28px;
+                margin-bottom: 64px;
+            }
+        }
+
+        .address-list {
+            margin-bottom: 100px;
+        }
+
+        .address-card:not(:only-child) {
+            &:nth-child(odd) {
+                padding-right: 10px;
+                margin-bottom: 16px;
+            }
+
+            &:nth-child(even) {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .address-list {
+            margin-bottom: 120px;
+        }
+    }
+
     .account-welcome {
         h1 {
             @extend .h2;
@@ -28,12 +68,13 @@
 
     .address-card:not(:only-child) {
         &:first-child {
-           margin-bottom: 40px;
+            margin-bottom: 40px;
         }
     }
 
     .address-list {
         margin-bottom: 50px;
+
         .h3 {
             @extend .h5;
             color: $gray-700;
@@ -80,67 +121,31 @@
                     margin: 0;
                     padding: 0;
                 }
+            }
 
-                .address-actions-buttons .btn-light,
-                .btn-link {
-                    border: none;
-                    width: 100%;
-                    color: $sw-text-color;
-                    background: none;
-                    cursor: pointer;
-                    text-align: left;
-                    font-weight: $font-weight-base;
-                    text-transform: capitalize;
-                    line-height: 18px;
-                    padding: 10px 14px;
-                    border-radius: 0;
+            .address-actions-buttons .btn-light,
+            .btn-link {
+                border: none;
+                width: 100%;
+                color: $sw-text-color;
+                background: none;
+                cursor: pointer;
+                text-align: left;
+                font-weight: $font-weight-base;
+                text-transform: capitalize;
+                line-height: 18px;
+                padding: 10px 14px;
+                border-radius: 0;
 
-                    &:hover, &:focus, &:active {
-                        background-color: $gray-200;
-                        color: inherit;
-                        text-decoration: none;
-                        outline: none;
-                    }
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $gray-200;
+                    color: inherit;
+                    text-decoration: none;
+                    outline: none;
                 }
             }
-        }
-    }
-
-    @include media-breakpoint-down(sm) {
-        &.account-address-form {
-            .form-group {
-                max-width: 100%;
-                flex-basis: 100%;
-            }
-        }
-    }
-
-    @include media-breakpoint-up(sm) {
-        .account-welcome {
-            h1 + p {
-                margin-top: 28px;
-                margin-bottom: 64px;
-            }
-        }
-
-        .address-list {
-            margin-bottom: 100px;
-        }
-
-        .address-card:not(:only-child) {
-            &:nth-child(odd) {
-                padding-right: 10px;
-                margin-bottom: 16px;
-            }
-            &:nth-child(even) {
-                padding-left: 10px;
-            }
-        }
-    }
-
-    @include media-breakpoint-up(lg) {
-        .address-list {
-            margin-bottom: 120px;
         }
     }
 }

@@ -3,7 +3,7 @@
         font-size: 28px;
         font-weight: $font-weight-bold;
         border-bottom: $border-width solid $border-color-bold;
-        padding: 0 0 16px 0;
+        padding: 0 0 16px;
         color: $gray-700;
         margin-bottom: 30px;
         margin-top: 16px;
@@ -25,8 +25,8 @@
     &-aside {
         @extend .col-lg-5;
 
-        &:before {
-            content: "";
+        &::before {
+            content: '';
             display: block;
             position: absolute;
             top: 0;
@@ -169,8 +169,8 @@
 }
 
 .is-act-checkoutregisterpage {
-    [data-swag-paypal-express-button="true"],
-    [data-swag-paypal-installment-banner="true"] {
+    [data-swag-paypal-express-button='true'],
+    [data-swag-paypal-installment-banner='true'] {
         @extend .col-12;
         @extend .col-md-5;
     }
@@ -206,7 +206,7 @@
 
 @include media-breakpoint-up(lg) {
     .account-register-aside {
-        &:before {
+        &::before {
             width: auto;
             left: -9999px;
             transform: none;

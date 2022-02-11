@@ -7,8 +7,8 @@ $checkout-divider-line: 1px solid $table-border-color;
     .container-main,
     .checkout {
         &-main {
-            padding: $checkout-spacing-md 20px 150px;
             @extend .pr-lg-5;
+            padding: $checkout-spacing-md 20px 150px;
         }
     }
 
@@ -27,13 +27,13 @@ $checkout-divider-line: 1px solid $table-border-color;
         padding-top: $checkout-spacing-sm;
         margin-top: $checkout-spacing-sm;
 
-        .card-title {
-            border: none;
-        }
-
         @include media-breakpoint-up(lg) {
             padding-top: $checkout-spacing-md;
             margin-top: $checkout-spacing-md;
+        }
+
+        .card-title {
+            border: none;
         }
     }
 
@@ -71,9 +71,9 @@ $checkout-divider-line: 1px solid $table-border-color;
     }
 
     .checkout-aside {
+        @extend .offset-lg-0;
         background-color: $gray-100;
         border-left: $checkout-divider-line;
-        @extend .offset-lg-0;
     }
 
     .register-submit {

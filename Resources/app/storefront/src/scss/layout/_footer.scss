@@ -35,7 +35,7 @@
     &-minimal,
     &-link,
     &-main a:not(:hover),
-    &-minimal a:not(:hover){
+    &-minimal a:not(:hover) {
         color: #fdfdfd;
     }
 
@@ -63,6 +63,7 @@
 
         a {
             margin: 0 10px;
+
             &:hover {
                 text-decoration: none;
 
@@ -183,8 +184,8 @@
     .footer-logos {
         position: relative;
 
-        &:after {
-            content: "";
+        &::after {
+            content: '';
             display: block;
             position: absolute;
             border-bottom: 1px solid $white;

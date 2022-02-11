@@ -16,7 +16,7 @@
 
 .swag-cms-extensions-quickview {
     &-header {
-        display: none
+        display: none;
     }
 
     &-content {
@@ -47,7 +47,6 @@
 @include media-breakpoint-down(sm) {
     .swag-cms-extensions-quickview {
         &-content {
-
             .btn-buy {
                 margin-top: $spacer;
             }

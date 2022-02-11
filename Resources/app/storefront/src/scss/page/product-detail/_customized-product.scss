@@ -81,7 +81,7 @@
     }
 
     .input-group {
-        & > .form-control {
+        > .form-control {
             border-radius: 11px;
             padding: 12px 16px;
             overflow: hidden;
@@ -175,19 +175,18 @@
             margin-bottom: 10px;
         }
 
-       .swag-customized-products__navigation-holder {
-           border-bottom: 0;
+        .swag-customized-products__navigation-holder {
+            border-bottom: 0;
 
-           > .form-group {
-               margin: 0;
-               padding: 20px 0;
-           }
+            > .form-group {
+                margin: 0;
+                padding: 20px 0;
+            }
 
-           .swag-customized-products-navigation,
-           .swag-customized-products-navigation {
-               padding-bottom: 0;
-           }
-       }
+            .swag-customized-products-navigation {
+                padding-bottom: 0;
+            }
+        }
 
         .swag-customized-products__title-link-container {
             border-top: none;
@@ -241,15 +240,12 @@
         }
 
         .swag-customized-products-pager__button {
-            height: 40px;
-            min-width: 122px;
-        }
-
-        .swag-customized-products-pager__button {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            height: 40px;
+            min-width: 122px;
 
             .icon {
                 width: 18px;

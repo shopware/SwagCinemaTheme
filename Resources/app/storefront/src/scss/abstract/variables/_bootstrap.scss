@@ -7,10 +7,10 @@ $asset-path: '#{$sw-asset-theme-url}/bundles/swagcinematheme/assets' !default;
 // Color system
 
 // scss-docs-start gray-color-variables
-$white:    #fff !default;
-$black:    #000 !default;
+$white: #fff !default;
+$black: #000 !default;
 
-$gray-50:  mix($white, $sw-text-color, 97%) !default; //#f7f8f8
+$gray-50: mix($white, $sw-text-color, 97%) !default; //#f7f8f8
 $gray-100: mix($white, $sw-text-color, 95%) !default; //#f4f4f5
 $gray-200: mix($white, $sw-text-color, 91%) !default; //#e8eaec
 $gray-300: mix($white, $sw-text-color, 80%) !default; //#cdd2d6
@@ -33,41 +33,41 @@ $font-weight-bolder: 700 !default;
 $primary-100: #e4f6f8 !default;
 
 // scss-docs-start theme-color-variables
-$primary:       $sw-color-brand-primary !default;
-$secondary:     $sw-color-brand-secondary !default;
-$success:       $sw-color-success !default;
-$info:          $sw-color-info !default;
-$warning:       $sw-color-warning !default;
-$danger:        $sw-color-danger !default;
+$primary: $sw-color-brand-primary !default;
+$secondary: $sw-color-brand-secondary !default;
+$success: $sw-color-success !default;
+$info: $sw-color-info !default;
+$warning: $sw-color-warning !default;
+$danger: $sw-color-danger !default;
 // scss-docs-end theme-color-variables
 
 // Components
 //
 // Define common padding and border radius sizes and more.
 
-$border-width:                   2px !default;
-$border-color:                   $gray-400 !default;
-$border-color-bold:              $sw-text-color !default;
+$border-width: 2px !default;
+$border-color: $gray-400 !default;
+$border-color-bold: $sw-text-color !default;
 
 // Typography
 // Font, line-height, and color for body text, headings, and more.
 
 // scss-docs-start border-radius-variables
-$border-radius:     .5rem !default;
-$border-radius-sm:  .375rem !default;
-$border-radius-lg:  .6875rem !default;
+$border-radius: 0.5rem !default;
+$border-radius-sm: 0.375rem !default;
+$border-radius-lg: 0.6875rem !default;
 $border-color: $gray-600 !default;
 // scss-docs-end border-radius-variables
 
 // scss-docs-start font-variables
-$h1-font-size:      5.625rem !default;
-$h2-font-size:      3.5rem !default;
-$h3-font-size:      2.75rem !default;
-$h4-font-size:      2.25rem !default;
-$h5-font-size:      1.75rem !default;
-$h6-font-size:      1.5rem !default;
+$h1-font-size: 5.625rem !default;
+$h2-font-size: 3.5rem !default;
+$h3-font-size: 2.75rem !default;
+$h4-font-size: 2.25rem !default;
+$h5-font-size: 1.75rem !default;
+$h6-font-size: 1.5rem !default;
 
-$headings-font-weight:        $font-weight-bold !default;
+$headings-font-weight: $font-weight-bold !default;
 // scss-docs-end font-variables
 
 
@@ -76,11 +76,11 @@ $headings-font-weight:        $font-weight-bold !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 // Form Input
-$input-font-weight:             500 !default;
-$input-border-width:            2px !default;
-$input-padding-x:               1rem !default;
-$input-border-color:            $black !default;
-$input-placeholder-color:       $gray-400 !default;
+$input-font-weight: 500 !default;
+$input-border-width: 2px !default;
+$input-padding-x: 1rem !default;
+$input-border-color: $black !default;
+$input-placeholder-color: $gray-400 !default;
 $input-height-lg: 48px;
 
 // Form checkbox
@@ -88,42 +88,42 @@ $custom-checkbox-indicator-border-radius: 4px !default;
 $custom-control-indicator-border-color: $border-color-bold !default;
 
 // scss-docs-start btn-variables
-$btn-font-size:                 .875rem !default;
-$btn-font-weight:               500 !default;
-$btn-padding-y:                 .0625rem !default;
-$btn-padding-x:                 .625rem !default;
-$btn-border-width:              .125rem !default;
-$btn-focus-box-shadow:          none !default;
+$btn-font-size: 0.875rem !default;
+$btn-font-weight: 500 !default;
+$btn-padding-y: 0.0625rem !default;
+$btn-padding-x: 0.625rem !default;
+$btn-border-width: 0.125rem !default;
+$btn-focus-box-shadow: none !default;
 
-$btn-padding-y-sm:              .0625rem !default;
+$btn-padding-y-sm: 0.0625rem !default;
 
-$btn-padding-y-lg:              .1875rem !default;
+$btn-padding-y-lg: 0.1875rem !default;
 // scss-docs-start btn-variables
 
 // Alerts
-$alert-padding-y:               1rem !default;
-$alert-padding-x:               .75rem !default;
-$alert-border-radius:           11px 11px 11px 4px !default;
+$alert-padding-y: 1rem !default;
+$alert-padding-x: 0.75rem !default;
+$alert-border-radius: 11px 11px 11px 4px !default;
 
 // Tables
-$table-accent-bg:               transparent !default;
-$table-cell-padding:            15px 0 !default;
-$table-border-width:            2px !default;
-$table-caption-color:           $gray-400 !default;
+$table-accent-bg: transparent !default;
+$table-cell-padding: 15px 0 !default;
+$table-border-width: 2px !default;
+$table-caption-color: $gray-400 !default;
 
 
 // Modals
 
 // scss-docs-start modal-variables
-$modal-inner-padding:           0 64px 48px 64px !default;
+$modal-inner-padding: 0 64px 48px 64px !default;
 
-$modal-header-border-color:     transparent !default;
-$modal-header-padding-x:        64px !default;
-$modal-header-padding:          64px $modal-header-padding-x 0 !default; // Keep this for backwards compatibility
+$modal-header-border-color: transparent !default;
+$modal-header-padding-x: 64px !default;
+$modal-header-padding: 64px $modal-header-padding-x 0 !default; // Keep this for backwards compatibility
 
-$modal-content-border-radius:   1rem !default;
+$modal-content-border-radius: 1rem !default;
 
-$modal-md:                      746px !default;
+$modal-md: 746px !default;
 // scss-docs-end modal-variables
 
 
@@ -143,8 +143,8 @@ $container-max-widths: (
 // Badges
 
 // scss-docs-start badge-variables
-$badge-font-size:               14px !default;
-$badge-font-weight:             $font-weight-bolder !default;
+$badge-font-size: 14px !default;
+$badge-font-weight: $font-weight-bolder !default;
 // scss-docs-end badge-variables
 
 
@@ -152,30 +152,30 @@ $badge-font-weight:             $font-weight-bolder !default;
 //
 // Style anchor elements.
 
-$link-hover-color:              $primary !default;
+$link-hover-color: $primary !default;
 
 // Pagination
 
-$pagination-color:                  $gray-900 !default;
-$pagination-border-width:           0 !default;
-$pagination-padding-y:              0 !default;
-$pagination-padding-x:              4px !default;
-$pagination-line-height:            36px !default;
+$pagination-color: $gray-900 !default;
+$pagination-border-width: 0 !default;
+$pagination-padding-y: 0 !default;
+$pagination-padding-x: 4px !default;
+$pagination-line-height: 36px !default;
 
-$pagination-hover-color:            $primary !default;
-$pagination-hover-bg:               $primary-100 !default;
-$pagination-hover-border-color:     $primary-100 !default;
+$pagination-hover-color: $primary !default;
+$pagination-hover-bg: $primary-100 !default;
+$pagination-hover-border-color: $primary-100 !default;
 
-$pagination-active-color:           $white !default;
-$pagination-active-bg:              $primary !default;
-$pagination-active-border-color:    $pagination-hover-border-color !default;
+$pagination-active-color: $white !default;
+$pagination-active-bg: $primary !default;
+$pagination-active-border-color: $pagination-hover-border-color !default;
 
 
 // Forms
 
-$custom-control-gutter:             .75rem !default;
+$custom-control-gutter: 0.75rem !default;
 
-$form-grid-gutter-width:            20px !default;
+$form-grid-gutter-width: 20px !default;
 
 
 // Dropdowns
@@ -183,13 +183,13 @@ $form-grid-gutter-width:            20px !default;
 // Dropdown menu container and contents.
 
 // scss-docs-start dropdown-variables
-$dropdown-border-color:              $gray-900 !default;
-$dropdown-padding-y:                 0 !default;
+$dropdown-border-color: $gray-900 !default;
+$dropdown-padding-y: 0 !default;
 // scss-docs-end dropdown-variables
 
 //Progress
 
-$progress-height:                   6px !default;
-$progress-bg:                       $gray-300 !default;
-$progress-border-radius:            0 !default;
-$progress-bar-review:               $primary !default;
+$progress-height: 6px !default;
+$progress-bg: $gray-300 !default;
+$progress-border-radius: 0 !default;
+$progress-bar-review: $primary !default;

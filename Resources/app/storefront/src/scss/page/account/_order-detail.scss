@@ -1,4 +1,33 @@
 .order-item-detail {
+
+    @include media-breakpoint-up(sm) {
+        .document-detail-content-header {
+            ~ .order-detail-content-row {
+                padding: 10px 0;
+
+                &:not(:last-child) {
+                    border-bottom: $border-width-sm solid $border-color;
+                }
+            }
+        }
+
+        .document-item {
+            font-size: 14px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .document-item-view-file {
+            margin-top: -17px;
+        }
+
+        .document-item-date {
+            color: $gray-600;
+        }
+    }
+
     .document-detail-content-header {
         ~ .order-detail-content-row {
             padding: 6px 0;
@@ -39,48 +68,21 @@
             }
         }
     }
-
-    @include media-breakpoint-up(sm) {
-        .document-detail-content-header {
-            ~ .order-detail-content-row {
-                padding: 10px 0;
-
-                &:not(:last-child) {
-                    border-bottom: $border-width-sm solid $border-color;
-                }
-            }
-        }
-
-        .document-item {
-            font-size: 14px;
-            padding-right: 20px;
-            padding-left: 20px;
-        }
-    }
-
-    @include media-breakpoint-down(sm) {
-        .document-item-view-file {
-            margin-top: -17px;
-        }
-
-        .document-item-date {
-            color: $gray-600;
-        }
-    }
 }
 
 .order-item-detail-footer {
+
+    @include media-breakpoint-up(md) {
+        .order-item-summary {
+            order: 1;
+        }
+    }
+
     dl {
         dt.col,
         dt[class*='col-'] {
             margin-bottom: 0;
             padding-right: 0;
-        }
-    }
-
-    @include media-breakpoint-up(md) {
-        .order-item-summary {
-            order: 1;
         }
     }
 }
@@ -93,7 +95,7 @@
     dd {
         @extend .col-md-7;
 
-        &:after {
+        &::after {
             content: '*';
         }
     }

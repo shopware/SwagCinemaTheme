@@ -15,7 +15,6 @@
 
 {% block component_filter_panel_element %}
     {# hidden block filter-panel when filter empty #}
-    {# @var manufacturers \Shopware\Core\Framework\DataAbstractionLayer\Search\AggregationResult\Metric\EntityResult #}
     {% set manufacturers = listing.aggregations.get('manufacturer') %}
 
     <div class="filter-panel{% if sidebar %} is--sidebar{% endif %} {% if manufacturers.entities is empty %}d-none{% endif %}">

@@ -2,7 +2,7 @@
     left: 0;
     top: 100%;
 
-    [class="navigation-flyout-categories"] {
+    [class='navigation-flyout-categories'] {
         margin-left: $spacer;
         border-top: 2px solid $gray-900;
         padding-top: $spacer-lg;
@@ -10,7 +10,7 @@
 
     .navigation-flyout-categories {
         .navigation-flyout-col {
-            &:before {
+            &::before {
                 content: none;
             }
         }

@@ -26,6 +26,8 @@
                       data-form-csrf-handler="true"
                       data-form-preserver="true"
                       data-form-submit-loader="true"
+                      data-form-add-history="true"
+                      data-form-add-history-options='{{ formAddHistoryOptions|json_encode }}'
                       method="post">
 
                     {{ block('page_checkout_aside_actions_csrf') }}
