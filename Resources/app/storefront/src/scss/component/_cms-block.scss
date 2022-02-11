@@ -72,10 +72,12 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .cms-block-sidebar-filter {
-        position: sticky;
-        top: 0;
-        z-index: 10;
+    .is-act-home {
+        .cms-block-sidebar-filter {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
     }
 
     .is-ctl-navigation {
