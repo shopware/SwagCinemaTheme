@@ -1,3 +1,6 @@
+$icon-star: url('#{$asset-path}/icon-pack/cinema/ic-star-bg.svg');
+$icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
+
 .filter-panel {
     padding: $spacer * 2 0;
     margin-bottom: 0;
@@ -247,6 +250,48 @@
 .is--sidebar {
     .filter-panel-item {
         margin-bottom: $spacer;
+    }
+}
+
+.filter-active-icon {
+    width: 96px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    height: 17px;
+    font-size: 0;
+    top: -2px;
+
+    &:before {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 1;
+        content: '';
+        background: $icon-star;
+        background-size: 17px;
+        background-position: 0;
+        background-repeat: space;
+    }
+
+    > span {
+        display: inline-block;
+        height: 17px;
+        padding-right: 2px;
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: $icon-star-fill;
+            background-size: 17px;
+            background-position: 0;
+            background-repeat: space;
+            display: block;
+        }
     }
 }
 
