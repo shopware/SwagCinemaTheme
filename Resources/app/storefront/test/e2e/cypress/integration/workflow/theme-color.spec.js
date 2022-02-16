@@ -53,7 +53,7 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
                 }).as('saveData');
 
                 cy.get('.sw-theme-list-item .sw-theme-list-item__title')
-                    .contains('SwagCinemaTheme')
+                    .contains('Cinema Theme')
                     .click();
 
                 cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
@@ -91,7 +91,7 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
         cy.get('.sw-theme-list-item')
             .last()
             .get('.sw-theme-list-item__title')
-            .contains('SwagCinemaTheme')
+            .contains('Cinema Theme')
             .click();
 
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);
