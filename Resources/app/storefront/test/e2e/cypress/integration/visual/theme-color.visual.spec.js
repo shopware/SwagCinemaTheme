@@ -54,7 +54,7 @@ describe('ThemeColor: Visual tests', () => {
                 }).as('saveData');
 
                 cy.get('.sw-theme-list-item .sw-theme-list-item__title')
-                    .contains('SwagCinemaTheme')
+                    .contains('Cinema Theme')
                     .click();
 
                 cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
@@ -92,7 +92,7 @@ describe('ThemeColor: Visual tests', () => {
         cy.get('.sw-theme-list-item')
             .last()
             .get('.sw-theme-list-item__title')
-            .contains('SwagCinemaTheme')
+            .contains('Cinema Theme')
             .click();
 
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);

@@ -1,5 +1,5 @@
 {
-    "name": "SwagCinemaTheme",
+    "name": "Cinema Theme",
     "author": "Shopware AG",
     "views": [
         "@Storefront",
@@ -28,6 +28,30 @@
     ],
     "config": {
         "blocks": {
+            "themeColors": {
+                "label": {
+                    "en-GB": "Theme colors",
+                    "de-DE": "Themenfarben"
+                }
+            },
+            "typography": {
+                "label": {
+                    "en-GB": "Typography",
+                    "de-DE": "Typografie"
+                }
+            },
+            "statusColors": {
+                "label": {
+                    "en-GB": "Status messages",
+                    "de-DE": "Status-Meldungen"
+                }
+            },
+            "media": {
+                "label": {
+                    "en-GB": "Media",
+                    "de-DE": "Medien"
+                }
+            },
             "footer": {
                 "label": {
                     "en-GB": "Footer",
@@ -36,8 +60,8 @@
             },
             "404 Page": {
                 "label": {
-                    "en-GB": "404 page",
-                    "de-DE": "404-seite"
+                    "en-GB": "404 error page",
+                    "de-DE": "404-Fehlerseite"
                 }
             },
             "Maintenance Page": {
@@ -45,61 +69,157 @@
                     "en-GB": "Maintenance page",
                     "de-DE": "Wartungsseite"
                 }
+            },
+            "wishlist": {
+                "label": {
+                    "en-GB": "Wishlist",
+                    "de-DE": "Wishlist"
+                }
             }
         },
         "fields": {
             "sw-color-brand-primary": {
+                "label": {
+                    "en-GB": "Primary colour",
+                    "de-DE": "Primärfarbe"
+                },
                 "value": "#00a9c1"
             },
             "sw-color-brand-secondary": {
+                "label": {
+                    "en-GB": "Secondary colour",
+                    "de-DE": "Sekundärfarbe"
+                },
                 "value": "#071c31"
             },
+            "sw-border-color": {
+                "label": {
+                    "en-GB": "Border",
+                    "de-DE": "Rahmen"
+                }
+            },
+            "sw-background-color": {
+                "label": {
+                    "en-GB": "Background",
+                    "de-DE": "Hintergrund"
+                }
+            },
             "sw-color-success": {
+                "label": {
+                    "en-GB": "Success",
+                    "de-DE": "Erfolg"
+                },
                 "value": "#0ea037"
             },
             "sw-color-info": {
+                "label": {
+                    "en-GB": "Information",
+                    "de-DE": "Information"
+                },
                 "value": "#027eab"
             },
+            "sw-color-warning": {
+                "label": {
+                    "en-GB": "Notice",
+                    "de-DE": "Hinweis"
+                }
+            },
             "sw-color-danger": {
+                "label": {
+                    "en-GB": "Error",
+                    "de-DE": "Fehler"
+                },
                 "value": "#c30205"
             },
             "sw-font-family-base": {
+                "label": {
+                    "en-GB": "Text font type",
+                    "de-DE": "Schriftart Text"
+                },
                 "value": "'IBM Plex Sans', sans-serif"
             },
             "sw-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
                 "value": "#071c31"
             },
             "sw-font-family-headline": {
+                "label": {
+                    "en-GB": "Headline font type",
+                    "de-DE": "Schriftart Überschrift"
+                },
                 "value": "'IBM Plex Sans', sans-serif"
             },
             "sw-headline-color": {
+                "label": {
+                    "en-GB": "Headline colour",
+                    "de-DE": "Überschriftfarbe"
+                },
                 "value": "#071c31"
             },
             "sw-color-price": {
+                "label": {
+                    "en-GB": "Price",
+                    "de-DE": "Preis"
+                },
                 "value": "#071c31"
             },
             "sw-color-buy-button": {
+                "label": {
+                    "en-GB": "Buy button",
+                    "de-DE": "Kaufen-Button"
+                },
                 "value": "#00a9c3"
             },
             "sw-color-buy-button-text": {
+                "label": {
+                    "en-GB": "Buy button text",
+                    "de-DE": "Kaufen-Button-Text"
+                },
                 "value": "#ffffff"
             },
             "sw-logo-desktop": {
+                "label": {
+                    "en-GB": "Desktop",
+                    "de-DE": "Desktop"
+                },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/cinema-logo.svg"
             },
             "sw-logo-tablet": {
+                "label": {
+                    "en-GB": "Tablet",
+                    "de-DE": "Tablet"
+                },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/cinema-logo.svg"
             },
             "sw-logo-mobile": {
+                "label": {
+                    "en-GB": "Mobile",
+                    "de-DE": "Handy"
+                },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/cinema-logo.svg"
+            },
+            "sw-logo-share": {
+                "label": {
+                    "en-GB": "App & share icon",
+                    "de-DE": "App- & Share-Icon"
+                }
+            },
+            "sw-logo-favicon": {
+                "label": {
+                    "en-GB": "Favicon",
+                    "de-DE": "Favicon"
+                }
             },
             "sw-footer-logo": {
                 "label": {
                     "en-GB": "Footer logo",
-                    "de-DE": "Footer Logo"
+                    "de-DE": "Footer-Logo"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/cinema-logo.svg",
@@ -109,8 +229,8 @@
             },
             "sw-instagram-link": {
                 "label": {
-                    "en-GB": "Instagram Link",
-                    "de-DE": "Instagram Link"
+                    "en-GB": "Instagram link",
+                    "de-DE": "Instagram-Link"
                 },
                 "type": "textarea",
                 "value": "https://www.instagram.com/",
@@ -119,8 +239,8 @@
             },
             "sw-facebook-link": {
                 "label": {
-                    "en-GB": "Facebook Link",
-                    "de-DE": "Facebook Link"
+                    "en-GB": "Facebook link",
+                    "de-DE": "Facebook-Link"
                 },
                 "type": "textarea",
                 "value": "https://www.facebook.com/",
@@ -129,8 +249,8 @@
             },
             "sw-pinterest-link": {
                 "label": {
-                    "en-GB": "Pinterest Link",
-                    "de-DE": "Pinterest Link"
+                    "en-GB": "Pinterest link",
+                    "de-DE": "Pinterest-Link"
                 },
                 "type": "textarea",
                 "value": "https://www.pinterest.com/",
@@ -139,8 +259,8 @@
             },
             "sw-404-bg-desktop": {
                 "label": {
-                    "en-GB": "Desktop Background Image",
-                    "de-DE": "Desktop-Hintergrundbild"
+                    "en-GB": "Desktop background",
+                    "de-DE": "Desktop-Hintergrund"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/404-desktop.png",
@@ -149,8 +269,8 @@
             },
             "sw-404-bg-tablet": {
                 "label": {
-                    "en-GB": "Tablet Background Image",
-                    "de-DE": "Tablet-Hintergrundbild"
+                    "en-GB": "Tablet background",
+                    "de-DE": "Tablet-Hintergrund"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/404-tablet.png",
@@ -159,8 +279,8 @@
             },
             "sw-404-bg-mobile": {
                 "label": {
-                    "en-GB": "Mobile Background Image",
-                    "de-DE": "Mobiles Hintergrundbild"
+                    "en-GB": "Mobile background",
+                    "de-DE": "Handy-Hintergrund"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/404-mobile.png",
@@ -169,8 +289,8 @@
             },
             "sw-maintenance-bg-mobile": {
                 "label": {
-                    "en-GB": "Maintenance Background",
-                    "de-DE": "Wartung Hintergrund"
+                    "en-GB": "Mobile background",
+                    "de-DE": "Handy-Hintergrund"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/maintenance-mobile.png",
@@ -179,8 +299,8 @@
             },
             "sw-maintenance-bg-tablet": {
                 "label": {
-                    "en-GB": "Tablet Maintenance Background",
-                    "de-DE": "Tablet Wartung Hintergrund"
+                    "en-GB": "Tablet background",
+                    "de-DE": "Tablet-Hintergrund"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/maintenance-tablet.png",
@@ -189,8 +309,8 @@
             },
             "sw-maintenance-bg-desktop": {
                 "label": {
-                    "en-GB": "Tablet Maintenance Background",
-                    "de-DE": "Tablet Wartung Hintergrund"
+                    "en-GB": "Desktop background",
+                    "de-DE": "Desktop-Hintergrund"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/maintenance-desktop.png",
@@ -200,7 +320,7 @@
             "sw-wishlist-empty": {
                 "label": {
                     "en-GB": "Mobile empty state",
-                    "de-DE": "Mobile empty state"
+                    "de-DE": "Handy-Leerzustand"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/empty-wishlist-mobile.png",
@@ -210,7 +330,7 @@
             "sw-wishlist-empty-tablet": {
                 "label": {
                     "en-GB": "Tablet empty state",
-                    "de-DE": "Tablet empty state"
+                    "de-DE": "Tablet-Leerzustand"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/empty-wishlist-tablet.png",
@@ -220,7 +340,7 @@
             "sw-wishlist-empty-desktop": {
                 "label": {
                     "en-GB": "Desktop empty state",
-                    "de-DE": "Desktop empty state"
+                    "de-DE": "Desktop-Leerzustand"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/empty-wishlist-desktop.png",
