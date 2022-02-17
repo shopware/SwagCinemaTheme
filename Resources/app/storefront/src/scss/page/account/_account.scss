@@ -134,8 +134,7 @@
         width: 16px;
     }
 
-    .order-table-header-label,
-    .order-item-total-value {
+    .order-table-header-label {
         font-weight: $font-weight-normal;
     }
 
@@ -464,14 +463,11 @@
                 &:not(:first-child) {
                     font-size: 16px;
                 }
-
-                &:last-child {
-                    padding-right: 20px;
-                }
             }
 
             .order-item-total-value {
                 font-weight: $font-weight-bold;
+                color: $gray-700;
             }
         }
     }
@@ -491,5 +487,13 @@
 @include media-breakpoint-up(lg) {
     .account-content .account-content-aside {
         padding-top: 55px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .order-item-total-label,
+    .order-item-total-value {
+        font-weight: $font-weight-medium;
+        font-size: $font-size-base;
     }
 }
