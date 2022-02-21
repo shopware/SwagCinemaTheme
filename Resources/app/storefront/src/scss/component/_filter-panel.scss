@@ -102,11 +102,11 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
             @include border-bottom-radius(0);
 
             color: $sw-text-color;
-            border-color: $border-color-bold;
             border-bottom-color: transparent;
         }
 
         + .filter-panel-item-dropdown {
+            border-color: $primary;
             overflow: hidden;
             padding: 0;
         }
@@ -117,7 +117,7 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
             @include border-bottom-radius(8px);
             @include border-top-radius(0);
 
-            border-top-color: transparent;
+            border-color: $primary;
             margin: 0;
         }
 
@@ -137,7 +137,7 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
     min-width: 0;
     top: -12px !important;
     padding-top: 0;
-    border: $border-width solid $border-color-bold;
+    border: $border-width solid $primary;
     border-top: 0;
 }
 
