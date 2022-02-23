@@ -6,7 +6,7 @@
         <label>Cinema Theme</label>
         <label lang="de-DE">Cinema Theme</label>
         <description>The Cinema Theme from Shopware has a high-contrast design and unique character. It can be used in any branch, offers additional functions and can be extended by apps.</description>
-        <description lang="de-DE">Das Cinema Theme von Shopware hat ein kontrastreiches Design und einzigartigen Charachter. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
+        <description lang="de-DE">Das Cinema Theme von Shopware hat ein kontrastreiches Design und einzigartigen Charakter. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
         <version>1.0.0</version>
