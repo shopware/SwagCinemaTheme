@@ -29,7 +29,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
     function fillOutContactForm(el) {
         cy.get(el).within(() => {
             cy.get(selector.formContactSalutation).select('Not specified');
-            cy.get(selector.formContactFirstName).type('Foo');
+            cy.get(selector.formContactFirstName).focus().type('Foo');
             cy.get(selector.formContactLastName).type('Bar');
             cy.get(selector.formContactMail).type('user@example.com');
             cy.get(selector.formContactPhone).type('+123456789');

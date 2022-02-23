@@ -103,7 +103,7 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
         cy.get('.sw-card__title').contains('eCommerce')
             .parent('.sw-theme-manager-detail__area')
             .find('.sw-colorpicker__input')
-            .first().clear().typeAndCheck(colorScheme.buyButton);
+            .first().clear().typeAndCheck(colorScheme.price);
 
         cy.get('.sw-card__title').contains('eCommerce')
             .parent('.sw-theme-manager-detail__area')

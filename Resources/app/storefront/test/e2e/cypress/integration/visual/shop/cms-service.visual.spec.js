@@ -54,6 +54,10 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
         cy.get('#sw-field--draft').type('Shipping and payment{enter}');
         cy.wait('@saveData');
 
+        cy.get('.sw-tree-item__children .tree-link')
+            .contains('Shipping and payment')
+            .click();
+
         cy.get('.sw-card__title').contains('General').should('be.visible');
         cy.get('input[name="categoryActive"]').click();
 

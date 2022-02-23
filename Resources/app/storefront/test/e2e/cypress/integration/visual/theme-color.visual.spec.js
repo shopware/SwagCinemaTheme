@@ -4,7 +4,7 @@ let product = {};
 let colorScheme = {};
 const accountPage = new AccountPageObject();
 
-describe('ThemeColor: Visual tests', () => {
+describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => cy.setShippingMethodInSalesChannel('Standard'))
@@ -46,7 +46,7 @@ describe('ThemeColor: Visual tests', () => {
                 cy.loginViaApi()
             })
             .then(() => {
-                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
 
                 cy.intercept({
                     path: `${Cypress.env('apiPath')}/_action/theme/*`,
@@ -95,20 +95,20 @@ describe('ThemeColor: Visual tests', () => {
             .contains('Cinema Theme')
             .click();
 
+        // Primary
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);
+
+        // Secondary
+        cy.get('.sw-colorpicker .sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.secondary);
 
         cy.get('.sw-card__title').contains('eCommerce')
             .parent('.sw-theme-manager-detail__area')
             .find('.sw-colorpicker__input')
-            .first().clear().typeAndCheck(colorScheme.buyButton);
+            .first().clear().typeAndCheck(colorScheme.price);
 
         cy.get('.sw-card__title').contains('eCommerce')
             .parent('.sw-theme-manager-detail__area')
-            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.price);
-
-        cy.get('[label="Secondary colour"]')
-            .parent('.sw-theme-manager-detail__content--section_field')
-            .find('.sw-colorpicker__input').clear().typeAndCheck(colorScheme.secondary);
+            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.buyButton);
 
         cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
         cy.get('.sw-modal .sw-button--primary').click();
@@ -160,19 +160,13 @@ describe('ThemeColor: Visual tests', () => {
 
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
 
-        // I comment this block because the Finish checkout page has not been implemented
-        // cy.get('.revocation-notice > a').should('have.css', 'color', hexToRGB(colorScheme.textColor));
-        // cy.get('#confirmFormSubmit').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
-        // cy.get('.checkout-confirm-tos-checkbox').should('not.be.visible')
-        //     .check({ force: true })
-        //     .should('be.checked');
-        // cy.takeSnapshot('[Theme Color] Checkout - Complete order', '.checkout');
-        //
-        // cy.get('#confirmFormSubmit').scrollIntoView();
-        // cy.get('#confirmFormSubmit').click();
+        cy.get('.checkout-confirm-tos-checkbox').should('not.be.visible')
+            .check({ force: true })
+            .should('be.checked');
+        cy.takeSnapshot('[Theme Color] Checkout - Complete order', '.checkout');
 
-        // cy.get('.finish-back-to-shop-button a').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
-        // cy.get('.finish-back-to-shop-button a').should('have.css', 'border-color', hexToRGB(colorScheme.primary));
-        // cy.takeSnapshot('[Theme Color] Checkout - Thank you page', '.checkout');
+        cy.get('#confirmFormSubmit').scrollIntoView();
+        cy.get('#confirmFormSubmit').click();
+        cy.takeSnapshot('[Theme Color] Checkout - Thank you page', '.checkout');
     });
 });

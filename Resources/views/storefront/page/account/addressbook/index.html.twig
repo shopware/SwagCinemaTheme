@@ -14,7 +14,6 @@
 {% block page_account_address_overview_actions %}
 {% endblock %}
 
-
 {% block page_account_address_overview_address %}
     {% sw_include '@Storefront/storefront/component/address/address.html.twig' with { 'showShippingWarning': defaultShippingAddress.id != address.id, 'showActionsButton': true } %}
 {% endblock %}
