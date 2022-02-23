@@ -94,20 +94,20 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
             .contains('Cinema Theme')
             .click();
 
+        // Primary
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);
 
-        cy.get('.sw-card__title').contains('E-Commerce')
+        // Secondary
+        cy.get('.sw-colorpicker .sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.secondary);
+
+        cy.get('.sw-card__title').contains('eCommerce')
             .parent('.sw-theme-manager-detail__area')
             .find('.sw-colorpicker__input')
             .first().clear().typeAndCheck(colorScheme.buyButton);
 
-        cy.get('.sw-card__title').contains('E-Commerce')
+        cy.get('.sw-card__title').contains('eCommerce')
             .parent('.sw-theme-manager-detail__area')
-            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.price);
-
-        cy.get('[label="Secondary colour"]')
-            .parent('.sw-theme-manager-detail__content--section_field')
-            .find('.sw-colorpicker__input').clear().typeAndCheck(colorScheme.secondary);
+            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.buyButton);
 
         cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
         cy.get('.sw-modal .sw-button--primary').click();
@@ -152,18 +152,5 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
         cy.get('.offcanvas-cart-actions .btn-link').click();
 
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
-
-        // I comment this block because the Finish checkout page has not been implemented
-        // cy.get('.revocation-notice > a').should('have.css', 'color', hexToRGB(colorScheme.textColor));
-        // cy.get('#confirmFormSubmit').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
-        // cy.get('.checkout-confirm-tos-checkbox').should('not.be.visible')
-        //     .check({force: true})
-        //     .should('be.checked');
-        //
-        // cy.get('#confirmFormSubmit').scrollIntoView();
-        // cy.get('#confirmFormSubmit').click();
-
-        // cy.get('.finish-back-to-shop-button a').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
-        // cy.get('.finish-back-to-shop-button a').should('have.css', 'border-color', hexToRGB(colorScheme.textColor));
     });
 });

@@ -5,7 +5,7 @@
         <div class="form-row buy-widget-container">
             {% block page_product_detail_buy_quantity_container %}
                 <div class="col-12 product-detail-quantity-box">
-                    <div class="product-detail-buy-quantity">
+                    <div class="product-detail-buy-quantity" data-custom-select="true">
                         <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
                         {{ block('page_product_detail_buy_quantity') }}
                     </div>
@@ -63,7 +63,7 @@
             {{ block('page_product_detail_buy_product_buy_info') }}
 
             {{ block('page_product_detail_product_buy_meta') }}
-            
+
             {% block page_product_detail_product_customized_products %}
                 {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-form-customized-products.html.twig' ignore missing %}
             {% endblock %}

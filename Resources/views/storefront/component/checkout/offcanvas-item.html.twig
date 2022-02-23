@@ -20,3 +20,9 @@
         {{ block('component_offcanvas_product_details_inner') }}
     </div>
 {% endblock %}
+
+{% block component_offcanvas_product_buy_quantity %}
+    <div data-custom-select="true">
+        {{ parent() }}
+    </div>
+{% endblock %}

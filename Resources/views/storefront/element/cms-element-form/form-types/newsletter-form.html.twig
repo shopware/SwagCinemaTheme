@@ -18,3 +18,28 @@
         <div class="col-md-6 cms-form-submit-col">{{ parent() }}</div>
     </div>
 {% endblock %}
+
+{% block cms_form_newsletter_select_action %}
+    <div class="form-group col-12" data-custom-select="true">
+        <label class="form-label" for="newsletterAction">
+            {{ "newsletter.labelActionSelect"|trans }} {{ "general.required"|trans }}
+        </label>
+
+        <select name="option"
+                id="newsletterAction"
+                required="required"
+                class="custom-select"
+                data-form-field-toggle="true"
+                data-form-field-toggle-target=".js-field-toggle-newsletter-additional"
+                data-form-field-toggle-value="subscribe">
+            <option selected="selected"
+                    value="{{ constant('Shopware\\Storefront\\Controller\\FormController::SUBSCRIBE') }}">
+                {{ "newsletter.subscribeOption"|trans }}
+            </option>
+
+            <option value="{{ constant('Shopware\\Storefront\\Controller\\FormController::UNSUBSCRIBE') }}">
+                {{ "newsletter.unsubscribeOption"|trans }}
+            </option>
+        </select>
+    </div>
+{% endblock %}

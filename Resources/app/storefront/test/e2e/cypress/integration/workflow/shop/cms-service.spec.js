@@ -47,15 +47,16 @@ describe('Shop page: CMS service page', {tags: ['@workflow']}, () => {
         cy.get('.sw-empty-state__title').contains('No category selected');
         cy.get(`${page.elements.categoryTreeItem}__icon`).should('be.visible');
 
-        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').get('.sw-tree-item__toggle').click();
+        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').click();
         cy.get('a[href="#/sw/category/index/24c3c853a8354db89d04ce3a06dc5bbc"]').contains('Information').parents('.sw-tree-item__children').find('.sw-context-button__button').click();
 
         // Create a category
         cy.get('.sw-tree-item__sub-action')
             .contains('New subcategory')
             .click();
-        cy.get('#sw-field--draft').type('Shipping and payment');
-        cy.get('.sw-confirm-field__button.sw-button--primary').click();
+        cy.get('#sw-field--draft').type('Shipping and payment{enter}');
+        cy.wait('@saveData');
+
         cy.get('.sw-tree-item__children .tree-link')
             .contains('Shipping and payment')
             .click();

@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/quickview/buy-widget-form.html.twig' %}
 
 {% block page_product_detail_buy_quantity_container %}
-    <div class="col-12 product-detail-quantity-box swag-cms-extensions-quickview-content--buy-quantity">
+    <div class="col-12 product-detail-quantity-box swag-cms-extensions-quickview-content--buy-quantity" data-custom-select="true">
         <div class="product-detail-buy-quantity">
             <label>{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
             {{ block('page_product_detail_buy_quantity') }}

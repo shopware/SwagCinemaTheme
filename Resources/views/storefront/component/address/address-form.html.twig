@@ -67,7 +67,7 @@
 {% endblock %}
 
 {% block component_address_form_country %}
-    <div class="form-group col-12 col-lg-6">
+    <div class="form-group col-12 col-lg-6" data-custom-select="true">
         {% set initialCountryId = null %}
 
         {% if data.get('countryId') %}
@@ -87,7 +87,7 @@
         {{ block ('component_address_form_country_select') }}
     </div>
 
-    <div class="form-group col-md-6 d-none">
+        <div class="form-group col-md-6 d-none" data-custom-select="true">
         {% if formViolations.getViolations("/countryStateId") is not empty %}
             {% set violationPath = "/countryStateId" %}
         {% elseif formViolations.getViolations("/#{prefix}/countryStateId") is not empty %}

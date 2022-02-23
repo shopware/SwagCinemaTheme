@@ -75,6 +75,127 @@ function wrapper() {
                     </div>
                 `;
             }
+
+            /**
+             * Renders a navigation select field which allows to quickly jump between the steps.
+             *
+             * @returns {string}
+             */
+            renderNavigationSelection() {
+                /**
+                 * Renders a single option of the select box.
+                 *
+                 * @params {Object} entry
+                 * @returns {string}
+                 */
+                const renderSelectOption = (entry) => {
+                    return `
+                <option value="${entry.pageNum}"${this.currentPage - 1 === entry.pageNum ? ' selected="selected"' : ''}>
+                    ${entry.pageNum} - ${entry.name} ${entry.required ? `(${this.translations.required})` : ''}
+                </option>`;
+                };
+
+                const renderCurrentlySelectedText = () => {
+                    const entry = this.navigationEntries.find((navEntry) => {
+                        return this.currentPage - 1 === navEntry.pageNum;
+                    });
+
+                    if (!entry) {
+                        return '';
+                    }
+
+                    return `${entry.pageNum}. ${entry.name}`;
+                };
+
+                /* Defines if the navigation element should be displayed */
+                const showNavigation = () => {
+                    return this.currentPage <= 1 || this.currentPage >= this.pagesCount;
+                };
+
+                this.navigationEl.style.display = (showNavigation() ? 'none' : 'block');
+
+                const renderDropdown = (entry) => {
+                    if(this.currentPage - 1 !== entry.pageNum) {
+                        return `
+                            <li class="dropdown-item" value="${entry.pageNum}" tabindex="0" id="listbox-${entry.pageNum}">
+                                ${entry.pageNum} - ${entry.name} ${entry.required ? `(${this.translations.required})` : ''}
+                            </li>`;
+                    }
+
+                    return;
+                };
+
+                /* eslint-disable max-len */
+                return `
+                    <div class="form-group">
+                        <div class="swag-customized-products-navigation">
+                            <select class="custom-select swag-customized-products-navigation" onmousedown="event.preventDefault()" tabindex="-1" aria-expanded="false" data-toggle="dropdown" data-boundary="viewport" data-offset="0,0" aria-haspopup="true">
+                               ${this.navigationEntries.map(renderSelectOption).join("").trim()}
+                            </select>
+                            <div class="dropdown-menu" role="listbox" tabindex="0" id="listboxSelection" aria-labelledby="listboxlabelSelection">
+                                <ul>
+                                    ${this.navigationEntries.map(renderDropdown).join("").trim()}
+                                </ul>
+                            </div>
+                            <span class="swag-customized-products-navigation__text">
+                                ${renderCurrentlySelectedText()}
+                            </span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                class="swag-customized-products-navigation__icon">
+                                <defs>
+                                    <path
+                                        id="icons-small-arrow-small-down-a"
+                                        d="M5.70710678,6.29289322 C5.31658249,5.90236893 4.68341751,5.90236893 4.29289322,6.29289322 C3.90236893,6.68341751 3.90236893,7.31658249 4.29289322,7.70710678 L7.29289322,10.7071068 C7.68341751,11.0976311 8.31658249,11.0976311 8.70710678,10.7071068 L11.7071068,7.70710678 C12.0976311,7.31658249 12.0976311,6.68341751 11.7071068,6.29289322 C11.3165825,5.90236893 10.6834175,5.90236893 10.2928932,6.29289322 L8,8.58578644 L5.70710678,6.29289322 Z"/>
+                                </defs>
+                                <use
+                                    fill="#758CA3"
+                                    fill-rule="evenodd"
+                                    transform="matrix(-1 0 0 1 16 0)"
+                                    xlink:href="#icons-small-arrow-small-down-a"/>
+                            </svg>
+                        </div>
+                    </div>
+                `;
+                /* eslint-enable max-len */
+            }
+
+            transitionToPage(...args) {
+                super.transitionToPage(...args);
+
+                this.createDropdown();
+            }
+
+            /**
+             * Validates the current field and checks if the field is valid
+             * @event input
+             * @params event
+             */
+            validateCurrentField() {
+                super.validateCurrentField();
+
+                this.createDropdown();
+            }
+
+            createDropdown() {
+                const dropdownItems = DomAccess.querySelectorAll(this.navigationEl, '.dropdown-item');
+
+                dropdownItems.forEach(item => {
+                    item.removeEventListener('click', this.onClick.bind(this));
+                    item.addEventListener('click', this.onClick.bind(this));
+                });
+            }
+
+            onClick(e) {
+                const customSelect = DomAccess.querySelector(this.navigationEl, '.custom-select');
+
+                customSelect.value = e.target.getAttribute('value');
+                customSelect.dispatchEvent(new Event('change', {bubbles: true}));
+            }
         }
 
         return CustomizedProductsStepByStepWizard;

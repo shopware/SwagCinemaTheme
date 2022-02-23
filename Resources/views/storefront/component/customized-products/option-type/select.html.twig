@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/component/customized-products/option-type/select.html.twig' %}
+
+{% block swag_customized_products_option_type_template_select %}
+    <div class="swag-customized-products-option-type-select-wrapper" data-custom-select="true">
+        {% if props.isDropDown %}
+            {% sw_include fileName ~ '/dropdown.html.twig' %}
+        {% else %}
+            {% sw_include fileName ~ '/checkboxes.html.twig' %}
+        {% endif %}
+    </div>
+{% endblock %}

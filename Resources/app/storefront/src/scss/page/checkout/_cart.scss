@@ -71,6 +71,10 @@ $checkout-cart-spacing: 32px;
 
         .custom-select {
             @extend .custom-select-lg;
+
+            &[aria-expanded=true] + .dropdown-menu {
+                width: 100%;
+            }
         }
 
         .form-group {
