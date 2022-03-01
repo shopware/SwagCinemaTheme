@@ -25,6 +25,24 @@
         .header-search-input:focus + .input-group-append .header-search-btn {
             background-color: transparent;
         }
+
+        .header-search-form {
+            .header-search-input,
+            .header-search-input:focus,
+            .header-search-btn {
+                border-color: $gray-500;
+                color: $white;
+                background-color: transparent;
+            }
+
+            .header-search-input:focus {
+                border-color: $primary;
+            }
+
+            .icon {
+                color: $white;
+            }
+        }
     }
 
     &-search-col {
@@ -54,22 +72,6 @@
         .header-logo-main {
             text-align: left;
         }
-    }
-
-    &-search-input,
-    &-search-input:focus,
-    &-search-btn {
-        border-color: $gray-500;
-        color: $white;
-        background-color: transparent;
-    }
-
-    &-search-input:focus {
-        border-color: $primary;
-    }
-
-    &-search-btn .icon {
-        color: $white;
     }
 
     &-actions-btn,

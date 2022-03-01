@@ -1,0 +1,33 @@
+.b2b-upload {
+    .b2b-upload__dropzone {
+        outline: none;
+        padding: 25px $spacer;
+        background-color: #f4f4f5;
+        border-radius: 12px;
+
+        label {
+            padding: 0;
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #071c31;
+        }
+    }
+
+    .b2b-upload__configuration {
+        background-color: #f4f4f5;
+        padding: 25px $spacer;
+        border-radius: 12px;
+
+        .b2b-upload__configuration-header,
+        .b2b-upload__configuration-content {
+            background-color: transparent;
+        }
+
+        .b2b-upload__configuration-header {
+            padding: 0;
+        }
+    }
+}

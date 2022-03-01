@@ -1,0 +1,17 @@
+.b2b-accordion {
+    .filter-container {
+        h5 + .form-row {
+            > .form-group:first-child {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .b2b-accordion__title {
+        font-weight: $font-weight-medium;
+    }
+
+    .b2b-accordion__body {
+        transition: none;
+    }
+}

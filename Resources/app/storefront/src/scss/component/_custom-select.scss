@@ -1,5 +1,5 @@
 .custom-select {
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         border-color: $primary;
         border-bottom-color: transparent;
         border-bottom-left-radius: 0;
@@ -15,7 +15,7 @@
             overflow: hidden;
             min-width: 0;
 
-            &[x-placement="bottom-start"] {
+            &[x-placement='bottom-start'] {
                 border-top: none;
                 border-top-right-radius: 0;
                 border-top-left-radius: 0;
@@ -41,13 +41,13 @@
         }
     }
 
-    &[aria-expanded="false"] + .dropdown-menu {
+    &[aria-expanded='false'] + .dropdown-menu {
         display: none;
     }
 }
 
 .was-validated {
-    .custom-select[aria-expanded="true"] {
+    .custom-select[aria-expanded='true'] {
         &:invalid + .dropdown-menu.show {
             border-color: $sw-color-danger;
         }

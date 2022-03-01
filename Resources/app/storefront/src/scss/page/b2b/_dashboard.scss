@@ -1,0 +1,173 @@
+.b2b--navigation {
+    margin-top: 0;
+
+    .b2b--navigation-mainmenu {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.module-dashboard {
+    margin: $spacer-lg 0;
+
+    .dashboard--header {
+        h2 {
+            font-size: $h4-font-size;
+            line-height: 43px;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.dashboard-teaser--container {
+    > a {
+        .dashboard-teaser {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            position: unset;
+
+            svg {
+                color: $gray-900;
+            }
+
+            .icon {
+                position: unset;
+                width: 24px;
+                height: 24px;
+                align-self: unset;
+
+                svg {
+                    color: $gray-900;
+                }
+            }
+
+            .content h3 {
+                line-height: 1;
+            }
+        }
+    }
+}
+
+.is--b2b-tree-select-container {
+    .node {
+        &.is--opened {
+            background-color: #e6e6e6;
+        }
+    }
+}
+
+.b2b--salutation-select__container {
+    select:not([selected]) {
+        color: $gray-900;
+    }
+}
+
+.b2b--search-container {
+    position: relative;
+
+    .b2b--search-results {
+        max-width: unset;
+        left: 0;
+        right: 0;
+        top: 10px;
+        border-radius: 8px;
+        border: 2px solid $gray-900;
+    }
+}
+
+.b2b-remote-list-orderlist {
+    h4 {
+        font-size: 20px;
+    }
+}
+
+.b2b-checkout-additional {
+    .checkout-additional {
+        max-width: unset !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+.is-act-cartpage,
+.is-act-confirmpage {
+    .b2b-remote-list-orderlist {
+        margin-top: 0 !important;
+    }
+}
+
+.is--b2b-acl-action-updateDiscount {
+    form {
+        input[name='discount'] {
+            text-align: left !important;
+        }
+    }
+}
+
+.is-ctl-b2bofferthroughcheckout {
+    .header-minimal-row {
+        flex-wrap: nowrap;
+
+        .header-minimal-back-to-shop-button {
+            border: none;
+        }
+    }
+
+    .block-group {
+        .block:nth-child(2) {
+            flex: 1;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+    }
+}
+
+.b2b--checkout-offer {
+    .confirm-main-header + br {
+        display: none;
+    }
+
+    .checkout-card {
+        div.card-title {
+            font-weight: 400;
+            border: none;
+            font-size: 14px;
+        }
+    }
+}
+
+
+.b2b--grid-container {
+    .custom-select {
+        background-position-x: 98%;
+    }
+}
+
+.select-field {
+    .custom-select {
+        background-position-x: 98%;
+    }
+}
+
+.b2b-discount-field {
+    select[name='isPercentageDiscount'],
+    input[name='discount'] {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}
+
+.b2b-avatar {
+    b2b-avatar__image {
+        height: 100%;
+    }
+}
+
+.is-ctl-b2bsalesrepresentative {
+    .top-bar {
+        display: none !important;
+    }
+}
