@@ -70,17 +70,23 @@
                             {% apply spaceless %}
                                 <a class="links instagram"
                                    href="{{ theme_config('sw-instagram-link') |sw_encode_url }}"
-                                   title="{{ "footer.instagramLink"|trans|striptags }}">
+                                   title="{{ "footer.instagramLink"|trans|striptags }}"
+                                   rel="noopener"
+                                   target="_blank">
                                     {% sw_icon 'ic-instagram' style {'pack' : 'cinema'} %}
                                 </a>
                                 <a class="links facebook"
                                    href="{{ theme_config('sw-facebook-link') |sw_encode_url }}"
-                                   title="{{ "footer.facebookLink"|trans|striptags }}">
+                                   title="{{ "footer.facebookLink"|trans|striptags }}"
+                                   rel="noopener"
+                                   target="_blank">
                                     {% sw_icon 'ic-facebook' style {'pack' : 'cinema'} %}
                                 </a>
                                 <a class="links printer"
                                    href="{{ theme_config('sw-pinterest-link') |sw_encode_url }}"
-                                   title="{{ "footer.pinterestLink"|trans|striptags }}">
+                                   title="{{ "footer.pinterestLink"|trans|striptags }}"
+                                   rel="noopener"
+                                   target="_blank">
                                     {% sw_icon 'ic-pinterest' style {'pack' : 'cinema'} %}
                                 </a>
                             {% endapply %}
