@@ -1,0 +1,23 @@
+{% if
+    cartDestination is not same as('cleared-order') and
+    cartDestination is not same as('offer') and
+    b2b_acl_check('b2bcreateofferthroughcart', 'createOffer') %}
+    <div class="checkout-aside-action">
+        <form
+                action="{{ path('frontend.b2b.b2bcreateofferthroughcart.createOffer') }}"
+                method="post"
+                data-form-csrf-handler="true"
+                data-form-preserver="true"
+                data-csrf-token="{{ sw_csrf('frontend.b2b.b2bcreateofferthroughcart.createOffer', { mode: 'token' }) }}"
+        >
+            {{ sw_csrf('frontend.b2b.b2bcreateofferthroughcart.createOffer') }}
+
+            <button
+                    type="submit"
+                    class="btn btn-secondary btn-block btn-lg"
+            >
+                {{ "b2b.RequestAnOffer"|trans|sw_sanitize }}
+            </button>
+        </form>
+    </div>
+{% endif %}

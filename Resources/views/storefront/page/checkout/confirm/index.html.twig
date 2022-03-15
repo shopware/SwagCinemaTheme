@@ -1,11 +1,39 @@
 {% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
 
+{% set cartDestination = page.cart.getExtension("b2b-cart-state").destination.name %}
+
 {% block page_checkout_confirm_tos %}
     {% block page_checkout_confirm_tos_header %}
     {% endblock %}
 {% endblock %}
 
+{% block page_checkout_confirm_alerts %}
+{% endblock %}
+
+{% block page_checkout_confirm_header %}
+
+    {% block page_checkout_confirm_violations %}
+        {{ parent() }}
+    {% endblock %}
+
+    {{ parent() }}
+{% endblock %}
+
 {% block page_checkout_additional %}
+{% endblock %}
+
+{% block page_checkout_confirm_product_table %}
+    {{ parent() }}
+
+    {% if b2bSuite %}
+        <div class="row b2b-checkout-additional">
+            <div class="col-sm-6">
+                {% block b2b_checkout_confirm_additional %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block page_checkout_aside_container %}
@@ -39,6 +67,11 @@
                     {{ block('page_checkout_confirm_form_submit') }}
                 </form>
             </div>
+
+            {% if b2bSuite %}
+                {% sw_include '@Storefront/storefront/page/checkout/confirm/b2b-checkout-action.html.twig' %}
+            {% endif %}
+
         {% endblock %}
     </div>
 {% endblock %}

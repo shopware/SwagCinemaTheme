@@ -1,0 +1,20 @@
+.b2b--tab-menu {
+    .tab--navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+.b2b--role-default-container {
+    background-color: #f4f4f5;
+
+    .info--baloon {
+        border-radius: 12px;
+
+        h2 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+}

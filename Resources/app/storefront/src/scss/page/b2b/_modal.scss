@@ -1,0 +1,102 @@
+#b2bModal {
+    .modal-dialog {
+        max-width: 1200px;
+    }
+
+    .modal-header {
+        border-bottom: none;
+
+        .modal-close {
+            padding-top: 0;
+            padding-right: 24px;
+        }
+    }
+
+    .b2b--grid-container.m-n4 {
+        margin-top: 0 !important;
+    }
+
+    .js--modal__title {
+        span {
+            padding-left: 0 !important;
+            margin-left: 18px !important;
+        }
+    }
+
+    &.b2b--modal--has-navigation {
+        .b2b--modal-navigation--toggle {
+            display: none;
+        }
+
+    }
+
+    .b2b--modal-navigation {
+        transform: translateX(0);
+        opacity: 1;
+        position: unset;
+    }
+
+    .inner--content {
+        padding: 0 14px;
+    }
+
+    .inner--actions {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .inner--bottom {
+        padding-bottom: 24px;
+        padding-left: 14px;
+        padding-right: 14px;
+
+        button[type='submit'] {
+            min-width: 80px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .js--modal__title {
+            span {
+                padding-left: 20px !important;
+            }
+        }
+    }
+}
+
+.is-ctl-b2borderlist {
+    .b2b--modal-content {
+        > .b2b--ajax-panel {
+            .js--modal__content {
+                display: flex;
+            }
+        }
+    }
+}
+
+#b2b-confirm-modal {
+    .modal-body {
+        padding: 48px 64px;
+    }
+
+    .b2b--confirm-modal-header {
+        font-size: 44px;
+        font-weight: $font-weight-bold;
+        line-height: 48px;
+        margin-bottom: 32px;
+
+        h3 {
+            font-size: unset;
+        }
+    }
+
+    .b2b--confirm-modal-footer {
+        button:not(:first-child) {
+            margin-left: 14px;
+        }
+    }
+}

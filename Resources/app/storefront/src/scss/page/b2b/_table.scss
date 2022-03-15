@@ -1,0 +1,43 @@
+.b2b-table {
+    .headline-product {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    &.table--responsive {
+        overflow-x: auto;
+    }
+}
+
+.b2b-table__actions {
+    gap: 8px;
+    flex-wrap: wrap;
+
+    .companyFilterTypeContainer {
+        margin-right: 0 !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+        > * {
+            max-width: unset !important;
+            flex-basis: 100% !important;
+        }
+    }
+}
+
+.b2b-upload__configuration {
+    margin-top: $spacer;
+
+    .b2b-upload__configuration-header {
+        .b2b-accordion__title {
+            padding: 0;
+        }
+    }
+}
+
+.module-ordernumber,
+.module-fastorder {
+    .table-responsive {
+        overflow-x: visible;
+    }
+}
