@@ -198,6 +198,16 @@
     }
 }
 
+.cms-block-gallery-buybox {
+    > .cms-block-container {
+        padding-top: 0;
+    }
+
+    .product-detail-buy {
+        margin-top: 1rem;
+    }
+}
+
 .product-detail-headline {
     margin-bottom: 0;
 }
@@ -565,5 +575,12 @@
         .icon {
             margin-right: $spacer;
         }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .cms-block-product-heading {
+        margin-top: 64px;
+        margin-bottom: 64px;
     }
 }

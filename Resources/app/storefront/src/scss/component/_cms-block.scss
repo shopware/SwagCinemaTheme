@@ -45,6 +45,15 @@
     }
 }
 
+.cms-element-manufacturer-logo {
+    .cms-image-container {
+        img {
+            width: unset;
+            max-height: 32px !important;
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .is-ctl-navigation {
         &:not(.modal-open) {
@@ -66,6 +75,14 @@
                     font-size: 28px;
                     line-height: 34px;
                 }
+            }
+        }
+    }
+
+    .cms-element-manufacturer-logo {
+        .cms-image-container {
+            img {
+                max-width: 167px !important;
             }
         }
     }
@@ -104,6 +121,15 @@
         .cms-block-sidebar-filter {
             .cms-block-container {
                 padding-top: 0 !important;
+            }
+        }
+    }
+
+    .cms-element-manufacturer-logo {
+        .cms-image-container {
+            img {
+                max-width: 100% !important;
+                max-height: 52px !important;
             }
         }
     }
