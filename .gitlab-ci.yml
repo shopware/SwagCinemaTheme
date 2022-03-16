@@ -18,6 +18,8 @@ variables:
         "amzn/amazon-pay-api-sdk-php:2.2.1"
       ]
     description: 'Additional composer dependencies. Defined in json. Example: ["theiconic/name-parser", "amzn/amazon-pay-api-sdk-php:2.2.1"]'
+  # use major features including bootstrap 5
+  V6_5_0_0: 'true'
 
 include:
   project: 'shopware/6/product/platform'
