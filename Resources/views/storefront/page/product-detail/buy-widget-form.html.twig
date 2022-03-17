@@ -26,13 +26,6 @@
 
                                     <p class="product-detail-tax">
                                         {% block page_product_detail_tax_link %}
-                                            {% if context.taxState == "gross" %}
-                                                {% set taxLabelText = "general.grossTaxLabelInformation"|trans|sw_sanitize %}
-                                            {% else %}
-                                                {% set taxLabelText = "general.netTaxLabelInformation"|trans|sw_sanitize %}
-                                            {% endif %}
-
-                                            {{ taxLabelText }}
                                             <a class="product-detail-tax-link"
                                                href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
                                                title="{{ taxText }}"

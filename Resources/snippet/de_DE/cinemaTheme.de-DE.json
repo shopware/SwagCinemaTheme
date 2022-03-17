@@ -1,9 +1,5 @@
 {
     "general": {
-        "grossTaxInformation": "Versandkosten",
-        "netTaxInformation": "Versandkosten",
-        "grossTaxLabelInformation": "Preise inkl. MwSt. zzgl.",
-        "netTaxLabelInformation": "Preise exkl. MwSt. zzgl.",
         "maintenanceModeHeader": "Wartungsmodus",
         "maintenanceModeDescription": "Wir aktualisieren derzeit den Inhalt dieser Website. Bitte schauen Sie später wieder vorbei.",
         "404ErrorPageHeader": "Seite nicht gefunden",
