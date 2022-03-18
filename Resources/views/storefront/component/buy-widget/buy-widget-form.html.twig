@@ -92,6 +92,12 @@
                         } %}
                     {% endblock %}
                 {% endif %}
+
+                <div class="col-12 product-payment-logo">
+                    {% block buy_widget_buy_button_container_paypal %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
             {% endblock %}
         </div>
     {% endif %}
