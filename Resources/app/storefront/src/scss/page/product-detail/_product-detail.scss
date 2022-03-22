@@ -21,8 +21,8 @@
             margin: 0;
 
             .col-8 {
-                flex: 0 0 calc(100% - 60px);
-                max-width: calc(100% - 60px);
+                flex: 0 0 100%;
+                max-width: 100%;
                 padding: 0;
             }
         }
@@ -537,7 +537,7 @@
 
 #swag-amazon-pay-product-detail-wrapper {
     > div.col-8 {
-        @include make-col(10);
+        @include make-col(12);
 
         margin-right: auto;
     }
