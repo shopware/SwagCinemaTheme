@@ -5,6 +5,10 @@
         padding: 4px 0;
     }
 
+    &-back-to-shop {
+        @include make-col(6);
+    }
+
     &-back-to-shop-button {
         padding-right: 0;
         color: $white;
