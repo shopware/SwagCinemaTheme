@@ -100,14 +100,15 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
         // Secondary
         cy.get('.sw-colorpicker .sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.secondary);
 
-        cy.get('.sw-card__title').contains('eCommerce')
-            .parent('.sw-theme-manager-detail__area')
+        cy.get('.sw-field-id-sw-color-price')
             .find('.sw-colorpicker__input')
-            .first().clear().typeAndCheck(colorScheme.price);
+            .clear()
+            .typeAndCheck(colorScheme.price);
 
-        cy.get('.sw-card__title').contains('eCommerce')
-            .parent('.sw-theme-manager-detail__area')
-            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.buyButton);
+        cy.get('.sw-field-id-sw-color-buy-button')
+            .find('.sw-colorpicker__input')
+            .clear()
+            .typeAndCheck(colorScheme.buyButton);
 
         cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
         cy.get('.sw-modal .sw-button--primary').click();

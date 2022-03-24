@@ -38,7 +38,7 @@ $search-suggest-image-size: 100px;
 
     .search-suggest-product-info {
         font-size: $font-size-lg;
-        font-weight: $font-weight-bolder;
+        font-weight: $font-weight-semibold;
         color: $gray-700;
 
         @include media-breakpoint-down(sm) {
@@ -52,6 +52,10 @@ $search-suggest-image-size: 100px;
         .search-suggest-product-name,
         .search-suggest-product-price {
             @include make-col(12);
+        }
+
+        .search-suggest-product-price {
+            text-align: left;
         }
     }
 

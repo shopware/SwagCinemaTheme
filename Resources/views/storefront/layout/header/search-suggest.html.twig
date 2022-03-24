@@ -4,11 +4,11 @@
     <a href="{{ seoUrl('frontend.detail.page', {'productId': product.id}) }}"
        title="{{ product.translated.name }}"
        class="search-suggest-product-link">
-        <div class="row align-items-center no-gutters">
+        <div class="row align-items-center {{ gridNoGuttersClass }}">
             {{ block('layout_search_suggest_result_image') }}
 
             <div class="col-8 search-suggest-product-info pl-lg-2">
-                <div class="row no-gutters">
+                <div class="row {{ gridNoGuttersClass }}">
                     {{ block('layout_search_suggest_result_name') }}
                     {{ block('layout_search_suggest_result_price') }}
                 </div>
