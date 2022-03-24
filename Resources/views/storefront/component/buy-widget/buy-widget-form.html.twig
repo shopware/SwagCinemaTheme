@@ -93,10 +93,10 @@
                     {% endblock %}
                 {% endif %}
 
-                <div class="col-10 product-payment-logo">
-                    {% block buy_widget_buy_button_container_paypal %}
-                        {{ parent() }}
-                    {% endblock %}
+                <div class="col-8 product-payment-logo">
+                    {% if block('buy_widget_buy_button_container_paypal') is defined %}
+                        {{ block('buy_widget_buy_button_container_paypal')|raw }}
+                    {% endif %}
                 </div>
             {% endblock %}
         </div>

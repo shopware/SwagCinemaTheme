@@ -85,9 +85,11 @@
                 </div>
 
                 <div class="col-10 product-payment-logo">
-                    {% block page_product_detail_buy_container_paypal %}
-                        {{ parent() }}
-                    {% endblock %}
+                    {% if page.extensions.payPalEcsButtonData or page.extensions.payPalInstallmentBannerData is not null %}
+                        {% block page_product_detail_buy_container_paypal %}
+                            {{ parent() }}
+                        {% endblock %}
+                    {% endif %}
 
                     {% block page_product_detail_buy_container_amazon %}
                         {% if buyable and page.extensions.SwagAmazonPayButton is not null %}
