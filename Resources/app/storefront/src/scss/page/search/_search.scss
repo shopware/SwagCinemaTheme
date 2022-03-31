@@ -26,6 +26,12 @@
     }
 }
 
+.search-suggest-product-list-price,
+.search-suggest-product-reference-price {
+    text-align: left;
+    font-size: 14px;
+}
+
 
 @include media-breakpoint-down(md) {
     .search-page {
