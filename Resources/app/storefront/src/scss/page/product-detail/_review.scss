@@ -238,6 +238,14 @@
     }
 }
 
+.product-detail-review-item-title {
+    padding-left: $grid-gutter-width/2;
+
+    .h5 {
+        font-size: 16px;
+    }
+}
+
 .product-detail-review-sortby-label {
     margin-right: 27px;
     white-space: nowrap;
