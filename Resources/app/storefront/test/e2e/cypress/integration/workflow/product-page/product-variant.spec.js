@@ -76,23 +76,8 @@ describe('Product Detail: Product variants', {tags: ['@workflow']}, () => {
         cy.get('.sw-data-grid__inline-edit-save').click();
 
         // Validate product
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 204);
-            cy.awaitAndCheckNotification('Product "Green" has been saved.');
-        });
-
-        // Asign product to Home category
-        cy.get('.sw-product-detail__tab-general').click();
-        cy.get('.sw-product-detail-base__visibility-structure').scrollIntoView()
-
-        cy.get('.sw-category-tree__input-field').focus();
-        cy.get('.sw-category-tree-field__results').should('be.visible');
-        cy.get('.sw-tree-item__element').contains('Home').parent().parent()
-            .find('.sw-field__checkbox input')
-            .click({force: true});
-        cy.get('.sw-category-tree-field__selected-label').contains('Home').should('be.visible');
-        cy.get('.sw-product-detail__save-action').click();
-
+        cy.wait('@saveData').its('response.statusCode').should('equal', 204);
+        cy.awaitAndCheckNotification('Product "Green" has been saved.');
         // Find variant in Storefront
         cy.visit('/');
         cy.get('input[name=search]').first().type('Variant product name');
