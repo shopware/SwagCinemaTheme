@@ -13,7 +13,7 @@ describe('Quick View: Test if it works correctly', {tags: ['@workflow', '@cms']}
             .then(() => cy.createCmsFixture())
     });
 
-    it('@visual @cms: Run Quick View in a product view directly in the listing page', () => {
+    it.skip('@visual @cms: Run Quick View in a product view directly in the listing page', () => {
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({

@@ -6,6 +6,8 @@
             {% set violationPath = "/zipcode" %}
         {% elseif formViolations.getViolations("/#{prefix}/zipcode") is not empty %}
             {% set violationPath = "/#{prefix}/zipcode" %}
+        {% else %}
+            {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "address.zipcodeLabel"|trans|sw_sanitize }) %}
         {% endif %}
 
         {{ block('component_address_form_zipcode_label') }}
@@ -21,6 +23,7 @@
         {% elseif formViolations.getViolations("/#{prefix}/city") is not empty %}
             {% set violationPath = "/#{prefix}/city" %}
         {% else %}
+            {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "address.cityLabel"|trans|sw_sanitize }) %}
             {% set violationPath = null %}
         {% endif %}
 
@@ -56,6 +59,8 @@
             {% set violationPath = "/street" %}
         {% elseif formViolations.getViolations("/#{prefix}/street") is not empty %}
             {% set violationPath = "/#{prefix}/street" %}
+        {% else %}
+            {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "address.streetLabel"|trans|sw_sanitize }) %}
         {% endif %}
 
         {{ block('component_address_form_street_label') }}
@@ -87,7 +92,7 @@
         {{ block ('component_address_form_country_select') }}
     </div>
 
-        <div class="form-group col-md-6 d-none" data-custom-select="true">
+    <div class="form-group col-md-6 d-none" data-custom-select="true">
         {% if formViolations.getViolations("/countryStateId") is not empty %}
             {% set violationPath = "/countryStateId" %}
         {% elseif formViolations.getViolations("/#{prefix}/countryStateId") is not empty %}

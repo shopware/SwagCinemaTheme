@@ -11,91 +11,77 @@
 
             <div class="col-12 col-lg-4 order-1 order-lg-0">
                 {% block layout_footer_vat %}
-                    <div class="footer-vat">
-                        {% if context.taxState == "gross" %}
-                            <p>
-                                {{ "footer.includeVat"|trans({
-                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
-                                })|raw }}
-                            </p>
-                        {% else %}
-                            <p>
-                                {{ "footer.excludeVat"|trans({
-                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
-                                })|raw }}
-                            </p>
-                        {% endif %}
-                    </div>
+                    {{ parent() }}
                 {% endblock %}
             </div>
 
             <div class="col-12 col-sm-6 col-lg-4">
                 {% block layout_footer_copyright %}
-                    <div class="footer-copyright">
-                        {% sw_icon 'shopware' style {'size':'xs'} %}
-                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
-                    </div>
+                    {{ parent() }}
                 {% endblock %}
             </div>
         </div>
     </div>
+
+    {# @var \Swag\PayPal\Storefront\Data\Struct\FundingEligibilityData fundingEligibilityData #}
+    {% set fundingEligibilityData = page.footer.extensions[constant('Swag\\PayPal\\Storefront\\Data\\FundingSubscriber::FUNDING_ELIGIBILITY_EXTENSION')] %}
+
+    {% if fundingEligibilityData %}
+        <div data-swag-paypal-funding-eligibility="true"
+             data-swag-paypal-funding-eligibility-options="{{ fundingEligibilityData|json_encode }}">
+        </div>
+    {% endif %}
 {% endblock %}
 
-{% block layout_footer_inner_container %}
-    <div class="container">
-        {{ block('layout_footer_navigation') }}
+{% block layout_footer_payment_shipping_logos %}
+    {{ parent() }}
 
-        {{ block('layout_footer_payment_shipping_logos') }}
-
-        {% block layout_footer_social_media %}
-            <div class="footer-social-media">
-                <div class="row footer-links">
-                    {% block layout_footer_logo %}
-                        <div class="col-lg-12 footer-logo">
-                            <a class="footer-logo-main-link"
-                               href="{{ path('frontend.home.page') }}"
-                               title="{{ "header.logoLink"|trans|striptags }}">
-                                {% block layout_header_footer_image %}
-                                    {% if theme_config('sw-footer-logo') %}
-                                        <img src="{{ theme_config('sw-footer-logo') |sw_encode_url }}"
-                                             alt="{{ "header.logoLink"|trans|striptags }}"
-                                             class="img-fluid header-logo-main-img"/>
-                                    {% endif %}
-                                {% endblock %}
+    {% block layout_footer_social_media %}
+        <div class="footer-social-media">
+            <div class="row footer-links">
+                {% block layout_footer_logo %}
+                    <div class="col-lg-12 footer-logo">
+                        <a class="footer-logo-main-link"
+                           href="{{ path('frontend.home.page') }}"
+                           title="{{ "header.logoLink"|trans|striptags }}">
+                            {% block layout_header_footer_image %}
+                                {% if theme_config('sw-footer-logo') %}
+                                    <img src="{{ theme_config('sw-footer-logo') |sw_encode_url }}"
+                                         alt="{{ "header.logoLink"|trans|striptags }}"
+                                         class="img-fluid header-logo-main-img"/>
+                                {% endif %}
+                            {% endblock %}
+                        </a>
+                    </div>
+                {% endblock %}
+                {% block layout_footer_soial_links %}
+                    <div class="col-lg-12 footer-social_links">
+                        {% apply spaceless %}
+                            <a class="links instagram"
+                               href="{{ theme_config('sw-instagram-link') |sw_encode_url }}"
+                               title="{{ "footer.instagramLink"|trans|striptags }}"
+                               rel="noopener"
+                               target="_blank">
+                                {% sw_icon 'ic-instagram' style {'pack' : 'cinema'} %}
                             </a>
-                        </div>
-                    {% endblock %}
-                    {% block layout_footer_soial_links %}
-                        <div class="col-lg-12 footer-social_links">
-                            {% apply spaceless %}
-                                <a class="links instagram"
-                                   href="{{ theme_config('sw-instagram-link') |sw_encode_url }}"
-                                   title="{{ "footer.instagramLink"|trans|striptags }}"
-                                   rel="noopener"
-                                   target="_blank">
-                                    {% sw_icon 'ic-instagram' style {'pack' : 'cinema'} %}
-                                </a>
-                                <a class="links facebook"
-                                   href="{{ theme_config('sw-facebook-link') |sw_encode_url }}"
-                                   title="{{ "footer.facebookLink"|trans|striptags }}"
-                                   rel="noopener"
-                                   target="_blank">
-                                    {% sw_icon 'ic-facebook' style {'pack' : 'cinema'} %}
-                                </a>
-                                <a class="links printer"
-                                   href="{{ theme_config('sw-pinterest-link') |sw_encode_url }}"
-                                   title="{{ "footer.pinterestLink"|trans|striptags }}"
-                                   rel="noopener"
-                                   target="_blank">
-                                    {% sw_icon 'ic-pinterest' style {'pack' : 'cinema'} %}
-                                </a>
-                            {% endapply %}
-                        </div>
-                    {% endblock %}
-                </div>
+                            <a class="links facebook"
+                               href="{{ theme_config('sw-facebook-link') |sw_encode_url }}"
+                               title="{{ "footer.facebookLink"|trans|striptags }}"
+                               rel="noopener"
+                               target="_blank">
+                                {% sw_icon 'ic-facebook' style {'pack' : 'cinema'} %}
+                            </a>
+                            <a class="links printer"
+                               href="{{ theme_config('sw-pinterest-link') |sw_encode_url }}"
+                               title="{{ "footer.pinterestLink"|trans|striptags }}"
+                               rel="noopener"
+                               target="_blank">
+                                {% sw_icon 'ic-pinterest' style {'pack' : 'cinema'} %}
+                            </a>
+                        {% endapply %}
+                    </div>
+                {% endblock %}
             </div>
-        {% endblock %}
-    </div>
-
-    {{ block('layout_footer_bottom') }}
+        </div>
+    {% endblock %}
 {% endblock %}

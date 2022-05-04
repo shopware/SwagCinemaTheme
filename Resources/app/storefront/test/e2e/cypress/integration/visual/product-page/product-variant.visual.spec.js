@@ -31,18 +31,6 @@ describe('Product Detail: Check appearance of product variants', () => {
         cy.get('.sw-product-modal-variant-generation').should('be.visible');
         page.generateVariants('Size', [0, 1, 2], 6);
 
-        // Asign product to Home category
-        cy.get('.sw-product-detail__tab-general').click();
-        cy.get('.sw-product-detail-base__visibility-structure').scrollIntoView()
-
-        cy.get('.sw-category-tree__input-field').focus();
-        cy.get('.sw-category-tree-field__results').should('be.visible');
-        cy.get('.sw-tree-item__element').contains('Home').parent().parent()
-            .find('.sw-field__checkbox input')
-            .click({force: true});
-        cy.get('.sw-category-tree-field__selected-label').contains('Home').should('be.visible');
-        cy.get('.sw-product-detail__save-action').click();
-
         // Verify in storefront
         cy.visit('/');
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
@@ -66,9 +54,7 @@ describe('Product Detail: Check appearance of product variants', () => {
                 if (!$input.attr('checked')) {
                     cy.contains('Green').click();
 
-                    cy.wait('@changeVariant').then((xhr) => {
-                        expect(xhr.response).to.have.property('statusCode', 200);
-                    });
+                    cy.wait('@changeVariant').its('response.statusCode').should('equal', 200);
                 } else {
                     cy.get('.product-detail-price').contains('64.00');
                 }
@@ -83,9 +69,7 @@ describe('Product Detail: Check appearance of product variants', () => {
                 if (!$input.attr('checked')) {
                     cy.get('.product-detail-configurator-option-label[title="M"]').click();
 
-                    cy.wait('@changeVariant').then((xhr) => {
-                        expect(xhr.response).to.have.property('statusCode', 200);
-                    });
+                    cy.wait('@changeVariant').its('response.statusCode').should('equal', 200);
                 }
                 cy.get('.product-detail-price').contains('64.00');
             });
