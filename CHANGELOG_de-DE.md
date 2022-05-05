@@ -1,3 +1,5 @@
+# 1.2.0
+- Prüfung der Theme-Kompatibilität mit Shopware v6.4.11.0
 # 1.1.0
 - Titel zur Produktbewertung hinzufügen
 - Anzeige des niedrigsten Preises, wenn z.B. Grundpreise angezeigt werden

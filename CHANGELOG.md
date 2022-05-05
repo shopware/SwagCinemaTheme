@@ -1,3 +1,5 @@
+# 1.2.0
+- Theme compatibility check with Shopware v6.4.11.0
 # 1.1.0
 - Add title to product review
 - Display the lowest price where f.e. base prices are displayed

@@ -13,6 +13,8 @@ module.exports = {
         'selector-max-compound-selectors': null,
         'selector-max-id': null,
         'order/order': null,
+        'no-extra-semicolons': true,
+        'font-family-no-missing-generic-family-keyword': true,
         'selector-no-qualifying-type': [
             true, {
                 ignore: ['attribute', 'class']
