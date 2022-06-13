@@ -39,7 +39,7 @@ export default class CinemaCustomSelectPlugin extends Plugin {
             dropdownMenu.innerHTML = '';
         } else {
             dropdownMenu.className = this.options.dropdownSelector;
-        };
+        }
 
         dropdownMenu.setAttribute('role', 'listbox');
         dropdownMenu.setAttribute('tabindex', 0);
@@ -60,7 +60,7 @@ export default class CinemaCustomSelectPlugin extends Plugin {
                 return;
             }
 
-            if(item.getAttribute('disabled')) {
+            if(item.hasAttribute('disabled')) {
                 liElement.classList.add('disabled');
                 liElement.setAttribute('disabled', item.getAttribute('disabled'));
             } else {
