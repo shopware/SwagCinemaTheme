@@ -15,6 +15,8 @@ export default class CinemaFilterRatingSelectPlugin extends FilterRatingSelectPl
 
         if (currentRating) {
             let endSnippet = this.options.snippets.filterRatingActiveLabelEnd;
+
+            // eslint-disable-next-line
             if (parseInt(currentRating) === 1) {
                 endSnippet = this.options.snippets.filterRatingActiveLabelEndSingular;
             }
@@ -24,7 +26,7 @@ export default class CinemaFilterRatingSelectPlugin extends FilterRatingSelectPl
                         ${currentRating}/${this.options.maxPoints}
                         ${endSnippet}`,
                 id: 'rating',
-                currentRatingPercent: parseInt(currentRating/this.options.maxPoints*100)
+                currentRatingPercent: parseInt(currentRating/this.options.maxPoints*100) // eslint-disable-line
             });
         } else {
             labels = [];

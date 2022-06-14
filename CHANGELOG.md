@@ -1,3 +1,5 @@
+# 1.3.0
+- Fixed offcanvas cart shipping method dropdown has invalid option available
 # 1.2.0
 - Theme compatibility check with Shopware v6.4.11.0
 # 1.1.0

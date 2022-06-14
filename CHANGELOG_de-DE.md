@@ -1,3 +1,5 @@
+# 1.3.0
+- Das Dropdown-Menü für die Versandart im Off-Canvas-Warenkorb wurde korrigiert, da eine ungültige Option verfügbar ist.
 # 1.2.0
 - Prüfung der Theme-Kompatibilität mit Shopware v6.4.11.0
 # 1.1.0
