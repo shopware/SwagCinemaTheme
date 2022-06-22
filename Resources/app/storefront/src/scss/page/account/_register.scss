@@ -24,6 +24,7 @@
 
     &-aside {
         @extend .col-lg-5;
+        position: relative;
 
         &::before {
             content: '';
@@ -60,9 +61,16 @@
                 text-decoration: underline;
             }
 
-            .login-submit .btn-primary {
-                @extend .btn-secondary, .btn-block;
+            @if (feature('V6_5_0_0')) {
+                .login-submit .btn-primary  {
+                    @extend .btn-secondary, .w-100;
+                }
+            } @else {
+                .login-submit .btn-primary {
+                    @extend .btn-secondary, .btn-block;
+                }
             }
+
         }
 
         .login-advantages {

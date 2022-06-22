@@ -102,6 +102,11 @@
                     width: 36px;
                     border-radius: 8px;
                     border-color: $border-color-bold;
+                    @if (feature('V6_5_0_0')) {
+                        .icon {
+                            margin-top: -2px;
+                        }
+                    }
                 }
 
                 .btn .icon > svg {

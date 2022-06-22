@@ -1,8 +1,27 @@
 .table {
+    @if (feature('V6_5_0_0')) {
+        thead {
+            tr {
+                border: none;
+                border-top: $border-width solid $table-border-color;
+                border-bottom: $border-width solid $table-border-color;
+            }
+        }
+
+        > :not(:first-child) {
+            border: none;
+            border-width: $border-width;
+        }
+    }
     tr {
         background-color: $table-accent-bg;
-        border-top: $table-border-width solid $table-border-color;
-        border-bottom: $table-border-width solid $table-border-color;
+        @if (feature('V6_5_0_0')) {
+            border-top: $border-width-sm solid $table-border-color;
+            border-bottom: $border-width-sm solid $table-border-color;
+        } @else {
+            border-top: $table-border-width solid $table-border-color;
+            border-bottom: $table-border-width solid $table-border-color;
+        }
     }
 }
 

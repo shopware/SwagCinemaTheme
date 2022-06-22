@@ -3,7 +3,11 @@
     .checkout-main {
         @extend .col-lg-8;
         @extend .m-lg-0;
-        @extend .pr-lg-5;
+        @if (feature('V6_5_0_0')) {
+            @extend .pe-lg-5;
+        } @else {
+            @extend .pr-lg-5;
+        }
         padding: $checkout-spacing-sm $checkout-spacing-sm $checkout-spacing-md;
 
         @include media-breakpoint-up(md) {

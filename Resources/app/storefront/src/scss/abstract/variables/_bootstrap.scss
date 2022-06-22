@@ -78,10 +78,18 @@ $headings-font-weight: $font-weight-bold !default;
 // Form Input
 $input-font-weight: 500 !default;
 $input-border-width: 2px !default;
+$input-padding-y: 8px !default;
 $input-padding-x: 1rem !default;
 $input-border-color: $black !default;
 $input-placeholder-color: $gray-400 !default;
-$input-height-lg: 48px;
+$input-height-lg: 48px !default;
+$form-select-indicator-padding: 2rem !default;
+$form-select-padding-y: 8px !default;
+$form-select-border-color: $black !default;
+
+$form-select-padding-y-lg: 10px !default;
+
+$input-padding-y-lg: 10px !default;
 
 // Form checkbox
 $custom-checkbox-indicator-border-radius: 4px !default;
@@ -90,14 +98,15 @@ $custom-control-indicator-border-color: $border-color-bold !default;
 // scss-docs-start btn-variables
 $btn-font-size: 0.875rem !default;
 $btn-font-weight: 500 !default;
-$btn-padding-y: 0.0625rem !default;
+$btn-padding-y: 0.1875rem !default;
 $btn-padding-x: 0.625rem !default;
 $btn-border-width: 0.125rem !default;
 $btn-focus-box-shadow: none !default;
+$btn-line-height: 30px !default;
 
 $btn-padding-y-sm: 0.0625rem !default;
 
-$btn-padding-y-lg: 0.1875rem !default;
+$btn-padding-y-lg: 7px !default;
 // scss-docs-start btn-variables
 
 // Alerts
@@ -107,6 +116,7 @@ $alert-border-radius: 11px 11px 11px 4px !default;
 
 // Tables
 $table-accent-bg: transparent !default;
+$table-striped-bg:              transparent !default;
 $table-cell-padding: 15px 0 !default;
 $table-border-width: 2px !default;
 $table-caption-color: $gray-400 !default;
@@ -153,6 +163,7 @@ $badge-font-weight: $font-weight-bolder !default;
 // Style anchor elements.
 
 $link-hover-color: $primary !default;
+$link-decoration:               none !default;
 
 // Pagination
 
@@ -193,3 +204,16 @@ $progress-height: 6px !default;
 $progress-bg: $gray-300 !default;
 $progress-border-radius: 0 !default;
 $progress-bar-review: $primary !default;
+
+
+
+// Navs
+
+$nav-divider-color:         $gray-200 !default;
+
+
+// Offcanvas
+
+// scss-docs-start offcanvas-variables
+$offcanvas-padding-y:     16px !default;
+$offcanvas-padding-x:     16px !default;

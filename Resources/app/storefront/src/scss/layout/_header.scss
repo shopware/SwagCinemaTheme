@@ -8,13 +8,17 @@
         position: relative;
 
         @include media-breakpoint-up(lg) {
-            .collapse::before {
-                content: '';
-                display: block;
-                position: absolute;
-                height: 100%;
-                width: 1px;
-                box-shadow: -6px 1px 14px 6px $secondary;
+            .collapse {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    box-shadow: -6px 1px 14px 6px $secondary;
+                }
             }
         }
     }
@@ -22,8 +26,25 @@
     &-search {
         margin: 0 0 0 auto;
 
-        .header-search-input:focus + .input-group-append .header-search-btn {
+        .header-search-btn {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .header-search-input:focus + .header-search-btn {
             background-color: transparent;
+            border-color: $primary;
+        }
+
+        @if (feature('V6_5_0_0')) {
+            .header-search-input:focus + .header-search-btn {
+                background-color: transparent;
+                border-color: $primary;
+            }
+        } @else {
+             .header-search-input:focus + .input-group-append .header-search-btn {
+                background-color: transparent;
+             }
         }
 
         .header-search-form {
@@ -81,10 +102,14 @@
         }
     }
 
-    &-actions-btn:hover {
-        .header-cart-badge,
-        .header-wishlist-badge {
-            background-color: $primary;
+    &-actions-btn {
+        position: static;
+
+        &:hover {
+            .header-cart-badge,
+            .header-wishlist-badge {
+                background-color: $primary !important;
+            }
         }
     }
 
@@ -103,10 +128,20 @@
             color: $secondary;
         }
 
+        @if (feature('V6_5_0_0')) {
+            .header-wishlist {
+                position: relative;
+            }
+        }
+
         .header-wishlist-badge {
             right: -14px;
             color: $secondary;
         }
+    }
+
+    &-cart {
+        position: relative;
     }
 
     &-cart-btn {

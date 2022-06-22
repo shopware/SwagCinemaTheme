@@ -22,8 +22,12 @@
         padding: 20px 0 0;
         margin: 0;
         border: none;
-        border-top: $hr-border-width solid $secondary;
         border-radius: 0;
+        @if (feature('V6_5_0_0')) {
+            border-top: $border-width solid $secondary;
+        } @else {
+            border-top: $hr-border-width solid $secondary;
+        }
     }
 
     .swag-customized-products-option__title {
@@ -86,9 +90,13 @@
             padding: 12px 16px;
             overflow: hidden;
             height: 48px;
-            border: $hr-border-width solid $gray-600;
             box-shadow: none;
             margin: 0;
+            @if (feature('V6_5_0_0')) {
+                border: $border-width solid $gray-600;
+            } @else {
+                border: $hr-border-width solid $gray-600;
+            }
         }
 
         .form-control ~ .input-group-append {
@@ -277,8 +285,12 @@
 
 .swag-customized-products-option-type__checkbox-wrapper {
     border-radius: 11px;
-    border: $hr-border-width solid $gray-600;
     padding: 12px 16px;
+    @if (feature('V6_5_0_0')) {
+        border: $border-width solid $gray-600;
+    } @else {
+        border: $hr-border-width solid $gray-600;
+    }
 }
 
 .swag-customized-products-options-datetime-wrapper {

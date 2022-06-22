@@ -42,6 +42,7 @@
 
     &-content-aside {
         padding-top: 20px;
+        position: relative;
 
         &::before {
             content: '';
@@ -111,6 +112,9 @@
         display: flex;
         align-items: center;
         flex-basis: 100%;
+        @if (feature('V6_5_0_0')) {
+            padding: 0;
+        }
 
         .order-item-status-badge {
             margin: 0;
@@ -388,8 +392,12 @@
         }
 
         .order-table-header-order-status {
-            flex-basis: auto;
             margin: 0;
+            @if (feature('V6_5_0_0')) {
+                flex-basis: 0;
+            } @else {
+                flex-basis: auto;
+            }
         }
 
         .order-detail-content-row {

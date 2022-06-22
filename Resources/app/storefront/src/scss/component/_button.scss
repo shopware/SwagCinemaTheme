@@ -3,8 +3,14 @@
     font-weight: $font-weight-medium;
 
     &-lg {
+        padding-top: 3px;
+        padding-bottom: 3px;
         font-weight: $btn-font-weight-lg;
     }
+
+    //.icon {
+    //    margin-top: -4px;
+    //}
 }
 
 .btn-link {
@@ -38,9 +44,17 @@ button {
 
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
-    .btn-#{$color}:hover:not(:disabled) {
-        background-color: $value;
-        border-color: $value;
+    .btn-#{$color} {
+        &:hover:not(:disabled) {
+            background-color: $value;
+            border-color: $value;
+        }
+
+        @if (feature('V6_5_0_0')) {
+            .icon {
+                color: inherit;
+            }
+        }
     }
 }
 

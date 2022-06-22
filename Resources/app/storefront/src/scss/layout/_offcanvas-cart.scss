@@ -57,7 +57,11 @@ $offcanvas-cart-spacing: 20px;
                 }
 
                 .cart-item-details-container {
-                    @extend .pl-md-0, .pl-lg-3;
+                    @if (feature('V6_5_0_0')) {
+                        @extend .ps-md-0, .ps-lg-3;
+                    } @else {
+                        @extend .pl-md-0, .pl-lg-3;
+                    }
                     padding-left: 20px;
                 }
             }
@@ -117,40 +121,96 @@ $offcanvas-cart-spacing: 20px;
 
                 .input-group {
                     @extend .input-group-lg;
+                    @if (feature('V6_5_0_0')) {
+                        .btn {
+                            padding-top: 4px;
+                            padding-bottom: 4px;
+                        }
+                    }
+                }
+            }
+
+            @if (feature('V6_5_0_0')) {
+                .d-grid {
+                    margin-bottom: $offcanvas-cart-spacing;
                 }
             }
 
             .begin-checkout-btn {
                 @extend .btn-lg;
-                @include button-variant($primary, $primary);
-            }
-
-            .btn-block {
-                @extend .btn-lg;
-                @extend .btn-outline-primary;
-                margin-top: 12px;
-
-                &.begin-checkout-btn:hover:not(:disabled) {
+                @if (feature('V6_5_0_0')) {
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                } @else {
                     @include button-variant($primary, $primary);
                 }
+            }
 
-                &:hover {
-                    text-decoration: none;
+            .btn-link {
+                @if (feature('V6_5_0_0')) {
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    border-color: $primary;
+                } @else {
+                    @extend .btn-outline-primary;
                 }
+            }
 
-                &[data-swag-paypal-express-button='true'],
-                &[data-swag-paypal-installment-banner='true'] {
-                    padding: 0;
+            @if (not feature('V6_5_0_0')) {
+                .btn {
+                    @extend .btn-lg;
+
+                    &.begin-checkout-btn:hover:not(:disabled) {
+                        @include button-variant($primary, $primary);
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &[data-swag-paypal-express-button='true'],
+                    &[data-swag-paypal-installment-banner='true'] {
+                        padding: 0;
+                    }
+                }
+            } @else {
+                .btn-block {
+                    @extend .btn-lg;
+                    @extend .btn-outline-primary;
+                    margin-top: 12px;
+
+                    &.begin-checkout-btn:hover:not(:disabled) {
+                        @include button-variant($primary, $primary);
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &[data-swag-paypal-express-button='true'],
+                    &[data-swag-paypal-installment-banner='true'] {
+                        padding: 0;
+                    }
                 }
             }
         }
 
         .cart-item-quantity {
-            .custom-select {
-                color: $gray-400;
-                font-weight: $font-weight-medium;
-                width: 80px;
-                background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px $input-bg;
+
+            @if (feature('V6_5_0_0')) {
+                .form-select {
+                    color: $gray-400;
+                    font-weight: $font-weight-medium;
+                    width: 80px;
+                    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 8px center/22px 10px $input-bg;
+                }
+            } @else {
+                .custom-select {
+                    color: $gray-400;
+                    font-weight: $font-weight-medium;
+                    width: 80px;
+                    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px $input-bg;
+                }
             }
         }
     }

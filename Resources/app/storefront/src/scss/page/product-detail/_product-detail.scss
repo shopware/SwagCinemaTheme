@@ -11,8 +11,15 @@
 .product-detail-form-container {
     margin-bottom: 36px;
 
-    .custom-select {
-        background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px $input-bg;
+
+    @if (feature('V6_5_0_0')) {
+        .form-select {
+            background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 16px center/15px $input-bg;
+        }
+    } @else {
+        .custom-select {
+            background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px $input-bg;
+        }
     }
 
     .form-row {
@@ -81,7 +88,7 @@
 
     .product-block-prices-body {
         .product-block-prices-cell {
-            padding-bottom: 0;
+            //padding-bottom: 0;
             height: 57px;
         }
     }
@@ -303,6 +310,9 @@
     font-weight: $font-weight-medium;
     height: 48px;
     text-align: left;
+    @if (feature('V6_5_0_0')) {
+        background-position-y: 17px;
+    }
 }
 
 .product-detail-quantity-dropdown {
@@ -322,6 +332,10 @@
 [class*='product-detail-buy'] {
     .product-wishlist {
         width: 48px;
+
+        @if (feature('V6_5_0_0')) {
+            margin-left: -12px;
+        }
     }
 
     .product-wishlibuy-widget-containerst-btn-content-md {
@@ -349,6 +363,11 @@
 }
 
 .btn-buy {
+    @if (feature('V6_5_0_0')) {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
     .icon {
         margin-right: 16px;
     }
@@ -389,6 +408,9 @@
 
     label {
         display: block;
+        @if (feature('V6_5_0_0')) {
+            @extend .form-label;
+        }
     }
 }
 

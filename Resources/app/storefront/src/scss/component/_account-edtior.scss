@@ -10,6 +10,7 @@
     @extend .btn-outline-secondary;
     margin-top: 20px;
     cursor: pointer;
+    width: 100%;
 
     &:not(.collapsed) {
         @extend .btn-secondary;
@@ -23,8 +24,10 @@
 .address-editor-modal {
     .js-field-toggle-contact-type-company .form-group {
         @extend .col-12, .col-sm-6;
-        padding-right: $form-grid-gutter-width / 2;
-        padding-left: $form-grid-gutter-width / 2;
+        @if (not feature('V6_5_0_0')) {
+            padding-right: $form-grid-gutter-width / 2;
+            padding-left: $form-grid-gutter-width / 2;
+        }
     }
 }
 
