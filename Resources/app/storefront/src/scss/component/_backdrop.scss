@@ -1,0 +1,9 @@
+@if (feature('V6_5_0_0')) {
+    .js-pseudo-modal:not(:empty) {
+        + .cart-offcanvas {
+            + .modal-backdrop-open {
+                z-index: 1055;
+            }
+        }
+    }
+}

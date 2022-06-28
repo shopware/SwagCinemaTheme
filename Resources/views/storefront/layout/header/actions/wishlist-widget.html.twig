@@ -22,7 +22,7 @@
     {% set wishlistWidgetOptions = { showCounter: showCounter } %}
 
     {% block layout_header_actions_wishlist_badge %}
-        <span class="badge badge-light header-wishlist-badge"
+        <span class="badge {{bgClass}}-light header-wishlist-badge"
               id="wishlist-basket"
               data-wishlist-storage="true"
               data-wishlist-storage-options="{{ wishlistStorageOptions|json_encode }}"

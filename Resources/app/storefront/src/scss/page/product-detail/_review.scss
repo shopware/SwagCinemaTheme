@@ -56,19 +56,38 @@
     max-width: 98px;
     padding-right: 25px;
 
-    .custom-control-label {
-        &::before,
-        &::after {
-            content: unset;
+    @if (feature('V6_5_0_0')) {
+        .form-check-label {
+            font-size: $font-size-lg;
+        }
+
+        .form-check-input {
+            opacity: 0;
+        }
+    } @else {
+        .custom-control-label {
+            &::before,
+            &::after {
+                content: unset;
+            }
         }
     }
 
-    .custom-checkbox {
-        padding-left: 0;
-        padding-right: 0;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-lg;
-        width: 63px;
+    @if (feature('V6_5_0_0')) {
+        .form-check {
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: $font-weight-bold;
+            width: 63px;
+        }
+    } @else {
+        .custom-checkbox {
+            padding-left: 0;
+            padding-right: 0;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-lg;
+            width: 63px;
+        }
     }
 }
 
@@ -188,16 +207,30 @@
     flex-flow: row;
     justify-content: flex-end;
 
-    .custom-select {
-        font-size: 14px;
-        height: $custom-select-height;
-        padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
-        border-color: $secondary;
-        transition: none;
+    @if (feature('V6_5_0_0')) {
+        .form-select {
+            font-size: 14px;
+            padding: $form-select-padding-y ($form-select-padding-x + $form-select-indicator-padding) $form-select-padding-y $form-select-padding-x;
+            border-color: $secondary;
+            transition: none;
 
-        &:focus,
-        &:hover {
-            border-color: $custom-select-focus-border-color;
+            &:focus,
+            &:hover {
+                border-color: $form-select-focus-border-color;
+            }
+        }
+    } @else {
+        .custom-select {
+            font-size: 14px;
+            height: $custom-select-height;
+            padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+            border-color: $secondary;
+            transition: none;
+
+            &:focus,
+            &:hover {
+                border-color: $custom-select-focus-border-color;
+            }
         }
     }
 }
@@ -259,8 +292,18 @@
 .product-detail-review-language {
     margin-bottom: 0;
 
-    .form-label {
+    .form-check-label {
         margin-bottom: 0;
+    }
+
+    @if (feature('V6_5_0_0')) {
+        .form-check-label {
+            margin-bottom: 0;
+        }
+    } @else {
+        .form-label {
+            margin-bottom: 0;
+        }
     }
 
     small {

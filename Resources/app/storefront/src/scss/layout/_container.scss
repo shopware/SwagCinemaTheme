@@ -1,6 +1,9 @@
 .container {
-    @include make-container-max-widths();
+    @if (feature('V6_5_0_0')) {
 
+    } @else {
+        @include make-container-max-widths();
+    }
     &.flashbags:not(:empty) {
         padding-top: 20px;
     }

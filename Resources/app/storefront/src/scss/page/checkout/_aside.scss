@@ -10,19 +10,23 @@
         margin: 0;
     }
 
-    .checkout-main::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: $sw-background-color;
-        z-index: -1;
-        width: 75vw;
-        height: 100%;
-        border-right: $checkout-divider-line;
+    .checkout-main {
+        position: relative;
 
-        @include media-breakpoint-down(md) {
-            content: none;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $sw-background-color;
+            z-index: -1;
+            width: 75vw;
+            height: 100%;
+            border-right: $checkout-divider-line;
+
+            @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+                content: none;
+            }
         }
     }
 
@@ -62,7 +66,16 @@
         }
 
         .checkout-aside {
-            padding: $checkout-spacing-lg 0 $checkout-spacing-lg $checkout-spacing-lg;
+            padding: $checkout-spacing-lg 20px $checkout-spacing-lg $checkout-spacing-lg;
+
+            @if (feature('V6_5_0_0')) {
+                padding-right: 20px;
+                padding-left: 20px;
+                @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+                    background-color: $gray-100;
+                    border-top: $checkout-divider-line;
+                }
+            }
 
             @include media-breakpoint-only(md) {
                 &::after {
@@ -138,6 +151,10 @@
                 width: 100vw;
                 height: 100%;
                 border-top: $checkout-divider-line;
+
+                @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+                    content: none;
+                }
             }
         }
     }

@@ -41,6 +41,12 @@
         .product-detail-configurator-option-image {
             z-index: unset;
         }
+
+        @if (feature('V6_5_0_0')) {
+            .swag-cms-extensions-quickview-content-right.product-detail-buy {
+                @extend .col-5;
+            }
+        }
     }
 }
 

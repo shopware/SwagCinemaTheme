@@ -2,10 +2,10 @@
     font-size: 14px;
 }
 
-.form-group {
-    .custom-select[aria-expanded='true'] {
-        + .dropdown-menu.show {
-            width: calc(100% - #{$form-grid-gutter-width});
+@if (not feature('V6_5_0_0')) {
+    .form-group[class*='col'] {
+        > .dropdown-menu.show {
+            width: calc(100% - #{$form-grid-gutter-width}) !important;
         }
     }
 }

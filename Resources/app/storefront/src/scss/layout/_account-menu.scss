@@ -62,7 +62,10 @@
             @extend .btn-sm;
             width: 100%;
             text-decoration: none;
-
+            @if (feature('V6_5_0_0')) {
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
             .icon {
                 display: none;
             }
