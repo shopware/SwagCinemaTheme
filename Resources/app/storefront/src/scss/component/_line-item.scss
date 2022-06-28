@@ -1,0 +1,120 @@
+.line-item {
+    &-details {
+        padding-top: 0;
+
+        @include media-breakpoint-down(sm) {
+            flex: 1 0 0;
+        }
+    }
+
+    &-info {
+        @include make-col(11);
+
+        padding-left: 0;
+
+        @include media-breakpoint-up(sm) {
+            @include make-col(5);
+        }
+
+        @include media-breakpoint-up(md) {
+            @include make-col(5);
+        }
+    }
+
+    &-unit-price,
+    &-total-price,
+    &-quantity {
+        @include media-breakpoint-up(sm) {
+            @include make-col(2);
+        }
+    }
+
+    &-remove {
+        @include make-col(1);
+
+        &-button {
+            border: none;
+            padding: 0;
+
+            svg {
+                top: 0 !important;
+            }
+        }
+    }
+
+    &.is-default {
+        @include media-breakpoint-up(sm) {
+            .line-item-info,
+            .line-item-quantity,
+            .line-item-unit-price,
+            .line-item-total-price,
+            .line-item-tax-price,
+            .line-item-remove {
+                order: 0;
+            }
+        }
+    }
+}
+
+.is-offcanvas {
+    .line-item {
+        &-details {
+            padding-top: 0;
+            width: unset;
+            flex: 1;
+        }
+
+        &-info {
+            @include make-col(11);
+        }
+
+        &-remove {
+            @include make-col(1);
+
+            &-button {
+                border: none;
+                padding: 0;
+
+                svg {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+.line-item.is-order {
+    margin: 0;
+
+    .line-item {
+        &-quantity-row {
+            width: 100%;
+        }
+    }
+
+    .line-item-quantity-select-wrapper {
+        .line-item-quantity {
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .line-item {
+            &-quantity {
+                margin-bottom: 0;
+            }
+
+            &-quantity-row {
+                margin: 0;
+            }
+
+            &-quantity-label {
+                padding-left: 0;
+            }
+
+            &-quantity-select-wrapper {
+                padding-right: 0;
+            }
+        }
+    }
+}

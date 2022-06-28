@@ -5,7 +5,7 @@
         <div class="{% if feature('V6_5_0_0') %}row g-4{% else %}form-row{% endif %} buy-widget-container">
             {% block buy_widget_buy_quantity_container %}
                 <div class="col-12 product-detail-quantity-box">
-                    <div class="product-detail-buy-quantity" data-custom-select="true">
+                    <div class="product-detail-buy-quantity">
                         <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
                         {{ block('buy_widget_buy_quantity') }}
                     </div>

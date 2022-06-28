@@ -5,9 +5,8 @@ Styling for productbox component.
 */
 
 .product-wishlist {
-    width: 24px;
     margin-top: 0;
-    font-size: 0;
+    font-size: 14px;
 
     .icon-wishlist {
         width: 24px;
@@ -15,17 +14,12 @@ Styling for productbox component.
     }
 
     &-btn-content {
-        text-decoration: underline;
+        text-decoration: none;
+        margin-left: 8px;
+    }
 
-        &-md {
-            margin-left: 0;
-            font-size: 0;
-        }
-
-        &-sm {
-            margin-left: 0;
-            font-size: 0;
-        }
+    &-action {
+        align-items: center;
     }
 }
 
