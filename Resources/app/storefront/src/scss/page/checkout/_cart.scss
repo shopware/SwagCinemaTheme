@@ -60,7 +60,7 @@ $checkout-cart-spacing: 32px;
             max-width: none;
 
             @if (not feature('V6_5_0_0')) {
-                >.input-group {
+                > .input-group {
                     @extend .input-group-lg;
                 }
             }
@@ -69,6 +69,11 @@ $checkout-cart-spacing: 32px;
         @if (feature('V6_5_0_0')) {
             .input-group {
                 @extend .input-group-lg;
+
+                .btn-secondary {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
             }
         }
     }

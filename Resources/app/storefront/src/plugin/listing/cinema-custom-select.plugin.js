@@ -11,8 +11,12 @@ export default class CinemaCustomSelectPlugin extends Plugin {
     };
 
     init() {
-        this._inputElement = DomAccess.querySelector(this.el, this.options.inputSelector);
-        this._registerCustomSelect();
+        try {
+            this._inputElement = DomAccess.querySelector(this.el, this.options.inputSelector);
+            this._registerCustomSelect();
+        } catch (e) {
+            // TODO
+        }
     }
 
     _registerCustomSelect() {

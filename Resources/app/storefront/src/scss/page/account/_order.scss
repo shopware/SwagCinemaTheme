@@ -6,4 +6,10 @@
 
 .order-table {
     margin-bottom: 62px;
+
+    @if (feature('V6_5_0_0')) {
+        .order-detail-content {
+            margin-top: 24px;
+        }
+    }
 }

@@ -115,13 +115,12 @@ $navigation-offcanvas-spacer-lg: 60px;
 
             .navigation-offcanvas-link {
                 padding: $navigation-offcanvas-spacer-sm 0;
-                font-size: $font-size-lg;
+                font-size: 16px;
                 font-weight: $font-weight-semibold;
                 color: $gray-700;
 
                 @include media-breakpoint-up(sm) {
                     padding: 15px 0;
-                    font-size: 20px;
                 }
 
                 .icon svg {
@@ -132,7 +131,7 @@ $navigation-offcanvas-spacer-lg: 60px;
             .root-item {
                 padding: $spacer 0;
                 border-bottom: 2px solid $gray-900;
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: $font-weight-semibold;
                 color: $gray-900;
             }

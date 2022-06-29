@@ -5,8 +5,9 @@
         <div class="{% if feature('V6_5_0_0') %}row g-4{% else %}form-row{% endif %} buy-widget-container">
             {% block page_product_detail_buy_quantity_container %}
                 <div class="col-12 product-detail-quantity-box">
-                    <div class="product-detail-buy-quantity">
+                    <div class="product-detail-buy-quantity" data-custom-select="true">
                         <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
+                        {% set selectQuantityThreshold = 100 %}
                         {{ block('page_product_detail_buy_quantity') }}
                     </div>
 
