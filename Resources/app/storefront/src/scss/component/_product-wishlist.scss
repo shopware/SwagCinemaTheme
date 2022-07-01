@@ -5,9 +5,8 @@ Styling for productbox component.
 */
 
 .product-wishlist {
-    width: 24px;
     margin-top: 0;
-    font-size: 0;
+    font-size: 14px;
 
     .icon-wishlist {
         width: 24px;
@@ -15,24 +14,19 @@ Styling for productbox component.
     }
 
     &-btn-content {
-        text-decoration: underline;
+        text-decoration: none;
+        margin-left: 8px;
+    }
 
-        &-md {
-            margin-left: 0;
-            font-size: 0;
-        }
-
-        &-sm {
-            margin-left: 0;
-            font-size: 0;
-        }
+    &-action {
+        align-items: center;
     }
 }
 
 .product-wishlist-btn-remove {
     position: relative;
-    top: -10px;
-    right: 10px;
+    top: 0;
+    right: 0;
     height: unset;
 }
 
@@ -62,6 +56,6 @@ Styling for productbox component.
 
 @include media-breakpoint-up(md) {
     .product-wishlist-btn-remove {
-        right: 0;
+        right: -28px;
     }
 }

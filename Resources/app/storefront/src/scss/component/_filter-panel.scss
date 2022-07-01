@@ -187,9 +187,6 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
 .filter-panel-item-dropdown {
     width: 100%;
     min-width: 0;
-    @if (not feature('V6_5_0_0')) {
-        top: -12px !important;
-    }
     padding-top: 0;
     border: $border-width solid $primary;
     border-top: 0;

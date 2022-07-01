@@ -87,6 +87,18 @@
             }
         }
     }
+
+    &-recover-password {
+        padding-top: 55px;
+
+        h1 {
+            line-height: normal;
+            font-size: $h4-font-size;
+            font-weight: $font-weight-bold;
+            margin-bottom: 16px;
+            border-bottom: $border-width solid $border-color-bold;
+        }
+    }
 }
 
 .account-overview,
@@ -353,11 +365,11 @@
         color: $gray-700;
     }
 
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), sm, xs)) {
         .order-item-detail-footer {
+            border-radius: 0;
             margin-left: -($grid-gutter-width / 2 + $card-border-width);
             margin-right: -($grid-gutter-width / 2 + $card-border-width);
-            border-radius: 0;
         }
 
         .order-item-detail-summary,
@@ -374,7 +386,7 @@
         }
     }
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(if(feature('V6_5_0_0'), md, sm)) {
         .order-detail-content {
             border-top: 0;
         }

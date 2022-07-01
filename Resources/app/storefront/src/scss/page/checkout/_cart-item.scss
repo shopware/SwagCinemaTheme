@@ -133,8 +133,9 @@ $cart-item-img-size-sm: 80px;
         .product-wishlist-action {
             margin-top: 0;
             border: none;
-            width: 200px;
             justify-content: left;
+            text-align: left;
+            align-items: flex-start;
 
             .icon-wishlist {
                 color: $sw-text-color;

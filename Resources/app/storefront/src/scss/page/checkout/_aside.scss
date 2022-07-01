@@ -139,6 +139,13 @@
 
             .checkout-aside-add-code {
                 @extend .input-group-lg;
+
+                @if (feature('V6_5_0_0')) {
+                    .btn-secondary {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+                }
             }
 
             &::after {
