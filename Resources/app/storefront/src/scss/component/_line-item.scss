@@ -54,6 +54,12 @@
             }
         }
     }
+
+    &-children {
+        .line-item-row {
+            margin: 0;
+        }
+    }
 }
 
 .line-item-quantity-label,
@@ -72,18 +78,32 @@
         }
 
         &-quantity {
-            padding-left: 70px;
             @include make-col(6);
+
+            padding-left: 70px;
+            margin-bottom: 0;
+
+            > * {
+                margin-bottom: 0;
+            }
         }
 
         &-quantity-select-wrapper {
             width: 100%;
+
+            > * {
+                width: 100%;
+            }
         }
 
         &-total-price {
             @include make-col(6);
-            padding-top: 10px;
             justify-content: flex-end;
+
+            &-value {
+                display: flex;
+                align-items: center;
+            }
         }
 
         &-quantity-label,
@@ -112,6 +132,14 @@
     &.line-item {
         .product-wishlist {
             display: none;
+        }
+    }
+
+    .line-item-children {
+        &.nesting-level-1 {
+            .line-item-quantity {
+                padding-left: 54px;
+            }
         }
     }
 }
