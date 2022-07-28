@@ -43,11 +43,7 @@
             @extend .rounded-0;
             padding-left: 56px;
             padding-right: 20px;
-            color: $sw-text-color;
-
-            &:hover {
-                background-color: $gray-200;
-            }
+            color: $gray-700;
         }
 
         .account-aside-footer {

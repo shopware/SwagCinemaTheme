@@ -13,4 +13,12 @@
             width: auto;
         }
     }
+
+    &.is-left {
+        .offcanvas-close {
+            &:hover {
+                border-color: $border-color;
+            }
+        }
+    }
 }
