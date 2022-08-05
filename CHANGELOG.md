@@ -1,7 +1,15 @@
+# 1.4.0
+- Added Bootstrap 5 compatibility
+- Checked compatibility with platform v6.4.13.0
+- Fixed nested line items UI issues
+- Checked compatibility with the platform v6.4.14.0
+
 # 1.3.0
 - Fixed offcanvas cart shipping method dropdown has invalid option available
+
 # 1.2.0
 - Theme compatibility check with Shopware v6.4.11.0
+
 # 1.1.0
 - Add title to product review
 - Display the lowest price where f.e. base prices are displayed

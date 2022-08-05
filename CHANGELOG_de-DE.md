@@ -1,7 +1,15 @@
+# 1.4.0
+- Hinzufügen von Kompatibilität mit Bootstrap 5
+- Überprüfung der Kompatibilität mit Platform v6.4.13.0
+- Behoben der UI-Probleme mit verschachtelten Elementen
+- Überprüfung der Kompatibilität mit Platform v6.4.14.0
+
 # 1.3.0
 - Das Dropdown-Menü für die Versandart im Off-Canvas-Warenkorb wurde korrigiert, da eine ungültige Option verfügbar ist.
+
 # 1.2.0
 - Prüfung der Theme-Kompatibilität mit Shopware v6.4.11.0
+
 # 1.1.0
 - Titel zur Produktbewertung hinzufügen
 - Anzeige des niedrigsten Preises, wenn z.B. Grundpreise angezeigt werden
