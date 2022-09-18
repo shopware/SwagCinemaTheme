@@ -1,8 +1,4 @@
 .swag-cms-extensions-quickview-modal {
-    .swag-cms-extensions-quickview-close-button {
-        top: 0;
-    }
-
     .gallery-slider-thumbnails-col {
         display: none !important;
     }
@@ -14,9 +10,50 @@
     }
 }
 
+.swag-cms-extensions-quickview-close-button {
+    top: 0 !important;
+
+    button.close {
+        opacity: 1;
+        color: $black;
+        border: none;
+        background-color: transparent;
+    }
+}
+
 .swag-cms-extensions-quickview {
+    &-container {
+        padding: 28px;
+    }
+
     &-header {
         display: none;
+    }
+
+    &-content-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        > div {
+            background-color: $gray-100;
+            border-radius: 14px;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 21px;
+        }
+
+        .gallery-slider-item {
+            background: transparent;
+        }
+
+        .base-slider-controls-prev,
+        .base-slider-controls-next {
+            background-color: transparent;
+            border: none;
+        }
     }
 
     &-content {
@@ -42,15 +79,43 @@
             z-index: unset;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .swag-cms-extensions-quickview-content-right.product-detail-buy {
-                @extend .col-5;
+        .product-detail-price-container {
+            width: unset;
+        }
+
+        // reset style was set in product detail page
+        .product-detail-buy.col-lg-5 {
+            @extend .col-lg-5;
+        }
+    }
+}
+
+#swag-cms-extensions-quickview-carousel {
+    > .carousel-control-next {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    > .carousel-control-prev {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    #swag-cms-extensions-quickview-carousel {
+        .carousel-control-next,
+        .carousel-control-prev {
+            span.icon {
+                width: 18px;
+                height: 18px;
+                color: $black;
             }
         }
     }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
     .swag-cms-extensions-quickview {
         &-content {
             .btn-buy {
@@ -92,34 +157,19 @@
     }
 }
 
-@media (max-width: 400px) {
-    .swag-cms-extensions-quickview {
-        &-content {
-            &--buy-button {
-                @include make-col(9);
-            }
-        }
-    }
-}
-
-@include media-breakpoint-only(lg) {
-    .swag-cms-extensions-quickview {
-        &-content {
-            &--buy-button {
-                @include make-col(9);
-            }
-
-            .wishlist-col {
-                @include make-col(3);
-            }
-        }
-    }
-}
-
-@include media-breakpoint-up(xl) {
+@include media-breakpoint-up(if(feature('V6_5_0_0'), lg, xl)) {
     .swag-cms-extensions-quickview-modal {
         .modal-content {
             @include border-radius(16px);
         }
+    }
+
+    .swag-cms-extensions-quickview {
+        &-content-left {
+            > div {
+                margin-bottom: 0;
+            }
+        }
+
     }
 }
