@@ -19,11 +19,13 @@
     <div class="product-detail-info">
         {{ block('buy_widget_delivery_informations') }}
 
+        {# @deprecated tag:v6.5.0 - Will be removed - The variable will be moved into block `buy_widget_reviews` #}
         {% set remoteClickOptions = {
             selector: "#review-tab-" ~ product.id,
             scrollToElement: true
         } %}
 
+        {# @deprecated tag:v6.5.0 - Will be removed - The variable will be moved into block `buy_widget_reviews` #}
         {% set reviewTabHref = "#review-tab-" ~ product.id ~ "-pane" %}
 
         {{ block('buy_widget_reviews') }}
