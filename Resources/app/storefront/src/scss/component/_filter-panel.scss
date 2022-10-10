@@ -92,7 +92,8 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
                 }
 
                 + .filter-panel-item-dropdown {
-                    border-color: $primary;overflow: hidden;
+                    border-color: $primary;
+                    overflow: hidden;
                     padding: 0;
                 }
             }

@@ -1,5 +1,4 @@
 .account-address {
-
     @include media-breakpoint-down(sm) {
         &.account-address-form {
             .form-group {
@@ -102,11 +101,14 @@
                     width: 36px;
                     border-radius: 8px;
                     border-color: $border-color-bold;
+
+                    /* stylelint-disable max-nesting-depth */
                     @if (feature('V6_5_0_0')) {
                         .icon {
                             margin-top: -2px;
                         }
                     }
+                    /* stylelint-enable */
                 }
 
                 .btn .icon > svg {

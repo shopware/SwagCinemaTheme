@@ -13,6 +13,7 @@
             border-width: $border-width;
         }
     }
+
     tr {
         background-color: $table-accent-bg;
         @if (feature('V6_5_0_0')) {

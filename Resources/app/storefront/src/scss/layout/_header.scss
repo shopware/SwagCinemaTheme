@@ -42,9 +42,9 @@
                 border-color: $primary;
             }
         } @else {
-             .header-search-input:focus + .input-group-append .header-search-btn {
+            .header-search-input:focus + .input-group-append .header-search-btn {
                 background-color: transparent;
-             }
+            }
         }
 
         .header-search-form {

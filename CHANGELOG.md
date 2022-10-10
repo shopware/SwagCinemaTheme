@@ -1,3 +1,7 @@
+# 1.5.0
+- Checked compatibility with platform v6.4.16.0
+- Updated compatibility of CMS Extensions with Bootstrap 5
+
 # 1.4.0
 - Added Bootstrap 5 compatibility
 - Checked compatibility with platform v6.4.13.0

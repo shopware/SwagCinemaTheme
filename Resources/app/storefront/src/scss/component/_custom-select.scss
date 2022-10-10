@@ -50,7 +50,7 @@
         }
     }
 
-    .form-group[class*="col-"] {
+    .form-group[class*='col-'] {
         .dropdown-menu {
             width: calc(100% - var(--bs-gutter-x)) !important;
         }
