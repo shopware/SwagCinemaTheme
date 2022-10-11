@@ -1,7 +1,6 @@
 $offcanvas-cart-spacing: 20px;
 
 .cart-offcanvas {
-
     @include media-breakpoint-up(md) {
         .offcanvas-content-container {
             width: 30rem;
@@ -26,7 +25,6 @@ $offcanvas-cart-spacing: 20px;
                 color: $sw-text-color;
             }
         }
-
 
         .offcanvas-cart-items {
             border-top: $border-width solid $border-color-bold;
@@ -56,6 +54,7 @@ $offcanvas-cart-spacing: 20px;
                     flex: 0 0 calc(100% - 110px);
                 }
 
+                /* stylelint-disable max-nesting-depth */
                 .cart-item-details-container {
                     @if (feature('V6_5_0_0')) {
                         @extend .ps-md-0, .ps-lg-3;
@@ -64,6 +63,7 @@ $offcanvas-cart-spacing: 20px;
                     }
                     padding-left: 20px;
                 }
+                /* stylelint-enable */
             }
 
             .cart-item-customized-products {
@@ -121,12 +121,15 @@ $offcanvas-cart-spacing: 20px;
 
                 .input-group {
                     @extend .input-group-lg;
+
+                    /* stylelint-disable max-nesting-depth */
                     @if (feature('V6_5_0_0')) {
                         .btn {
                             padding-top: 4px;
                             padding-bottom: 4px;
                         }
                     }
+                    /* stylelint-enable */
                 }
             }
 
@@ -156,6 +159,7 @@ $offcanvas-cart-spacing: 20px;
                 }
             }
 
+            /* stylelint-disable max-nesting-depth */
             @if (not feature('V6_5_0_0')) {
                 .btn {
                     @extend .btn-lg;
@@ -193,23 +197,35 @@ $offcanvas-cart-spacing: 20px;
                     }
                 }
             }
+            /* stylelint-enable */
         }
 
         .cart-item-quantity {
-
             @if (feature('V6_5_0_0')) {
                 .form-select {
                     color: $gray-400;
                     font-weight: $font-weight-medium;
                     width: 80px;
-                    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 8px center/22px 10px $input-bg;
+                    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg')
+                        no-repeat
+                        right
+                        8px
+                        center/22px
+                        10px
+                        $input-bg;
                 }
             } @else {
                 .custom-select {
                     color: $gray-400;
                     font-weight: $font-weight-medium;
                     width: 80px;
-                    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px $input-bg;
+                    background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg')
+                        no-repeat
+                        right
+                        1rem
+                        center/22px
+                        10px
+                        $input-bg;
                 }
             }
         }

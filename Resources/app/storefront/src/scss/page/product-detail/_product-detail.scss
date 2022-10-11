@@ -11,14 +11,23 @@
 .product-detail-form-container {
     margin-bottom: 36px;
 
-
     @if (feature('V6_5_0_0')) {
         .form-select {
-            background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 16px center/15px $input-bg;
+            background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg')
+                no-repeat
+                right
+                16px
+                center/15px
+                $input-bg;
         }
     } @else {
         .custom-select {
-            background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg') no-repeat right 20px center/15px $input-bg;
+            background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-arrow-down.svg')
+                no-repeat
+                right
+                20px
+                center/15px
+                $input-bg;
         }
     }
 
@@ -163,31 +172,6 @@
 
         @include media-breakpoint-down(md) {
             height: auto;
-        }
-    }
-
-    &-buy {
-        .btn-buy,
-        .product-wishlist-action {
-            margin-top: 48px;
-        }
-
-        .product-wishlist-btn-content {
-            display: none;
-        }
-
-        .product-wishlist-action {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: $border-width solid $primary;
-            border-radius: 11px;
-
-            .icon {
-                color: $primary;
-            }
         }
     }
 }
@@ -431,7 +415,6 @@
 }
 
 .product-detail-media {
-
     @include media-breakpoint-up(xl) {
         padding-right: 0;
     }
@@ -452,7 +435,6 @@
 }
 
 .product-detail-buy {
-
     @include media-breakpoint-up(xl) {
         padding-left: 90px;
     }
@@ -464,6 +446,29 @@
     .product-detail-review-content {
         > [class*='col'] {
             @extend .col-12;
+        }
+    }
+
+    .btn-buy,
+    .product-wishlist-action {
+        margin-top: 48px;
+    }
+
+    .product-wishlist-btn-content {
+        display: none;
+    }
+
+    .product-wishlist-action {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: $border-width solid $primary;
+        border-radius: 11px;
+
+        .icon {
+            color: $primary;
         }
     }
 }

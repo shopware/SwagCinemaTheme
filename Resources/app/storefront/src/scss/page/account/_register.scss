@@ -62,7 +62,7 @@
             }
 
             @if (feature('V6_5_0_0')) {
-                .login-submit .btn-primary  {
+                .login-submit .btn-primary {
                     @extend .btn-secondary, .w-100;
                 }
             } @else {
