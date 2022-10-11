@@ -15,9 +15,7 @@
 
 {% block component_filter_panel_element %}
     {# hidden block filter-panel when filter empty #}
-    {% set manufacturers = listing.aggregations.get('manufacturer') %}
-
-    <div class="filter-panel{% if sidebar %} is--sidebar{% endif %} {% if manufacturers.entities is empty %}d-none{% endif %}">
+    <div class="filter-panel{% if sidebar %} is--sidebar{% endif %} {% if listing.total < 1 %}d-none{% endif %}">
         {% block component_filter_panel_items_container %}
             {% apply spaceless %}
                 {{ parent() }}
