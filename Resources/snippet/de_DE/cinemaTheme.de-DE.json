@@ -13,7 +13,10 @@
         "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 09:00 - 17:00 Uhr"
     },
     "footer": {
-        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 09:00 - 17:00 Uhr"
+        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 09:00 - 17:00 Uhr",
+        "instagramLink": "Instagram",
+        "facebookLink": "Facebook",
+        "pinterestLink": "Pinterest"
     },
     "account": {
         "overviewChangeAction": "change",
