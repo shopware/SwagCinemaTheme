@@ -1,6 +1,7 @@
 # 1.5.0
 - Überprüfung der Kompatibilität mit Platform v6.4.16.0
 - Aktualisierung der Kompatibilität von CMS-Erweiterungen mit Bootstrap 5
+- Behebung des versteckten Filter in den Listenseiten
 
 # 1.4.0
 - Hinzufügen von Kompatibilität mit Bootstrap 5
