@@ -13,7 +13,8 @@
         "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 09:00 - 17:00 Uhr"
     },
     "footer": {
-        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 09:00 - 17:00 Uhr",
+        "serviceHotline": "Unterstützung und Beratung über: <a href=\"tel:+49180000000\">0180 - 000000</a>",
+        "serviceContactLink": "Mo-Fr, 9-17 Uhr<br>Oder über unser <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Kontaktformular</a>.",
         "instagramLink": "Instagram",
         "facebookLink": "Facebook",
         "pinterestLink": "Pinterest"
