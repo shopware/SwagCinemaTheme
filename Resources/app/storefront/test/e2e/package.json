@@ -2,7 +2,7 @@
   "private": true,
   "name": "swag-storefront-e2e",
   "version": "1.0.0",
-  "description": "E2E Test suite for the Showroom Theme",
+  "description": "E2E Test suite for the Cinema Theme",
   "scripts": {
     "cypress": "./node_modules/.bin/cypress",
     "open": "node_modules/cypress/bin/cypress open",

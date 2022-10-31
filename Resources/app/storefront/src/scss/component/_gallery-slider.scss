@@ -31,6 +31,10 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    &.is-contain .gallery-slider-image {
+        width: 100%;
+    }
 }
 
 .product-detail-media.grid {
