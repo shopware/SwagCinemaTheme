@@ -24,6 +24,10 @@ describe('Account: Order page', {tags: '@visual'}, () => {
                     password: 'shopware'
                 });
             })
+            .then(() => {
+                return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console cache:clear`)
+                    .its('code').should('eq', 0);
+            })
             .then(() => cy.visit('/'))
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
