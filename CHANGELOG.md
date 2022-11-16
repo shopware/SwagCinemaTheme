@@ -1,6 +1,7 @@
 # 1.6.0
 - Checked compatibility with platform v6.4.17.0
 - Fixed service information snippets are missing
+- Fix wrong German snippets
 
 # 1.5.0
 - Checked compatibility with platform v6.4.16.0

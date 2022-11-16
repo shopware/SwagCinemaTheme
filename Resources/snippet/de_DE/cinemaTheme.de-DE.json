@@ -5,7 +5,7 @@
         "404ErrorPageHeader": "Seite nicht gefunden",
         "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können. Möglicherweise existiert sie nicht mehr oder ist verschoben worden.",
         "requiredFields": "Die mit einem Stern (*) markierten Felder sind Pflichtfelder.",
-        "privacyNotice": "ich habe gelesen <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
+        "privacyNotice": "Ich habe gelesen <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
     },
     "header": {
         "searchPlaceholder": "Nach was suchst Du?",
@@ -20,11 +20,11 @@
         "pinterestLink": "Pinterest"
     },
     "account": {
-        "overviewChangeAction": "change",
-        "profileChangeEmail": "ändern",
+        "overviewChangeAction": "Ändern",
+        "profileChangeEmail": "Ändern",
         "profileCurrentMail": "E-Mail-Adresse",
         "profileCurrentPassword": "Passwort",
-        "profileChangePassword": "ändern",
+        "profileChangePassword": "Ändern",
         "profilePasswordText": "*************",
         "orRegister": "",
         "orRegisterLink": "Registrieren",
@@ -32,7 +32,7 @@
         "loginPasswordRecover": "Passwort vergessen?",
         "personalMailLabel": "E-Mail-Addresse",
         "registerAddressShippingHeader": "Abweichende Lieferadresse:",
-        "ordersWelcome": "Hier finden sie ihre bestellungen sortiert nach datum."
+        "ordersWelcome": "Hier finden Sie Ihre Bestellung sortiert nach Datum."
     },
     "detail": {
         "reviewLinkText": "",
