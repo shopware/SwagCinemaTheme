@@ -8,7 +8,7 @@
         </span>
 
         <span class="col-5 shipping-value shipping-cost">
-            + {{ activeShipping.shippingCosts.totalPrice|currency }}
+            <strong>{{ activeShipping.shippingCosts.totalPrice < 0 ? '-' : '+' }} {{ activeShipping.shippingCosts.totalPrice|abs|currency }}{{ "general.star"|trans|sw_sanitize }}</strong>
         </span>
 
         <div class="col-12 offcanvas-shipping-selection">
