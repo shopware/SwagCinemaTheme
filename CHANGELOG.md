@@ -1,3 +1,7 @@
+# 1.6.0
+- Checked compatibility with platform v6.4.17.0
+- Fixed service information snippets are missing
+
 # 1.5.0
 - Checked compatibility with platform v6.4.16.0
 - Updated compatibility of CMS Extensions with Bootstrap 5
