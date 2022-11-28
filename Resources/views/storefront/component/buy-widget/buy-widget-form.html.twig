@@ -74,6 +74,7 @@
 
             {% block buy_widget_buy_button_container %}
                 {% block buy_widget_buy_button %}
+                    {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `btn-block` class, use `d-grid` wrapper instead #}
                     {% if feature('V6_5_0_0') %}
                         <div class="col-10">
                             <div class="d-grid">
