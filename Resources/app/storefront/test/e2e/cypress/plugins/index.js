@@ -1,6 +1,6 @@
 require('@babel/register');
-const selectTestsWithGrep = require('cypress-select-tests/grep');
 
 module.exports = (on, config) => {
-    on('file:preprocessor', selectTestsWithGrep(config));
+    // eslint-disable-next-line global-require
+    require('cypress-grep/src/plugin')(config);
 };

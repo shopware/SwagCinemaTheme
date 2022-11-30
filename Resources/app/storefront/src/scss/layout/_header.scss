@@ -157,6 +157,14 @@
     padding-left: 0;
 }
 
+.header-actions-btn {
+    &,
+    &:active,
+    &:hover {
+        border: $border-width solid transparent;
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .header-row {
         padding: $spacer 0;

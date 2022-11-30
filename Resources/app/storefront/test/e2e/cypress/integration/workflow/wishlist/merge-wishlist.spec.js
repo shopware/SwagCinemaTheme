@@ -57,12 +57,9 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
         cy.visit('/');
 
         cy.intercept({
-            path: '/wishlist/merge',
-            method: 'post'
+            url: '/wishlist/merge',
+            method: 'POST',
         }).as('wishlistMerge');
-
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
 
         let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
         heartIcon.should('be.visible');
@@ -82,13 +79,12 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
         accountPage.login();
 
         cy.wait('@wishlistMerge').then(() => {
+            cy.get('#wishlist-basket').contains('1');
             cy.get('.flashbags .alert .alert-content-container .alert-content').contains('Your wishlist might contain products that have been added and saved during a previous visit.');
         });
 
         cy.visit('/');
 
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
         heartIcon = cy.get(`.product-wishlist-${product.id}`).first()
 
         heartIcon.should('have.class', 'product-wishlist-added');
