@@ -6,6 +6,10 @@
         display: block;
     }
 
+    &-nav-btn.btn {
+        border: $border-width solid transparent;
+    }
+
     &-hotline {
         a {
             color: $sw-text-color;
