@@ -10,7 +10,7 @@ describe('Account: Visual tests login as customer', {tags: ['@workflow', '@login
     it('@workflow @login: check appearance of login with wrong credentials', () => {
         const accountPage = new AccountPageObject();
 
-        cy.get('.account-menu [type="button"]').click();
+        cy.get('.account-menu-btn').click();
         cy.get('.account-menu-dropdown').should('be.visible');
 
         cy.get('.account-menu-login-button').click();

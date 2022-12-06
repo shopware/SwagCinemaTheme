@@ -6,7 +6,7 @@
   "scripts": {
     "cypress": "./node_modules/.bin/cypress",
     "open": "node_modules/cypress/bin/cypress open",
-    "open:cli": "./node_modules/.bin/cypress run",
+    "open:cli": "./node_modules/.bin/cypress run --browser chrome --spec cypress/**/workflow/account/login.spec.js",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:firefox": "cypress run --browser firefox"
   },
@@ -25,5 +25,8 @@
     "mochawesome": "^6.3.1",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^5.2.0"
+  },
+  "devDependencies": {
+    "cypress-log-to-output": "^1.1.2"
   }
 }
