@@ -7,14 +7,8 @@
             background-color: $gray-200;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .form-checkbox {
-                flex-grow: 1;
-            }
-        } @else {
-            .custom-checkbox {
-                flex-grow: 1;
-            }
+        .form-checkbox {
+            flex-grow: 1;
         }
     }
 

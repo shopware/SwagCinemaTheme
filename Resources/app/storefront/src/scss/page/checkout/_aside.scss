@@ -24,7 +24,7 @@
             height: 100%;
             border-right: $checkout-divider-line;
 
-            @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+            @include media-breakpoint-down(lg) {
                 content: none;
             }
         }
@@ -68,24 +68,16 @@
         .checkout-aside-add-code {
             @extend .input-group-lg;
 
-            @if (feature('V6_5_0_0')) {
-                .btn-secondary {
-                    padding-top: 0;
-                    padding-bottom: 0;
-                }
+            .btn-secondary {
+                padding-top: 0;
+                padding-bottom: 0;
             }
         }
 
         .checkout-aside {
-            padding: $checkout-spacing-lg 20px $checkout-spacing-lg
-                $checkout-spacing-lg;
+            padding: $checkout-spacing-lg 20px;
 
-            @if (feature('V6_5_0_0')) {
-                padding-right: 20px;
-                padding-left: 20px;
-            }
-
-            @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+            @include media-breakpoint-down(lg) {
                 background-color: $gray-100;
                 border-top: $checkout-divider-line;
             }
@@ -161,9 +153,7 @@
                 height: 100%;
                 border-top: $checkout-divider-line;
 
-                @include media-breakpoint-down(
-                    if(feature('V6_5_0_0'), lg, md)
-                ) {
+                @include media-breakpoint-down(lg) {
                     content: none;
                 }
             }

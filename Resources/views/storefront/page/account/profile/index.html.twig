@@ -35,7 +35,7 @@
             <div class="col-8 col-sm-6 account-profile-action">
                 <span class="account-profile-mail d-sm-none">{{ context.customer.email }}</span>
                 <a class="account-profile-change{% if not emailFormViolation %} collapsed{% endif %}"
-                   {{dataBsToggleAttr}}="collapse"
+                   data-bs-toggle="collapse"
                    href="#profile-email-form"
                    role="button"
                    aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
@@ -58,7 +58,7 @@
             <div class="col-8 col-sm-6 account-profile-action">
                 <span class="account-profile-password d-sm-none">{{ "account.profilePasswordText"|trans|sw_sanitize }}</span>
                 <a class="account-profile-change{% if not passwordFormViolation %} collapsed{% endif %}"
-                   {{dataBsToggleAttr}}="collapse"
+                   data-bs-toggle="collapse"
                    href="#profile-password-form"
                    role="button"
                    aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"

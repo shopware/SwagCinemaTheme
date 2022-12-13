@@ -20,7 +20,7 @@
 
         <div class="col-md-6">
             <a class="btn btn-lg btn-secondary cart-shipping-costs-btn"
-               {{dataBsToggleAttr}}="collapse"
+               data-bs-toggle="collapse"
                href="#collapseShippingCost"
                role="button"
                aria-expanded="false"
@@ -49,7 +49,7 @@
                 {% block page_checkout_cart_shipping_costs_form_group_payment_method %}
                     <div class="form-group" data-custom-select="true">
                         <label for="paymentMethodId">{{ "checkout.paymentMethod"|trans|sw_sanitize }}</label>
-                        <select class="{{ formSelectClass }}" type="text" id="paymentMethodId" name="paymentMethodId">
+                        <select class="form-select" type="text" id="paymentMethodId" name="paymentMethodId">
                             {% if context.paymentMethod.id not in page.paymentMethods.ids %}
                                 <option value="{{ context.paymentMethod.id }}"
                                         selected="selected"
@@ -72,7 +72,7 @@
                 {% block page_checkout_cart_shipping_costs_form_group_shipping_method %}
                     <div class="form-group" data-custom-select="true">
                         <label for="shippingMethodId">{{ "checkout.shippingMethod"|trans|sw_sanitize }}</label>
-                        <select class="{{ formSelectClass }}" type="text" id="shippingMethodId" name="shippingMethodId">
+                        <select class="form-select" type="text" id="shippingMethodId" name="shippingMethodId">
                             {% if context.shippingMethod.id not in page.shippingMethods.ids %}
                                 <option value="{{ context.shippingMethod.id }}"
                                         selected="selected"

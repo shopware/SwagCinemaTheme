@@ -4,13 +4,8 @@
 
     &-lg {
         font-weight: $btn-font-weight-lg;
-        @if (feature('V6_5_0_0')) {
-            padding-top: 7px;
-            padding-bottom: 7px;
-        } @else {
-            padding-top: 3px;
-            padding-bottom: 3px;
-        }
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
 }
 
@@ -51,10 +46,8 @@ button {
             border-color: $value;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .icon {
-                color: inherit;
-            }
+        .icon {
+            color: inherit;
         }
     }
 }

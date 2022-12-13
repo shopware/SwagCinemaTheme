@@ -36,15 +36,9 @@
             border-color: $primary;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .header-search-input:focus + .header-search-btn {
-                background-color: transparent;
-                border-color: $primary;
-            }
-        } @else {
-            .header-search-input:focus + .input-group-append .header-search-btn {
-                background-color: transparent;
-            }
+        .header-search-input:focus + .header-search-btn {
+            background-color: transparent;
+            border-color: $primary;
         }
 
         .header-search-form {
@@ -128,10 +122,8 @@
             color: $secondary;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .header-wishlist {
-                position: relative;
-            }
+        .header-wishlist {
+            position: relative;
         }
 
         .header-wishlist-badge {

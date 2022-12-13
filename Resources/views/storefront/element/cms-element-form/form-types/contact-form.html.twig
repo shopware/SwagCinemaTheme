@@ -44,7 +44,7 @@
 {% endblock %}
 
 {% block cms_form_contact_submit %}
-    <div class="{% if feature('V6_5_0_0') %}row{% else %}form-row{% endif %} form-privacy-row">
+    <div class="row form-privacy-row">
         <div class="col-md-6">
             {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-privacy.html.twig' %}
         </div>
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="{% if feature('V6_5_0_0') %}row{% else %}form-row{% endif %}">
+    <div class="row">
         <div class="col-md-6 cms-form-submit-col">{{ parent() }}</div>
     </div>
 {% endblock %}

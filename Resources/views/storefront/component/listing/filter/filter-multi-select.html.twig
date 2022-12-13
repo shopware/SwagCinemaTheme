@@ -8,13 +8,13 @@
     <button class="filter-panel-item-toggle btn"
             aria-expanded="false"
     {% if sidebar %}
-        {{dataBsToggleAttr}}="collapse"
-        {{dataBsTargetAttr}}="#{{ filterItemId }}"
+        data-bs-toggle="collapse"
+        data-bs-target="#{{ filterItemId }}"
     {% else %}
-        {{dataBsToggleAttr}}="dropdown"
+        data-bs-toggle="dropdown"
         data-boundary="viewport"
         data-bs-offset="0,0"
-        {% if feature('V6_5_0_0') %}data-bs-reference{% else %}data-reference{% endif %}="parent"
+        data-bs-reference="parent"
         aria-haspopup="true"
     {% endif %}>
 

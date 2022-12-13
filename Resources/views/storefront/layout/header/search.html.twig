@@ -1,23 +1,11 @@
 {% sw_extends '@Storefront/storefront/layout/header/search.html.twig' %}
 
 {% block layout_header_search_button %}
-    {% if feature('V6_5_0_0') %}
-        <button type="submit"
-                class="btn header-search-btn"
-                aria-label="{{ "header.searchButton"|trans|striptags }}">
-            <span class="header-search-icon">
-                {% sw_icon 'ic-search' style {'pack': 'cinema'} %}
-            </span>
-        </button>
-    {% else %}
-        <div class="input-group-append">
-        <button type="submit"
-                class="btn header-search-btn"
-                aria-label="{{ "header.searchButton"|trans|striptags }}">
-            <span class="header-search-icon">
-                {% sw_icon 'ic-search' style {'pack': 'cinema'} %}
-            </span>
-        </button>
-    </div>
-    {% endif %}
+    <button type="submit"
+            class="btn header-search-btn"
+            aria-label="{{ "header.searchButton"|trans|striptags }}">
+        <span class="header-search-icon">
+            {% sw_icon 'ic-search' style {'pack': 'cinema'} %}
+        </span>
+    </button>
 {% endblock %}

@@ -2,7 +2,7 @@
 
 {% block buy_widget_buy_container %}
     {% if buyable %}
-        <div class="{% if feature('V6_5_0_0') %}row g-4{% else %}form-row{% endif %} buy-widget-container">
+        <div class="row g-4 buy-widget-container">
             {% block buy_widget_buy_quantity_container %}
                 <div class="col-12 product-detail-quantity-box">
                     <div class="product-detail-buy-quantity" data-custom-select="true">
@@ -30,7 +30,7 @@
                                             <a class="product-detail-tax-link"
                                                href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
                                                title="{{ taxText }}"
-                                               {{dataBsToggleAttr}}="modal"
+                                               data-bs-toggle="modal"
                                                data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
                                                 {{ taxText }}
                                             </a>
@@ -74,41 +74,19 @@
 
             {% block buy_widget_buy_button_container %}
                 {% block buy_widget_buy_button %}
-                    {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `btn-block` class, use `d-grid` wrapper instead #}
-                    {% if feature('V6_5_0_0') %}
-                        <div class="col-10">
-                            <div class="d-grid">
-                                <button class="btn btn-primary btn-buy"
-                                        title="{{ "detail.addProduct"|trans|striptags }}"
-                                        aria-label="{{ "detail.addProduct"|trans|striptags }}">
-                                    {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
-                                    {{ "detail.addProduct"|trans|sw_sanitize }}
-                                </button>
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="col-8">
-                            <button class="btn btn-primary btn-block btn-buy"
+                    <div class="col-10">
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-buy"
                                     title="{{ "detail.addProduct"|trans|striptags }}"
                                     aria-label="{{ "detail.addProduct"|trans|striptags }}">
                                 {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
                                 {{ "detail.addProduct"|trans|sw_sanitize }}
                             </button>
                         </div>
-                    {% endif %}
+                    </div>
                 {% endblock %}
                 {% block buy_widget_wishlist %}
-                    {% if feature('V6_5_0_0') %}
-                        <div class="col-2">
-                            {% if config('core.cart.wishlistEnabled') %}
-                                {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
-                                    showText: true,
-                                    size: 'md',
-                                    productId: product.id
-                                } %}
-                            {% endif %}
-                        </div>
-                    {% else %}
+                    <div class="col-2">
                         {% if config('core.cart.wishlistEnabled') %}
                             {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
                                 showText: true,
@@ -116,7 +94,7 @@
                                 productId: product.id
                             } %}
                         {% endif %}
-                    {% endif %}
+                    </div>
                 {% endblock %}
 
                 <div class="col-8 product-payment-logo">

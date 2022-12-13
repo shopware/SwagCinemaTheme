@@ -15,7 +15,7 @@ $search-suggest-image-size: 100px;
         overflow-y: scroll;
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), sm, xs)) {
+    @include media-breakpoint-down(sm) {
         width: 100vw;
         left: -$grid-gutter-width/2;
         border-radius: 0;

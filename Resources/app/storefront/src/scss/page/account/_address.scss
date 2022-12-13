@@ -103,10 +103,8 @@
                     border-color: $border-color-bold;
 
                     /* stylelint-disable max-nesting-depth */
-                    @if (feature('V6_5_0_0')) {
-                        .icon {
-                            margin-top: -2px;
-                        }
+                    .icon {
+                        margin-top: -2px;
                     }
                     /* stylelint-enable */
                 }

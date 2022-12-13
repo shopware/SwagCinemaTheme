@@ -23,10 +23,8 @@ $box-image-height-img: 100%;
         margin-left: auto;
         margin-right: 10px;
 
-        @if (feature('V6_5_0_0')) {
-            .icon {
-                margin-top: auto;
-            }
+        .icon {
+            margin-top: auto;
         }
     }
 
@@ -363,9 +361,7 @@ $box-image-height-img: 100%;
             display: flex;
             align-items: center;
             flex-direction: row;
-            @if (feature('V6_5_0_0')) {
-                justify-content: flex-end;
-            }
+            justify-content: flex-end;
         }
 
         [data-swag-paypal-express-button=true] {
