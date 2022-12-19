@@ -7,6 +7,10 @@
         padding-top: 7px;
         padding-bottom: 7px;
     }
+
+    &.btn-primary {
+        --bs-btn-hover-color: #fdfdfd;
+    }
 }
 
 .btn-link {

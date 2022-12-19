@@ -45,9 +45,8 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.get('.offcanvas .offcanvas-close').should('be.visible').click();
 
         // Product detail
-        cy.get('.header-search-input').should('be.visible');
         cy.get('.header-search-input').type('dummy test');
-        cy.get('.header-search-btn').should('be.visible').click();
+        cy.get('.header-search-btn').click();
         cy.takeSnapshot('[Checkout] No products found', '.container-main');
 
         cy.get('.header-search-input').type(product.name);
@@ -60,7 +59,7 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
         cy.takeSnapshot('[Checkout] Offcanvas', '.offcanvas');
 
@@ -77,8 +76,8 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.get('input[name="lastName"]').type('Doe');
 
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
+        cy.get('.register-guest-control.form-check label').scrollIntoView();
+        cy.get('.register-guest-control.form-check label').click(1, 1);
 
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
@@ -123,7 +122,7 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -144,10 +143,10 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.get(`.register-personal ${firstNameSelector}`).type('John');
         cy.get(`.register-personal ${lastNameSelector}`).type('Doe');
 
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
+        cy.get('.register-guest-control.form-check label').scrollIntoView();
+        cy.get('.register-guest-control.form-check label').click(1, 1);
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).should('not.be.visible');
+        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Abcd=123');
 
         cy.get(`.register-billing ${billingAddressStreetSelector}`).type('123 Main St');
         cy.get(`.register-billing ${billingAddressZipcodeSelector}`).type('1234');
@@ -168,7 +167,6 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.takeSnapshot('[Checkout] Shipping information with the alternative address', '.checkout-container');
 
         cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
-
 
         // Checkout
         cy.get('.revocation-notice').contains('Please note our cancellation policy.');

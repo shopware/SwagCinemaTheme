@@ -216,12 +216,6 @@
             margin-bottom: 23px;
         }
     }
-
-    .product-detail-review-language {
-        @extend .col-12;
-        @extend .col-md-6;
-        @extend .col-lg-12;
-    }
 }
 
 .product-detail-review-sortby {
@@ -256,11 +250,10 @@
 }
 
 .product-detail-review-language {
+    @extend .col-12;
+    @extend .col-md-6;
+    @extend .col-lg-12;
     margin-bottom: 0;
-
-    .form-check-label {
-        margin-bottom: 0;
-    }
 
     .form-check-label {
         margin-bottom: 0;

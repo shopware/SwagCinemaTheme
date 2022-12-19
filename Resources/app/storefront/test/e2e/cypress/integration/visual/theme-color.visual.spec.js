@@ -141,8 +141,7 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
         cy.get('.header-logo-main-link').first().click();
         cy.get('.cms-listing-col').should('be.visible');
         cy.get('.product-price').should('have.css', 'color', hexToRGB(colorScheme.price));
-        cy.get('.product-name').click();
-        cy.get('.product-detail').should('be.visible');
+        cy.get('.product-name').click({ force: true });
         cy.get('.btn-buy').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
         cy.get('.product-detail-price').should('have.css', 'color', hexToRGB(colorScheme.price));
         cy.get('.product-detail-manufacturer a').should('not.be.visible');

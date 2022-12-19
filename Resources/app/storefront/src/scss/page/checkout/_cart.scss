@@ -84,12 +84,6 @@ $checkout-cart-spacing: 32px;
             }
         }
 
-        .form-select {
-            &[aria-expanded=true] + .dropdown-menu {
-                width: 100%;
-            }
-        }
-
         .form-group {
             margin-bottom: $checkout-cart-spacing;
         }

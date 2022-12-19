@@ -54,6 +54,7 @@
         width: calc(100% - var(--bs-gutter-x)) !important;
     }
 }
+
 .was-validated {
     .form-select[aria-expanded='true'] {
         &:invalid + .dropdown-menu.show {

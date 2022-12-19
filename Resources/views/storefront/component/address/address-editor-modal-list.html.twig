@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/component/address/address-editor-modal-list.html.twig' %}
+
+{% block component_address_address_editor_modal_list %}
+    <div class="tab-pane fade show" role="tabpanel" id="{{ typePrefix }}address-list">
+        {% block component_address_address_editor_modal_list_wrapper %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

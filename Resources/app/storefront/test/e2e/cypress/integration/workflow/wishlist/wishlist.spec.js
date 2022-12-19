@@ -59,9 +59,8 @@ describe('Wishlist: Check appearance of wishlist', { tags: ['@workflow'] }, () =
 
             cy.get('#wishlist-basket').should('not.be.visible');
 
-            // hover over product-box
-            cy.get('.product-box').first().invoke('addClass', 'hover');
-            cy.get('.product-box .product-wishlist-action-circle').first().click();
+            // need force click because it's covered by filter-panel
+            cy.get('.product-box .product-wishlist-action-circle').click({ force: true});
 
             cy.get('.login-card').should('be.visible');
             cy.url().should('include', '/account/login?redirectTo=frontend.wishlist.add.after.login');
@@ -106,25 +105,17 @@ describe('Wishlist: Check appearance of wishlist', { tags: ['@workflow'] }, () =
             method: 'post'
         }).as('guestPagelet');
 
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
-
         let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
-
-        // hover over product-box
-        cy.get('.cms-listing-col').next().then(el => {
-            cy.wrap(el).get('.product-box').invoke('addClass', 'hover');
-        })
+        heartIcon.click({force: true });
 
         heartIcon = cy.get(`.product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).first();
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         cy.visit('/wishlist');
         cy.title().should('eq', 'Your wishlist');

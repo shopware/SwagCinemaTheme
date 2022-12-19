@@ -9,7 +9,7 @@
 
     {% if page.cart.lineItems|length > 0 %}
         {% block layout_header_actions_cart_badge %}
-            <span class="badge {{bgClass}}-light header-cart-badge">{{ page.cart.lineItems|length }}</span>
+            <span class="badge bg-light header-cart-badge">{{ page.cart.lineItems|length }}</span>
         {% endblock %}
     {% endif %}
 

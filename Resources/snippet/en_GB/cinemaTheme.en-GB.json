@@ -5,7 +5,7 @@
         "404ErrorPageHeader": "Page not found",
         "404ErrorDescription": "We are sorry, it seems we can't find the page you're looking for. It may no longer exist or may have been moved.",
         "requiredFields": "Fields marked with * are required.",
-        "privacyNotice": "I have read the <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Data protection information\">data protection information</a>"
+        "privacyNotice": "I have read the <a data-bs-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Data protection information\">data protection information</a>"
     },
     "header": {
         "searchPlaceholder": "What are you looking for?",
@@ -14,7 +14,7 @@
     },
     "footer": {
         "serviceHotline": "Support and counselling via: <a href=\"tel:+49180000000\">0180 - 000000</a>",
-        "serviceContactLink": "Mon-Fri, 9 am - 5 pm<br>Or via our <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">contact form</a>.",
+        "serviceContactLink": "Mon-Fri, 9 am - 5 pm<br>Or via our <a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">contact form</a>.",
         "instagramLink": "Instagram",
         "facebookLink": "Facebook",
         "pinterestLink": "Pinterest"

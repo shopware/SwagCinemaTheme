@@ -36,11 +36,6 @@
             border-color: $primary;
         }
 
-        .header-search-input:focus + .header-search-btn {
-            background-color: transparent;
-            border-color: $primary;
-        }
-
         .header-search-form {
             .header-search-input,
             .header-search-input:focus,
@@ -96,17 +91,6 @@
         }
     }
 
-    &-actions-btn {
-        position: static;
-
-        &:hover {
-            .header-cart-badge,
-            .header-wishlist-badge {
-                background-color: $primary !important;
-            }
-        }
-    }
-
     &-actions-col {
         .header-logo-col {
             width: auto;
@@ -150,6 +134,15 @@
 }
 
 .header-actions-btn {
+    position: static;
+
+    &:hover {
+        .header-cart-badge,
+        .header-wishlist-badge {
+            background-color: $primary !important;
+        }
+    }
+
     &,
     &:active,
     &:hover {
@@ -202,7 +195,7 @@
     }
 
     .header-search-col .header-logo-col {
-        padding: 0 20px 0 0;
+        padding: 0 20px;
     }
 
     .header-logo-picture {

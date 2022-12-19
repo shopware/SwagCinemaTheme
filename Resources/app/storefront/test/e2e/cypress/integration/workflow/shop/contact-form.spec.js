@@ -1,5 +1,5 @@
 const selector = {
-    footerLinkContact: '.footer-contact-form a[data-toggle="modal"]',
+    footerLinkContact: '.footer-contact-form a[data-bs-toggle="modal"]',
     formContactModal: '.modal form[action="/form/contact"]',
     formContact: '.cms-page form[action="/form/contact"]',
     formContactSalutation: '#form-Salutation',
@@ -14,16 +14,18 @@ const selector = {
     modalButtonDismiss: 'button[data-dismiss="modal"]'
 }
 
-describe('Contact: Basic', { tags: ['@workflow'] }, () => {
+describe('Contact: Basic', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
                 return cy.createProductFixture();
             })
             .then(() => {
-                cy.loginViaApi();
-                cy.createCmsFixture();
-            });
+                return cy.loginViaApi();
+            })
+            .then(() => {
+                return cy.createCmsFixture();
+            })
     });
 
     function fillOutContactForm(el) {
