@@ -54,6 +54,7 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
         display: flex;
         align-items: center;
         background-color: $white;
+        min-height: 40px;
 
         .icon {
             color: $sw-text-color;
@@ -282,9 +283,11 @@ $icon-star-fill: url('#{$asset-path}/icon-pack/cinema/ic-star-fill-bg.svg');
     @include button-variant($primary, $primary);
     text-align: left;
     color: $white;
+    background-color: var(--#{$prefix}btn-bg);
 
     &:hover {
         color: $white;
+        background-color: var(--#{$prefix}btn-bg);
 
         .icon {
             color: $white;

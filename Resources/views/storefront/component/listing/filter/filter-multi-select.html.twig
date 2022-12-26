@@ -7,16 +7,11 @@
 {% block component_filter_multi_select_toggle %}
     <button class="filter-panel-item-toggle btn"
             aria-expanded="false"
-    {% if sidebar %}
-        data-bs-toggle="collapse"
-        data-bs-target="#{{ filterItemId }}"
-    {% else %}
-        data-bs-toggle="dropdown"
-        data-boundary="viewport"
-        data-bs-offset="0,0"
-        data-bs-reference="parent"
-        aria-haspopup="true"
-    {% endif %}>
+            data-bs-toggle="dropdown"
+            data-boundary="viewport"
+            data-bs-offset="0,0"
+            data-bs-reference="parent"
+            aria-haspopup="true">
 
         {{ block('component_filter_multi_select_display_name') }}
 
@@ -24,4 +19,13 @@
 
         {{ block('component_filter_multi_select_toggle_icon') }}
     </button>
+{% endblock %}
+
+{% block component_filter_multi_select_dropdown %}
+    <div class="filter-multi-select-dropdown filter-panel-item-dropdown dropdown-menu"
+         id="{{ filterItemId }}">
+        {% block component_filter_multi_select_list %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
 {% endblock %}

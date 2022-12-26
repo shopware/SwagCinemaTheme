@@ -15,6 +15,11 @@ $search-suggest-image-size: 100px;
         overflow-y: scroll;
     }
 
+    @include media-breakpoint-down(md) {
+        min-width: 451px;
+        left: -50%;
+    }
+
     @include media-breakpoint-down(sm) {
         width: 100vw;
         left: -$grid-gutter-width/2;
@@ -41,10 +46,6 @@ $search-suggest-image-size: 100px;
         font-weight: $font-weight-semibold;
         color: $gray-700;
 
-        @include media-breakpoint-down(sm) {
-            padding-left: $search-suggest-padding;
-        }
-
         .search-suggest-product-name {
             margin-bottom: $search-suggest-padding;
         }
@@ -63,6 +64,8 @@ $search-suggest-image-size: 100px;
         @include make-col(3);
         width: $search-suggest-image-size;
         height: $search-suggest-image-size;
+        background-color: #D8D8D8;;
+        border-radius: $border-radius;
 
         @include media-breakpoint-up(md) {
             margin: 0;
@@ -71,11 +74,9 @@ $search-suggest-image-size: 100px;
     }
 
     .search-suggest-product-image {
-        max-width: $search-suggest-image-size;
-        max-height: $search-suggest-image-size;
-        width: $search-suggest-image-size;
-        height: $search-suggest-image-size;
-        border-radius: $border-radius;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
     }
 
     .search-suggest-total-link {

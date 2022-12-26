@@ -20,7 +20,6 @@ describe('Contact: Visual tests', {tags: ['@visual']}, () => {
             .then(() => cy.createProductFixture())
             .then(() => cy.loginViaApi())
             .then(() => cy.createCmsFixture())
-            .then(() => cy.visit('/'))
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
                 cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();

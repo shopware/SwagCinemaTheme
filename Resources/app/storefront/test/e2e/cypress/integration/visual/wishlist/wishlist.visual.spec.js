@@ -123,6 +123,6 @@ describe('Wishlist: Check appearance of wishlist', {tags: ['@visual']}, () => {
         cy.get('.product-wishlist-btn-content.text-wishlist-not-added').first().should('not.be.visible');
         cy.get('.product-wishlist-btn-content.text-wishlist-remove').first().contains('Remove from wishlist');
 
-        cy.takeSnapshot('[Wishlist] Product detail', '.is-ctl-wishlist');
+        cy.takeSnapshot('[Wishlist] Product detail', '.product-detail-name');
     });
 });

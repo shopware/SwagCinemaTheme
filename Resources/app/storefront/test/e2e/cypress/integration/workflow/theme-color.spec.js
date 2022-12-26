@@ -7,6 +7,7 @@ const accountPage = new AccountPageObject();
 describe('ThemeColor: workflow change primary color and buy color', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
+            .then(() => cy.setShippingMethodInSalesChannel('Standard'))
             .then(() => {
                 return cy.createProductFixture();
             })
@@ -140,11 +141,10 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
         cy.get('.product-name').click({ force: true });
         cy.get('.btn-buy').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
         cy.get('.product-detail-price').should('have.css', 'color', hexToRGB(colorScheme.price));
-        cy.get('.product-detail-manufacturer a').should('not.be.visible');
 
         cy.get('.product-detail-buy .btn-buy').click();
         cy.wait('@cartInfo').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200)
+            expect(xhr.response).to.have.property('statusCode', 204)
         });
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.primary));

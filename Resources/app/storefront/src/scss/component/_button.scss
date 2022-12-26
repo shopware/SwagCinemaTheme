@@ -9,7 +9,7 @@
     }
 
     &.btn-primary {
-        --bs-btn-hover-color: #fdfdfd;
+        --#{$prefix}btn-hover-color: #fdfdfd;
     }
 }
 
@@ -87,8 +87,13 @@ button {
 
 .btn-outline-primary {
     @include disable-button($disabled-btn-outline-primary-bg, $disabled-btn-outline-primary-color, $disabled-btn-outline-primary-color);
+
+    &.active {
+        color: var(--#{$prefix}btn-color);
+    }
 }
 
 .btn-outline-secondary {
+    --#{$prefix}btn-active-bg: transparent;
     @include disable-button($disabled-btn-outline-secondary-bg, $disabled-btn-outline-secondary-color, $disabled-btn-outline-secondary-border-color);
 }

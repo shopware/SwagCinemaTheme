@@ -24,6 +24,7 @@ describe('Account: Overview page', () => {
 
         cy.get('.account-overview-profile').should('be.visible');
         cy.get('.account-overview-newsletter').should('be.visible');
+        cy.get('label[for="newsletterRegister"]').click();
 
         cy.get('.newsletter-alerts').should((element) => {
             expect(element).to.contain('You have subscribed to the newsletter');
