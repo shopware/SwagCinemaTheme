@@ -52,10 +52,10 @@ describe('Product: Base price', () => {
 
         cy.get('.product-price-unit').contains('Content: 50 Gramm (€128.00* / 100 Gramm)');
 
-        cy.get('.product-name').click();
+        cy.get('.product-name').click({ force: true });
         cy.get('.product-detail-price-unit').contains('Content: 50 Gramm (€128.00* / 100 Gramm)');
         cy.get('.product-detail-price').contains('64.00');
 
-        cy.takeSnapshot('[Product Detail] Base price', '.product-detail');
+        cy.takeSnapshot('[Product Detail] Base price', '.is-ctl-product');
     });
 });

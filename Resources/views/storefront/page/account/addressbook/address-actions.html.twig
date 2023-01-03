@@ -1,10 +1,11 @@
 {% sw_extends '@Storefront/storefront/page/account/addressbook/address-actions.html.twig' %}
 
 {% block page_account_address_actions %}
-    <button class="btn btn-outline-secondary" type="button" id="accountActionsDropdown" {{ dataBsToggleAttr }}="dropdown" aria-expanded="false">
+    <button class="btn btn-outline-secondary" type="button" id="accountActionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
         {% sw_icon 'ic-three-dots' style {'pack' : 'cinema'} %}
     </button>
-    <div class="dropdown-menu dropdown-menu-right overflow-hidden" aria-labelledby="dropdownMenuButton">
+
+    <div class="dropdown-menu dropdown-menu-right overflow-hidden" aria-labelledby="accountActionsDropdown">
         {{ parent() }}
     </div>
 {% endblock %}

@@ -5,7 +5,7 @@
         "404ErrorPageHeader": "Seite nicht gefunden",
         "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können. Möglicherweise existiert sie nicht mehr oder ist verschoben worden.",
         "requiredFields": "Die mit einem Stern (*) markierten Felder sind Pflichtfelder.",
-        "privacyNotice": "Ich habe gelesen <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
+        "privacyNotice": "Ich habe gelesen <a data-bs-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
     },
     "header": {
         "searchPlaceholder": "Nach was suchst Du?",
@@ -14,7 +14,7 @@
     },
     "footer": {
         "serviceHotline": "Unterstützung und Beratung über: <a href=\"tel:+49180000000\">0180 - 000000</a>",
-        "serviceContactLink": "Mo-Fr, 9-17 Uhr<br>Oder über unser <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Kontaktformular</a>.",
+        "serviceContactLink": "Mo-Fr, 9-17 Uhr<br>Oder über unser <a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Kontaktformular</a>.",
         "instagramLink": "Instagram",
         "facebookLink": "Facebook",
         "pinterestLink": "Pinterest"

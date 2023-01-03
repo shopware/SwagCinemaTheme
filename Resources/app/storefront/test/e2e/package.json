@@ -16,7 +16,7 @@
   "dependencies": {
     "@percy/cli": "^1.16.0",
     "@percy/cypress": "^3.1.2",
-    "@shopware-ag/e2e-testsuite-platform": "^3.0.15",
+    "@shopware-ag/e2e-testsuite-platform": "^4.0.2",
     "cypress": "^7.6.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.6.1",

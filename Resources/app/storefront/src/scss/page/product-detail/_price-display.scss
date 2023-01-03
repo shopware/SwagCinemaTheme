@@ -1,11 +1,7 @@
 .swag-customized-product__price-display {
     padding: 24px 0 0;
     border: none;
-    @if (feature('V6_5_0_0')) {
-        border-top: $border-width solid $secondary;
-    } @else {
-        border-top: $hr-border-width solid $secondary;
-    }
+    border-top: $border-width solid $secondary;
     border-radius: 0;
     margin-bottom: 38px;
 

@@ -185,15 +185,16 @@
                 @include make-col-offset(0);
                 @include make-col(12);
 
-                @include media-breakpoint-up(if(feature('V6_5_0_0'), xl, lg)) {
+                @include media-breakpoint-up(xl) {
                     @include make-col(6);
+
                     margin-left: 25%;
                 }
             }
 
             .checkout-main,
             .checkout-aside {
-                @include media-breakpoint-up(if(feature('V6_5_0_0'), xl, lg)) {
+                @include media-breakpoint-up(xl) {
                     padding-left: 0;
                     padding-right: 0;
                 }

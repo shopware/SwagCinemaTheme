@@ -72,13 +72,8 @@
 
 .profile-form-submit {
     @include button-variant($primary, $primary);
-    @if (feature('V6_5_0_0')) {
-        color: $white;
-        padding: $btn-padding-y 20px;
-    } @else {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
+    color: $white;
+    padding: $btn-padding-y 20px;
     width: 100%;
 
     @include media-breakpoint-up(sm) {
@@ -98,9 +93,7 @@
     &:not(:disabled):hover {
         background-color: $primary;
         border-color: $primary;
-        @if (feature('V6_5_0_0')) {
-            color: $white;
-        }
+        color: $white;
     }
 }
 

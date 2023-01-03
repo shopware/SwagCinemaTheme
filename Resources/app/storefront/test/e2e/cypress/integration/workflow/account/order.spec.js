@@ -8,9 +8,6 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
             .then(() => {
                 return cy.createProductFixture();
             })
-            .then(() => {
-                return cy.fixture('product');
-            })
             .then((result) => {
                 return cy.createCustomerFixtureStorefront();
             })
@@ -54,10 +51,10 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
 
-        cy.get('.btn.btn-block.btn-primary').click();
+        cy.get('.btn.begin-checkout-btn.btn-primary').click();
         cy.get('.confirm-main-header').contains('Complete order');
 
-        cy.get('.custom-control.custom-checkbox input').click({force: true});
+        cy.get('.checkout-confirm-tos-checkbox').click({force: true});
         cy.get('#confirmFormSubmit').click();
 
         // Verify order

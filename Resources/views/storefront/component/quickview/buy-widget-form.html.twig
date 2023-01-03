@@ -28,7 +28,7 @@
                                 <a class="product-detail-tax-link"
                                    href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
                                    title="{{ taxText }}"
-                                   {{dataBsToggleAttr}}="modal"
+                                   data-bs-toggle="modal"
                                    data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
                                     {{ taxText }}
                                 </a>
@@ -50,23 +50,14 @@
 {% endblock %}
 
 {% block page_product_detail_buy_button %}
-    {% if feature('V6_5_0_0') %}
-        <div class="d-grid">
-            <button class="btn btn-primary btn-buy"
-                    title="{{ "detail.addProduct"|trans|striptags }}"
-                    aria-label="{{ "detail.addProduct"|trans|striptags }}">
-                {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
-                {{ "detail.addProduct"|trans|sw_sanitize }}
-            </button>
-        </div>
-    {% else %}
-        <button class="btn btn-primary btn-block btn-buy"
+    <div class="d-grid">
+        <button class="btn btn-primary btn-buy"
                 title="{{ "detail.addProduct"|trans|striptags }}"
                 aria-label="{{ "detail.addProduct"|trans|striptags }}">
             {% sw_icon 'ic-cart' style {'pack' : 'cinema'} %}
             {{ "detail.addProduct"|trans|sw_sanitize }}
         </button>
-    {% endif %}
+    </div>
 {% endblock %}
 
 {% block page_product_detail_buy_button_container %}
@@ -89,23 +80,13 @@
 {% endblock %}
 
 {% block swag_cms_extensions_detail_buy_form_detail_button %}
-    {% if feature('V6_5_0_0') %}
-        <div class="d-grid">
-            <a class="swag-cms-extensions-quickview-detail-page-button btn btn-outline-primary btn-lg{{ redirectButtonClasses }}"
-               href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}"
-               title="{{ redirectButtonLabel }}"
-               aria-label="{{ redirectButtonLabel }}">
-                {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
-                {{ redirectButtonLabel }}
-            </a>
-        </div>
-    {% else %}
-        <a class="swag-cms-extensions-quickview-detail-page-button btn btn-outline-primary btn-block btn-lg{{ redirectButtonClasses }}"
+    <div class="d-grid">
+        <a class="swag-cms-extensions-quickview-detail-page-button btn btn-outline-primary btn-lg{{ redirectButtonClasses }}"
            href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}"
            title="{{ redirectButtonLabel }}"
            aria-label="{{ redirectButtonLabel }}">
             {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
             {{ redirectButtonLabel }}
         </a>
-    {% endif %}
+    </div>
 {% endblock %}

@@ -129,7 +129,7 @@ function wrapper() {
                 return `
                     <div class="form-group">
                         <div class="swag-customized-products-navigation">
-                            <select class="custom-select swag-customized-products-navigation" onmousedown="event.preventDefault()" tabindex="-1" aria-expanded="false" data-toggle="dropdown" data-boundary="viewport" data-offset="0,0" aria-haspopup="true">
+                            <select class="custom-select swag-customized-products-navigation" onmousedown="event.preventDefault()" tabindex="-1" aria-expanded="false" data-bs-toggle="dropdown" data-boundary="viewport" data-offset="0,0" aria-haspopup="true">
                                ${this.navigationEntries.map(renderSelectOption).join("").trim()}
                             </select>
                             <div class="dropdown-menu" role="listbox" tabindex="0" id="listboxSelection" aria-labelledby="listboxlabelSelection">

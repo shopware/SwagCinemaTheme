@@ -67,7 +67,7 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
         heartIcon.get('.icon-wishlist-not-added').should('be.visible');
         heartIcon.should('not.have.class', 'product-wishlist-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         cy.window().then((win) => {
             cy.expect(win.wishlistEnabled).to.equal(1);
@@ -110,8 +110,6 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
 
         cy.visit('/');
 
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
         let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
 
         heartIcon.should('be.visible');
@@ -119,7 +117,7 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
         heartIcon.get('.icon-wishlist-not-added').should('be.visible');
         heartIcon.should('not.have.class', 'product-wishlist-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         cy.wait('@wishlistAdd').then(() => {
             cy.visit('/account/logout');
@@ -127,11 +125,8 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
             cy.reload(true);
         });
 
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
         heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
-
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         // Login
         cy.visit('/account/login');
@@ -181,30 +176,23 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
 
         cy.visit('/');
 
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
         let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
 
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         cy.wait('@wishlistAdd').then(() => {
             cy.visit('/account/logout');
             cy.visit('/');
         });
 
-        // hover over product-box
-        cy.get('.cms-listing-col').next().then(el => {
-            cy.wrap(el).get('.product-box').invoke('addClass', 'hover');
-        })
-
         heartIcon = cy.get(`.product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).first();
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         // Login
         cy.visit('/account/login');
@@ -254,32 +242,24 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
 
         cy.visit('/');
 
-        // hover over product-box
-        cy.get('.product-box').first().invoke('addClass', 'hover');
-
         // add to wishlist with registered users
         let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         cy.wait('@wishlistAdd').then(() => {
             cy.visit('/account/logout');
             cy.visit('/');
         });
 
-        // hover over product-box
-        cy.get('.cms-listing-col').next().then(el => {
-            cy.wrap(el).get('.product-box').invoke('addClass', 'hover');
-        })
-
         // add to wishlist with anonymous user
         heartIcon = cy.get(`.product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).first();
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        heartIcon.click({ force: true });
 
         cy.visit('/account/login');
         accountPage.login();

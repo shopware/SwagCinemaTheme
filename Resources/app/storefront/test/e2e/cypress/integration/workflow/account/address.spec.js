@@ -1,6 +1,6 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-const accountPage = new AccountPageObject();
+const page = new AccountPageObject();
 
 describe('Account: Address', { tags: ['@workflow', '@address'] }, () => {
     beforeEach(() => {
@@ -14,8 +14,6 @@ describe('Account: Address', { tags: ['@workflow', '@address'] }, () => {
     });
 
     it('@workflow @address: update address', () => {
-        const page = new AccountPageObject();
-
         cy.get(page.elements.loginCard).should('be.visible');
 
         cy.get('#loginMail').typeAndCheckStorefront('test@example.com');

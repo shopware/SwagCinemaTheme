@@ -102,7 +102,7 @@
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+@include media-breakpoint-down(lg) {
     #swag-cms-extensions-quickview-carousel {
         .carousel-control-next,
         .carousel-control-prev {
@@ -115,7 +115,7 @@
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .swag-cms-extensions-quickview {
         &-content {
             .btn-buy {
@@ -157,7 +157,7 @@
     }
 }
 
-@include media-breakpoint-up(if(feature('V6_5_0_0'), lg, xl)) {
+@include media-breakpoint-up(lg) {
     .swag-cms-extensions-quickview-modal {
         .modal-content {
             @include border-radius(16px);

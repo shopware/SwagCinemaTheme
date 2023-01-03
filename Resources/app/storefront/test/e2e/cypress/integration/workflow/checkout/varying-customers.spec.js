@@ -98,9 +98,9 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Offcanvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(product.name);
-                cy.get('.cart-item-price').contains(price);
+                cy.get('.line-item-price').contains(price);
                 cy.get('.summary-value.summary-total').contains(price);
 
                 // Checkout
@@ -142,10 +142,10 @@ describe('Checkout: Proceed checkout using various customers', {tags: ['@workflo
                 cy.get('.cart-header-tax-price').contains(vatSnippet);
                 // Check the tax price
                 if (customer.firstName === 'Net') {
-                    cy.get('.col-12.cart-item-tax-price').contains('7.98');
+                    cy.get('.line-item-tax-price').contains('7.98');
                     cy.get('.col-5.checkout-aside-summary-value').contains('49.98');
                 } else {
-                    cy.get('.col-12.cart-item-tax-price').contains('10.22');
+                    cy.get('.line-item-tax-price').contains('10.22');
                     cy.get('.col-5.checkout-aside-summary-value').contains('53.78');
                 }
             });

@@ -28,7 +28,7 @@ describe('Checkout: as a guest', {tags: ['@workflow']}, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -41,9 +41,10 @@ describe('Checkout: as a guest', {tags: ['@workflow']}, () => {
         cy.get('input[name="lastName"]').type('Doe');
 
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
+        cy.get('.register-guest-control.form-check label').scrollIntoView();
+        cy.get('.register-guest-control.form-check label').click(1, 1);
 
+        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Abcd=123');
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
         cy.get('input[name="billingAddress[city]"]').type('Anytown');
@@ -83,7 +84,7 @@ describe('Checkout: as a guest', {tags: ['@workflow']}, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -104,10 +105,10 @@ describe('Checkout: as a guest', {tags: ['@workflow']}, () => {
         cy.get(`.register-personal ${firstNameSelector}`).type('John');
         cy.get(`.register-personal ${lastNameSelector}`).type('Doe');
 
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
+        cy.get('.register-guest-control.form-check label').scrollIntoView();
+        cy.get('.register-guest-control.form-check label').click(1, 1);
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).should('not.be.visible');
+        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Abcd=123');
 
         cy.get(`.register-billing ${billingAddressStreetSelector}`).type('123 Main St');
         cy.get(`.register-billing ${billingAddressZipcodeSelector}`).type('1234');

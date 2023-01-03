@@ -1,5 +1,3 @@
-@if (feature('V6_5_0_0')) {
-    .sr-only {
-        @include visually-hidden();
-    }
+.sr-only {
+    @include visually-hidden();
 }

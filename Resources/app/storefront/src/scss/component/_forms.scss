@@ -2,14 +2,6 @@
     font-size: 14px;
 }
 
-@if (not feature('V6_5_0_0')) {
-    .form-group[class*='col'] {
-        > .dropdown-menu.show {
-            width: calc(100% - #{$form-grid-gutter-width}) !important;
-        }
-    }
-}
-
 .form-control:disabled {
     &:disabled,
     &[readonly] {

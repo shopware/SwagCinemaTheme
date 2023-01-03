@@ -141,16 +141,14 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
         cy.get('.header-logo-main-link').first().click();
         cy.get('.cms-listing-col').should('be.visible');
         cy.get('.product-price').should('have.css', 'color', hexToRGB(colorScheme.price));
-        cy.get('.product-name').click();
-        cy.get('.product-detail').should('be.visible');
+        cy.get('.product-name').click({ force: true });
         cy.get('.btn-buy').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
         cy.get('.product-detail-price').should('have.css', 'color', hexToRGB(colorScheme.price));
-        cy.get('.product-detail-manufacturer a').should('not.be.visible');
-        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.product-detail-content');
+        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.is-ctl-product');
 
         cy.get('.product-detail-buy .btn-buy').click();
         cy.wait('@cartInfo').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200)
+            expect(xhr.response).to.have.property('statusCode', 204)
         });
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.primary));

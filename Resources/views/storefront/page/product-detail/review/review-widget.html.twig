@@ -42,7 +42,7 @@
 
 {% block page_product_detail_review_filter_checkbox_label %}
     {# Remove count after point rating text #}
-    <label class="{{formCheckLabelClass}} text-nowrap"
+    <label class="form-check-label text-nowrap"
            for="reviewRating{{ matrix.points }}">
         {{ "detail.review#{matrix.points}PointRatingText"|trans|sw_sanitize }}
     </label>
@@ -84,9 +84,6 @@
               method="post"
               data-form-ajax-submit="true"
               data-form-ajax-submit-options='{{ formAjaxSubmitOptions|json_encode }}'>
-
-            {# @deprecated tag:v6.5.0 - Block component_review_filter_csrf will be removed. #}
-            {{ block('page_product_detail_review_filter_csrf') }}
 
             {% if app.request.get('limit') %}
                 <input type="hidden" name="limit" value="{{ app.request.get('limit') }}">

@@ -35,7 +35,7 @@
             <div class="col-8 col-sm-6 account-profile-action">
                 <span class="account-profile-mail d-sm-none">{{ context.customer.email }}</span>
                 <a class="account-profile-change{% if not emailFormViolation %} collapsed{% endif %}"
-                   {{dataBsToggleAttr}}="collapse"
+                   data-bs-toggle="collapse"
                    href="#profile-email-form"
                    role="button"
                    aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
@@ -58,7 +58,7 @@
             <div class="col-8 col-sm-6 account-profile-action">
                 <span class="account-profile-password d-sm-none">{{ "account.profilePasswordText"|trans|sw_sanitize }}</span>
                 <a class="account-profile-change{% if not passwordFormViolation %} collapsed{% endif %}"
-                   {{dataBsToggleAttr}}="collapse"
+                   data-bs-toggle="collapse"
                    href="#profile-password-form"
                    role="button"
                    aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"
@@ -80,4 +80,28 @@
     {% endapply %}
 
     {{ parent() }}
+{% endblock %}
+
+{# @deprecated tag:v6.5.0 remove this block when default storefront update data-parent to data-bs-parent #}
+{% block page_account_profile_password %}
+    <div class="collapse{% if passwordFormViolation and formViolations %} show{% endif %}" id="profile-password-form"
+         data-bs-parent=".profile-content">
+        <div class="card account-password">
+            {% block page_account_profile_password_form %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{# @deprecated tag:v6.5.0 remove this block when default storefront update data-parent to data-bs-parent #}
+{% block page_account_profile_mail_collapse %}
+    <div class="collapse{% if emailFormViolation and formViolations %} show{% endif %}" id="profile-email-form"
+         data-bs-parent=".profile-content">
+        <div class="card account-email">
+            {% block page_account_profile_mail_form %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
 {% endblock %}

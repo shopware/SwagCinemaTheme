@@ -4,13 +4,12 @@
 
     &-lg {
         font-weight: $btn-font-weight-lg;
-        @if (feature('V6_5_0_0')) {
-            padding-top: 7px;
-            padding-bottom: 7px;
-        } @else {
-            padding-top: 3px;
-            padding-bottom: 3px;
-        }
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    &.btn-primary {
+        --#{$prefix}btn-hover-color: #fdfdfd;
     }
 }
 
@@ -51,10 +50,8 @@ button {
             border-color: $value;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .icon {
-                color: inherit;
-            }
+        .icon {
+            color: inherit;
         }
     }
 }
@@ -90,8 +87,13 @@ button {
 
 .btn-outline-primary {
     @include disable-button($disabled-btn-outline-primary-bg, $disabled-btn-outline-primary-color, $disabled-btn-outline-primary-color);
+
+    &.active {
+        color: var(--#{$prefix}btn-color);
+    }
 }
 
 .btn-outline-secondary {
+    --#{$prefix}btn-active-bg: transparent;
     @include disable-button($disabled-btn-outline-secondary-bg, $disabled-btn-outline-secondary-color, $disabled-btn-outline-secondary-border-color);
 }

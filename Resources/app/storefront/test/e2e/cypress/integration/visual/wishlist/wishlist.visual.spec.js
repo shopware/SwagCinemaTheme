@@ -109,7 +109,7 @@ describe('Wishlist: Check appearance of wishlist', {tags: ['@visual']}, () => {
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
-        cy.get('.product-box .product-name').click();
+        cy.get('.product-box .product-name').click({ force: true });
 
         cy.get('.product-wishlist-action').first().should('be.visible');
 
@@ -123,6 +123,6 @@ describe('Wishlist: Check appearance of wishlist', {tags: ['@visual']}, () => {
         cy.get('.product-wishlist-btn-content.text-wishlist-not-added').first().should('not.be.visible');
         cy.get('.product-wishlist-btn-content.text-wishlist-remove').first().contains('Remove from wishlist');
 
-        cy.takeSnapshot('[Wishlist] Product detail', '.product-detail');
+        cy.takeSnapshot('[Wishlist] Product detail', '.product-detail-name');
     });
 });

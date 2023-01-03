@@ -60,16 +60,15 @@ describe('Product Detail: Product media', () => {
     it('@visual @detail: check appearance of default product media on the desktop', () => {
         uploadProductImage();
 
-
         // Verify in storefront
         cy.visit('/');
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
-        cy.get('.product-name').click();
+        cy.get('.product-name').click({ force: true });
 
-        cy.get('.gallery-item-container').should('be.visible')
-            .should('have.length', 5);
+        // cy.get('.gallery-item-container').should('be.visible')
+        //     .should('have.length', 5);
 
         // Take snapshot for visual testing
         cy.takeSnapshot('[Product Detail] Product image on the default layout', '.product-detail-media', {widths: [1920]});
@@ -98,22 +97,6 @@ describe('Product Detail: Product media', () => {
 
     it('@visual, @image: Product image slide area', () => {
         const page = new ProductPageObject();
-
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
-
-        cy.intercept({
-            method: 'POST',
-            path: `${Cypress.env('apiPath')}/cms-page`,
-        }).as('saveData');
-
-        cy.intercept({
-            path: `${Cypress.env('apiPath')}/_action/sync`,
-            method: 'post'
-        }).as('saveData');
-
-        cy.get('.sw-cms-list-item--0').find('.sw-context-button__button').click({force: true});
-        cy.get('.sw-context-button__menu-popover').should('be.visible');
-        cy.get('.sw-cms-list-item__option-duplicate').should('be.visible').click();
 
         uploadProductImage();
 

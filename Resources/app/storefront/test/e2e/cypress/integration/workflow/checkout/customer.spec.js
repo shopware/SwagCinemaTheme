@@ -34,7 +34,7 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Go to cart
@@ -73,7 +73,7 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Offcanvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
                 // Go to cart
@@ -114,7 +114,7 @@ describe('Checkout: as a customer', {tags: ['@workflow']}, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Go to cart

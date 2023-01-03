@@ -51,11 +51,7 @@
                 height: 16px;
                 width: 16px;
                 left: 16px;
-                @if (feature('V6_5_0_0')) {
-                    border: $border-width solid $secondary;
-                } @else {
-                    border: $hr-border-width solid $secondary;
-                }
+                border: $border-width solid $secondary;
             }
 
             &::after {
@@ -85,35 +81,6 @@
 
         ~ .custom-control-label span.swag-customized-products-option-type-select-checkboxes-label__property {
             padding-left: 40px;
-
-            @if (not feature('V6_5_0_0')) {
-                &::before,
-                &::after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-
-                &::before {
-                    height: 16px;
-                    width: 16px;
-                    left: 16px;
-                    border-radius: 4px;
-                    border: $hr-border-width solid $secondary;
-                }
-
-                &::after {
-                    height: 16px;
-                    width: 16px;
-                    left: 16px;
-                    display: block;
-                    background: $custom-checkbox-indicator-icon-checked no-repeat 50%/50% 50%;
-                    opacity: 0;
-                    transition: 0.3s;
-                }
-            }
         }
     }
 }
@@ -154,23 +121,12 @@
 }
 
 .form-group .swag-customized-products-option-type-select-wrapper {
-    @if (feature('V6_5_0_0')) {
-        [aria-expanded=true] {
-            border-color: $primary;
+    [aria-expanded=true] {
+        border-color: $primary;
 
-            + .dropdown-menu {
-                width: 100%;
-                max-height: 140px;
-            }
-        }
-    } @else {
-        .custom-select[aria-expanded=true] {
-            border-color: $primary;
-
-            + .dropdown-menu {
-                width: 100%;
-                max-height: 140px;
-            }
+        + .dropdown-menu {
+            width: 100%;
+            max-height: 140px;
         }
     }
 }

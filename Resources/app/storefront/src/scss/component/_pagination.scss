@@ -68,21 +68,13 @@
         margin-left: 0;
 
         .page-link {
-            @if (feature('V6_5_0_0')) {
-                @include border-start-radius(4px);
-            } @else {
-                @include border-left-radius(4px);
-            }
+            @include border-start-radius(4px);
         }
     }
 
     &:last-child {
         .page-link {
-            @if (feature('V6_5_0_0')) {
-                @include border-start-radius(4px);
-            } @else {
-                @include border-left-radius(4px);
-            }
+            @include border-start-radius(4px);
         }
     }
 

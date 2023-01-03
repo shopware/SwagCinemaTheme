@@ -1,21 +1,13 @@
 {% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
 
 {% block page_product_detail_product_buy_button %}
-    {% if feature('V6_5_0_0') %}
-        <div class="d-grid">
-            <button class="btn btn-buy"
-                    title="{{ "listing.boxAddProduct"|trans|striptags }}">
-                {% sw_icon 'ic-cart' style {'pack': 'cinema'} %}
-                {{ "listing.boxAddProduct"|trans|sw_sanitize }}
-            </button>
-        </div>
-    {% else %}
-        <button class="btn btn-block btn-buy"
+    <div class="d-grid">
+        <button class="btn btn-buy"
                 title="{{ "listing.boxAddProduct"|trans|striptags }}">
             {% sw_icon 'ic-cart' style {'pack': 'cinema'} %}
             {{ "listing.boxAddProduct"|trans|sw_sanitize }}
         </button>
-    {% endif %}
+    </div>
 {% endblock %}
 
 {% block component_product_box_action_detail %}

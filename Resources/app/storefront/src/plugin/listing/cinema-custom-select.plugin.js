@@ -1,12 +1,11 @@
 import DomAccess from 'src/helper/dom-access.helper';
 import Plugin from 'src/plugin-system/plugin.class';
 import Iterator from 'src/helper/iterator.helper';
-import Feature from 'src/helper/feature.helper';
 
 export default class CinemaCustomSelectPlugin extends Plugin {
 
     static options = {
-        inputSelector: Feature.isActive('V6_5_0_0') ? '.form-select' : '.custom-select',
+        inputSelector: '.form-select',
         dropdownSelector: 'dropdown-menu'
     };
 
@@ -82,15 +81,9 @@ export default class CinemaCustomSelectPlugin extends Plugin {
 
         this._inputElement.parentElement.style.setProperty('position', 'relative', 'important');
         this._inputElement.setAttribute('aria-expanded', 'false');
-        if (Feature.isActive('V6_5_0_0')) {
-            this._inputElement.setAttribute('data-bs-toggle', 'dropdown');
-            this._inputElement.setAttribute('data-bs-boundary', 'viewport');
-            this._inputElement.setAttribute('data-bs-offset', '0,0');
-        } else {
-            this._inputElement.setAttribute('data-toggle', 'dropdown');
-            this._inputElement.setAttribute('data-boundary', 'viewport');
-            this._inputElement.setAttribute('data-offset', '0,0');
-        }
+        this._inputElement.setAttribute('data-bs-toggle', 'dropdown');
+        this._inputElement.setAttribute('data-bs-boundary', 'viewport');
+        this._inputElement.setAttribute('data-bs-offset', '0,0');
         this._inputElement.setAttribute('aria-haspopup', 'true');
         this._inputElement.insertAdjacentElement('afterend', dropdownMenu);
     }
