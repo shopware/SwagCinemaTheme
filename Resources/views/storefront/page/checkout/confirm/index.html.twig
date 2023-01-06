@@ -48,6 +48,8 @@
         {{ block('page_checkout_aside_summary') }}
 
         {% block page_checkout_aside_actions %}
+            {{ block('page_checkout_confirm_tos_control') }}
+
             <div class="checkout-aside-action">
                 <form id="confirmOrderForm"
                       action="{{ path('frontend.checkout.finish.order') }}"
@@ -58,8 +60,6 @@
                       method="post">
 
                     {{ block('page_checkout_confirm_revocation_notice') }}
-
-                    {{ block('page_checkout_confirm_tos_control') }}
 
                     {{ block('page_checkout_confirm_form_submit') }}
                 </form>
