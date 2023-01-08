@@ -2,7 +2,7 @@ variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/visual/**/*.visual.spec.js'
   PLATFORM_BRANCH: "trunk"
-  PERCY_TARGET_BRANCH: "master"
+  PERCY_TARGET_BRANCH: "main"
   PLUGIN_DEPENDENCIES:
     value: >
       [
@@ -19,8 +19,6 @@ variables:
         "amzn/amazon-pay-api-sdk-php:2.2.1"
       ]
     description: 'Additional composer dependencies. Defined in json. Example: ["theiconic/name-parser", "amzn/amazon-pay-api-sdk-php:2.2.1"]'
-  FEATURE_ALL: 'major'
-  v6_5_0_0: '1'
 
 .base_install: &base_install
   - composer install -o --no-scripts
@@ -34,6 +32,13 @@ variables:
 #  - '(cd src/Administration/Resources/app/administration/ && npm ci && npm run build)'
 #  - '(cd src/Storefront/Resources/app/storefront/ && npm ci && npm run production && node copy-to-vendor.js)'
 
+.theme_install: &theme_install
+  - bin/console app:refresh
+  - bin/console app:activate $THEME_NAME
+  - bin/console theme:change --all $THEME_NAME
+  - bin/console assets:install
+  - bin/console cache:clear
+
 cypress:
   before_script:
     - export THEME_NAME="${THEME_NAME:-${CI_PROJECT_TITLE}}"
@@ -42,7 +47,7 @@ cypress:
     - mkdir -p custom/apps || true
     - unzip -q /tmp/theme.zip -d custom/apps
     - *base_install
-    - !reference [ .theme_install ]
+    - *theme_install
     - !reference [ .install_dependencies ]
     - SERVICE_PHPFPM_OPTS=--allow-to-run-as-root CONTAINER_UID=root /entrypoint supervisord > /dev/null 2>&1 &
     - bin/console e2e:dump-db

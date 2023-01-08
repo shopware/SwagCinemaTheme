@@ -93,6 +93,10 @@ button {
     }
 }
 
+.btn-primary {
+    @include button-variant($buy-btn-bg, $buy-btn-bg, $white);
+}
+
 .btn-outline-secondary {
     --#{$prefix}btn-active-bg: transparent;
     @include disable-button($disabled-btn-outline-secondary-bg, $disabled-btn-outline-secondary-color, $disabled-btn-outline-secondary-border-color);
