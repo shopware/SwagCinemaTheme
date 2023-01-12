@@ -9,7 +9,7 @@ variables:
          { "name": "SwagCustomizedProducts", "url": "gitlab.shopware.com/shopware/6/services/customized-product", "branch": "next-21258/6.5-compatibility" },
         # { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" },
         # { "name": "SwagAmazonPay", "url": "gitlab.shopware.com/shopware/6/services/swagamazonpay", "branch": "master" },
-         { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "cms-359/6.5-compatibility" }
+         { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "master" }
       ]
     description: 'Plugin dependencies. Defined in json. Example: [{ "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" }]'
   COMPOSER_DEPENDENCIES:
@@ -25,7 +25,7 @@ build zip:
   # Revert after node is fixed in ghcr.io/friendsofshopware/platform-plugin-dev
   allow_failure: true
   image:
-    name: ghcr.io/friendsofshopware/platform-plugin-dev:v6.4.18
+    name: ghcr.io/friendsofshopware/shopware-cli
     entrypoint: [ "" ]
   rules:
     - exists:
@@ -37,23 +37,22 @@ build zip:
     STOREFRONT_PATH: $CI_PROJECT_DIR/src/Storefront/Resources/app/storefront
   before_script:
     - !reference [.base_env_vars]
-    - mkdir -p /opt/shopware/custom/apps || true
-    - ln -s "$PWD" "/opt/shopware/custom/apps/$THEME_NAME"
-    - /opt/shopware/bin/console system:install --drop-database --basic-setup --force
-    - /opt/shopware/bin/console app:install --activate "$THEME_NAME"
   script:
-    - /opt/shopware/bin/build-js.sh
-    - rm -rf /opt/shopware/custom/apps/${THEME_NAME}/${THEME_SOURCE_DIR}Resources/app/storefront/node_modules || true
-    - plugin-uploader ext:zip --strategy=plain -- "/opt/shopware/custom/apps/$THEME_NAME"
-    - mkdir -p /fix_zip
-    - mv *.zip /fix_zip
-    - cd /fix_zip
-    - unzip -q *.zip
-    - rm *.zip
-    - mv * $THEME_NAME # fix folder name
-    - zip -q -r ${CI_PROJECT_DIR}/$THEME_NAME.zip $THEME_NAME/ # create new zip
-    - cd ${CI_PROJECT_DIR}
-    - '[[ -r "${THEME_NAME}.zip" ]] || (echo "failed to create zip. Please run ./bin/init $THEME_NAME" && exit 1)'
+    - shopware-cli extension zip . --disable-git --verbose
+    - shopware-cli extension validate $THEME_NAME.zip
+#  script:
+#    - /opt/shopware/bin/build-js.sh
+#    - rm -rf /opt/shopware/custom/apps/${THEME_NAME}/${THEME_SOURCE_DIR}Resources/app/storefront/node_modules || true
+#    - plugin-uploader ext:zip --strategy=plain -- "/opt/shopware/custom/apps/$THEME_NAME"
+#    - mkdir -p /fix_zip
+#    - mv *.zip /fix_zip
+#    - cd /fix_zip
+#    - unzip -q *.zip
+#    - rm *.zip
+#    - mv * $THEME_NAME # fix folder name
+#    - zip -q -r ${CI_PROJECT_DIR}/$THEME_NAME.zip $THEME_NAME/ # create new zip
+#    - cd ${CI_PROJECT_DIR}
+#    - '[[ -r "${THEME_NAME}.zip" ]] || (echo "failed to create zip. Please run ./bin/init $THEME_NAME" && exit 1)'
     - mv "${THEME_NAME}.zip" "${CI_PROJECT_DIR}/$THEME_NAME.zip"
   artifacts:
     name: '${CI_PROJECT_TITLE}.zip'
