@@ -5,10 +5,10 @@
         <div class="row g-4 buy-widget-container">
             {% block buy_widget_buy_quantity_container %}
                 <div class="col-12 product-detail-quantity-box">
-                    <div class="product-detail-buy-quantity" data-custom-select="true">
+                    <div class="product-detail-buy-quantity">
                         <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
                         {% set selectQuantityThreshold = 100 %}
-                        {{ block('buy_widget_buy_quantity') }}
+                        {{ block('buy_widget_buy_quantity_input_group') }}
                     </div>
 
                     {% block buy_widget_price %}

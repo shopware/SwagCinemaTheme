@@ -1,0 +1,17 @@
+.quantity-selector-group {
+
+    .quantity-selector-group-input {
+        border-width: 1px;
+        border-color: $border-color;
+    }
+
+    .btn {
+        &:hover {
+            border-color: $border-color;
+
+            svg {
+                color: $sw-text-color;
+            }
+        }
+    }
+}
