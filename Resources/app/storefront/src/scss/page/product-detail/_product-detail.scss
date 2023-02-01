@@ -112,8 +112,8 @@
 }
 
 .product-detail-price-container {
-    margin-top: 32px;
-    width: calc(100% - 202px);
+    //margin-top: 32px;
+    //width: calc(100% - 202px);
 
     &.product-detail-price-table {
         width: 100%;
@@ -364,24 +364,24 @@
     margin-top: 48px;
 }
 
+.product-detail-buy-quantity {
+    width: 100%;
+}
+
 .product-detail-quantity-box {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    gap: 42px;
+
+    &--column {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
 }
 
 .product-detail-tax-container,
 .product-detail-price-unit {
     width: 100%;
-}
-
-.product-detail-buy-quantity {
-    margin-right: 32px;
-
-    label {
-        @extend .form-label;
-        display: block;
-    }
 }
 
 .product-detail-tax {
@@ -594,11 +594,24 @@
             margin-right: $spacer;
         }
     }
+
+    .product-detail-buy-quantity {
+        width: 50%;
+        max-width: 212px;
+    }
 }
 
 @include media-breakpoint-up(lg) {
     .cms-block-product-heading {
         margin-top: 64px;
         margin-bottom: 64px;
+    }
+
+    .product-detail-quantity-box {
+        gap: 52px;
+
+        &--column {
+            gap: 12px;
+        }
     }
 }

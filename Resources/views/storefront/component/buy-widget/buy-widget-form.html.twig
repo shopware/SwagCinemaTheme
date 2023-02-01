@@ -4,17 +4,11 @@
     {% if buyable %}
         <div class="row g-4 buy-widget-container">
             {% block buy_widget_buy_quantity_container %}
-                <div class="col-12 product-detail-quantity-box">
-                    <div class="product-detail-buy-quantity">
-                        <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
-                        {% set selectQuantityThreshold = 100 %}
-                        {{ block('buy_widget_buy_quantity_input_group') }}
-                    </div>
-
-                    {% block buy_widget_price %}
-                        {# the block buy_widget_price was moved from buy-widget/buy-widget.html.twig #}
-                        <div class="product-detail-price-container {% if product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
-                            {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+                <div class="col-12 product-detail-quantity-box {% if page.product.calculatedPrices|length <= 1 %}product-detail-quantity-box--column{% endif %}">
+                    {% if showQuantitySelect %}
+                        <div class="product-detail-buy-quantity">
+                            {% set selectQuantityThreshold = 100 %}
+                            {{ block('buy_widget_buy_quantity_input_group') }}
 
                             {% block buy_widget_tax %}
                                 {# the block buy_widget_tax was moved from buy-widget/buy-widget.html.twig #}
@@ -38,6 +32,13 @@
                                     </p>
                                 </div>
                             {% endblock %}
+                        </div>
+                    {% endif %}
+
+                    {% block buy_widget_price %}
+                        {# the block buy_widget_price was moved from buy-widget/buy-widget.html.twig #}
+                        <div class="product-detail-price-container {% if product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
+                            {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
                         </div>
                     {% endblock %}
 

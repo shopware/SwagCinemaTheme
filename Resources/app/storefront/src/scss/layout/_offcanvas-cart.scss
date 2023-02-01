@@ -67,6 +67,10 @@ $offcanvas-cart-spacing: 20px;
                     padding-left: 8px;
                 }
             }
+
+            .line-item {
+                padding: 24px 0;
+            }
         }
 
         .cart-item-remove {
@@ -157,8 +161,8 @@ $offcanvas-cart-spacing: 20px;
                     text-decoration: none;
                 }
 
-                &[data-swag-paypal-express-button='true'],
-                &[data-swag-paypal-installment-banner='true'] {
+                &[data-swag-paypal-express-button="true"],
+                &[data-swag-paypal-installment-banner="true"] {
                     padding: 0;
                 }
             }
@@ -170,7 +174,8 @@ $offcanvas-cart-spacing: 20px;
                 color: $gray-400;
                 font-weight: $font-weight-medium;
                 width: 80px;
-                background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 8px center/22px 10px $input-bg;
+                background: url("#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg")
+                    no-repeat right 8px center/22px 10px $input-bg;
             }
         }
     }

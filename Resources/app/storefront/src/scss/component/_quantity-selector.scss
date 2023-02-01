@@ -1,17 +1,30 @@
+$quantity-border-color: $sw-text-color;
+
 .quantity-selector-group {
+    min-height: 44px;
 
     .quantity-selector-group-input {
-        border-width: 1px;
-        border-color: $border-color;
+        border-width: 2px;
+        border-color: $quantity-border-color;
     }
 
     .btn {
+        border-width: 2px;
+        border-color: $quantity-border-color !important;
+        background-color: transparent !important;
+
         &:hover {
-            border-color: $border-color;
+            border-color: $quantity-border-color;
 
             svg {
-                color: $sw-text-color;
+                color: $quantity-border-color;
             }
+        }
+    }
+
+    input {
+        &:focus {
+            box-shadow: none;
         }
     }
 }
