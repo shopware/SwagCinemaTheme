@@ -1,8 +1,8 @@
 variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/visual/**/*.visual.spec.js'
-  PLATFORM_BRANCH: "6.4.18.0"
-  PERCY_TARGET_BRANCH: "master"
+  PLATFORM_BRANCH: "6.4.19.0"
+  PERCY_TARGET_BRANCH: "main"
   PLUGIN_DEPENDENCIES:
     value: >
       [
@@ -22,5 +22,5 @@ variables:
 
 include:
   project: 'shopware/6/product/platform'
-  ref: 'trunk'
+  ref: '6.4'
   file: '.gitlab/templates/theme.yml'
