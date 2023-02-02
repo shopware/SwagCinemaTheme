@@ -1,3 +1,10 @@
+# 1.7.0
+- Überprüfung der Kompatibilität mit Platform v6.4.18.0
+- Überprüfung der Kompatibilität mit Platform v6.4.19.0
+- Behobene falsche deutsche Snippets
+- Behobene Produktbild größer skaliert als der Bildbetrachter
+- Behobene tos Validierung
+
 # 1.6.0
 - Überprüfung der Kompatibilität mit Platform v6.4.17.0
 - Fehlende Service-Informations-Snippets wurden behoben

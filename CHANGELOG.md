@@ -1,3 +1,10 @@
+# 1.7.0
+- Checked compatibility with platform v6.4.18.0
+- Checked compatibility with platform v6.4.19.0
+- Fixed wrong German snippets
+- Fixed product image is scaled larger than the image viewer
+- Fixed tos validation
+
 # 1.6.0
 - Checked compatibility with platform v6.4.17.0
 - Fixed service information snippets are missing
