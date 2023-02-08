@@ -160,3 +160,30 @@
         }
     }
 }
+
+.is-act-checkoutregisterpage {
+    .checkout-aside-product-list {
+        .line-item-quantity-row {
+            align-items: start;
+        }
+
+        .line-item-quantity-label {
+            display: flex;
+            font-weight: 400;
+
+            &:after {
+                content: ":"
+            }
+        }
+
+        .line-item-quantity-select-wrapper {
+            padding-left: 4px;
+            width: unset;
+        }
+    }
+
+    .line-item-quantity-select-wrapper > div {
+        justify-content: flex-start !important;
+        padding-left: 0;
+    }
+}

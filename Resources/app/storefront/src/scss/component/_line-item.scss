@@ -80,7 +80,7 @@
         &-quantity {
             @include make-col(6);
 
-            padding-left: 70px;
+            padding-left: 78px;
             margin-bottom: 0;
 
             > * {
@@ -90,6 +90,7 @@
 
         &-quantity-select-wrapper {
             width: 100%;
+            padding-right: 0;
 
             > * {
                 width: 100%;
@@ -207,10 +208,19 @@
             &-quantity-label {
                 padding-left: 0;
             }
-
-            &-quantity-select-wrapper {
-                padding-right: 0;
-            }
         }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .line-item-unit-price,
+    .line-item-total-price,
+    .line-item-tax-price {
+        justify-content: space-between !important;
+    }
+
+    .line-item-unit-price-label,
+    .line-item-total-price-label {
+        display: block;
     }
 }
