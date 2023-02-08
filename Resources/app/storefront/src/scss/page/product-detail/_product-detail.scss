@@ -470,25 +470,22 @@
 @include media-breakpoint-up(lg) {
     .ci-gallery-desktop {
         .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-auto-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .gallery-item-container {
-            width: calc(50% - 10px);
-            margin-right: 20px;
-            margin-bottom: 20px;
             background-color: $gray-100;
             border-radius: 16px;
 
             &:nth-child(2n) {
-                margin-right: 0;
+                grid-column: 2;
             }
         }
 
         .gallery-slider-item {
             width: 100%;
-            padding-bottom: 138%;
             position: relative;
         }
     }

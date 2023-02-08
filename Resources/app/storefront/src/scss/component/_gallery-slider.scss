@@ -43,6 +43,7 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
         &.is-contain .gallery-slider-image {
             width: 100%;
             min-height: 100%;
+            object-fit: cover;
         }
     }
 }
