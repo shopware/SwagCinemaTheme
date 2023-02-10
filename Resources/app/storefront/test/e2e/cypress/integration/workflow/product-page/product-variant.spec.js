@@ -3,9 +3,13 @@ import ProductPageObject from "../../../support/pages/sw-product.page-object";
 describe('Product Detail: Product variants', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createProductVariantFixture())
-            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
+            .then(() => {
+                cy.visit(`${Cypress.env('admin')}#/sw/product/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
+            });
     });
 
     it('@workflow @variants: add variant with surcharge to product', () => {

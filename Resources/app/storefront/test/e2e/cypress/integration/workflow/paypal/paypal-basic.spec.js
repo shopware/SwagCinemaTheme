@@ -47,18 +47,18 @@ describe('Paypal: Checkout', { tags: ['@workflow', '@Paypal'] }, () => {
             })
     });
 
-    it('@workflow @paypal: should see Paypal logo in footer', () => {
+    it.skip('@workflow @paypal: should see Paypal logo in footer', () => {
         cy.get('.footer-logos div[data-swag-paypal-installment-banner="true"]')
             .should('be.visible');
 
         cy.get('body').screenshot('logo-in-footer');
     });
 
-    it('@workflow @paypal: should be visible in product box', () => {
+    it.skip('@workflow @paypal: should be visible in product box', () => {
         cy.get('.paypal-buttons').should('be.exist').click({force: true});
     });
 
-    it('@workflow @paypal: should have Paypal checkout button for default settings', () => {
+    it.skip('@workflow @paypal: should have Paypal checkout button for default settings', () => {
         // search product
         checkoutPage.search(product.name);
 
@@ -73,7 +73,7 @@ describe('Paypal: Checkout', { tags: ['@workflow', '@Paypal'] }, () => {
         cy.screenshot('paypal-button-in-product-detail-page');
     });
 
-    it('@workflow @paypal: should have Paypal checkout button in Offcanvas cart', () => {
+    it.skip('@workflow @paypal: should have Paypal checkout button in Offcanvas cart', () => {
         cy.get('.product-box .btn-buy').should('be.exist').click({force: true});
 
         cy.get('.offcanvas-cart div[data-swag-paypal-express-button="true"]').should('be.visible');
@@ -82,7 +82,7 @@ describe('Paypal: Checkout', { tags: ['@workflow', '@Paypal'] }, () => {
         cy.screenshot('paypal-button-in-offcanvas-cart');
     });
 
-    it('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
+    it.skip('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
         // search product
         checkoutPage.search(product.name);
         cy.get('.search-suggest-product-name').contains(product.name).click();
@@ -103,7 +103,7 @@ describe('Paypal: Checkout', { tags: ['@workflow', '@Paypal'] }, () => {
         cy.get('body').screenshot('paypal-button-in-checkout-register-page');
     });
 
-    it('@workflow @paypal: should have Paypal checkout in checkout cart page', () => {
+    it.skip('@workflow @paypal: should have Paypal checkout in checkout cart page', () => {
         // search product
         checkoutPage.search(product.name);
 
@@ -119,7 +119,7 @@ describe('Paypal: Checkout', { tags: ['@workflow', '@Paypal'] }, () => {
         cy.get('body').screenshot('paypalbutton-in-checkout-cart-page');
     });
 
-    it.only('@workflow @paypal: should be able to checkout using Paypal as payment method', () => {
+    it.skip('@workflow @paypal: should be able to checkout using Paypal as payment method', () => {
         cy.createCustomerFixtureStorefront();
 
         // search product

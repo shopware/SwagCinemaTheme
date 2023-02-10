@@ -1,6 +1,5 @@
 import AccountPageObject from "../../support/pages/account.page-object";
 
-let product = {};
 let colorScheme = {};
 const accountPage = new AccountPageObject();
 
@@ -11,22 +10,21 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
             .then(() => {
                 return cy.createProductFixture();
             })
+            .then(() => cy.createCustomerFixtureStorefront())
             .then(() => {
-                return cy.fixture('product');
-            })
-            .then((result) => {
-                product = result;
-                return cy.createCustomerFixtureStorefront();
+                return cy.login();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
-                cy.fixture('color-scheme.json').then((colorSchemeFixture) => {
-                    colorScheme = colorSchemeFixture;
-                    changeColorScheme(colorSchemeFixture);
-                })
+                return cy.fixture('color-scheme.json')
+            })
+            .then((colorSchemeFixture) => {
+                colorScheme = colorSchemeFixture;
+                changeColorScheme(colorSchemeFixture);
             })
             .then(() => {
                 cy.visit('/');
@@ -43,10 +41,12 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
                 cy.clearCookies();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
 
                 cy.intercept({
                     path: `${Cypress.env('apiPath')}/_action/theme/*`,
@@ -64,9 +64,6 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
                     expect(xhr.response).to.have.property('statusCode', 200);
                 });
             })
-            .then(() => {
-                cy.visit('/');
-            });
     });
 
     function hexToRGB(hex) {
@@ -147,7 +144,7 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
             expect(xhr.response).to.have.property('statusCode', 204)
         });
         cy.get('.cart-offcanvas').should('be.visible');
-        cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
+        cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
 
         cy.get('.offcanvas-cart-actions .btn-link').click();
 

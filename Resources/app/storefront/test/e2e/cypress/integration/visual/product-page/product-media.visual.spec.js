@@ -6,7 +6,7 @@ describe('Product Detail: Product media', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 cy.createProductFixture();
@@ -35,7 +35,7 @@ describe('Product Detail: Product media', () => {
         // Upload Image
         for (let i = 0; i < 5; i++) {
             cy.get('.sw-product-media-form__previews').scrollIntoView();
-            cy.get('#files').attachFile(
+            cy.get('.sw-product-detail-base__media #files').attachFile(
                 `img/sw-product-preview-${i}.png`,
                 {
                     fileName: `sw-product-preview-${i}.png`,
@@ -66,9 +66,6 @@ describe('Product Detail: Product media', () => {
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.get('.product-name').click({ force: true });
-
-        // cy.get('.gallery-item-container').should('be.visible')
-        //     .should('have.length', 5);
 
         // Take snapshot for visual testing
         cy.takeSnapshot('[Product Detail] Product image on the default layout', '.product-detail-media', {widths: [1920]});

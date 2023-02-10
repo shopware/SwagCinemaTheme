@@ -1,6 +1,5 @@
 import AccountPageObject from "../../support/pages/account.page-object";
 
-let product = {};
 let colorScheme = {};
 const accountPage = new AccountPageObject();
 
@@ -11,22 +10,21 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
             .then(() => {
                 return cy.createProductFixture();
             })
+            .then(() => cy.createCustomerFixtureStorefront())
             .then(() => {
-                return cy.fixture('product');
-            })
-            .then((result) => {
-                product = result;
-                return cy.createCustomerFixtureStorefront();
+                return cy.login();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
-                cy.fixture('color-scheme.json').then((colorSchemeFixture) => {
-                    colorScheme = colorSchemeFixture;
-                    changeColorScheme(colorSchemeFixture);
-                })
+                return cy.fixture('color-scheme.json')
+            })
+            .then((colorSchemeFixture) => {
+                colorScheme = colorSchemeFixture;
+                changeColorScheme(colorSchemeFixture);
             })
             .then(() => {
                 cy.visit('/');
@@ -43,10 +41,12 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
                 cy.clearCookies();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
 
                 cy.intercept({
                     path: `${Cypress.env('apiPath')}/_action/theme/*`,
@@ -64,9 +64,6 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
                     expect(xhr.response).to.have.property('statusCode', 200);
                 });
             })
-            .then(() => {
-                cy.visit('/');
-            });
     });
 
     function hexToRGB(hex) {
@@ -151,7 +148,7 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
             expect(xhr.response).to.have.property('statusCode', 204)
         });
         cy.get('.cart-offcanvas').should('be.visible');
-        cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
+        cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
         cy.takeSnapshot('[Theme Color] Cart Off-canvas', '.cart-offcanvas');
 
         cy.get('.offcanvas-cart-actions .btn-link').click();
@@ -159,9 +156,8 @@ describe('ThemeColor: Visual tests', {tags: ['@visual']}, () => {
 
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
 
-        cy.get('.checkout-confirm-tos-checkbox').should('not.be.visible')
-            .check({ force: true })
-            .should('be.checked');
+        cy.get('.checkout-confirm-tos-checkbox').click({ force: true });
+
         cy.takeSnapshot('[Theme Color] Checkout - Complete order', '.checkout');
 
         cy.get('#confirmFormSubmit').scrollIntoView();

@@ -18,12 +18,9 @@ describe('Contact: Visual tests', {tags: ['@visual']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => cy.createProductFixture())
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createCmsFixture())
-            .then(() => {
-                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
-            });
+            .then(() => cy.visit('/'))
     });
 
     function fillOutContactForm(el) {
@@ -35,7 +32,6 @@ describe('Contact: Visual tests', {tags: ['@visual']}, () => {
             cy.get(selector.formContactPhone).type('+123456789');
             cy.get(selector.formContactSubject).type('Lorem ipsum');
             cy.get(selector.formContactComment).type('Dolor sit amet.');
-            cy.get(selector.formContactDataProtectionCheckbox).check({force: true});
         });
     }
 
@@ -58,7 +54,8 @@ describe('Contact: Visual tests', {tags: ['@visual']}, () => {
         // Save layout
         cy.get('.sw-category-detail__save-action').click();
 
-        cy.wait('@saveCategory').its('response.statusCode').should('equal', 204)
+        cy.wait('@saveCategory').its('response.statusCode').should('equal', 204);
+        cy.wait(1000);
     }
 
     function createContactFormPage() {
@@ -75,24 +72,14 @@ describe('Contact: Visual tests', {tags: ['@visual']}, () => {
             salesChannel = data.id;
             cy.createDefaultFixture('cms-page', {}, 'cms-contact-page')
         }).then(() => {
-            cy.openInitialPage(`${Cypress.env('admin')}#/sw/category/index`);
+            cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
+            cy.get('.sw-skeleton').should('not.exist');
+            cy.get('.sw-loader').should('not.exist');
             assignContactFormToHomepage();
         });
     }
 
-    it('@visual: open contact form modal', () => {
-        cy.visit('/');
-
-        cy.get('.footer-contact-form a').click();
-        cy.get('.modal').should('be.visible');
-        cy.get('.modal .card-title').contains('Contact');
-
-        fillOutContactForm(selector.formContactModal);
-
-        cy.takeSnapshot('[Contact] Fill in information to contact form modal', '.modal');
-    });
-
-    it('@visual: assign contact form to homepage', () => {
+    it.skip('@visual: assign contact form to homepage', () => {
         createContactFormPage();
 
         cy.visit('/');

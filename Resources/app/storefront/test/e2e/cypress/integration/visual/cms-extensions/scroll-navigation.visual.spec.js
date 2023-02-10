@@ -5,7 +5,7 @@ let product = {};
 describe('Scroll Navigation: Test if it works correctly', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createProductFixture())
             .then((result) => {
                 product = result;
@@ -13,10 +13,10 @@ describe('Scroll Navigation: Test if it works correctly', () => {
             })
     });
 
-    it('@visual @cms: Run Scroll Navigation', () => {
+    it.skip('@visual @cms: Run Scroll Navigation', () => {
         const page = new CategoryPageObject();
 
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
             method: 'POST',

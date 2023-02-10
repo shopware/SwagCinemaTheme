@@ -12,10 +12,12 @@ describe('Product Detail: Check appearance of product review', () => {
                 cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
                 cy.get('.offcanvas-cookie .btn-primary').contains('Save').click({force: true});
             })
-            .then(() => cy.get('.review-tab').click())
+            .then(() => cy.get('#review-tab').click({ force: true }))
     });
 
     it('@visual, @review: show review tab', () => {
+        cy.get('#review-tab').scrollIntoView();
+
         cy.get('.product-detail-review-teaser-btn').should('be.visible');
         cy.get('.product-detail-review-list').contains('No reviews found');
 
@@ -32,7 +34,7 @@ describe('Product Detail: Check appearance of product review', () => {
         cy.get('.login-submit [type="submit"]').click();
 
         cy.visit('/Product-name/RS-333');
-        cy.get('.review-tab').click();
+        cy.get('#review-tab').click({ force: true });
         cy.get('.product-detail-review-teaser-btn').click();
 
         cy.get('#reviewTitle').type('Review title '.repeat(4));

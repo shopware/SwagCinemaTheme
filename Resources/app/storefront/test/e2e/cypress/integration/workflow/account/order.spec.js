@@ -49,7 +49,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
 
         cy.get('.order-table-header-context-menu-content-form button').click();
         cy.get('.cart-offcanvas').should('be.visible');
-        cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
+        cy.get('.cart-offcanvas .alert-content').contains('1 product added to your shopping cart.');
 
         cy.get('.btn.begin-checkout-btn.btn-primary').click();
         cy.get('.confirm-main-header').contains('Complete order');
@@ -64,7 +64,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
 
     it('@workflow @order: cancel order', () => {
         // Enable refunds
-        cy.loginViaApi().then(() => {
+        cy.login().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
             cy.contains('Enable refunds').click();
             cy.get('.sw-settings-cart__save-action').click();

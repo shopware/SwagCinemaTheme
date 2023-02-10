@@ -28,15 +28,16 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
             .then(() => cy.createProductFixture())
             .then((result) => {
                 product = result;
-                cy.visit('/');
-                cy.get('.cookie-permission-container .btn-primary').contains('Configure').click();
-                cy.get('.offcanvas .btn-primary').contains('Save').click();
+                // cy.get('.cookie-permission-container .btn-primary').contains('Configure').click();
+                // cy.get('.offcanvas .btn-primary').contains('Save').click();
             });
     });
 
     it('@visual: Run checkout with the same address', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
+
+        cy.visit('/');
 
         // Shopping cart
         cy.get('.header-cart-btn').should('be.visible').click();
@@ -79,6 +80,7 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         cy.get('.register-guest-control.form-check label').scrollIntoView();
         cy.get('.register-guest-control.form-check label').click(1, 1);
 
+        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Abcd=123');
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
         cy.get('input[name="billingAddress[city]"]').type('Anytown');
@@ -113,6 +115,7 @@ describe('Checkout: as a guest', {tags: ['@visual']}, () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
+        cy.visit('/');
         // Product detail
         cy.get('.header-search-input').should('be.visible');
         cy.get('.header-search-input').type(product.name);

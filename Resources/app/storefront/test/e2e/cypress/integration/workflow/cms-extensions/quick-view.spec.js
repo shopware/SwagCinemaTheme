@@ -9,7 +9,7 @@ describe('Quick View: Test if it works correctly', {tags: ['@workflow', '@cms']}
             .then((result) => {
                 product = result;
             })
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createCmsFixture())
     });
 

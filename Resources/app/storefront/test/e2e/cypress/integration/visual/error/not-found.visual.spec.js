@@ -19,7 +19,7 @@ describe('Error: 404 page visual testing', {tags: ['@visual']}, () => {
         cy.get('.content-bg img')
             .should('have.attr', 'src')
             .and('match', /404/);
-        cy.get('.btn').contains('Back to homepage');
+        cy.get('.btn').contains('Back to shop');
 
         // Check Header and Footer
         cy.get('.header-main').should('be.visible');

@@ -5,7 +5,7 @@ import ProductPageObject from '../../../support/pages/sw-product.page-object';
 describe('Product: Base price', () => {
     before(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createProductFixture())
             .then(() => cy.createDefaultFixture('unit'))
             .then(() => {
@@ -13,7 +13,11 @@ describe('Product: Base price', () => {
                 cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
                 cy.get('.offcanvas .btn-primary').contains('Save').click();
             })
-            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
+            .then(() => {
+                cy.visit(`${Cypress.env('admin')}#/sw/product/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
+            });
     });
 
     it('@visual @detail: Editing product with base price', () => {
