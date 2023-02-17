@@ -64,7 +64,7 @@ $search-suggest-image-size: 100px;
         @include make-col(3);
         width: $search-suggest-image-size;
         height: $search-suggest-image-size;
-        background-color: #D8D8D8;;
+        background-color: #d8d8d8;
         border-radius: $border-radius;
 
         @include media-breakpoint-up(md) {

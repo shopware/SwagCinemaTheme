@@ -113,7 +113,7 @@ $alert-border-radius: 11px 11px 11px 4px !default;
 
 // Tables
 $table-accent-bg: transparent !default;
-$table-striped-bg:              transparent !default;
+$table-striped-bg: transparent !default;
 $table-cell-padding: 15px 0 !default;
 $table-border-width: 2px !default;
 $table-caption-color: $gray-400 !default;
@@ -160,7 +160,7 @@ $badge-font-weight: $font-weight-bolder !default;
 // Style anchor elements.
 
 $link-hover-color: $primary !default;
-$link-decoration:               none !default;
+$link-decoration: none !default;
 
 // Pagination
 
@@ -206,11 +206,11 @@ $progress-bar-review: $primary !default;
 
 // Navs
 
-$nav-divider-color:         $gray-200 !default;
+$nav-divider-color: $gray-200 !default;
 
 
 // Offcanvas
 
 // scss-docs-start offcanvas-variables
-$offcanvas-padding-y:     16px !default;
-$offcanvas-padding-x:     16px !default;
+$offcanvas-padding-y: 16px !default;
+$offcanvas-padding-x: 16px !default;
