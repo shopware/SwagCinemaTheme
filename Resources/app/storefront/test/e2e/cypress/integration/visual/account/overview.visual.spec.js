@@ -27,7 +27,7 @@ describe('Account: Overview page', () => {
         cy.get('label[for="newsletterRegister"]').click();
 
         cy.get('.newsletter-alerts').should((element) => {
-            expect(element).to.contain('You have subscribed to the newsletter');
+            expect(element).to.contain('You have successfully subscribed to the newsletter');
         });
 
         cy.get('.overview-billing-address [data-address-editor="true"]').click();

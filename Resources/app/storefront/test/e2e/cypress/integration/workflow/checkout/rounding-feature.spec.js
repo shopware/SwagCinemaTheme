@@ -22,7 +22,7 @@ describe('Checkout: Use rounding feature', {tags: ['@workflow']}, () => {
             method: 'patch'
         }).as('saveData');
 
-        cy.loginViaApi();
+        cy.login();
 
         cy.visit(`/admin#/sw/settings/currency/detail/${product.price[0].currencyId}`);
 

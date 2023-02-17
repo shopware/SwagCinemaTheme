@@ -5,7 +5,7 @@ let saleChannel = {}
 describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createDefaultFixture('category', {}, 'footer-category-first'))
             .then(() => cy.createDefaultFixture('category', {}, 'footer-category-second'))
             .then(() => {
@@ -87,13 +87,20 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
                 type: 'equals',
                 value: 'Storefront'
             }
-        }).then((data) => {
-            salesChannel = data.id;
-            return cy.createDefaultFixture('cms-page', {}, 'cms-service-page')
-        }).then(() => {
-            cy.openInitialPage(`${Cypress.env('admin')}#/sw/category/index`);
-            assignToFooterLink();
-        });
+        })
+            .then((data) => {
+                salesChannel = data.id;
+                return cy.createDefaultFixture('cms-page', {}, 'cms-service-page')
+            })
+            .then(() => {
+                cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
+                cy.get('.sw-skeleton').should('not.exist');
+                cy.get('.sw-loader').should('not.exist');
+
+            })
+            .then(() => {
+                assignToFooterLink();
+            });
     }
 
     it('@visual: assign service page to footer category', () => {

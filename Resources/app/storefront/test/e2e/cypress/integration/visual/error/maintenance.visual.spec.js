@@ -1,6 +1,6 @@
 describe('Maintenance visual testing page', {tags: ['@visual']}, () => {
     before(() => {
-        cy.loginViaApi()
+        cy.login()
             .then(() => {
                 return cy.searchViaAdminApi({
                     endpoint: 'sales-channel',
@@ -19,7 +19,7 @@ describe('Maintenance visual testing page', {tags: ['@visual']}, () => {
     });
 
     after(() => {
-        cy.loginViaApi()
+        cy.login()
             .then(() => {
                 return cy.searchViaAdminApi({
                     endpoint: 'sales-channel',
