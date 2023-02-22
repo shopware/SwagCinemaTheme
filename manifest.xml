@@ -2,14 +2,14 @@
 <manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/app-system/0.1.0/src/Core/Content/App/Manifest/Schema/manifest-1.0.xsd">
     <meta>
-        <name>SwagCinemaTheme</name>
-        <label>Cinema Theme</label>
-        <label lang="de-DE">Cinema Theme</label>
+        <name>SwagTestTheme</name>
+        <label>Test Theme</label>
+        <label lang="de-DE">Test Theme</label>
         <description>The Cinema Theme from Shopware has a high-contrast design and unique character. It can be used in any branch, offers additional functions and can be extended by apps.</description>
         <description lang="de-DE">Das Cinema Theme von Shopware hat ein kontrastreiches Design und einzigartigen Charakter. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
-        <version>1.6.0</version>
+        <version>2.2.0</version>
         <icon>theme-icon.png</icon>
         <license>MIT</license>
     </meta>
