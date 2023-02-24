@@ -1,3 +1,6 @@
+# 1.8.0
+- Checked compatibility with platform v6.4.20.0
+
 # 1.7.0
 - Checked compatibility with platform v6.4.18.0
 - Checked compatibility with platform v6.4.19.0
