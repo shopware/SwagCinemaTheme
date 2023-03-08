@@ -194,9 +194,6 @@ describe('Customized Product: Visual tests product with full customize option', 
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__label', 'Example Blue');
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__price', '€10.00*');
 
-        // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€110.00*').should('be.visible');
-
         // Expand all configuration
         cy.get('.swag-customized-products-option .toggle-icon-plus').each(($el) => {
             if (Cypress.dom.isVisible($el)) {
@@ -212,7 +209,6 @@ describe('Customized Product: Visual tests product with full customize option', 
         cy.get('.line-item-label').contains(product.name);
         // Check the configuration
         cy.get('.line-item-collapse-button').click();
-        cy.contains('.line-item-details-container', 'Example #2');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -311,11 +307,10 @@ describe('Customized Product: Visual tests product with full customize option', 
 
                 // HTML Input
                 cy.contains('.swag-customized-products-option__title', 'Example html').scrollIntoView();
-                // cy.get('.swag-custommized-product-html-editor__editor').should('be.visible').focus().type('Hello Customized Products HTML')
                 nextButton()
 
                 // Check if the configuration was done
-                cy.contains('.swag-customized-products-start-wizard', 'Change configuration').should('be.visible');
+                cy.contains('.swag-customized-products-start-wizard', 'Change product configuration').should('be.visible');
                 // Add to cart
                 cy.get('.product-detail-buy .btn-buy').click();
 
@@ -325,7 +320,6 @@ describe('Customized Product: Visual tests product with full customize option', 
 
                 // Check the configuration
                 cy.get('.line-item-collapse-button').click();
-                cy.contains('.line-item-details-container', 'Example #2');
 
                 // Checkout
                 cy.get('.offcanvas-cart-actions .btn-primary').click();

@@ -10,8 +10,8 @@
 .swag-customized-products {
     @extend .col-12;
 
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
     margin-top: 30px;
 
     .swag-customized-products__description {
@@ -95,6 +95,10 @@
         .form-control ~ .input-group-append {
             right: 12px;
         }
+
+        .form-control:focus {
+            background-color: transparent;
+        }
     }
 
     ::placeholder {
@@ -147,6 +151,26 @@
         }
     }
 
+    .form-switch {
+        display: flex;
+        align-items: center;
+        min-height: unset;
+
+        .swag-customized-products-form-control {
+            float: none;
+            margin: 0;
+            background-image: unset;
+            width: 1rem;
+            padding: 0;
+            border-radius: 4px !important;
+
+            &:checked {
+                border-color: $primary;
+                background-image: escape-svg($form-check-input-checked-bg-image);
+            }
+        }
+    }
+
     .share-container {
         .btn {
             @extend .btn-outline-primary;
@@ -156,6 +180,10 @@
 
         .input-group .form-control ~ .input-group-append {
             right: 0;
+        }
+
+        .swag-customized-products-form-control {
+            padding: 0;
         }
     }
 
@@ -278,6 +306,10 @@
     }
 }
 
+.swag-customized-products__line-item-image-container {
+    padding: 0;
+}
+
 .swag-customized-products-option-type__checkbox-wrapper {
     border-radius: 11px;
     padding: 12px 16px;
@@ -287,5 +319,110 @@
 .swag-customized-products-options-datetime-wrapper {
     .icon {
         width: 20px;
+    }
+}
+
+.line-item-customized-products {
+    .swag-customized-products__line-item-options-container {
+        @include make-col(10);
+
+        .order-detail-content-list & {
+            @include make-col(12);
+        }
+    }
+
+    .swag-customized-products__line-item-option-elements {
+        .line-item-row {
+            padding-left: 0;
+            margin: 0;
+        }
+    }
+
+    .swag-customized-products__line-item-option-price-elements-small {
+        .cart-offcanvas & {
+            margin-top: 45px;
+        }
+
+        .line-item-unit-price,
+        .line-item-tax-price {
+            display: none;
+        }
+
+        .line-item-total-price {
+            margin-bottom: 2px;
+        }
+    }
+
+    .swag-customized-products__line-item-options-inline-price-caption {
+        display: none;
+    }
+
+    .swag-customized-products__line-item-options-headline-wrapper {
+        line-height: 1;
+    }
+
+    .swag-customized-products__line-item-options-headline {
+        line-height: 18px;
+    }
+
+    @include media-breakpoint-up(md) {
+        .line-item-row > .line-item-unit-price > .line-item-unit-price-value,
+        .line-item-row > .line-item-total-price > .line-item-total-price-value,
+        .line-item-row > .line-item-tax-price > .line-item-tax-price-value {
+            display: block;
+        }
+    }
+
+    &.is-order {
+        .swag-customized-products__line-item-options-inline-price-caption {
+            display: none;
+        }
+    }
+
+    &.is-default {
+        .swag-customized-products__line-item-options-inline-price-caption {
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .line-item-customized-products {
+        .swag-customized-products__line-item-option-price-elements-small {
+            margin-top: 37px;
+
+            .checkout & {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .line-item-customized-products {
+        .swag-customized-products__line-item-options-container {
+            @include make-col(12);
+
+            .offcanvas-cart & {
+                @include make-col(10);
+            }
+        }
+
+        .swag-customized-products__line-item-option-price-elements {
+            margin-top: 22px;
+        }
+
+        &.is-order {
+            .swag-customized-products__line-item-option-price-elements {
+                margin-top: 73px;
+            }
+        }
+    }
+}
+
+.is-act-finishpage,
+.order-item-detail {
+    .swag-customized-products__line-item-remove {
+        display: none;
     }
 }

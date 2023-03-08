@@ -68,6 +68,21 @@
             }
         }
     }
+
+    .order-detail-content-header {
+        .order-header-price {
+            padding-right: 0;
+        }
+    }
+
+    //.swag-customized-products__line-item-grid_component {
+    //    grid-template-columns: 1.25fr 4.75fr 2fr 2fr 2fr;
+    //    grid-template-rows: repeat(3, auto);
+    //    grid-template-areas:
+    //        "image label quantity unit-price total-price"
+    //        "image collapse-options collapse-options collapse-unit collapse-total"
+    //        "image details . . .";
+    //}
 }
 
 .order-item-detail-footer {

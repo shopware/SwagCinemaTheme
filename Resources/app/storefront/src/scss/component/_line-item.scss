@@ -5,6 +5,10 @@
         @include media-breakpoint-down(sm) {
             flex: 1 0 0;
         }
+
+        &-container {
+            padding-left: 0px;
+        }
     }
 
     &-info {
@@ -23,8 +27,10 @@
 
     &-unit-price,
     &-total-price,
+    &-tax-price,
     &-quantity {
         @include media-breakpoint-up(sm) {
+            display: unset;
             @include make-col(2);
         }
     }
@@ -100,11 +106,6 @@
         &-total-price {
             @include make-col(6);
             justify-content: flex-end;
-
-            &-value {
-                display: flex;
-                align-items: center;
-            }
         }
 
         &-quantity-label,
@@ -212,6 +213,64 @@
     }
 }
 
+.swag-customized-products__line-item-quantity {
+    .line-item-quantity-select-wrapper {
+        .line-item-quantity {
+            justify-content: center !important;
+        }
+    }
+}
+
+.swag-customized-products__line-item-remove {
+    order: 2;
+
+    @include media-breakpoint-up(sm) {
+        order: 5;
+    }
+}
+
+.is-offcanvas {
+    .swag-customized-products__line-item-remove {
+        order: 2;
+    }
+
+    .swag-customized-products__line-item-quantity {
+        float: left;
+
+        .line-item-quantity-label {
+            display: none;
+        }
+    }
+
+    .swag-customized-products__line-item-options-control-wrapper {
+        justify-content: space-between;
+    }
+}
+
+.swag-customized-products__line-item-option-element {
+    line-height: 24px;
+}
+
+.swag-customized-products__line-item-options-control-wrapper {
+    display: flex;
+    align-items: center;
+
+    .swag-customized-products__line-item-control-headline {
+        font-size: 14px;
+        color: #576674;
+        font-weight: bold;
+    }
+
+    .icon-arrow-down {
+        height: unset !important;
+    }
+}
+
+:not(.cart-offcanvas) .swag-customized-products__line-item-quantity {
+    color: $sw-text-color;
+    font-weight: bold;
+}
+
 @include media-breakpoint-down(sm) {
     .line-item-unit-price,
     .line-item-total-price,
@@ -219,8 +278,25 @@
         justify-content: space-between !important;
     }
 
-    .line-item-unit-price-label,
-    .line-item-total-price-label {
-        display: block;
+    .line-item-price {
+        .line-item-unit-price-label,
+        .line-item-total-price-label {
+            display: block !important;
+        }
+    }
+
+    .is-offcanvas {
+        .line-item-price {
+            .line-item-unit-price-label,
+            .line-item-total-price-label {
+                display: none !important;
+            }
+        }
+
+        .line-item-unit-price,
+        .line-item-total-price,
+        .line-item-tax-price {
+            justify-content: flex-end !important;
+        }
     }
 }

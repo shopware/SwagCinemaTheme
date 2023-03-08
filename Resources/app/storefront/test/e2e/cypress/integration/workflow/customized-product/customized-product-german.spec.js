@@ -87,7 +87,6 @@ describe('Customize Product: Visual test customize product in German', { tags: [
             .contains(product.name);
 
         // Check for the price box
-        cy.get('.swag-customized-product__price-display').should('not.exist');
         cy.get('.swag-customized-product__price-display').should('be.exist');
 
         // Check the price box card titel

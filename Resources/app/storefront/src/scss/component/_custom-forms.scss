@@ -30,6 +30,11 @@
         }
     }
 
+    > .btn {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
     .input-group-append {
         > .btn {
             border-color: $gray-900;

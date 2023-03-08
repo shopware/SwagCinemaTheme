@@ -201,4 +201,37 @@
             }
         }
     }
+
+    .swag-customized-products__line-item-collapse-unit-price {
+        .swag-customized-products__line-item-option-sub-element {
+            text-align: right;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .swag-customized-products__line-item-collapse-total-price {
+            @include make-col(4);
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .swag-customized-products__line-item-info {
+            width: 50%;
+        }
+
+        .swag-customized-products__line-item-collapse-unit-price {
+            @include make-col(3);
+        }
+
+        .swag-customized-products__line-item-collapse-total-price {
+            @include make-col(2);
+        }
+
+    }
+
+    @include media-breakpoint-down(md) {
+        .line-item-tax-price {
+            @include make-col(2);
+        }
+    }
 }
