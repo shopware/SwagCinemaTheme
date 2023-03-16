@@ -44,7 +44,6 @@ describe('Customized Product: Visual tests product with full customize option', 
         cy.visit('Customized-Product/RS-333');
 
         // Check for the price box
-        cy.get('.swag-customized-product__price-display').should('not.exist');
         cy.get('.swag-customized-product__price-display').should('be.exist');
 
         // Check for the product price

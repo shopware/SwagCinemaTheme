@@ -113,7 +113,13 @@ $checkout-divider-line: 1px solid $table-border-color;
         width: 100%;
     }
 
-    .swag-customized-products__line-item-collapse-options {
+    .swag-customized-products__line-item-collapse {
+        > .line-item-row {
+            margin: 0;
+        }
+    }
+
+    .swag-customized-products__line-item-collapse-unit-price {
         display: none;
     }
 
