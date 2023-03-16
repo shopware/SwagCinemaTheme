@@ -104,4 +104,32 @@ $checkout-divider-line: 1px solid $table-border-color;
             }
         }
     }
+
+    .swag-customized-products__line-item-grid_component {
+        display: flex;
+    }
+
+    .swag-customized-products__line-item-image-container + div {
+        width: 100%;
+    }
+
+    .swag-customized-products__line-item-collapse {
+        > .line-item-row {
+            margin: 0;
+        }
+    }
+
+    .swag-customized-products__line-item-collapse-unit-price {
+        display: none;
+    }
+
+    .swag-customized-products__line-item-quantity {
+        .line-item-quantity-row {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .swag-customized-products__line-item-total-price {
+        right: -24px;
+    }
 }

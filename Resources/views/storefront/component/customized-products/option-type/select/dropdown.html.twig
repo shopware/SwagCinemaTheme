@@ -4,7 +4,7 @@
     {% set inConfigurationExtension = configurationExtension.configuration[option.id] %}
 
     <select id="swag-customized-products-option-id-{{ option.id }}"
-            class="custom-select form-control swag-customized-products-form-control"
+            class="form-select swag-customized-products-form-control"
             name="{{ constant('Swag\\CustomizedProducts\\Storefront\\Controller\\CustomizedProductsCartController::CUSTOMIZED_PRODUCTS_TEMPLATE_REQUEST_PARAMETER') }}[options][{{ option.id }}][value]"
         {{ option.required ? 'required' : '' }}>
 

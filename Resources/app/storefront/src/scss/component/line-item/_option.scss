@@ -1,0 +1,176 @@
+*:not(.cart-offcanvas) {
+    .swag-customized-products__line-item-grid_component {
+        display: block;
+    }
+
+    .is-order .swag-customized-products__line-item-unit-price {
+        .line-item-unit-price-label,
+        .line-item-tax-price-label {
+            display: block;
+        }
+    }
+
+    .is-order .swag-customized-products__line-item-total-price {
+        .line-item-total-price-label {
+            display: block;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .is-order {
+            .swag-customized-products__line-item-unit-price {
+                .line-item-unit-price-label,
+                .line-item-tax-price-label {
+                    display: none;
+                }
+            }
+
+            .swag-customized-products__line-item-total-price {
+                .line-item-total-price-label {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.swag-customized-products__line-item-collapse {
+    order: 6;
+    padding: 0;
+}
+
+.swag-customized-products__line-item-options-control-wrapper {
+    white-space: nowrap;
+
+    .swag-customized-products__line-item-control-headline,
+    .swag-customized-products__line-item-control-icon-container {
+        vertical-align: middle;
+    }
+}
+
+.swag-customized-products__line-item-collapse-options {
+    @include make-col(7);
+
+    padding-left: $spacer-sm;
+    padding-right: $spacer-sm;
+}
+
+.swag-customized-products__line-item-collapse-total-price {
+    @include make-col(5);
+    padding-right: 12px;
+}
+
+.is-act-cartpage,
+.is-act-confirmpage {
+    @include media-breakpoint-up(sm) {
+        .swag-customized-products__line-item-collapse-total-price {
+            @include make-col(4);
+        }
+    }
+}
+
+.swag-customized-products__line-item-option-element {
+    .line-item-unit-price-value,
+    .line-item-tax-price-value {
+        text-align: right;
+    }
+
+    .line-item-total-price-value {
+        justify-content: flex-end;
+    }
+}
+
+.swag-customized-products__line-item-image-container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.is-order {
+    .swag-customized-products__line-item-option-element {
+        .line-item-unit-price-label,
+        .line-item-tax-price-label,
+        .line-item-total-price-label {
+            display: none;
+        }
+
+        .line-item-total-price-value {
+            text-align: right;
+        }
+    }
+}
+
+.is--default,
+.is- {
+    .swag-customized-products__line-item-collapse-unit-price {
+        display: none;
+    }
+
+    .line-item-total-price {
+        order: 5;
+    }
+
+    @include media-breakpoint-up(md) {
+        .swag-customized-products__line-item-collapse-unit-price {
+            display: block;
+            @include make-col(2);
+        }
+
+        .swag-customized-products__line-item-collapse-total-price {
+            @include make-col(2);
+        }
+
+        .swag-customized-products__line-item-collapse-options {
+            padding-left: 86px;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .swag-customized-products__line-item-collapse-options {
+        .swag-customized-products__line-item-option-element-detailed-price {
+            display: none;
+        }
+    }
+
+    *:not(.cart-offcanvas) {
+        .swag-customized-products__line-item-collapse-total-price {
+            display: block;
+        }
+    }
+}
+
+.is-offcanvas {
+    .swag-customized-products__line-item-collapse {
+        position: relative;
+        margin-top: 24px;
+    }
+
+    .swag-customized-products__line-item-control-icon-container {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .is-order {
+        .swag-customized-products__line-item-collapse-unit-price {
+            @include make-col(3);
+        }
+
+        .swag-customized-products__line-item-collapse-total-price {
+            @include make-col(2);
+        }
+    }
+
+    *:not(.cart-offcanvas) {
+        .swag-customized-products__line-item-label {
+            padding-left: 0;
+        }
+    }
+
+    .swag-customized-products__line-item-collapse-options {
+        .is-order & {
+            padding-left: 86px
+        }
+    }
+}

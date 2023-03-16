@@ -32,3 +32,26 @@ https://getbootstrap.com/docs/4.3/components/alerts/
         @include alert-variant($value, $value, $custom-alert-text-color);
     }
 }
+
+.swag-customized-products {
+    .swag-customized-products__violation-list-holder {
+
+        .alert .icon svg {
+            top: 12px;
+        }
+
+        .alert-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0 1rem 8px;
+        }
+
+        .alert-heading {
+            font-size: 1rem;
+        }
+
+        .entry__link {
+            color: #fff;
+        }
+    }
+}

@@ -9,6 +9,10 @@
         border-radius: 12px;
         background-color: $gray-100;
 
+        &-row {
+            align-items: center;
+        }
+
         .icon {
             color: $secondary;
         }

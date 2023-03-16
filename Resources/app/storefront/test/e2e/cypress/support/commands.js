@@ -191,3 +191,22 @@ Cypress.Commands.overwrite(
         });
     }
 );
+
+/**
+ * Create custom product fixture using Shopware API at the given endpoint
+ * @memberOf Cypress.Chainable#
+ * @name createCustomProductFixture
+ * @function
+ * @param {Object} [userData={}] - Options concerning creation
+ * @param [String] [templateFixtureName = 'product'] - Specifies the base fixture name
+ */
+Cypress.Commands.add('createCustomProductFixture', (userData = {}, templateFixtureName = 'product', categoryName = 'Confirm input catalogue') => {
+    const fixture = global.ProductFixtureService;
+    cy.log(fixture)
+
+    return cy.fixture(templateFixtureName).then((result) => {
+        return Cypress._.merge(result, userData);
+    }).then((data) => {
+        return fixture.setProductFixture(data, categoryName);
+    });
+});

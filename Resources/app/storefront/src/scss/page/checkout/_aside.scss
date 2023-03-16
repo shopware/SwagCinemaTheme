@@ -37,7 +37,11 @@
                 @extend .col-md-12;
                 @extend .col-lg-4;
 
-                @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(md) {
+                    padding-left: 20px;
+                }
+
+                @include media-breakpoint-up(xl) {
                     padding-left: $checkout-spacing-lg;
                 }
 

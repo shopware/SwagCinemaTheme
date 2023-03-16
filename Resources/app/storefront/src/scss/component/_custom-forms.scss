@@ -3,7 +3,7 @@
     background: url('#{$app-css-relative-asset-path}/icon-pack/cinema/ic-select-down.svg') no-repeat right 1rem center/22px 10px $input-bg;
     background-position-y: 15px;
     background-position-x: calc(100% - 5px);
-    padding-left: 12px;
+    padding-left: 1rem;
     padding-right: 26px;
 
     &-lg {
@@ -28,6 +28,11 @@
                 border-color: $input-focus-border-color;
             }
         }
+    }
+
+    > .btn {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     .input-group-append {
