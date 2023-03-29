@@ -356,6 +356,11 @@
         flex: 0 0 calc(100% - 60px);
         max-width: calc(100% - 60px);
     }
+
+    [data-swag-paypal-express-button],
+    [data-swag-paypal-installment-banner] {
+        @extend .col-12;
+    }
 }
 
 .product-detail-buy-button {
@@ -460,10 +465,12 @@
     }
 }
 
-[data-swag-paypal-express-button].is-disabled {
-    &::after {
-        left: 0;
-        width: 100%;
+[data-swag-paypal-express-button] {
+    &.is-disabled {
+       &::after {
+            left: 0;
+            width: 100%;
+        }
     }
 }
 
