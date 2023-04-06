@@ -50,6 +50,7 @@
 
     &.is-default {
         @include media-breakpoint-up(sm) {
+            .line-item-status,
             .line-item-info,
             .line-item-quantity,
             .line-item-unit-price,
@@ -170,6 +171,10 @@
         &-unit-price-label,
         &-tax-price-label {
             font-weight: 400;
+
+            @include media-breakpoint-up(sm) {
+                font-weight: 600;
+            }
         }
 
         &-quantity-row {
@@ -183,7 +188,8 @@
 
         &-quantity,
         &-unit-price,
-        &-total-price {
+        &-total-price,
+        &-status {
             padding-left: 80px;
 
             @include media-breakpoint-up(sm) {
@@ -297,4 +303,36 @@
             justify-content: flex-end !important;
         }
     }
+}
+
+.line-item.has-line-item-status {
+    @include media-breakpoint-up(sm) {
+        .line-item-info {
+            @include make-col(4);
+        }
+
+        .line-item-status,
+        .line-item-quantity,
+        .line-item-unit-price,
+        .line-item-tax-price,
+        .line-item-total-price {
+            @include make-col(2);
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .line-item-info {
+            @include make-col(5);
+        }
+
+        .line-item-quantity,
+        .line-item-unit-price,
+        .line-item-tax-price {
+            @include make-col(1.5);
+        }
+    }
+}
+
+.line-item-ordernumber {
+    word-break: break-all;
 }
