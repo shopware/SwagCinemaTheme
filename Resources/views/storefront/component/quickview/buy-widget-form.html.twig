@@ -4,10 +4,12 @@
     {% set selectQuantityThreshold = 100 %}
 
     <div class="col-12 product-detail-quantity-box swag-cms-extensions-quickview-content--buy-quantity" data-custom-select="true">
-        <div class="product-detail-buy-quantity">
-            <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
-            {{ block('page_product_detail_buy_quantity') }}
-        </div>
+        {% if showQuantitySelect %}
+            <div class="product-detail-buy-quantity">
+                <label class="form-label">{{ "detail.dataColumnQuantity"|trans|sw_sanitize }}</label>
+                {{ block('page_product_detail_buy_quantity') }}
+            </div>
+        {% endif %}
 
         {% block page_product_detail_price %}
             {# the block page_product_detail_price was moved from product-detail/buy-widget.html.twig #}
@@ -41,8 +43,9 @@
 
         {% block page_product_detail_configurator_include %}
             {% if page.product.parentId and page.configuratorSettings|length > 0 %}
+                <form></form>
                 <div class="product-detail-configurator-container">
-                    {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+                    {% sw_include '@SwagCmsExtensions/storefront/component/quickview/configurator.html.twig' ignore missing %}
                 </div>
             {% endif %}
         {% endblock %}
