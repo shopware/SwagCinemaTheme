@@ -229,7 +229,7 @@
             padding: 0;
             overflow: hidden;
 
-            &.swag-customized-products-option {
+            &.swag-customized-products-option:not(.swag-customized-products_step-mode-hidden) {
                 border-top: $border-width-sm solid $gray-400;
                 padding: 20px 0 30px;
                 margin-bottom: 16px;
@@ -302,6 +302,11 @@
 
         .swag-customized-products__scrollable {
             min-height: 56px;
+            overflow: hidden;
+
+            &::-webkit-scrollbar {
+                pointer-events: none;
+            }
         }
     }
 }

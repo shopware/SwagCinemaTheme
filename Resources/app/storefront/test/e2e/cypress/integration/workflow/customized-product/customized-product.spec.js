@@ -256,21 +256,24 @@ describe('Customized Product: Visual tests product with full customize option', 
                 // Checkbox
                 cy.contains('.swag-customized-products-option__title', 'Example checkbox').scrollIntoView();
                 cy.contains('.form-check-label', 'Example checkbox').click();
-                nextButton()
+                nextButton();
 
                 // Textfield
                 cy.contains('.swag-customized-products-option__title', 'Example textfield').scrollIntoView();
                 cy.get('.swag-customized-products__type-textfield input').type('Hello Customized Products Textfield StepByStep');
+                cy.get('body').click({ force: true });
                 nextButton();
 
                 // Textarea
                 cy.contains('.swag-customized-products-option__title', 'Example textarea').scrollIntoView();
                 cy.get('.swag-customized-products__type-textarea textarea').type('Hello Customized Products Textarea StepByStep');
+                cy.get('body').click({ force: true });
                 nextButton();
 
                 // Numberfield
                 cy.contains('.swag-customized-products-option__title', 'Example numberfield').scrollIntoView();
                 cy.get('.swag-customized-products__type-numberfield input').type('42');
+                cy.get('body').click({ force: true });
                 nextButton();
 
                 // Datefield
@@ -293,7 +296,7 @@ describe('Customized Product: Visual tests product with full customize option', 
 
                 // Color select
                 cy.contains('.swag-customized-products-option__title', 'Example color select').scrollIntoView();
-                cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Blue').click({force: true});
+                cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Blue').click({ force: true });
                 nextButton()
 
                 // File upload
@@ -306,7 +309,7 @@ describe('Customized Product: Visual tests product with full customize option', 
 
                 // HTML Input
                 cy.contains('.swag-customized-products-option__title', 'Example html').scrollIntoView();
-                nextButton()
+                nextButton();
 
                 // Check if the configuration was done
                 cy.contains('.swag-customized-products-start-wizard', 'Change product configuration').should('be.visible');
