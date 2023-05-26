@@ -467,7 +467,7 @@
 
 [data-swag-paypal-express-button] {
     &.is-disabled {
-       &::after {
+        &::after {
             left: 0;
             width: 100%;
         }
