@@ -1,0 +1,112 @@
+{% sw_extends '@Storefront/storefront/subscriptions/product-box.html.twig' %}
+
+{% block subscription_buy_widget_quantity_container %}
+    <div class="col-12 product-detail-quantity-box {% if page.product.calculatedPrices|length <= 1 %}product-detail-quantity-box--column{% endif %}">
+        {% if showQuantitySelect %}
+            <div class="product-detail-buy-quantity">
+                {% set selectQuantityThreshold = 100 %}
+
+                {% block subscription_page_product_detail_buy_quantity %}
+                    <div class="input-group product-detail-quantity-group quantity-selector-group"
+                         data-quantity-selector="true">
+
+                        {% block page_product_detail_buy_quantity_input %}
+                            <button type="button" class="btn btn-outline-light btn-minus js-btn-minus">
+                                {% sw_icon 'minus' style {'size': 'xs'} %}
+                            </button>
+                            <input
+                                type="number"
+                                name="lineItems[{{ product.id }}][quantity]"
+                                class="form-control js-quantity-selector quantity-selector-group-input product-detail-quantity-input"
+                                min="{{ product.minPurchase }}"
+                                max="{{ product.calculatedMaxPurchase }}"
+                                step="{{ product.purchaseSteps }}"
+                                value="{{ product.minPurchase }}"
+                            />
+                            <button type="button" class="btn btn-outline-light btn-plus js-btn-plus">
+                                {% sw_icon 'plus' style {'size': 'xs'} %}
+                            </button>
+                        {% endblock %}
+
+                        {% block page_product_detail_buy_quantity_input_unit %}
+                            {% if product.translated.packUnit %}
+                                <span class="input-group-text">
+                                    {% if product.minPurchase > 1 and product.translated.packUnitPlural %}
+                                        {{ product.translated.packUnitPlural }}
+                                    {% elseif product.translated.packUnit %}
+                                        {{ product.translated.packUnit }}
+                                    {% endif %}
+                                </span>
+                            {% endif %}
+                        {% endblock %}
+
+                    </div>
+                {% endblock %}
+
+                <div class="product-detail-tax-container">
+                    {% if context.taxState == "gross" %}
+                        {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+                    {% else %}
+                        {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+                    {% endif %}
+
+                    <p class="product-detail-tax">
+                        <a class="product-detail-tax-link"
+                           href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                           title="{{ taxText }}"
+                           data-bs-toggle="modal"
+                           data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                            {{ taxText }}
+                        </a>
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+        <div
+            class="product-detail-price-container {% if page.product.calculatedPrices|length > 1 %}product-detail-price-table{% endif %}">
+            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
+
+    {% block subscription_buy_widget_buy_button_container %}
+        <div class="col-10">
+            {% block subscription_buy_widget_buy_button %}
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-buy subscription-button"
+                            title="{{ 'commercial.subscriptions.detail.subscribe'|trans|striptags }}"
+                            aria-label="{{ 'commercial.subscriptions.detail.subscribe'|trans|striptags }}">
+                        {{ 'commercial.subscriptions.detail.subscribe'|trans|sw_sanitize }}
+                    </button>
+                </div>
+            {% endblock %}
+        </div>
+
+        <div class="col-2">
+            {% if config('core.cart.wishlistEnabled') %}
+                {% block subscription_page_product_detail_wishlist %}
+                    {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                        showText: true,
+                        size: 'md',
+                        productId: page.product.id
+                    } %}
+                {% endblock %}
+            {% endif %}
+        </div>
+
+        <div class="col-10 product-payment-logo">
+            {% if page.extensions.payPalEcsButtonData or page.extensions.payPalInstallmentBannerData is not null %}
+                {% block subscription_page_product_detail_buy_container_paypal %}
+                    {{ parent() }}
+                {% endblock %}
+            {% endif %}
+
+            {% block subscription_page_product_detail_buy_container_amazon %}
+                {% if buyable and page.extensions.SwagAmazonPayButton is not null %}
+                    {% block subscription_page_product_detail_buy_container_swag_amazon_pay_button %}
+                        {{ parent() }}
+                    {% endblock %}
+                {% endif %}
+            {% endblock %}
+        </div>
+    {% endblock %}

@@ -67,7 +67,7 @@ describe('Product Detail: Product variants', {tags: ['@workflow']}, () => {
         cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().should('be.enabled');
         cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().should('have.value', '64');
         cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().clear();
-        cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().should('have.value', '');
+        cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().should('have.value', '0');
         cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().clearTypeAndCheck('100');
         cy.get('.sw-data-grid__row--0 #sw-price-field-gross').first().type('{enter}');
 
