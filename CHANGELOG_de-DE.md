@@ -1,3 +1,10 @@
+# 2.1.0
+- Überprüfung der Kompatibilität mit dem Abonnement
+- Vereinheitlichtes Styling für SwagCustomNotification
+- Die Sichtbarkeit der Variante in Quickview wurde korrigiert
+- UI-Fehler behoben, wenn die Bestellung den Status Return hat
+- Breite des PayPal-Banners auf der Produkt-Detailseite wurde behoben
+
 # 2.0.0
 - Freigabe v2.0 kompatibel mit Version 6.5
 
