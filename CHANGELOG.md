@@ -1,3 +1,10 @@
+# 2.1.0
+- Checked compatibility with the subscription
+- Unified stylings of SwagCustomNotification
+- Fixed the variant visibility in Quick View
+- Fixed UI bug when the order has the status return
+- Fixed PayPal banner width on the product detail page
+
 # 2.0.0
 - Release v2.0 compatible with 6.5 version
 
