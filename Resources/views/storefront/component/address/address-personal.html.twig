@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
 
 {% block component_address_personal_account_type %}
-    <div class="row">
+    <div class="row g-2">
         {% if onlyCompanyRegistration or (config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect) %}
             <div class="form-group col-12 col-md-6 contact-type" data-custom-select="true">
                 {{ block('component_address_personal_account_type_label') }}

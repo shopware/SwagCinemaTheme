@@ -32,7 +32,9 @@
         "loginPasswordRecover": "Passwort vergessen?",
         "personalMailLabel": "E-Mail-Addresse",
         "registerAddressShippingHeader": "Abweichende Lieferadresse:",
-        "ordersWelcome": "Hier finden Sie Ihre Bestellung sortiert nach Datum."
+        "ordersWelcome": "Hier finden Sie Ihre Bestellung sortiert nach Datum.",
+        "addressesContentItemActionEdit": "Bearbeiten",
+        "addressListHeader": "Alle Adressen"
     },
     "detail": {
         "reviewLinkText": "",

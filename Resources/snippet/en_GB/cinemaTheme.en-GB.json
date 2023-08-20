@@ -32,7 +32,9 @@
         "loginPasswordRecover": "Forgot Password?",
         "personalMailLabel": "Email address",
         "registerAddressShippingHeader": "Alternative shipping address:",
-        "ordersWelcome": "Here you can find your orders sorted by date."
+        "ordersWelcome": "Here you can find your orders sorted by date.",
+        "addressesContentItemActionEdit": "Edit",
+        "addressListHeader": "All addresses"
     },
     "detail": {
         "reviewLinkText": "",
