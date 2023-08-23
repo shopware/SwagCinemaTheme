@@ -1,11 +1,38 @@
 {% sw_extends '@Storefront/storefront/component/address/address-editor-modal.html.twig' %}
 
-{% block component_address_address_editor_modal_accordion_overview_billing_card %}
-    <h5 class="address-editor-headline">{{ "account.overviewChangeBilling"|trans|sw_sanitize }}</h5>
-    {{ parent() }}
+{% block component_address_address_editor_modal_accordion_overview_billing_card_title %}
+    <div class="card-title">
+        {{ block('component_address_address_editor_modal_accordion_overview_billing_card_title_text') }}
+    </div>
 {% endblock %}
 
-{% block component_address_address_editor_modal_accordion_overview_shipping_card %}
-    <h5 class="address-editor-headline">{{ "account.overviewChangeShipping"|trans|sw_sanitize }}</h5>
-    {{ parent() }}
+{% block component_address_address_editor_modal_accordion_overview_shipping_card_title %}
+    <div class="card-title">
+        {{ block('component_address_address_editor_modal_accordion_overview_shipping_card_title_text') }}
+    </div>
+{% endblock %}
+
+{% block component_address_address_editor_modal_accordion_overview_shipping_card_address %}
+    {% sw_include '@Storefront/storefront/component/address/address.html.twig' with {
+        'address': context.customer.defaultShippingAddress
+    } %}
+{% endblock %}
+
+{% block component_address_address_editor_modal_accordion_action_edit %}
+    <a class="address-editor-edit btn btn-outline-secondary"
+       data-bs-toggle="collapse"
+       data-bs-target="#{{ typePrefix }}address-create-edit"
+    >
+        {{ "account.addressEditBtn"|trans|sw_sanitize }}
+    </a>
+{% endblock %}
+
+{% block component_address_address_editor_modal_accordion_action_create %}
+    <a class="address-editor-create btn btn-outline-secondary ms-2"
+       data-bs-toggle="collapse"
+       data-bs-target="#{{ typePrefix }}address-create-new"
+    >
+
+        {{ "account.addressCreateBtn"|trans|sw_sanitize }}
+    </a>
 {% endblock %}

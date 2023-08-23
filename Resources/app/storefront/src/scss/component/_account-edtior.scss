@@ -1,23 +1,13 @@
-.address-editor-headline {
-    margin-bottom: 35px;
-    padding-bottom: 14px;
-    border-bottom: 2px solid $sw-text-color;
-}
+.address-editor-card,
+.address-editor-list-wrapper {
+    .card-title {
+        margin-bottom: 24px;
+        border-bottom: 2px solid $gray-400;
+        font-weight: 500;
+    }
 
-.address-editor-select,
-.address-editor-edit,
-.address-editor-create {
-    @extend .btn-outline-secondary;
-    margin-top: 20px;
-    cursor: pointer;
-    width: 100%;
-
-    &:not(.collapsed) {
-        @extend .btn-secondary;
-
-        &:hover {
-            color: $white;
-        }
+    .address {
+        line-height: 26px;
     }
 }
 
@@ -25,6 +15,13 @@
     .js-field-toggle-contact-type-company .form-group {
         @extend .col-12, .col-sm-6;
     }
+}
+
+.address-editor-title {
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid $sw-text-color;
+    font-size: 36px;
 }
 
 @include media-breakpoint-down(sm) {

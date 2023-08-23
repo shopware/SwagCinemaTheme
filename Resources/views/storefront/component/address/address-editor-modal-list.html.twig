@@ -10,3 +10,40 @@
         {% endblock %}
     </div>
 {% endblock %}
+
+{% block component_address_address_editor_modal_list_address_body %}
+    <div class="card-body">
+        <div class="d-flex gap-3 flex-column flex-md-row">
+            {{ block('component_address_address_editor_modal_list_address_include') }}
+
+            {{ block('component_address_address_editor_modal_list_address_actions') }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block component_address_address_editor_modal_list_address_action_billing_form_button %}
+    <button type="submit"
+            title="{{ "account.addressesSetAsDefaultBillingAction"|trans|striptags }}"
+            class="btn btn-block btn-outline-secondary btn-sm">
+        {% block component_address_address_editor_modal_list_address_action_billing_form_button_text %}
+            {{ "account.selectAddress"|trans|sw_sanitize }}
+        {% endblock %}
+    </button>
+{% endblock %}
+
+{% block component_address_address_editor_modal_list_address_action_shipping_form_button %}
+    <button type="submit"
+            title="{{ "account.addressesSetAsDefaultShippingAction"|trans|striptags }}"
+            class="btn btn-block btn-outline-secondary btn-sm"
+        {% if not address.country.shippingAvailable %} disabled="disabled"{% endif %}>
+        {% block component_address_address_editor_modal_list_address_action_shipping_form_text %}
+            {{ "account.selectAddress"|trans|sw_sanitize }}
+        {% endblock %}
+    </button>
+{% endblock %}
+
+{% block component_address_address_editor_modal_list_address %}
+    <div class="card mb-4">
+        {{ block('component_address_address_editor_modal_list_address_body') }}
+    </div>
+{% endblock %}

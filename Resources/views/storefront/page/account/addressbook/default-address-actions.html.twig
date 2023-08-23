@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/page/account/addressbook/default-address-actions.html.twig' %}
+
+{% block page_account_default_address_actions_edit %}
+    <div class="col p-0">
+        <a href="{{ path('frontend.account.address.edit.page', {'addressId': address.id}) }}"
+           title="{{ "account.addressesContentItemActionEdit"|trans|striptags }}"
+           class="btn btn-link btn-sm p-0 address-action-edit">
+            {{ "account.addressesContentItemActionEdit"|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}
