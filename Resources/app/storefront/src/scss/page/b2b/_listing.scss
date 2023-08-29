@@ -1,0 +1,12 @@
+.b2b-listing {
+    padding-top: 20px;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 44px;
+    }
+
+    h1 {
+        @extend .h2;
+        line-height: normal;
+    }
+}

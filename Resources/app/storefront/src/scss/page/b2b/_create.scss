@@ -1,0 +1,16 @@
+.b2b-create {
+    padding-top: 20px;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 44px;
+    }
+
+    &-title {
+        align-items: center;
+    }
+
+    &-title-text {
+        @extend .h2;
+        line-height: normal;
+    }
+}
