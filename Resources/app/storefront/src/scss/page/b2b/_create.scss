@@ -10,7 +10,11 @@
     }
 
     &-title-text {
-        @extend .h2;
-        line-height: normal;
+        font-size: calc(1.475rem + 2.7vw);
+        line-height: 1.1;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 3.5rem;
+        }
     }
 }
