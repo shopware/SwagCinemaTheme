@@ -142,18 +142,43 @@
         }
     }
 
-    .default-address,
-    .address-list {
-        .billing-address,
-        .shipping-address {
-            .h3 {
-                font-size: 14px;
-                font-weight: 500;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 0;
-                line-height: normal;
+    .dropdown-menu {
+        .icon {
+            display: none;
+        }
+
+        .btn {
+            --#{$prefix}btn-bg: transparent;
+            --#{$prefix}btn-border-width: 0;
+            --#{$prefix}btn-border-radius: 0;
+            --#{$prefix}btn-padding-y: 10px;
+            --#{$prefix}btn-padding-x: 14px;
+            --#{$prefix}btn-line-height: 18px;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    @if feature('v6.6.0.0') {
+        .default-address,
+        .address-list {
+
+            &.row,
+            .row {
+                --#{$prefix}gutter-x: 0;
+            }
+
+            .billing-address,
+            .shipping-address {
+                .h3 {
+                    font-size: 14px;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 0;
+                    line-height: normal;
+                }
             }
         }
     }
