@@ -7,14 +7,15 @@
 
 .address-editor-edit,
 .address-editor-create {
+    width: auto;
+    margin-top: 20px;
+
     &:not(.collapsed) {
         @extend .btn-outline-secondary;
         --#{$prefix}btn-color: #{$black};
         --#{$prefix}btn-bg: transparent;
         --#{$prefix}btn-border-color: #{$black};
-        margin-top: 20px;
         cursor: pointer;
-        width: auto;
 
         &:hover {
             color: $white;

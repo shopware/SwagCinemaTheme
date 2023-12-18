@@ -4,8 +4,8 @@
         @extend .col-lg-8;
         @extend .m-lg-0;
         @extend .pe-lg-5;
-
         padding: $checkout-spacing-sm $checkout-spacing-sm $checkout-spacing-md;
+        margin-left: 0 !important;
 
         @include media-breakpoint-up(md) {
             padding-top: $checkout-spacing-md;

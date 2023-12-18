@@ -1,4 +1,4 @@
-import FilterRatingSelectPlugin from 'src/plugin/listing/filter-rating-select.plugin'
+import FilterRatingSelectPlugin from 'src/plugin/listing/filter-rating-select.plugin';
 import DomAccess from 'src/helper/dom-access.helper';
 
 export default class CinemaFilterRatingSelectPlugin extends FilterRatingSelectPlugin {

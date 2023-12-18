@@ -81,10 +81,6 @@ $checkout-divider-line: 1px solid $table-border-color;
 
         button {
             width: 100%;
-
-            @include media-breakpoint-up(lg) {
-                width: 50%;
-            }
         }
     }
 

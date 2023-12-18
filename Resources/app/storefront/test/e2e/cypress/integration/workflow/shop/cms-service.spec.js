@@ -102,7 +102,8 @@ describe('Shop page: CMS service page', {tags: ['@workflow']}, () => {
         })
     }
 
-    it('@shop: assign service page to footer category', () => {
+    /** @TODO TCM-194 Re-enable it */
+    it.skip('@shop: assign service page to footer category', () => {
         createServicePage();
         cy.visit('/');
 

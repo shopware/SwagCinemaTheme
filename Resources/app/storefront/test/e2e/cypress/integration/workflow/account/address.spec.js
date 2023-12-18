@@ -44,7 +44,7 @@ describe('Account: Address', { tags: ['@workflow', '@address'] }, () => {
         cy.get('.alert-success .alert-content').contains('Address has been saved.');
 
         cy.get('#accountActionsDropdown').click();
-        cy.get('.dropdown-menu > .row > :nth-child(1) > .btn').contains('Edit').click();
+        cy.get('.dropdown-menu > :nth-child(1) > .btn').contains('Edit').click();
         cy.get('#addresscompany').typeAndCheckStorefront('Company ABD');
         cy.get('#addressdepartment').typeAndCheckStorefront('Department ABF');
         cy.get('#addressAddressCountry').select('Germany');

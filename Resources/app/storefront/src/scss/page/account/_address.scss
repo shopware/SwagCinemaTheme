@@ -159,26 +159,24 @@
         }
     }
 
-    @if feature('v6.6.0.0') {
-        .default-address,
-        .address-list {
+    .default-address,
+    .address-list {
 
-            &.row,
-            .row {
-                --#{$prefix}gutter-x: 0;
-            }
+        &.row,
+        .row {
+            --#{$prefix}gutter-x: 0;
+        }
 
-            .billing-address,
-            .shipping-address {
-                .h3 {
-                    font-size: 14px;
-                    font-weight: 500;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 0;
-                    line-height: normal;
-                }
+        .billing-address,
+        .shipping-address {
+            .h3 {
+                font-size: 14px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 0;
+                line-height: normal;
             }
         }
     }

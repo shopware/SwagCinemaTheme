@@ -1,3 +1,6 @@
+# 3.0.0
+- Shopware 6.6 compatibility
+
 # 2.1.0
 - Checked compatibility with the subscription
 - Unified stylings of SwagCustomNotification
