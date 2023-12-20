@@ -28,7 +28,7 @@
     .account-aside-footer {
         margin: 20px 16px;
         padding: 0;
-        border-top: $border-width solid $border-color-bold;
+        border-top: $border-width solid $border-color-bold !important;
     }
 
     .account-aside-btn {

@@ -9,7 +9,7 @@
         <description lang="de-DE">Das Cinema Theme von Shopware hat ein kontrastreiches Design und einzigartigen Charakter. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
-        <version>2.1.0</version>
+        <version>3.0.0</version>
         <icon>theme-icon.png</icon>
         <license>MIT</license>
     </meta>

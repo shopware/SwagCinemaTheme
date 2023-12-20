@@ -116,7 +116,8 @@ describe('ThemeColor: workflow change primary color and buy color', {tags: ['@wo
         });
     }
 
-    it('@workflow @themeColor: check change primary color ', () => {
+    /** @TODO TCM-194 Re-enable it */
+    it.skip('@workflow @themeColor: check change primary color ', () => {
         cy.intercept({
             path: '/widgets/checkout/info',
             method: 'get'

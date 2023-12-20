@@ -113,6 +113,7 @@
         margin-right: 14px;
         color: $secondary;
         line-height: normal;
+        max-width: none;
     }
 
     .order-item-heading {
@@ -307,8 +308,14 @@
     }
 
     .order-item-detail-footer {
-        border-radius: 12px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
         padding: 20px;
+    }
+
+    .order-item-detail-footnote {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
 
     .order-item-detail-summary {
@@ -364,7 +371,8 @@
     }
 
     @include media-breakpoint-down(sm) {
-        .order-item-detail-footer {
+        .order-item-detail-footer,
+        .order-item-detail-footnote {
             border-radius: 0;
             margin-left: -($grid-gutter-width / 2 + $card-border-width);
             margin-right: -($grid-gutter-width / 2 + $card-border-width);

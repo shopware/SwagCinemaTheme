@@ -1,23 +1,14 @@
-import BackButtonPlugin from './plugin/product-detail/back-button';
-import CinemaListingPlugin from './plugin/listing/cinema-listing.plugin';
-import CinemaFilterRatingSelectPlugin from './plugin/listing/cinema-filter-rating-select.plugin';
-import CustomizedProductsStepByStepWizard from "./plugin/customized-product/customized-product-step.plugin";
-import CinemaCustomizedProductPriceDisplay from "./plugin/customized-product/customized-products-price-display.plugin";
-import CinemaZoomModalPlugin from './plugin/zoom-modal/zoom-modal.plugin';
-import CinemaCustomSelectPlugin from './plugin/listing/cinema-custom-select.plugin';
-
 const PluginManager = window.PluginManager;
 
-PluginManager.register('BackButton', BackButtonPlugin, '[data-back-button]');
-PluginManager.register('CustomSelect', CinemaCustomSelectPlugin, '[data-custom-select]')
-PluginManager.override('Listing', CinemaListingPlugin, '[data-listing]');
-PluginManager.override('FilterRatingSelect', CinemaFilterRatingSelectPlugin, '[data-filter-rating-select]');
-PluginManager.override('ZoomModal', CinemaZoomModalPlugin, '[data-zoom-modal]');
+PluginManager.register('BackButton', () => import('./plugin/product-detail/back-button'), '[data-back-button]');
+PluginManager.register('CustomSelect', () => import('./plugin/listing/cinema-custom-select.plugin'), '[data-custom-select]')
+PluginManager.override('Listing', () => import('./plugin/listing/cinema-listing.plugin'), '[data-listing]');
+PluginManager.override('FilterRatingSelect', () => import('./plugin/listing/cinema-filter-rating-select.plugin'), '[data-filter-rating-select]');
 
 if (PluginManager.getPluginList().SwagCustomizedProductsStepByStepWizard) {
-    PluginManager.override('SwagCustomizedProductsStepByStepWizard', CustomizedProductsStepByStepWizard, '*[data-swag-customized-product-step-by-step="true"]');
+    PluginManager.override('SwagCustomizedProductsStepByStepWizard', () => import('./plugin/customized-product/customized-product-step.plugin'), '*[data-swag-customized-product-step-by-step="true"]');
 }
 
 if (PluginManager.getPluginList().SwagCustomizedProductPriceDisplay) {
-    PluginManager.override('SwagCustomizedProductPriceDisplay', CinemaCustomizedProductPriceDisplay, '[data-swag-customized-product-price-display="true"]',);
+    PluginManager.override('SwagCustomizedProductPriceDisplay', () => import('./plugin/customized-product/customized-products-price-display.plugin'), '[data-swag-customized-product-price-display="true"]',);
 }

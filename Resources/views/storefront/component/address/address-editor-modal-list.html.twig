@@ -1,19 +1,8 @@
 {% sw_extends '@Storefront/storefront/component/address/address-editor-modal-list.html.twig' %}
 
-{# @deprecated tag:v6.5.0 remove this block when default storefront update data-parent to data-bs-parent #}
-{% block component_address_address_editor_modal_list %}
-    <div id="{{ typePrefix }}address-list"
-         class="collapse {% if not address %} show{% endif %}"
-         data-bs-parent="#{{ typePrefix }}addressEditorAccordion">
-        {% block component_address_address_editor_modal_list_wrapper %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
-{% endblock %}
-
 {% block component_address_address_editor_modal_list_address_body %}
     <div class="card-body">
-        <div class="d-flex gap-3 flex-column flex-md-row">
+        <div class="d-flex gap-3 flex-column flex-md-row justify-content-md-between mt-3">
             {{ block('component_address_address_editor_modal_list_address_include') }}
 
             {{ block('component_address_address_editor_modal_list_address_actions') }}

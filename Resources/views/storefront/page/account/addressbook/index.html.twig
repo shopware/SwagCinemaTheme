@@ -4,7 +4,7 @@
     <div class="address-action-create">
         <a href="{{ path('frontend.account.address.create.page') }}"
            title="{{ "account.addressCreateBtn"|trans|striptags }}"
-           class="btn btn-primary px-5">
+           class="btn btn-primary px-5 d-inline-flex">
             {% sw_icon 'ic-plus' style {'pack' : 'cinema'} %}
             {{ "account.addressCreateBtn"|trans|sw_sanitize }}
         </a>
@@ -29,9 +29,6 @@
                 {{ block('page_account_address_welcome_headline') }}
 
                 <p>{{ "account.addressText"|trans|sw_sanitize }}</p>
-
-                {# @deprecated tag:v6.6.0 - Block will be removed. #}
-                {{ block('page_account_address_welcome_intro') }}
             </div>
         {% endblock %}
 

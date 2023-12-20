@@ -1,6 +1,8 @@
 // contains variable overrides for bootstrap variables located under
 // shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstrap/scss/_variables.scss
 
+$enable-important-utilities: true !default;
+
 // Color system
 // scss-docs-start gray-color-variables
 $white: #fff !default;

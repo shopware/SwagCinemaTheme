@@ -142,8 +142,31 @@
         }
     }
 
+    .dropdown-menu {
+        .icon {
+            display: none;
+        }
+
+        .btn {
+            --#{$prefix}btn-bg: transparent;
+            --#{$prefix}btn-border-width: 0;
+            --#{$prefix}btn-border-radius: 0;
+            --#{$prefix}btn-padding-y: 10px;
+            --#{$prefix}btn-padding-x: 14px;
+            --#{$prefix}btn-line-height: 18px;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
     .default-address,
     .address-list {
+
+        &.row,
+        .row {
+            --#{$prefix}gutter-x: 0;
+        }
+
         .billing-address,
         .shipping-address {
             .h3 {
