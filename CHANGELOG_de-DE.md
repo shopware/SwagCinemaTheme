@@ -1,5 +1,6 @@
 # 3.0.0
 - Shopware 6.6 Kompatibilität
+- TCM-200 - Fehlerhafte Umbrüche im Layout der Account-Seite wurden angepasst
 
 # 2.1.0
 - Überprüfung der Kompatibilität mit dem Abonnement

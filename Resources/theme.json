@@ -21,7 +21,7 @@
     ],
     "script": [
         "@Storefront",
-        "app/storefront/dist/storefront/js/swag-cinema-theme.js"
+        "app/storefront/dist/storefront/js/swag-cinema-theme/swag-cinema-theme.js"
     ],
     "iconSets": {
         "cinema": "app/storefront/src/assets/icon-pack/cinema"

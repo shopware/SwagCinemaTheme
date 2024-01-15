@@ -7,7 +7,7 @@ $enable-important-utilities: true !default;
 // scss-docs-start gray-color-variables
 $white: #fff !default;
 $black: #000 !default;
-$app-css-relative-asset-path: '../assets' !default;
+$app-css-relative-asset-path: '../../' + $theme-id + '/assets' !default;
 
 $gray-50: mix($white, $sw-text-color, 97%) !default; //#f7f8f8
 $gray-100: mix($white, $sw-text-color, 95%) !default; //#f4f4f5

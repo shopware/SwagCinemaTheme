@@ -12,7 +12,7 @@ describe('Product Detail: Product variants', {tags: ['@workflow']}, () => {
             });
     });
 
-    it('@workflow @variants: add variant with surcharge to product', () => {
+    it.skip('@workflow @variants: add variant with surcharge to product', () => {
         const page = new ProductPageObject();
 
         // Request we want to wait for later

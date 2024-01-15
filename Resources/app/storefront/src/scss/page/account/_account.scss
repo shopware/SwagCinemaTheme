@@ -505,9 +505,18 @@
     }
 }
 
-@include media-breakpoint-up(lg) {
-    .account-content .account-content-aside {
-        padding-top: 55px;
+.account-content {
+    flex-wrap: nowrap;
+
+    .account-content-main {
+        width: unset;
+        flex-grow: 1;
+    }
+
+    .account-content-aside {
+        @include media-breakpoint-up(lg) {
+            padding-top: 55px;
+        }
     }
 }
 
