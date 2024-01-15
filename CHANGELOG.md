@@ -1,5 +1,6 @@
 # 3.0.0
 - Shopware 6.6 compatibility
+- TCM-200 - Fixed wrapping of account page layout
 
 # 2.1.0
 - Checked compatibility with the subscription
