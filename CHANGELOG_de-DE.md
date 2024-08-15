@@ -1,3 +1,6 @@
+# 2.2.0
+- TCM-201 - Fehler im Layout der CMS Produktdetailseite wurden behoben
+
 # 2.1.0
 - Überprüfung der Kompatibilität mit dem Abonnement
 - Vereinheitlichtes Styling für SwagCustomNotification
