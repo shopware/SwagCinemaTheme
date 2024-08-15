@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-buy-box.html.twig' %}
+
+{% block element_buy_box %}
+    {{ parent() }}
+
+    {% sw_include '@Storefront/storefront/element/cms-element-product-description-reviews.html.twig' %}
+{% endblock %}

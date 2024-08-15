@@ -9,6 +9,14 @@
 {% block buy_widget_wishlist %}
 {% endblock %}
 
+{% block buy_widget_rich_snippets %}
+    <div class="row align-items-center">
+        {% sw_include '@Storefront/storefront/page/product-detail/headline.html.twig' %}
+    </div>
+
+    {{ parent() }}
+{% endblock %}
+
 {% block buy_widget_data %}
     {{ block('buy_widget_data_rich_snippet_url') }}
 
