@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/block/cms-block-gallery-buybox.html.twig' %}
+
+ {% block block_gallery_buybox_column_left %}
+     {% set element = block.slots.getSlot('left') %}
+     {% set config = element.fieldConfig.elements %}
+
+     <div class="col-lg-7 product-detail-media" data-cms-element-id="{{ element.id }}">
+        {% block block_gallery_buybox_column_left_inner %}
+            {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing
+                with {
+                'mediaItems': mediaItems,
+                'zoom': false,
+                'zoomModal': true,
+                'displayMode': 'contain',
+                'gutter': 5,
+                'minHeight': '430px',
+                'navigationArrows': 'inside',
+                'navigationDots': 'inside',
+                'galleryPosition': 'left',
+                'isProduct': true,
+                'isGridLayout': true,
+                'fallbackImageTitle': page.product.translated.name,
+                'startIndexThumbnails': 1,
+                'startIndexSlider': 1,
+                'keepAspectRatioOnZoom': false
+
+            } %}
+        {% endblock %}
+     </div>
+ {% endblock %}

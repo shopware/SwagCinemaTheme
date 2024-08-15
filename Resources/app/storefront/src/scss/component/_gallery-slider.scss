@@ -12,7 +12,8 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
     }
 }
 
-.ci-gallery-mobile .gallery-slider-thumbnails-col {
+.ci-gallery-mobile .gallery-slider-thumbnails-col,
+.base-slider-dots {
     display: none;
 }
 
@@ -34,17 +35,8 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
 
     &.is-contain .gallery-slider-image {
         width: 100%;
-    }
-}
-
-.product-detail-media.grid {
-    .gallery-slider-item,
-    .gallery-slider-single-image {
-        &.is-contain .gallery-slider-image {
-            width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-        }
+        min-height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -92,7 +84,7 @@ based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyua
 }
 
 .gallery-slider-thumbnails-col {
-    @extend .d-none, .d-lg-block;
+    @extend .d-none;
 }
 
 @include media-breakpoint-down(xs) {

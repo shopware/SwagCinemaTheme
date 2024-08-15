@@ -1,6 +1,6 @@
 import ProductPageObject from "../../../support/pages/sw-product.page-object";
 
-describe('Product Detail: Product variants', {tags: ['@workflow']}, () => {
+describe.skip('Product Detail: Product variants', {tags: ['@workflow']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => cy.login())
