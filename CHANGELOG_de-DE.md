@@ -1,3 +1,6 @@
+# 3.1.0
+- TCM-206 - Es wurde ein Styling-Fehler bei der Bildergalerie auf der Produkt-Detailseite behoben
+
 # 3.0.0
 - Shopware 6.6 Kompatibilität
 - TCM-200 - Fehlerhafte Umbrüche im Layout der Account-Seite wurden angepasst

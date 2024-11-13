@@ -1,3 +1,4 @@
+{# @deprecated tag:v4.0.0 - File will be removed as it is not extending the Product detail page properly. Extend the CMS block templates instead. #}
 {% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
 
 {% block buy_widget_price %}
@@ -16,42 +17,40 @@
 
     {{ block('buy_widget_data_rich_snippet_price_currency') }}
 
-    <div class="product-detail-info">
-        {{ block('buy_widget_delivery_informations') }}
+    {{ block('buy_widget_delivery_informations') }}
 
-        {{ block('buy_widget_reviews') }}
+    {{ block('buy_widget_reviews') }}
 
-        {% if product.purchaseUnit and product.calculatedPrices|length <= 1 %}
-            {% block buy_widget_price_unit %}
-                {# the block buy_widget_price_unit was moved from /buy-widget/buy-widget-price.html.twig #}
-                {% set price = product.calculatedPrice %}
+    {% if product.purchaseUnit and product.calculatedPrices|length <= 1 %}
+        {% block buy_widget_price_unit %}
+            {# the block buy_widget_price_unit was moved from /buy-widget/buy-widget-price.html.twig #}
+            {% set price = product.calculatedPrice %}
 
-                {% if product.calculatedPrices|length == 1 %}
-                    {% set price = product.calculatedPrices.first %}
+            {% if product.calculatedPrices|length == 1 %}
+                {% set price = product.calculatedPrices.first %}
+            {% endif %}
+
+            <div class="product-detail-price-unit">
+                {% block buy_widget_price_unit_label %}
+                    <span class="price-unit-label">
+                    {{ "detail.priceUnitName"|trans|sw_sanitize }}
+                </span>
+                {% endblock %}
+
+                {% block buy_widget_price_unit_content %}
+                    <span class="price-unit-content">
+                    {{ product.purchaseUnit }} {{ product.unit.name }}
+                </span>
+                {% endblock %}
+
+                {% if price.referencePrice is not null %}
+                    {% block buy_widget_price_unit_reference_content %}
+                        <span class="price-unit-reference-content">
+                        ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
+                    </span>
+                    {% endblock %}
                 {% endif %}
-
-                <div class="product-detail-price-unit">
-                    {% block buy_widget_price_unit_label %}
-                        <span class="price-unit-label">
-                        {{ "detail.priceUnitName"|trans|sw_sanitize }}
-                    </span>
-                    {% endblock %}
-
-                    {% block buy_widget_price_unit_content %}
-                        <span class="price-unit-content">
-                        {{ product.purchaseUnit }} {{ product.unit.name }}
-                    </span>
-                    {% endblock %}
-
-                    {% if price.referencePrice is not null %}
-                        {% block buy_widget_price_unit_reference_content %}
-                            <span class="price-unit-reference-content">
-                            ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
-                        </span>
-                        {% endblock %}
-                    {% endif %}
-                </div>
-            {% endblock %}
-        {% endif %}
-    </div>
+            </div>
+        {% endblock %}
+    {% endif %}
 {% endblock %}

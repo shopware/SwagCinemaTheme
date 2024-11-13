@@ -1,3 +1,6 @@
+# 3.1.0
+- TCM-206 - Fixed a styling issue on the product detail page image gallery
+
 # 3.0.0
 - Shopware 6.6 compatibility
 - TCM-200 - Fixed wrapping of account page layout
