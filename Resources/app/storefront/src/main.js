@@ -1,3 +1,5 @@
+// SwagCinemaTheme Copyright (C) 2025 shopware AG
+
 const PluginManager = window.PluginManager;
 
 PluginManager.register('BackButton', () => import('./plugin/product-detail/back-button'), '[data-back-button]');

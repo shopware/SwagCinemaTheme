@@ -1,3 +1,5 @@
+// SwagCinemaTheme Copyright (C) 2025 shopware AG
+
 import Plugin from 'src/plugin-system/plugin.class';
 
 export default class BackButton extends Plugin {
