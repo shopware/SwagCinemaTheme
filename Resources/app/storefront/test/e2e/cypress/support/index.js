@@ -1,3 +1,5 @@
+// SwagCinemaTheme Copyright (C) 2025 shopware AG
+
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.

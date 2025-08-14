@@ -1,3 +1,5 @@
+// SwagCinemaTheme Copyright (C) 2025 shopware AG
+
 import FilterRatingSelectPlugin from 'src/plugin/listing/filter-rating-select.plugin';
 import DomAccess from 'src/helper/dom-access.helper';
 

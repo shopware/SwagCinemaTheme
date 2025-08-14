@@ -11,8 +11,6 @@
     "cy:run:firefox": "cypress run --browser firefox"
   },
   "keywords": [],
-  "author": "nhulongctk10",
-  "license": "MIT",
   "dependencies": {
     "@percy/cli": "^1.16.0",
     "@percy/cypress": "^3.1.2",

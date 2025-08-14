@@ -1,3 +1,5 @@
+// SwagCinemaTheme Copyright (C) 2025 shopware AG
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
